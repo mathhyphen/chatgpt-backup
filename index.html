@@ -65,7 +65,7 @@ body{font-family:var(--serif);background:var(--paper);color:var(--ink);height:10
 
 /* 顶部 tab 切换: 知识图录 / 对话原档 */
 .tabs{display:flex;gap:0;margin-bottom:-1px}
-.tab{flex:1;padding:10px 8px;text-align:center;font-family:var(--display);font-size:14px;font-weight:500;color:var(--ink-3);cursor:pointer;border:1px solid transparent;border-bottom:none;border-radius:3px 3px 0 0;transition:all .15s;user-select:none;position:relative}
+.tab{flex:1;padding:10px 8px;text-align:center;font-family:var(--display);font-size:14px;font-weight:500;color:var(--ink-3);cursor:pointer;border:1px solid transparent;border-bottom:none;border-radius:3px 3px 0 0;transition:all .15s;user-select:none;position:relative;white-space:nowrap;text-decoration:none}
 .tab:hover{color:var(--ink-2)}
 .tab.active{color:var(--ink);background:var(--paper);border-color:var(--rule)}
 .tab.active::after{content:"";position:absolute;bottom:-1px;left:0;right:0;height:2px;background:var(--crimson)}
@@ -233,7 +233,7 @@ body{font-family:var(--serif);background:var(--paper);color:var(--ink);height:10
       <div class="tabs">
         <div class="tab active" data-tab="wiki">知识图录<span class="tab-count" id="cntWiki"></span></div>
         <div class="tab" data-tab="conv">对话原档<span class="tab-count" id="cntConv"></span></div>
-        <a class="tab" href="graph.html">3D知识图谱</a>
+        <a class="tab" href="graph.html">3D知识图谱<span class="tab-count" id="cntGraph"> 节点229</span></a>
       </div>
       <div class="side-tools">
         <div class="search-wrap"><input type="text" class="search" id="search" placeholder="检索篇目…"></div>
