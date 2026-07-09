@@ -1,6 +1,5 @@
 var COM_LABELS={0:"Diffusion & Signal",1:"Gen Model Training",2:"Medical Image Gen",3:"Dev Tools",4:"Wavelet & Quality",5:"Paper Workflow",6:"Brain Parcellation",7:"Infrastructure",8:"Rectified Flow",9:"Image Post-Proc",10:"Early Diagnosis",11:"Cortical Pipeline",12:"LaTeX & Submission",13:"Deep Learning",14:"Self-Supervised 3D"};
-var COLORS=["#f72585","#b5179e","#7209b7","#3a0ca3","#4361ee","#4cc9f0","#06d6a0","#fb5607","#ff006e","#8338ec","#3a86ff","#80ed99","#f77f00","#e36414","#9b5de5","#00bbf9","#00f5d4","#fee440","#d90368","#0ead69"];
-function c(n){return COLORS[n%COLORS.length];}
+function c(n){var h=((Number(n)||0)*137.508)%360;return "hsl("+h.toFixed(1)+",82%,62%)";}
 
 // Timeout: 12s fallback for CDN issues
 setTimeout(function(){var d=document.getElementById("loading");if(d&&d.className.indexOf("hidden")<0){d.innerHTML="<div style=color:#f72585>Timeout - <a href=graph.html style=color:#4cc9f0>retry</a></div>"}},12000);
