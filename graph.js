@@ -14,14 +14,7 @@ fetch("graph.json").then(function(r){return r.json()}).then(function(raw){
 
   var graph=ForceGraph3D({controlType:"orbit"})(document.getElementById("graph-container"))
     .graphData(gd).nodeId("id")
-    .nodeColor(function(n){return c(n.group)}).nodeVal("val")
-    .nodeThreeObject(function(n){
-      var isDoc=n.type==="document";var sz=isDoc?10:4;
-      // Use MeshBasicMaterial so nodes remain visible even if WebGL lighting differs across browsers/CDNs.
-      var sph=new THREE.Mesh(new THREE.SphereGeometry(sz,isDoc?24:16),new THREE.MeshBasicMaterial({color:new THREE.Color(c(n.group)),transparent:true,opacity:isDoc?1:.9}));
-      if(isDoc){var ring=new THREE.Mesh(new THREE.RingGeometry(sz*1.55,sz*1.85,32),new THREE.MeshBasicMaterial({color:new THREE.Color(c(n.group)),transparent:true,opacity:.55,side:THREE.DoubleSide}));ring.position.z=.1;sph.add(ring)}
-      return sph;
-    })
+    .nodeColor(function(n){return c(n.group)}).nodeVal("val").nodeRelSize(5).nodeOpacity(.98)
     .linkColor(function(l){var g=(l.source&&l.source.group!=null)?l.source.group:0;return c(g)})
     .linkOpacity(.55).linkWidth(function(l){return Math.max(1,Math.min((l.value||1)*1.5,3))})
     .backgroundColor("#0a0a0f").showNavInfo(false).enableNodeDrag(false).width(window.innerWidth).height(window.innerHeight)
