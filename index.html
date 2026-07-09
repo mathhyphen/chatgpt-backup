@@ -69,7 +69,7 @@ body{font-family:var(--serif);background:var(--paper);color:var(--ink);height:10
 .tab:hover{color:var(--ink-2)}
 .tab.active{color:var(--ink);background:var(--paper);border-color:var(--rule)}
 .tab.active::after{content:"";position:absolute;bottom:-1px;left:0;right:0;height:2px;background:var(--crimson)}
-.tab .tab-count{font-size:11px;font-weight:400;color:var(--ink-3);font-family:var(--serif);font-style:italic;margin-left:3px}
+.tab .tab-count{display:block;font-size:11px;font-weight:400;color:var(--ink-3);font-family:var(--serif);font-style:italic;margin-left:0;margin-top:2px;line-height:1.15}
 .tab.active .tab-count{color:var(--crimson)}
 
 .side-tools{padding:14px 0 12px}
@@ -233,7 +233,7 @@ body{font-family:var(--serif);background:var(--paper);color:var(--ink);height:10
       <div class="tabs">
         <div class="tab active" data-tab="wiki">知识图录<span class="tab-count" id="cntWiki"></span></div>
         <div class="tab" data-tab="conv">对话原档<span class="tab-count" id="cntConv"></span></div>
-        <a class="tab" href="graph.html">3D知识图谱<span class="tab-count" id="cntGraph"> 节点229</span></a>
+        <a class="tab" href="graph.html">3D知识图谱<span class="tab-count" id="cntGraph">节点229</span></a>
       </div>
       <div class="side-tools">
         <div class="search-wrap"><input type="text" class="search" id="search" placeholder="检索篇目…"></div>
@@ -280,8 +280,8 @@ async function unlock(){
     const manifest=JSON.parse(await fetchDec('manifest.enc'));
     UNITS=(manifest.units||[]).sort((a,b)=>(b.title||'').localeCompare(a.title||''));
     CONVS=(manifest.convs||[]).sort((a,b)=>(b.update_time||'').localeCompare(a.update_time||''));
-    $('cntWiki').textContent=UNITS.length?' ·'+UNITS.length:'';
-    $('cntConv').textContent=CONVS.length?' ·'+CONVS.length:'';
+    $('cntWiki').textContent=UNITS.length?'卷'+UNITS.length:'';
+    $('cntConv').textContent=CONVS.length?'卷'+CONVS.length:'';
     const tagSet=new Set();UNITS.forEach(u=>(u.tags||[]).forEach(t=>tagSet.add(t)));
     ALL_TAGS=[...tagSet].sort();
     $('lock').style.display='none';$('app').style.display='grid';
