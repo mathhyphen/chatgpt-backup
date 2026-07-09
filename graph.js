@@ -22,9 +22,9 @@ fetch("graph.json").then(function(r){return r.json()}).then(function(raw){
       if(isDoc){var ring=new THREE.Mesh(new THREE.RingGeometry(sz*1.55,sz*1.85,32),new THREE.MeshBasicMaterial({color:new THREE.Color(c(n.group)),transparent:true,opacity:.55,side:THREE.DoubleSide}));ring.position.z=.1;sph.add(ring)}
       return sph;
     })
-    .linkColor(function(l){var g=(l.source&&l.source.group!=null)?l.source.group:0;var cl=new THREE.Color(c(g));cl.multiplyScalar(.7);return cl})
+    .linkColor(function(l){var g=(l.source&&l.source.group!=null)?l.source.group:0;return c(g)})
     .linkOpacity(.55).linkWidth(function(l){return Math.max(1,Math.min((l.value||1)*1.5,3))})
-    .backgroundColor("#0a0a0f").showNavInfo(false).enableNodeDrag(false)
+    .backgroundColor("#0a0a0f").showNavInfo(false).enableNodeDrag(false).width(window.innerWidth).height(window.innerHeight)
     .onNodeClick(function(n){graph.centerAt(n.x,n.y,400);graph.zoom(3,400)})
     .onNodeHover(function(n){
       var t=document.getElementById("tooltip");
@@ -56,6 +56,7 @@ fetch("graph.json").then(function(r){return r.json()}).then(function(raw){
   setTimeout(function(){graph.zoomToFit(600,80)},500);
   setTimeout(function(){graph.zoomToFit(600,80)},1800);
   setTimeout(function(){graph.zoomToFit(600,80)},3500);
+  graph.onEngineStop(function(){graph.zoomToFit(600,80)});
   window.addEventListener("resize",function(){setTimeout(function(){graph.width(window.innerWidth).height(window.innerHeight);graph.zoomToFit(400,80)},100)});
 }).catch(function(err){
   var el=document.getElementById("loading");
