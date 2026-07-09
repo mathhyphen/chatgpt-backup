@@ -9,8 +9,9 @@ fetch("graph.json").then(function(r){return r.json()}).then(function(raw){
   raw.nodes.forEach(function(n){gd.nodes.push({id:n.id,name:n.label||n.id.replace(/_/g," "),group:n.community!=null?n.community:0,val:n.file_type==="document"?12:(n.val||3),type:n.file_type||"concept"})});
   (raw.links||[]).forEach(function(l){gd.links.push({source:l.source,target:l.target,value:l.weight||1})});
 
-  var shown={},leg=document.getElementById("legend");
-  gd.nodes.forEach(function(n){if(n.type==="document"&&!shown[n.group]){shown[n.group]=true;var d=document.createElement("div");d.className="legend-item";d.innerHTML='<span class="legend-dot" style="background:'+c(n.group)+'"></span> '+(COM_LABELS[n.group]||"C"+n.group);leg.appendChild(d)}});
+  var leg=document.getElementById("legend");
+  leg.innerHTML='<div class="legend-title">知识节点</div>';
+  gd.nodes.filter(function(n){return n.type==="document"}).sort(function(a,b){return a.name.localeCompare(b.name,"zh-Hans-CN")}).forEach(function(n){var d=document.createElement("div");d.className="legend-item";d.setAttribute("data-node",n.id);d.innerHTML='<span class="legend-dot" style="background:'+c(n.group)+'"></span><span>'+n.name+'</span>';leg.appendChild(d)});
 
   var graph=ForceGraph3D({controlType:"orbit"})(document.getElementById("graph-container"))
     .graphData(gd).nodeId("id")
@@ -21,7 +22,7 @@ fetch("graph.json").then(function(r){return r.json()}).then(function(raw){
     .onNodeClick(function(n){graph.centerAt(n.x,n.y,400);graph.zoom(3,400)})
     .onNodeHover(function(n){
       var t=document.getElementById("tooltip");
-      if(n){t.querySelector(".tt-title").textContent=n.name;t.querySelector(".tt-type").textContent=n.type==="document"?"Knowledge Unit":"Concept";t.querySelector(".tt-community").textContent=COM_LABELS[n.group]||"Community "+n.group;t.classList.add("visible")}else{t.classList.remove("visible")}
+      if(n){t.querySelector(".tt-title").textContent=n.name;t.querySelector(".tt-type").textContent=n.type==="document"?"知识单元":"概念节点";t.querySelector(".tt-community").textContent=COM_LABELS[n.group]||"社区 "+n.group;t.classList.add("visible")}else{t.classList.remove("visible")}
     })
     .d3AlphaDecay(.02).d3VelocityDecay(.3);
 
@@ -29,13 +30,15 @@ fetch("graph.json").then(function(r){return r.json()}).then(function(raw){
   var ang=0;setInterval(function(){if(graph.autoRotate){ang+=.003;var c=graph.cameraPosition();var r=Math.sqrt(c.x*c.x+c.z*c.z);graph.cameraPosition({x:r*Math.sin(ang),y:c.y,z:r*Math.cos(ang)},{x:0,y:0,z:0})}},20);
 
   var rt,ce=document.getElementById("graph-container");
-  ce.addEventListener("mousedown",function(){graph.autoRotate=false;btn.textContent="Stop";clearTimeout(rt)});
-  ce.addEventListener("mouseup",function(){rt=setTimeout(function(){graph.autoRotate=true;btn.textContent="Auto-rotate"},3000)});
-  ce.addEventListener("wheel",function(){graph.autoRotate=false;btn.textContent="Stop";clearTimeout(rt);rt=setTimeout(function(){graph.autoRotate=true;btn.textContent="Auto-rotate"},3000)});
+  ce.addEventListener("mousedown",function(){graph.autoRotate=false;btn.textContent="停止";clearTimeout(rt)});
+  ce.addEventListener("mouseup",function(){rt=setTimeout(function(){graph.autoRotate=true;btn.textContent="自动旋转"},3000)});
+  ce.addEventListener("wheel",function(){graph.autoRotate=false;btn.textContent="停止";clearTimeout(rt);rt=setTimeout(function(){graph.autoRotate=true;btn.textContent="自动旋转"},3000)});
   ce.addEventListener("mousemove",function(e){var t=document.getElementById("tooltip");t.style.left=(e.clientX+16)+"px";t.style.top=(e.clientY+16)+"px"});
 
   var btn=document.getElementById("btn-auto");
-  btn.onclick=function(){graph.autoRotate=!graph.autoRotate;this.textContent=graph.autoRotate?"Auto-rotate":"Stop"};
+  btn.onclick=function(){graph.autoRotate=!graph.autoRotate;this.textContent=graph.autoRotate?"自动旋转":"停止"};
+
+  leg.querySelectorAll(".legend-item").forEach(function(item){item.onclick=function(){var id=this.getAttribute("data-node");var n=gd.nodes.find(function(x){return x.id===id});if(n){graph.autoRotate=false;btn.textContent="停止";graph.centerAt(n.x||0,n.y||0,700);graph.zoom(3,700)}}});
 
   document.getElementById("search-box").oninput=function(){
     var q=this.value;if(!q){graph.nodeColor(function(n){return c(n.group)}).nodeVal("val");graph.zoomToFit(400);return}
