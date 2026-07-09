@@ -1,0 +1,1 @@
+window.CFG = { SALT_B64: "QguITgsjoUjQuXIQOWfdFg==", ITERATIONS: 210000 };
