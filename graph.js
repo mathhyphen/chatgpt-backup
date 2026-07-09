@@ -16,13 +16,14 @@ fetch("graph.json").then(function(r){return r.json()}).then(function(raw){
     .graphData(gd).nodeId("id")
     .nodeColor(function(n){return c(n.group)}).nodeVal("val")
     .nodeThreeObject(function(n){
-      var isDoc=n.type==="document";var sz=isDoc?8:3;
-      var sph=new THREE.Mesh(new THREE.SphereGeometry(sz,isDoc?24:16),new THREE.MeshStandardMaterial({color:new THREE.Color(c(n.group)),metalness:isDoc?.5:.2,roughness:isDoc?.3:.5,emissive:new THREE.Color(c(n.group)),emissiveIntensity:isDoc?.15:.05,transparent:true,opacity:isDoc?1:.75}));
-      if(isDoc){var ring=new THREE.Mesh(new THREE.RingGeometry(sz*1.6,sz*1.8,32),new THREE.MeshBasicMaterial({color:new THREE.Color(c(n.group)),transparent:true,opacity:.2,side:THREE.DoubleSide}));ring.position.z=.1;sph.add(ring)}
+      var isDoc=n.type==="document";var sz=isDoc?10:4;
+      // Use MeshBasicMaterial so nodes remain visible even if WebGL lighting differs across browsers/CDNs.
+      var sph=new THREE.Mesh(new THREE.SphereGeometry(sz,isDoc?24:16),new THREE.MeshBasicMaterial({color:new THREE.Color(c(n.group)),transparent:true,opacity:isDoc?1:.9}));
+      if(isDoc){var ring=new THREE.Mesh(new THREE.RingGeometry(sz*1.55,sz*1.85,32),new THREE.MeshBasicMaterial({color:new THREE.Color(c(n.group)),transparent:true,opacity:.55,side:THREE.DoubleSide}));ring.position.z=.1;sph.add(ring)}
       return sph;
     })
     .linkColor(function(l){var g=(l.source&&l.source.group!=null)?l.source.group:0;var cl=new THREE.Color(c(g));cl.multiplyScalar(.7);return cl})
-    .linkOpacity(.2).linkWidth(function(l){return Math.min(l.value||1,2)})
+    .linkOpacity(.55).linkWidth(function(l){return Math.max(1,Math.min((l.value||1)*1.5,3))})
     .backgroundColor("#0a0a0f").showNavInfo(false).enableNodeDrag(false)
     .onNodeClick(function(n){graph.centerAt(n.x,n.y,400);graph.zoom(3,400)})
     .onNodeHover(function(n){
@@ -51,8 +52,11 @@ fetch("graph.json").then(function(r){return r.json()}).then(function(raw){
   };
 
   document.getElementById("loading").classList.add("hidden");
-  setTimeout(function(){graph.zoomToFit(600,50)},100);
-  window.addEventListener("resize",function(){setTimeout(function(){graph.width(window.innerWidth).height(window.innerHeight)},100)});
+  graph.cameraPosition({x:0,y:0,z:520},{x:0,y:0,z:0},0);
+  setTimeout(function(){graph.zoomToFit(600,80)},500);
+  setTimeout(function(){graph.zoomToFit(600,80)},1800);
+  setTimeout(function(){graph.zoomToFit(600,80)},3500);
+  window.addEventListener("resize",function(){setTimeout(function(){graph.width(window.innerWidth).height(window.innerHeight);graph.zoomToFit(400,80)},100)});
 }).catch(function(err){
   var el=document.getElementById("loading");
   if(el){el.innerHTML="<div style='color:#f72585;font-size:14px;padding:20px;text-align:left;max-width:500px'><b>Graph Error</b><br>"+err.message+"<br><br><i>Check console (F12) for details</i><br><br><a href='graph.html' style='color:#4cc9f0'>Retry</a> | <a href='index.html' style='color:#4cc9f0'>Back</a></div>";}
