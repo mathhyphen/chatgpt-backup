@@ -12,12 +12,13 @@ fetch("graph.json").then(function(r){return r.json()}).then(function(raw){
   leg.innerHTML='<div class="legend-title">知识节点</div>';
   gd.nodes.filter(function(n){return n.type==="document"}).sort(function(a,b){return a.name.localeCompare(b.name,"zh-Hans-CN")}).forEach(function(n){var d=document.createElement("div");d.className="legend-item";d.setAttribute("data-node",n.id);d.innerHTML='<span class="legend-dot" style="background:'+c(n.group)+'"></span><span>'+n.name+'</span>';leg.appendChild(d)});
 
-  var focusedId=null, nodeById={};
+  var focusedId=null, focusedGroup=null, nodeById={};
   gd.nodes.forEach(function(n){nodeById[n.id]=n});
   function sid(v){return typeof v==="object"?v.id:v}
-  function updateLegend(){leg.querySelectorAll(".legend-item").forEach(function(item){item.classList.toggle("active",item.getAttribute("data-node")===focusedId)})}
-  function resetFocus(){focusedId=null;updateLegend();graph.nodeColor(function(n){return c(n.group)}).nodeVal("val").linkColor(function(l){var g=(l.source&&l.source.group!=null)?l.source.group:0;return c(g)}).linkOpacity(.55).linkWidth(function(l){return Math.max(1,Math.min((l.value||1)*1.5,3))});graph.zoomToFit(500,80)}
-  function applyFocus(id,node){if(focusedId===id){resetFocus();return}focusedId=id;updateLegend();graph.nodeColor(function(n){return n.id===focusedId?c(n.group):"rgba(70,66,88,.20)"}).nodeVal(function(n){if(!focusedId)return n.val;return n.id===focusedId?(n.type==="document"?30:16):1}).linkColor(function(l){var a=sid(l.source),b=sid(l.target),hit=a===focusedId||b===focusedId;return hit?"rgba(235,225,255,.82)":"rgba(80,76,100,.10)"}).linkOpacity(.62).linkWidth(function(l){var a=sid(l.source),b=sid(l.target),hit=a===focusedId||b===focusedId;return hit?1.8:.22});graph.autoRotate=false;btn.textContent="停止";graph.centerAt(node.x||0,node.y||0,700);graph.zoom(3,700)}
+  function sameGroup(n){return focusedGroup==null||n.group===focusedGroup}
+  function updateLegend(){leg.querySelectorAll(".legend-item").forEach(function(item){var n=nodeById[item.getAttribute("data-node")];item.classList.toggle("active",!!n&&focusedGroup!=null&&n.group===focusedGroup)})}
+  function resetFocus(){focusedId=null;focusedGroup=null;updateLegend();graph.nodeColor(function(n){return c(n.group)}).nodeVal("val").linkColor(function(l){var g=(l.source&&l.source.group!=null)?l.source.group:0;return c(g)}).linkOpacity(.55).linkWidth(function(l){return Math.max(1,Math.min((l.value||1)*1.5,3))});graph.zoomToFit(500,80)}
+  function applyFocus(id,node){if(focusedId===id){resetFocus();return}focusedId=id;focusedGroup=node.group;updateLegend();graph.nodeColor(function(n){return sameGroup(n)?c(n.group):"rgba(70,66,88,.20)"}).nodeVal(function(n){if(focusedGroup==null)return n.val;return sameGroup(n)?(n.type==="document"?24:12):1}).linkColor(function(l){var a=nodeById[sid(l.source)],b=nodeById[sid(l.target)],hit=a&&b&&a.group===focusedGroup&&b.group===focusedGroup;return hit?c(focusedGroup):"rgba(80,76,100,.12)"}).linkOpacity(focusedGroup==null?.55:.68).linkWidth(function(l){var a=nodeById[sid(l.source)],b=nodeById[sid(l.target)],hit=a&&b&&a.group===focusedGroup&&b.group===focusedGroup;return hit?2.8:.28});graph.autoRotate=false;btn.textContent="停止";graph.centerAt(node.x||0,node.y||0,700);graph.zoom(2.6,700)}
 
   var graph=ForceGraph3D({controlType:"orbit"})(document.getElementById("graph-container"))
     .graphData(gd).nodeId("id")
