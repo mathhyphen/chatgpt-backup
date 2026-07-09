@@ -46,13 +46,14 @@
   <script type="importmap">
   {
     "imports": {
-      "three": "https://cdn.jsdelivr.net/npm/three@0.170/build/three.module.js",
-      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170/examples/jsm/",
-      "3d-force-graph": "https://cdn.jsdelivr.net/npm/3d-force-graph@2.7/dist/3d-force-graph.mjs"
+      "three": "https://cdn.jsdelivr.net/npm/three@0.163/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.163/examples/jsm/",
+      "3d-force-graph": "https://cdn.jsdelivr.net/npm/3d-force-graph/dist/3d-force-graph.mjs"
     }
   </script>
   <script type="module">
-    import ForceGraph3D from "3d-force-graph";
+    import * as THREE from "three";
+import ForceGraph3D from "3d-force-graph";
 
     const COM_LABELS = {
       0:"Diffusion & Signal",1:"Gen Model Training",2:"Medical Image Gen",
