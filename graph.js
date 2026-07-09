@@ -53,4 +53,15 @@ fetch("graph.json").then(function(r){return r.json()}).then(function(raw){
   document.getElementById("loading").classList.add("hidden");
   setTimeout(function(){graph.zoomToFit(600,50)},100);
   window.addEventListener("resize",function(){setTimeout(function(){graph.width(window.innerWidth).height(window.innerHeight)},100)});
-}).catch(function(err){document.getElementById("loading").innerHTML="<div style='color:#f72585'>Error: "+err.message+"</div>";console.error("Graph:",err)});
+}).catch(function(err){
+  var el=document.getElementById("loading");
+  if(el){el.innerHTML="<div style='color:#f72585;font-size:14px;padding:20px;text-align:left;max-width:500px'><b>Graph Error</b><br>"+err.message+"<br><br><i>Check console (F12) for details</i><br><br><a href='graph.html' style='color:#4cc9f0'>Retry</a> | <a href='index.html' style='color:#4cc9f0'>Back</a></div>";}
+  console.error("Graph error:",err);
+  // Check THREE
+  console.log('THREE available:', typeof THREE !== 'undefined');
+  if(typeof THREE !== 'undefined') {
+    console.log('THREE.WebGLRenderer:', typeof THREE.WebGLRenderer);
+    try { var test = new THREE.WebGLRenderer(); console.log('WebGL test: OK'); } catch(e) { console.log('WebGL test: FAIL', e); }
+  }
+  console.log('ForceGraph3D available:', typeof ForceGraph3D !== 'undefined');
+});
