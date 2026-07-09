@@ -13,13 +13,20 @@ fetch("graph.json").then(function(r){return r.json()}).then(function(raw){
   leg.innerHTML='<div class="legend-title">知识节点</div>';
   gd.nodes.filter(function(n){return n.type==="document"}).sort(function(a,b){return a.name.localeCompare(b.name,"zh-Hans-CN")}).forEach(function(n){var d=document.createElement("div");d.className="legend-item";d.setAttribute("data-node",n.id);d.innerHTML='<span class="legend-dot" style="background:'+c(n.group)+'"></span><span>'+n.name+'</span>';leg.appendChild(d)});
 
+  var focusedId=null, neighbors={};
+  function sid(v){return typeof v==="object"?v.id:v}
+  gd.links.forEach(function(l){var a=sid(l.source),b=sid(l.target);(neighbors[a]||(neighbors[a]={}))[b]=true;(neighbors[b]||(neighbors[b]={}))[a]=true});
+  function isRelated(n){return !focusedId||n.id===focusedId||(neighbors[focusedId]&&neighbors[focusedId][n.id])}
+  function updateLegend(){leg.querySelectorAll(".legend-item").forEach(function(item){item.classList.toggle("active",item.getAttribute("data-node")===focusedId)})}
+  function applyFocus(id,node){focusedId=focusedId===id?null:id;updateLegend();graph.nodeColor(function(n){return isRelated(n)?c(n.group):"rgba(70,66,88,.22)"}).nodeVal(function(n){if(!focusedId)return n.val;if(n.id===focusedId)return n.type==="document"?26:14;return isRelated(n)?(n.type==="document"?18:8):1}).linkColor(function(l){var a=sid(l.source),b=sid(l.target),hit=focusedId&&(a===focusedId||b===focusedId);if(!focusedId){var g=(l.source&&l.source.group!=null)?l.source.group:0;return c(g)}return hit?"rgba(235,225,255,.95)":"rgba(80,76,100,.14)"}).linkOpacity(focusedId ? .72 : .55).linkWidth(function(l){var a=sid(l.source),b=sid(l.target),hit=focusedId&&(a===focusedId||b===focusedId);return focusedId?(hit?3:.35):Math.max(1,Math.min((l.value||1)*1.5,3))});if(focusedId&&node){graph.autoRotate=false;btn.textContent="停止";graph.centerAt(node.x||0,node.y||0,700);graph.zoom(3,700)}else{graph.zoomToFit(500,80)}}
+
   var graph=ForceGraph3D({controlType:"orbit"})(document.getElementById("graph-container"))
     .graphData(gd).nodeId("id")
     .nodeColor(function(n){return c(n.group)}).nodeVal("val").nodeRelSize(5).nodeOpacity(.98)
     .linkColor(function(l){var g=(l.source&&l.source.group!=null)?l.source.group:0;return c(g)})
     .linkOpacity(.55).linkWidth(function(l){return Math.max(1,Math.min((l.value||1)*1.5,3))})
     .backgroundColor("#0a0a0f").showNavInfo(false).enableNodeDrag(false).width(window.innerWidth).height(window.innerHeight)
-    .onNodeClick(function(n){graph.centerAt(n.x,n.y,400);graph.zoom(3,400)})
+    .onNodeClick(function(n){applyFocus(n.id,n)})
     .onNodeHover(function(n){
       var t=document.getElementById("tooltip");
       if(n){t.querySelector(".tt-title").textContent=n.name;t.querySelector(".tt-type").textContent=n.type==="document"?"知识单元":"概念节点";t.querySelector(".tt-community").textContent=COM_LABELS[n.group]||"社区 "+n.group;t.classList.add("visible")}else{t.classList.remove("visible")}
@@ -38,10 +45,10 @@ fetch("graph.json").then(function(r){return r.json()}).then(function(raw){
   var btn=document.getElementById("btn-auto");
   btn.onclick=function(){graph.autoRotate=!graph.autoRotate;this.textContent=graph.autoRotate?"自动旋转":"停止"};
 
-  leg.querySelectorAll(".legend-item").forEach(function(item){item.onclick=function(){var id=this.getAttribute("data-node");var n=gd.nodes.find(function(x){return x.id===id});if(n){graph.autoRotate=false;btn.textContent="停止";graph.centerAt(n.x||0,n.y||0,700);graph.zoom(3,700)}}});
+  leg.querySelectorAll(".legend-item").forEach(function(item){item.onclick=function(){var id=this.getAttribute("data-node");var n=gd.nodes.find(function(x){return x.id===id});if(n)applyFocus(id,n)}});
 
   document.getElementById("search-box").oninput=function(){
-    var q=this.value;if(!q){graph.nodeColor(function(n){return c(n.group)}).nodeVal("val");graph.zoomToFit(400);return}
+    var q=this.value;if(!q){focusedId=null;updateLegend();graph.nodeColor(function(n){return c(n.group)}).nodeVal("val").linkColor(function(l){var g=(l.source&&l.source.group!=null)?l.source.group:0;return c(g)}).linkOpacity(.55).linkWidth(function(l){return Math.max(1,Math.min((l.value||1)*1.5,3))});graph.zoomToFit(400);return}
     var ql=q.toLowerCase(),match={};gd.nodes.forEach(function(n){if(n.name.toLowerCase().indexOf(ql)>=0)match[n.id]=true});
     graph.nodeColor(function(n){return match[n.id]?c(n.group):"rgba(60,50,80,.3)"}).nodeVal(function(n){return match[n.id]?(n.type==="document"?18:6):1});
     for(var i=0;i<gd.nodes.length;i++){var f=gd.nodes[i];if(match[f.id]){graph.centerAt(f.x||0,f.y||0,600);graph.zoom(2.5,600);break}}
