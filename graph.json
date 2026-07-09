@@ -1,0 +1,3772 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "app.json",
+      "file_type": "code",
+      "source_file": ".obsidian/app.json",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "obsidian_app",
+      "community": 85,
+      "norm_label": "app.json"
+    },
+    {
+      "label": "\u81ea\u95ed\u75c7MRI\u8bca\u65ad",
+      "file_type": "document",
+      "source_file": "autism-mri-diagnosis.md",
+      "source_location": null,
+      "id": "autism_mri_diagnosis",
+      "community": 2,
+      "norm_label": "\u81ea\u95ed\u75c7mri\u8bca\u65ad"
+    },
+    {
+      "label": "ASD\u5206\u7c7b\u4e0e\u65e9\u671f\u8bca\u65ad",
+      "file_type": "concept",
+      "source_file": "autism-mri-diagnosis.md",
+      "source_location": null,
+      "id": "autism_mri_diagnosis_summary",
+      "community": 2,
+      "norm_label": "asd\u5206\u7c7b\u4e0e\u65e9\u671f\u8bca\u65ad"
+    },
+    {
+      "label": "ASD\u5206\u7c7b\u65b9\u6cd5\u8c31\u7cfb",
+      "file_type": "concept",
+      "source_file": "autism-mri-diagnosis.md",
+      "source_location": null,
+      "id": "autism_mri_diagnosis_asd_classification",
+      "community": 29,
+      "norm_label": "asd\u5206\u7c7b\u65b9\u6cd5\u8c31\u7cfb"
+    },
+    {
+      "label": "ABIDE\u6570\u636e\u96c6",
+      "file_type": "concept",
+      "source_file": "autism-mri-diagnosis.md",
+      "source_location": null,
+      "id": "autism_mri_diagnosis_abide_dataset",
+      "community": 16,
+      "norm_label": "abide\u6570\u636e\u96c6"
+    },
+    {
+      "label": "Rectified Flow\u65e9\u671f\u8bca\u65ad\u6846\u67b6",
+      "file_type": "concept",
+      "source_file": "autism-mri-diagnosis.md",
+      "source_location": null,
+      "id": "autism_mri_diagnosis_early_diagnosis",
+      "community": 10,
+      "norm_label": "rectified flow\u65e9\u671f\u8bca\u65ad\u6846\u67b6"
+    },
+    {
+      "label": "\u5a74\u5e7c\u513f\u529f\u80fd\u8fde\u63a5\u53d8\u5f02\u6027",
+      "file_type": "concept",
+      "source_file": "autism-mri-diagnosis.md",
+      "source_location": null,
+      "id": "autism_mri_diagnosis_fc_variability",
+      "community": 30,
+      "norm_label": "\u5a74\u5e7c\u513f\u529f\u80fd\u8fde\u63a5\u53d8\u5f02\u6027"
+    },
+    {
+      "label": "sMRI\u76ae\u5c42\u6570\u636eASD\u5206\u7c7b\u6d41\u7a0b",
+      "file_type": "concept",
+      "source_file": "autism-mri-diagnosis.md",
+      "source_location": null,
+      "id": "autism_mri_diagnosis_smri_classification_pipeline",
+      "community": 11,
+      "norm_label": "smri\u76ae\u5c42\u6570\u636easd\u5206\u7c7b\u6d41\u7a0b"
+    },
+    {
+      "label": "\u8111\u533a\u5206\u5272\u56fe\u8c31DKT/M-CRIB/AAL",
+      "file_type": "document",
+      "source_file": "brain-atlas-parcellation-dkt-mcrib-aal.md",
+      "source_location": null,
+      "id": "brain_atlas_parcellation_dkt_mcrib_aal",
+      "community": 6,
+      "norm_label": "\u8111\u533a\u5206\u5272\u56fe\u8c31dkt/m-crib/aal"
+    },
+    {
+      "label": "\u8111\u533a\u5206\u5272\u56fe\u8c31\u5bf9\u6bd4\u4e0e\u9009\u62e9",
+      "file_type": "concept",
+      "source_file": "brain-atlas-parcellation-dkt-mcrib-aal.md",
+      "source_location": null,
+      "id": "brain_atlas_parcellation_dkt_mcrib_aal_summary",
+      "community": 6,
+      "norm_label": "\u8111\u533a\u5206\u5272\u56fe\u8c31\u5bf9\u6bd4\u4e0e\u9009\u62e9"
+    },
+    {
+      "label": "Desikan-Killiany\u4e0eDKT\u56fe\u8c31",
+      "file_type": "concept",
+      "source_file": "brain-atlas-parcellation-dkt-mcrib-aal.md",
+      "source_location": null,
+      "id": "brain_atlas_parcellation_dkt_mcrib_aal_dk_dkt",
+      "community": 18,
+      "norm_label": "desikan-killiany\u4e0edkt\u56fe\u8c31"
+    },
+    {
+      "label": "AAL\u81ea\u52a8\u89e3\u5256\u6807\u7b7e\u56fe\u8c31",
+      "file_type": "concept",
+      "source_file": "brain-atlas-parcellation-dkt-mcrib-aal.md",
+      "source_location": null,
+      "id": "brain_atlas_parcellation_dkt_mcrib_aal_aal",
+      "community": 31,
+      "norm_label": "aal\u81ea\u52a8\u89e3\u5256\u6807\u7b7e\u56fe\u8c31"
+    },
+    {
+      "label": "M-CRIB 2.0\u65b0\u751f\u513f\u56fe\u8c31",
+      "file_type": "concept",
+      "source_file": "brain-atlas-parcellation-dkt-mcrib-aal.md",
+      "source_location": null,
+      "id": "brain_atlas_parcellation_dkt_mcrib_aal_mcrib",
+      "community": 32,
+      "norm_label": "m-crib 2.0\u65b0\u751f\u513f\u56fe\u8c31"
+    },
+    {
+      "label": "UNC 4D\u5a74\u5e7c\u513f\u56fe\u8c31",
+      "file_type": "concept",
+      "source_file": "brain-atlas-parcellation-dkt-mcrib-aal.md",
+      "source_location": null,
+      "id": "brain_atlas_parcellation_dkt_mcrib_aal_unc_4d",
+      "community": 2,
+      "norm_label": "unc 4d\u5a74\u5e7c\u513f\u56fe\u8c31"
+    },
+    {
+      "label": "aseg\u6807\u7b7e\u7ec4\u7ec7\u5206\u7c7b",
+      "file_type": "concept",
+      "source_file": "brain-atlas-parcellation-dkt-mcrib-aal.md",
+      "source_location": null,
+      "id": "brain_atlas_parcellation_dkt_mcrib_aal_aseg_labels",
+      "community": 17,
+      "norm_label": "aseg\u6807\u7b7e\u7ec4\u7ec7\u5206\u7c7b"
+    },
+    {
+      "label": "Brain MRI\u53cd\u4e8b\u5b9e\u751f\u6210",
+      "file_type": "document",
+      "source_file": "brain-mri-counterfactual-generation.md",
+      "source_location": null,
+      "id": "brain_mri_counterfactual_generation",
+      "community": 2,
+      "norm_label": "brain mri\u53cd\u4e8b\u5b9e\u751f\u6210"
+    },
+    {
+      "label": "Subject-preserving\u53cd\u4e8b\u5b9e\u751f\u6210",
+      "file_type": "concept",
+      "source_file": "brain-mri-counterfactual-generation.md",
+      "source_location": null,
+      "id": "brain_mri_counterfactual_generation_summary",
+      "community": 2,
+      "norm_label": "subject-preserving\u53cd\u4e8b\u5b9e\u751f\u6210"
+    },
+    {
+      "label": "Source Inversion",
+      "file_type": "concept",
+      "source_file": "brain-mri-counterfactual-generation.md",
+      "source_location": null,
+      "id": "brain_mri_counterfactual_generation_source_inversion",
+      "community": 34,
+      "norm_label": "source inversion"
+    },
+    {
+      "label": "Subject Token\u8eab\u4efd\u4fdd\u6301",
+      "file_type": "concept",
+      "source_file": "brain-mri-counterfactual-generation.md",
+      "source_location": null,
+      "id": "brain_mri_counterfactual_generation_subject_token",
+      "community": 35,
+      "norm_label": "subject token\u8eab\u4efd\u4fdd\u6301"
+    },
+    {
+      "label": "Reference\u6ce8\u610f\u529b\u673a\u5236",
+      "file_type": "concept",
+      "source_file": "brain-mri-counterfactual-generation.md",
+      "source_location": null,
+      "id": "brain_mri_counterfactual_generation_reference_attention",
+      "community": 33,
+      "norm_label": "reference\u6ce8\u610f\u529b\u673a\u5236"
+    },
+    {
+      "label": "Edit Head\u53d8\u5f62+\u6b8b\u5dee",
+      "file_type": "concept",
+      "source_file": "brain-mri-counterfactual-generation.md",
+      "source_location": null,
+      "id": "brain_mri_counterfactual_generation_edit_head",
+      "community": 19,
+      "norm_label": "edit head\u53d8\u5f62+\u6b8b\u5dee"
+    },
+    {
+      "label": "\u53cd\u4e8b\u5b9e\u8bad\u7ec3\u635f\u5931\uff08null-edit/cycle/anatomy\uff09",
+      "file_type": "concept",
+      "source_file": "brain-mri-counterfactual-generation.md",
+      "source_location": null,
+      "id": "brain_mri_counterfactual_generation_training_losses",
+      "community": 20,
+      "norm_label": "\u53cd\u4e8b\u5b9e\u8bad\u7ec3\u635f\u5931(null-edit/cycle/anatomy)"
+    },
+    {
+      "label": "\u5927\u8111\u5206\u5272\u6df1\u5ea6\u5b66\u4e60\u6a21\u578b",
+      "file_type": "document",
+      "source_file": "brain-segmentation-deep-learning-models.md",
+      "source_location": null,
+      "id": "brain_segmentation_deep_learning_models",
+      "community": 6,
+      "norm_label": "\u5927\u8111\u5206\u5272\u6df1\u5ea6\u5b66\u4e60\u6a21\u578b"
+    },
+    {
+      "label": "\u5224\u522b\u5f0f\u4e0e\u751f\u6210\u5f0f\u5206\u5272\u65b9\u6848",
+      "file_type": "concept",
+      "source_file": "brain-segmentation-deep-learning-models.md",
+      "source_location": null,
+      "id": "brain_segmentation_deep_learning_models_summary",
+      "community": 6,
+      "norm_label": "\u5224\u522b\u5f0f\u4e0e\u751f\u6210\u5f0f\u5206\u5272\u65b9\u6848"
+    },
+    {
+      "label": "nnU-Net\u81ea\u9002\u5e94\u5206\u5272",
+      "file_type": "concept",
+      "source_file": "brain-segmentation-deep-learning-models.md",
+      "source_location": null,
+      "id": "brain_segmentation_deep_learning_models_nn_unet",
+      "community": 21,
+      "norm_label": "nnu-net\u81ea\u9002\u5e94\u5206\u5272"
+    },
+    {
+      "label": "Medical-SAM2\u533b\u5b66\u5206\u5272",
+      "file_type": "concept",
+      "source_file": "brain-segmentation-deep-learning-models.md",
+      "source_location": null,
+      "id": "brain_segmentation_deep_learning_models_medical_sam2",
+      "community": 37,
+      "norm_label": "medical-sam2\u533b\u5b66\u5206\u5272"
+    },
+    {
+      "label": "\u4e00\u81f4\u6027\u6a21\u578b\u5c11\u6b65\u91c7\u6837",
+      "file_type": "concept",
+      "source_file": "brain-segmentation-deep-learning-models.md",
+      "source_location": null,
+      "id": "brain_segmentation_deep_learning_models_consistency_model",
+      "community": 36,
+      "norm_label": "\u4e00\u81f4\u6027\u6a21\u578b\u5c11\u6b65\u91c7\u6837"
+    },
+    {
+      "label": "\u8fb9\u7f18\u611f\u77e5\u635f\u5931\uff08Sobel\u7b97\u5b50\uff09",
+      "file_type": "concept",
+      "source_file": "brain-segmentation-deep-learning-models.md",
+      "source_location": null,
+      "id": "brain_segmentation_deep_learning_models_edge_aware_loss",
+      "community": 13,
+      "norm_label": "\u8fb9\u7f18\u611f\u77e5\u635f\u5931(sobel\u7b97\u5b50)"
+    },
+    {
+      "label": "NFE\u51fd\u6570\u8bc4\u4f30\u6b21\u6570",
+      "file_type": "concept",
+      "source_file": "brain-segmentation-deep-learning-models.md",
+      "source_location": null,
+      "id": "brain_segmentation_deep_learning_models_nfe",
+      "community": 38,
+      "norm_label": "nfe\u51fd\u6570\u8bc4\u4f30\u6b21\u6570"
+    },
+    {
+      "label": "\u76ae\u5c42\u539a\u5ea6\u8868\u9762\u79ef\u4f53\u79ef\u6d4b\u91cf\u4e0e\u5171\u53d8\u7f51\u7edc",
+      "file_type": "document",
+      "source_file": "cortical-thickness-area-volume-measurement.md",
+      "source_location": null,
+      "id": "cortical_thickness_area_volume_measurement",
+      "community": 6,
+      "norm_label": "\u76ae\u5c42\u539a\u5ea6\u8868\u9762\u79ef\u4f53\u79ef\u6d4b\u91cf\u4e0e\u5171\u53d8\u7f51\u7edc"
+    },
+    {
+      "label": "\u76ae\u5c42\u5f62\u6001\u5b66\u4e09\u91cf\u4e0e\u7ed3\u6784\u5171\u53d8\u7f51\u7edc",
+      "file_type": "concept",
+      "source_file": "cortical-thickness-area-volume-measurement.md",
+      "source_location": null,
+      "id": "cortical_thickness_area_volume_measurement_summary",
+      "community": 6,
+      "norm_label": "\u76ae\u5c42\u5f62\u6001\u5b66\u4e09\u91cf\u4e0e\u7ed3\u6784\u5171\u53d8\u7f51\u7edc"
+    },
+    {
+      "label": "\u76ae\u5c42\u539a\u5ea6\u5b9a\u4e49\u4e0e\u6d4b\u91cf",
+      "file_type": "concept",
+      "source_file": "cortical-thickness-area-volume-measurement.md",
+      "source_location": null,
+      "id": "cortical_thickness_area_volume_measurement_cortical_thickness",
+      "community": 11,
+      "norm_label": "\u76ae\u5c42\u539a\u5ea6\u5b9a\u4e49\u4e0e\u6d4b\u91cf"
+    },
+    {
+      "label": "\u8868\u9762\u79ef\u5b9a\u4e49\u4e0e\u6d4b\u91cf",
+      "file_type": "concept",
+      "source_file": "cortical-thickness-area-volume-measurement.md",
+      "source_location": null,
+      "id": "cortical_thickness_area_volume_measurement_surface_area",
+      "community": 42,
+      "norm_label": "\u8868\u9762\u79ef\u5b9a\u4e49\u4e0e\u6d4b\u91cf"
+    },
+    {
+      "label": "\u6df7\u6742\u53d8\u91cf\u6821\u6b63\uff08\u5e74\u9f84/\u6027\u522b\u56de\u5f52\uff09",
+      "file_type": "concept",
+      "source_file": "cortical-thickness-area-volume-measurement.md",
+      "source_location": null,
+      "id": "cortical_thickness_area_volume_measurement_confound_correction",
+      "community": 11,
+      "norm_label": "\u6df7\u6742\u53d8\u91cf\u6821\u6b63(\u5e74\u9f84/\u6027\u522b\u56de\u5f52)"
+    },
+    {
+      "label": "\u7ed3\u6784\u5171\u53d8\u7f51\u7edcSCN\u4e0e\u56fe\u8bba\u5206\u6790",
+      "file_type": "concept",
+      "source_file": "cortical-thickness-area-volume-measurement.md",
+      "source_location": null,
+      "id": "cortical_thickness_area_volume_measurement_scn",
+      "community": 41,
+      "norm_label": "\u7ed3\u6784\u5171\u53d8\u7f51\u7edcscn\u4e0e\u56fe\u8bba\u5206\u6790"
+    },
+    {
+      "label": "eTIV\u4f30\u8ba1\u9885\u5185\u603b\u4f53\u79ef",
+      "file_type": "concept",
+      "source_file": "cortical-thickness-area-volume-measurement.md",
+      "source_location": null,
+      "id": "cortical_thickness_area_volume_measurement_etiv",
+      "community": 40,
+      "norm_label": "etiv\u4f30\u8ba1\u9885\u5185\u603b\u4f53\u79ef"
+    },
+    {
+      "label": "aseg.stats Measure\u5168\u5c40\u4f53\u79ef",
+      "file_type": "concept",
+      "source_file": "cortical-thickness-area-volume-measurement.md",
+      "source_location": null,
+      "id": "cortical_thickness_area_volume_measurement_brain_volume",
+      "community": 39,
+      "norm_label": "aseg.stats measure\u5168\u5c40\u4f53\u79ef"
+    },
+    {
+      "label": "\u8de8\u6a21\u6001\u533b\u5b66\u5f71\u50cf\u7ffb\u8bd1",
+      "file_type": "document",
+      "source_file": "cross-modal-medical-image-translation.md",
+      "source_location": null,
+      "id": "cross_modal_medical_image_translation",
+      "community": 2,
+      "norm_label": "\u8de8\u6a21\u6001\u533b\u5b66\u5f71\u50cf\u7ffb\u8bd1"
+    },
+    {
+      "label": "\u8de8\u6a21\u6001\u7ffb\u8bd1\u65b9\u6cd5\uff08GAN/\u6269\u6563/Flow\uff09",
+      "file_type": "concept",
+      "source_file": "cross-modal-medical-image-translation.md",
+      "source_location": null,
+      "id": "cross_modal_medical_image_translation_summary",
+      "community": 2,
+      "norm_label": "\u8de8\u6a21\u6001\u7ffb\u8bd1\u65b9\u6cd5(gan/\u6269\u6563/flow)"
+    },
+    {
+      "label": "SynDiff\u5bf9\u6297\u6269\u6563\u7ffb\u8bd1",
+      "file_type": "concept",
+      "source_file": "cross-modal-medical-image-translation.md",
+      "source_location": null,
+      "id": "cross_modal_medical_image_translation_syndiff",
+      "community": 23,
+      "norm_label": "syndiff\u5bf9\u6297\u6269\u6563\u7ffb\u8bd1"
+    },
+    {
+      "label": "DIRECT Flow\u5339\u914d\u7ffb\u8bd1",
+      "file_type": "concept",
+      "source_file": "cross-modal-medical-image-translation.md",
+      "source_location": null,
+      "id": "cross_modal_medical_image_translation_direct",
+      "community": 22,
+      "norm_label": "direct flow\u5339\u914d\u7ffb\u8bd1"
+    },
+    {
+      "label": "BiomedCLIP\u9886\u57df\u77e5\u8bc6\u7f16\u7801",
+      "file_type": "concept",
+      "source_file": "cross-modal-medical-image-translation.md",
+      "source_location": null,
+      "id": "cross_modal_medical_image_translation_biomedclip",
+      "community": 43,
+      "norm_label": "biomedclip\u9886\u57df\u77e5\u8bc6\u7f16\u7801"
+    },
+    {
+      "label": "GAN\u8de8\u6a21\u6001\u7ffb\u8bd1\uff08pix2pix/CycleGAN\uff09",
+      "file_type": "concept",
+      "source_file": "cross-modal-medical-image-translation.md",
+      "source_location": null,
+      "id": "cross_modal_medical_image_translation_gan",
+      "community": 23,
+      "norm_label": "gan\u8de8\u6a21\u6001\u7ffb\u8bd1(pix2pix/cyclegan)"
+    },
+    {
+      "label": "DataLoader\u4e0e\u6570\u636e\u5e76\u884c\u914d\u7f6e",
+      "file_type": "document",
+      "source_file": "dataloader-data-parallel.md",
+      "source_location": null,
+      "id": "dataloader_data_parallel",
+      "community": 7,
+      "norm_label": "dataloader\u4e0e\u6570\u636e\u5e76\u884c\u914d\u7f6e"
+    },
+    {
+      "label": "PyTorch/MONAI DataLoader\u8c03\u53c2",
+      "file_type": "concept",
+      "source_file": "dataloader-data-parallel.md",
+      "source_location": null,
+      "id": "dataloader_data_parallel_summary",
+      "community": 7,
+      "norm_label": "pytorch/monai dataloader\u8c03\u53c2"
+    },
+    {
+      "label": "num_workers/pin_memory\u914d\u7f6e",
+      "file_type": "concept",
+      "source_file": "dataloader-data-parallel.md",
+      "source_location": null,
+      "id": "dataloader_data_parallel_num_workers",
+      "community": 24,
+      "norm_label": "num_workers/pin_memory\u914d\u7f6e"
+    },
+    {
+      "label": "pin_memory ancdata\u5d29\u6e83\u8bca\u65ad",
+      "file_type": "concept",
+      "source_file": "dataloader-data-parallel.md",
+      "source_location": null,
+      "id": "dataloader_data_parallel_pin_memory_crash",
+      "community": 46,
+      "norm_label": "pin_memory ancdata\u5d29\u6e83\u8bca\u65ad"
+    },
+    {
+      "label": "MONAI CacheDataset\u5185\u5b58\u4f30\u7b97",
+      "file_type": "concept",
+      "source_file": "dataloader-data-parallel.md",
+      "source_location": null,
+      "id": "dataloader_data_parallel_cachedataset",
+      "community": 44,
+      "norm_label": "monai cachedataset\u5185\u5b58\u4f30\u7b97"
+    },
+    {
+      "label": "MONAI\u65e7\u7248seed uint32\u6ea2\u51fa",
+      "file_type": "concept",
+      "source_file": "dataloader-data-parallel.md",
+      "source_location": null,
+      "id": "dataloader_data_parallel_seed_overflow",
+      "community": 47,
+      "norm_label": "monai\u65e7\u7248seed uint32\u6ea2\u51fa"
+    },
+    {
+      "label": "MONAI transforms pipeline\u5206\u5272\u793a\u4f8b",
+      "file_type": "concept",
+      "source_file": "dataloader-data-parallel.md",
+      "source_location": null,
+      "id": "dataloader_data_parallel_monai_transforms",
+      "community": 45,
+      "norm_label": "monai transforms pipeline\u5206\u5272\u793a\u4f8b"
+    },
+    {
+      "label": "DINOv3/3DINO\u81ea\u76d1\u77633D MRI",
+      "file_type": "document",
+      "source_file": "dinov3-3d-mri-self-supervised.md",
+      "source_location": null,
+      "id": "dinov3_3d_mri_self_supervised",
+      "community": 14,
+      "norm_label": "dinov3/3dino\u81ea\u76d1\u77633d mri"
+    },
+    {
+      "label": "2D\u81ea\u76d1\u7763ViT\u8fc1\u79fb\u52303D MRI",
+      "file_type": "concept",
+      "source_file": "dinov3-3d-mri-self-supervised.md",
+      "source_location": null,
+      "id": "dinov3_3d_mri_self_supervised_summary",
+      "community": 14,
+      "norm_label": "2d\u81ea\u76d1\u7763vit\u8fc1\u79fb\u52303d mri"
+    },
+    {
+      "label": "DINOv3 2D\u81ea\u76d1\u7763ViT\u9aa8\u5e72",
+      "file_type": "concept",
+      "source_file": "dinov3-3d-mri-self-supervised.md",
+      "source_location": null,
+      "id": "dinov3_3d_mri_self_supervised_dinov3",
+      "community": 50,
+      "norm_label": "dinov3 2d\u81ea\u76d1\u7763vit\u9aa8\u5e72"
+    },
+    {
+      "label": "3DINO 3D\u533b\u5b66\u81ea\u76d1\u7763\u6846\u67b6",
+      "file_type": "concept",
+      "source_file": "dinov3-3d-mri-self-supervised.md",
+      "source_location": null,
+      "id": "dinov3_3d_mri_self_supervised_3dino",
+      "community": 49,
+      "norm_label": "3dino 3d\u533b\u5b66\u81ea\u76d1\u7763\u6846\u67b6"
+    },
+    {
+      "label": "2D\u21923D\u4e94\u6761\u8fc1\u79fb\u8def\u7ebf",
+      "file_type": "concept",
+      "source_file": "dinov3-3d-mri-self-supervised.md",
+      "source_location": null,
+      "id": "dinov3_3d_mri_self_supervised_2d_to_3d",
+      "community": 48,
+      "norm_label": "2d\u21923d\u4e94\u6761\u8fc1\u79fb\u8def\u7ebf"
+    },
+    {
+      "label": "\u51bb\u7ed3DINOv3\u4f5cslice\u7f16\u7801\u5668",
+      "file_type": "concept",
+      "source_file": "dinov3-3d-mri-self-supervised.md",
+      "source_location": null,
+      "id": "dinov3_3d_mri_self_supervised_slice_encoder",
+      "community": 6,
+      "norm_label": "\u51bb\u7ed3dinov3\u4f5cslice\u7f16\u7801\u5668"
+    },
+    {
+      "label": "DINO patch-level\u611f\u77e5\u635f\u5931",
+      "file_type": "concept",
+      "source_file": "dinov3-3d-mri-self-supervised.md",
+      "source_location": null,
+      "id": "dinov3_3d_mri_self_supervised_perceptual_loss",
+      "community": 13,
+      "norm_label": "dino patch-level\u611f\u77e5\u635f\u5931"
+    },
+    {
+      "label": "MRI\u9ad8\u9891\u4fe1\u53f7\u7a00\u758f\u4e0e\u751f\u6210\u7ec6\u8282",
+      "file_type": "concept",
+      "source_file": "dinov3-3d-mri-self-supervised.md",
+      "source_location": null,
+      "id": "dinov3_3d_mri_self_supervised_high_frequency",
+      "community": 25,
+      "norm_label": "mri\u9ad8\u9891\u4fe1\u53f7\u7a00\u758f\u4e0e\u751f\u6210\u7ec6\u8282"
+    },
+    {
+      "label": "Docker\u5b89\u88c5\u4e0e\u7ba1\u7406",
+      "file_type": "document",
+      "source_file": "docker-install-and-management.md",
+      "source_location": null,
+      "id": "docker_install_and_management",
+      "community": 26,
+      "norm_label": "docker\u5b89\u88c5\u4e0e\u7ba1\u7406"
+    },
+    {
+      "label": "Ubuntu Docker\u5b89\u88c5\u4e0e\u7f51\u7edc\u95ee\u9898\u6392\u67e5",
+      "file_type": "concept",
+      "source_file": "docker-install-and-management.md",
+      "source_location": null,
+      "id": "docker_install_and_management_summary",
+      "community": 26,
+      "norm_label": "ubuntu docker\u5b89\u88c5\u4e0e\u7f51\u7edc\u95ee\u9898\u6392\u67e5"
+    },
+    {
+      "label": "Docker APT\u6e90\u914d\u7f6e",
+      "file_type": "concept",
+      "source_file": "docker-install-and-management.md",
+      "source_location": null,
+      "id": "docker_install_and_management_apt_source",
+      "community": 51,
+      "norm_label": "docker apt\u6e90\u914d\u7f6e"
+    },
+    {
+      "label": "IPv6\u963b\u585e\u4e0e\u963f\u91cc\u4e91\u955c\u50cf\u6e90",
+      "file_type": "concept",
+      "source_file": "docker-install-and-management.md",
+      "source_location": null,
+      "id": "docker_install_and_management_ipv6_fix",
+      "community": 53,
+      "norm_label": "ipv6\u963b\u585e\u4e0e\u963f\u91cc\u4e91\u955c\u50cf\u6e90"
+    },
+    {
+      "label": "Docker\u955c\u50cf\u5bb9\u5668\u7ba1\u7406\u547d\u4ee4",
+      "file_type": "concept",
+      "source_file": "docker-install-and-management.md",
+      "source_location": null,
+      "id": "docker_install_and_management_container_management",
+      "community": 52,
+      "norm_label": "docker\u955c\u50cf\u5bb9\u5668\u7ba1\u7406\u547d\u4ee4"
+    },
+    {
+      "label": "FastSurfer/FreeSurfer\u76ae\u5c42\u5206\u6790\u5de5\u5177\u94fe",
+      "file_type": "document",
+      "source_file": "fastsurfer-freesurfer-cortical-pipeline.md",
+      "source_location": null,
+      "id": "fastsurfer_freesurfer_cortical_pipeline",
+      "community": 6,
+      "norm_label": "fastsurfer/freesurfer\u76ae\u5c42\u5206\u6790\u5de5\u5177\u94fe"
+    },
+    {
+      "label": "\u76ae\u5c42\u8868\u9762\u91cd\u5efa\u4e0eFreeSurfer\u517c\u5bb9\u8f93\u51fa",
+      "file_type": "concept",
+      "source_file": "fastsurfer-freesurfer-cortical-pipeline.md",
+      "source_location": null,
+      "id": "fastsurfer_freesurfer_cortical_pipeline_summary",
+      "community": 6,
+      "norm_label": "\u76ae\u5c42\u8868\u9762\u91cd\u5efa\u4e0efreesurfer\u517c\u5bb9\u8f93\u51fa"
+    },
+    {
+      "label": "FastSurfer\u8f93\u51fa\u76ee\u5f55\u7ed3\u6784",
+      "file_type": "concept",
+      "source_file": "fastsurfer-freesurfer-cortical-pipeline.md",
+      "source_location": null,
+      "id": "fastsurfer_freesurfer_cortical_pipeline_output_structure",
+      "community": 11,
+      "norm_label": "fastsurfer\u8f93\u51fa\u76ee\u5f55\u7ed3\u6784"
+    },
+    {
+      "label": "aparc.stats\u6587\u4ef6\u683c\u5f0f",
+      "file_type": "concept",
+      "source_file": "fastsurfer-freesurfer-cortical-pipeline.md",
+      "source_location": null,
+      "id": "fastsurfer_freesurfer_cortical_pipeline_aparc_stats",
+      "community": 54,
+      "norm_label": "aparc.stats\u6587\u4ef6\u683c\u5f0f"
+    },
+    {
+      "label": "aseg.mgz\u6807\u7b7e\u534f\u8bae",
+      "file_type": "concept",
+      "source_file": "fastsurfer-freesurfer-cortical-pipeline.md",
+      "source_location": null,
+      "id": "fastsurfer_freesurfer_cortical_pipeline_aseg_mgz",
+      "community": 17,
+      "norm_label": "aseg.mgz\u6807\u7b7e\u534f\u8bae"
+    },
+    {
+      "label": "\u76ae\u5c42\u91cd\u5efa\u56db\u6b65\u6d41\u7a0b",
+      "file_type": "concept",
+      "source_file": "fastsurfer-freesurfer-cortical-pipeline.md",
+      "source_location": null,
+      "id": "fastsurfer_freesurfer_cortical_pipeline_cortical_reconstruction",
+      "community": 55,
+      "norm_label": "\u76ae\u5c42\u91cd\u5efa\u56db\u6b65\u6d41\u7a0b"
+    },
+    {
+      "label": "Desikan-Killiany 34\u5206\u533a",
+      "file_type": "concept",
+      "source_file": "fastsurfer-freesurfer-cortical-pipeline.md",
+      "source_location": null,
+      "id": "fastsurfer_freesurfer_cortical_pipeline_desikan",
+      "community": 18,
+      "norm_label": "desikan-killiany 34\u5206\u533a"
+    },
+    {
+      "label": "Flow-Based\u533b\u5b66\u5f71\u50cf\u751f\u6210",
+      "file_type": "document",
+      "source_file": "flow-medical-image-generation.md",
+      "source_location": null,
+      "id": "flow_medical_image_generation",
+      "community": 2,
+      "norm_label": "flow-based\u533b\u5b66\u5f71\u50cf\u751f\u6210"
+    },
+    {
+      "label": "Flow matching\u533b\u5b66\u751f\u6210\u5e94\u7528",
+      "file_type": "concept",
+      "source_file": "flow-medical-image-generation.md",
+      "source_location": null,
+      "id": "flow_medical_image_generation_summary",
+      "community": 2,
+      "norm_label": "flow matching\u533b\u5b66\u751f\u6210\u5e94\u7528"
+    },
+    {
+      "label": "DIRECT\u8de8\u6a21\u6001MRI\u2194PET",
+      "file_type": "concept",
+      "source_file": "flow-medical-image-generation.md",
+      "source_location": null,
+      "id": "flow_medical_image_generation_direct",
+      "community": 22,
+      "norm_label": "direct\u8de8\u6a21\u6001mri\u2194pet"
+    },
+    {
+      "label": "Flow\u7eb5\u5411\u8111\u53d1\u80b2\u751f\u6210",
+      "file_type": "concept",
+      "source_file": "flow-medical-image-generation.md",
+      "source_location": null,
+      "id": "flow_medical_image_generation_longitudinal",
+      "community": 10,
+      "norm_label": "flow\u7eb5\u5411\u8111\u53d1\u80b2\u751f\u6210"
+    },
+    {
+      "label": "Flow-GRPO\u5f3a\u5316\u5b66\u4e60\u4f18\u5316",
+      "file_type": "concept",
+      "source_file": "flow-medical-image-generation.md",
+      "source_location": null,
+      "id": "flow_medical_image_generation_flow_grpo",
+      "community": 56,
+      "norm_label": "flow-grpo\u5f3a\u5316\u5b66\u4e60\u4f18\u5316"
+    },
+    {
+      "label": "\u53cd\u4e8b\u5b9e\u751f\u6210Flow\u65b9\u6cd5",
+      "file_type": "concept",
+      "source_file": "flow-medical-image-generation.md",
+      "source_location": null,
+      "id": "flow_medical_image_generation_counterfactual",
+      "community": 2,
+      "norm_label": "\u53cd\u4e8b\u5b9e\u751f\u6210flow\u65b9\u6cd5"
+    },
+    {
+      "label": "3D MRI\u751f\u6210\u7ec6\u8282\u6539\u8fdb",
+      "file_type": "concept",
+      "source_file": "flow-medical-image-generation.md",
+      "source_location": null,
+      "id": "flow_medical_image_generation_3d_improvements",
+      "community": 14,
+      "norm_label": "3d mri\u751f\u6210\u7ec6\u8282\u6539\u8fdb"
+    },
+    {
+      "label": "\u786c\u4ef6\u7cbe\u5ea6\u4e0e\u8bad\u7ec3\u53ef\u590d\u73b0\u6027",
+      "file_type": "document",
+      "source_file": "hardware-precision-reproducibility.md",
+      "source_location": null,
+      "id": "hardware_precision_reproducibility",
+      "community": 7,
+      "norm_label": "\u786c\u4ef6\u7cbe\u5ea6\u4e0e\u8bad\u7ec3\u53ef\u590d\u73b0\u6027"
+    },
+    {
+      "label": "\u8de8GPU\u8bad\u7ec3\u7a33\u5b9a\u6027\u4e0e\u53ef\u590d\u73b0\u6027",
+      "file_type": "concept",
+      "source_file": "hardware-precision-reproducibility.md",
+      "source_location": null,
+      "id": "hardware_precision_reproducibility_summary",
+      "community": 7,
+      "norm_label": "\u8de8gpu\u8bad\u7ec3\u7a33\u5b9a\u6027\u4e0e\u53ef\u590d\u73b0\u6027"
+    },
+    {
+      "label": "RTX 3090 vs A6000\u6d6e\u70b9\u5bf9\u6bd4",
+      "file_type": "concept",
+      "source_file": "hardware-precision-reproducibility.md",
+      "source_location": null,
+      "id": "hardware_precision_reproducibility_3090_vs_a6000",
+      "community": 57,
+      "norm_label": "rtx 3090 vs a6000\u6d6e\u70b9\u5bf9\u6bd4"
+    },
+    {
+      "label": "AMP\u6df7\u5408\u7cbe\u5ea6\u8de8\u5361\u884c\u4e3a\u5dee\u5f02",
+      "file_type": "concept",
+      "source_file": "hardware-precision-reproducibility.md",
+      "source_location": null,
+      "id": "hardware_precision_reproducibility_amp_behavior",
+      "community": 27,
+      "norm_label": "amp\u6df7\u5408\u7cbe\u5ea6\u8de8\u5361\u884c\u4e3a\u5dee\u5f02"
+    },
+    {
+      "label": "\u53ef\u590d\u73b0\u6027\u8bbe\u7f6e\uff08seed/deterministic/benchmark\uff09",
+      "file_type": "concept",
+      "source_file": "hardware-precision-reproducibility.md",
+      "source_location": null,
+      "id": "hardware_precision_reproducibility_deterministic",
+      "community": 58,
+      "norm_label": "\u53ef\u590d\u73b0\u6027\u8bbe\u7f6e(seed/deterministic/benchmark)"
+    },
+    {
+      "label": "\u76f4\u65b9\u56fe\u5339\u914d",
+      "file_type": "document",
+      "source_file": "histogram-matching.md",
+      "source_location": null,
+      "id": "histogram_matching",
+      "community": 9,
+      "norm_label": "\u76f4\u65b9\u56fe\u5339\u914d"
+    },
+    {
+      "label": "\u7070\u5ea6\u5206\u5e03\u6620\u5c04\u4e0e\u4fe1\u606f\u6cc4\u9732\u4e89\u8bae",
+      "file_type": "concept",
+      "source_file": "histogram-matching.md",
+      "source_location": null,
+      "id": "histogram_matching_summary",
+      "community": 9,
+      "norm_label": "\u7070\u5ea6\u5206\u5e03\u6620\u5c04\u4e0e\u4fe1\u606f\u6cc4\u9732\u4e89\u8bae"
+    },
+    {
+      "label": "CDF\u6620\u5c04\u4e0e\u67e5\u627e\u8868LUT",
+      "file_type": "concept",
+      "source_file": "histogram-matching.md",
+      "source_location": null,
+      "id": "histogram_matching_cdf_lut",
+      "community": 15,
+      "norm_label": "cdf\u6620\u5c04\u4e0e\u67e5\u627e\u8868lut"
+    },
+    {
+      "label": "\u76f4\u65b9\u56fe\u5339\u914d\u4fe1\u606f\u6cc4\u9732\u98ce\u9669",
+      "file_type": "concept",
+      "source_file": "histogram-matching.md",
+      "source_location": null,
+      "id": "histogram_matching_information_leakage",
+      "community": 15,
+      "norm_label": "\u76f4\u65b9\u56fe\u5339\u914d\u4fe1\u606f\u6cc4\u9732\u98ce\u9669"
+    },
+    {
+      "label": "\u56fe\u50cf\u9891\u57df\u5206\u6790\u4e0e\u9ad8\u4f4e\u9891\u5206\u79bb",
+      "file_type": "document",
+      "source_file": "image-frequency-analysis.md",
+      "source_location": null,
+      "id": "image_frequency_analysis",
+      "community": 9,
+      "norm_label": "\u56fe\u50cf\u9891\u57df\u5206\u6790\u4e0e\u9ad8\u4f4e\u9891\u5206\u79bb"
+    },
+    {
+      "label": "\u5085\u91cc\u53f6\u53d8\u6362\u9891\u57df\u5206\u6790",
+      "file_type": "concept",
+      "source_file": "image-frequency-analysis.md",
+      "source_location": null,
+      "id": "image_frequency_analysis_summary",
+      "community": 9,
+      "norm_label": "\u5085\u91cc\u53f6\u53d8\u6362\u9891\u57df\u5206\u6790"
+    },
+    {
+      "label": "FFT\u9891\u8c31\u8ba1\u7b97\u4e0e\u53ef\u89c6\u5316",
+      "file_type": "concept",
+      "source_file": "image-frequency-analysis.md",
+      "source_location": null,
+      "id": "image_frequency_analysis_fft",
+      "community": 60,
+      "norm_label": "fft\u9891\u8c31\u8ba1\u7b97\u4e0e\u53ef\u89c6\u5316"
+    },
+    {
+      "label": "\u9ad8\u4f4e\u9891\u5206\u79bb\u6b63\u786e\u505a\u6cd5",
+      "file_type": "concept",
+      "source_file": "image-frequency-analysis.md",
+      "source_location": null,
+      "id": "image_frequency_analysis_high_low_separation",
+      "community": 25,
+      "norm_label": "\u9ad8\u4f4e\u9891\u5206\u79bb\u6b63\u786e\u505a\u6cd5"
+    },
+    {
+      "label": "\u9ad8\u9891\u56fe\u4e0e\u539f\u56fe\u51e0\u4e4e\u4e00\u6837\u7684\u5e38\u89c1\u5751",
+      "file_type": "concept",
+      "source_file": "image-frequency-analysis.md",
+      "source_location": null,
+      "id": "image_frequency_analysis_common_pitfalls",
+      "community": 59,
+      "norm_label": "\u9ad8\u9891\u56fe\u4e0e\u539f\u56fe\u51e0\u4e4e\u4e00\u6837\u7684\u5e38\u89c1\u5751"
+    },
+    {
+      "label": "\u5a74\u5e7c\u513f\u5927\u8111MRI\u5904\u7406",
+      "file_type": "document",
+      "source_file": "infant-brain-mri-processing.md",
+      "source_location": null,
+      "id": "infant_brain_mri_processing",
+      "community": 2,
+      "norm_label": "\u5a74\u5e7c\u513f\u5927\u8111mri\u5904\u7406"
+    },
+    {
+      "label": "\u5a74\u5e7c\u513fMRI\u5904\u7406\u5b8c\u6574\u94fe\u8def",
+      "file_type": "concept",
+      "source_file": "infant-brain-mri-processing.md",
+      "source_location": null,
+      "id": "infant_brain_mri_processing_summary",
+      "community": 2,
+      "norm_label": "\u5a74\u5e7c\u513fmri\u5904\u7406\u5b8c\u6574\u94fe\u8def"
+    },
+    {
+      "label": "FreeSurfer infant_recon_all",
+      "file_type": "concept",
+      "source_file": "infant-brain-mri-processing.md",
+      "source_location": null,
+      "id": "infant_brain_mri_processing_infant_recon_all",
+      "community": 62,
+      "norm_label": "freesurfer infant_recon_all"
+    },
+    {
+      "label": "iBEAT V2.0\u6df1\u5ea6\u5b66\u4e60\u5904\u7406",
+      "file_type": "concept",
+      "source_file": "infant-brain-mri-processing.md",
+      "source_location": null,
+      "id": "infant_brain_mri_processing_ibeat",
+      "community": 16,
+      "norm_label": "ibeat v2.0\u6df1\u5ea6\u5b66\u4e60\u5904\u7406"
+    },
+    {
+      "label": "\u76ae\u5c42\u91cd\u5efa\u8d28\u91cf\u8bc4\u4f30\u6307\u6807",
+      "file_type": "concept",
+      "source_file": "infant-brain-mri-processing.md",
+      "source_location": null,
+      "id": "infant_brain_mri_processing_quality_metrics",
+      "community": 11,
+      "norm_label": "\u76ae\u5c42\u91cd\u5efa\u8d28\u91cf\u8bc4\u4f30\u6307\u6807"
+    },
+    {
+      "label": "IBIS\u5a74\u5e7c\u513f\u8111\u5f71\u50cf\u6570\u636e\u96c6",
+      "file_type": "concept",
+      "source_file": "infant-brain-mri-processing.md",
+      "source_location": null,
+      "id": "infant_brain_mri_processing_ibis_dataset",
+      "community": 61,
+      "norm_label": "ibis\u5a74\u5e7c\u513f\u8111\u5f71\u50cf\u6570\u636e\u96c6"
+    },
+    {
+      "label": "\u5206\u6bb5\u7ebf\u6027\u6df7\u5408\u6548\u5e94\u751f\u957f\u6a21\u578b",
+      "file_type": "concept",
+      "source_file": "infant-brain-mri-processing.md",
+      "source_location": null,
+      "id": "infant_brain_mri_processing_growth_model",
+      "community": 10,
+      "norm_label": "\u5206\u6bb5\u7ebf\u6027\u6df7\u5408\u6548\u5e94\u751f\u957f\u6a21\u578b"
+    },
+    {
+      "label": "LaTeX/BibTeX\u6392\u7248\u6280\u5de7",
+      "file_type": "document",
+      "source_file": "latex-bibtex-typesetting.md",
+      "source_location": null,
+      "id": "latex_bibtex_typesetting",
+      "community": 12,
+      "norm_label": "latex/bibtex\u6392\u7248\u6280\u5de7"
+    },
+    {
+      "label": "LaTeX\u8bba\u6587\u8868\u683c/\u6587\u732e\u6392\u7248",
+      "file_type": "concept",
+      "source_file": "latex-bibtex-typesetting.md",
+      "source_location": null,
+      "id": "latex_bibtex_typesetting_summary",
+      "community": 12,
+      "norm_label": "latex\u8bba\u6587\u8868\u683c/\u6587\u732e\u6392\u7248"
+    },
+    {
+      "label": "\u8868\u683c\u5e8f\u53f7\u683c\u5f0f\u81ea\u5b9a\u4e49",
+      "file_type": "concept",
+      "source_file": "latex-bibtex-typesetting.md",
+      "source_location": null,
+      "id": "latex_bibtex_typesetting_table_format",
+      "community": 66,
+      "norm_label": "\u8868\u683c\u5e8f\u53f7\u683c\u5f0f\u81ea\u5b9a\u4e49"
+    },
+    {
+      "label": "subcaption\u4e0efnum\u51b2\u7a81",
+      "file_type": "concept",
+      "source_file": "latex-bibtex-typesetting.md",
+      "source_location": null,
+      "id": "latex_bibtex_typesetting_subcaption",
+      "community": 65,
+      "norm_label": "subcaption\u4e0efnum\u51b2\u7a81"
+    },
+    {
+      "label": "MathPhySci\u6587\u732e\u6837\u5f0f\u7f16\u8bd1",
+      "file_type": "concept",
+      "source_file": "latex-bibtex-typesetting.md",
+      "source_location": null,
+      "id": "latex_bibtex_typesetting_mathphysci",
+      "community": 64,
+      "norm_label": "mathphysci\u6587\u732e\u6837\u5f0f\u7f16\u8bd1"
+    },
+    {
+      "label": "\u6d6e\u52a8\u4f53\u4e0e\u6b63\u6587\u95f4\u8ddd\u53c2\u6570",
+      "file_type": "concept",
+      "source_file": "latex-bibtex-typesetting.md",
+      "source_location": null,
+      "id": "latex_bibtex_typesetting_float_spacing",
+      "community": 63,
+      "norm_label": "\u6d6e\u52a8\u4f53\u4e0e\u6b63\u6587\u95f4\u8ddd\u53c2\u6570"
+    },
+    {
+      "label": "Linux\u7528\u6237\u7ba1\u7406",
+      "file_type": "document",
+      "source_file": "linux-user-management.md",
+      "source_location": null,
+      "id": "linux_user_management",
+      "community": 28,
+      "norm_label": "linux\u7528\u6237\u7ba1\u7406"
+    },
+    {
+      "label": "Linux\u7528\u6237\u521b\u5efa/SSH/\u6743\u9650\u7ba1\u7406",
+      "file_type": "concept",
+      "source_file": "linux-user-management.md",
+      "source_location": null,
+      "id": "linux_user_management_summary",
+      "community": 28,
+      "norm_label": "linux\u7528\u6237\u521b\u5efa/ssh/\u6743\u9650\u7ba1\u7406"
+    },
+    {
+      "label": "useradd\u4e0e\u4e3b\u76ee\u5f55\u914d\u7f6e",
+      "file_type": "concept",
+      "source_file": "linux-user-management.md",
+      "source_location": null,
+      "id": "linux_user_management_user_creation",
+      "community": 69,
+      "norm_label": "useradd\u4e0e\u4e3b\u76ee\u5f55\u914d\u7f6e"
+    },
+    {
+      "label": "SSH\u516c\u94a5\u8ba4\u8bc1\u914d\u7f6e",
+      "file_type": "concept",
+      "source_file": "linux-user-management.md",
+      "source_location": null,
+      "id": "linux_user_management_ssh_auth",
+      "community": 68,
+      "norm_label": "ssh\u516c\u94a5\u8ba4\u8bc1\u914d\u7f6e"
+    },
+    {
+      "label": "Permission denied\u4e0e.Xauthority\u95ee\u9898",
+      "file_type": "concept",
+      "source_file": "linux-user-management.md",
+      "source_location": null,
+      "id": "linux_user_management_permission_denied",
+      "community": 67,
+      "norm_label": "permission denied\u4e0e.xauthority\u95ee\u9898"
+    },
+    {
+      "label": "Linux\u50f5\u5c38\u8fdb\u7a0b\u67e5\u770b\u4e0e\u56de\u6536",
+      "file_type": "concept",
+      "source_file": "linux-user-management.md",
+      "source_location": null,
+      "id": "linux_user_management_zombie",
+      "community": 70,
+      "norm_label": "linux\u50f5\u5c38\u8fdb\u7a0b\u67e5\u770b\u4e0e\u56de\u6536"
+    },
+    {
+      "label": "\u635f\u5931\u51fd\u6570\u8c03\u8bd5\u4e0e\u5206\u5272\u8bc4\u4f30",
+      "file_type": "document",
+      "source_file": "loss-function-debugging.md",
+      "source_location": null,
+      "id": "loss_function_debugging",
+      "community": 7,
+      "norm_label": "\u635f\u5931\u51fd\u6570\u8c03\u8bd5\u4e0e\u5206\u5272\u8bc4\u4f30"
+    },
+    {
+      "label": "\u635f\u5931\u6392\u67e5/\u914d\u51c6/Dice\u8bc4\u4f30/\u8fb9\u7f18\u635f\u5931",
+      "file_type": "concept",
+      "source_file": "loss-function-debugging.md",
+      "source_location": null,
+      "id": "loss_function_debugging_summary",
+      "community": 7,
+      "norm_label": "\u635f\u5931\u6392\u67e5/\u914d\u51c6/dice\u8bc4\u4f30/\u8fb9\u7f18\u635f\u5931"
+    },
+    {
+      "label": "\u4e94\u6b65\u6392\u67e5\u6cd5",
+      "file_type": "concept",
+      "source_file": "loss-function-debugging.md",
+      "source_location": null,
+      "id": "loss_function_debugging_five_step",
+      "community": 72,
+      "norm_label": "\u4e94\u6b65\u6392\u67e5\u6cd5"
+    },
+    {
+      "label": "VoxelMorph 3D\u914d\u51c6\u6846\u67b6",
+      "file_type": "concept",
+      "source_file": "loss-function-debugging.md",
+      "source_location": null,
+      "id": "loss_function_debugging_voxelmorph",
+      "community": 10,
+      "norm_label": "voxelmorph 3d\u914d\u51c6\u6846\u67b6"
+    },
+    {
+      "label": "MONAI DiceMetric\u80cc\u666f\u5305\u542b\u95ee\u9898",
+      "file_type": "concept",
+      "source_file": "loss-function-debugging.md",
+      "source_location": null,
+      "id": "loss_function_debugging_dice_metric",
+      "community": 21,
+      "norm_label": "monai dicemetric\u80cc\u666f\u5305\u542b\u95ee\u9898"
+    },
+    {
+      "label": "3D\u8fb9\u7f18\u635f\u5931Sobel\u7b97\u5b50",
+      "file_type": "concept",
+      "source_file": "loss-function-debugging.md",
+      "source_location": null,
+      "id": "loss_function_debugging_edge_loss_3d",
+      "community": 13,
+      "norm_label": "3d\u8fb9\u7f18\u635f\u5931sobel\u7b97\u5b50"
+    },
+    {
+      "label": "AsDiscrete\u540e\u5904\u7406\u53c2\u6570\u8be6\u89e3",
+      "file_type": "concept",
+      "source_file": "loss-function-debugging.md",
+      "source_location": null,
+      "id": "loss_function_debugging_as_discrete",
+      "community": 71,
+      "norm_label": "asdiscrete\u540e\u5904\u7406\u53c2\u6570\u8be6\u89e3"
+    },
+    {
+      "label": "\u533b\u5b66\u5f71\u50cf\u751f\u6210\u6311\u6218\u4e0e\u7efc\u8ff0",
+      "file_type": "document",
+      "source_file": "medical-image-generation-challenges.md",
+      "source_location": null,
+      "id": "medical_image_generation_challenges",
+      "community": 2,
+      "norm_label": "\u533b\u5b66\u5f71\u50cf\u751f\u6210\u6311\u6218\u4e0e\u7efc\u8ff0"
+    },
+    {
+      "label": "\u533b\u5b66\u5f71\u50cf\u751f\u6210\u6838\u5fc3\u6311\u6218",
+      "file_type": "concept",
+      "source_file": "medical-image-generation-challenges.md",
+      "source_location": null,
+      "id": "medical_image_generation_challenges_summary",
+      "community": 2,
+      "norm_label": "\u533b\u5b66\u5f71\u50cf\u751f\u6210\u6838\u5fc3\u6311\u6218"
+    },
+    {
+      "label": "\u89e3\u5256\u7ed3\u6784\u4fdd\u6301\u6311\u6218",
+      "file_type": "concept",
+      "source_file": "medical-image-generation-challenges.md",
+      "source_location": null,
+      "id": "medical_image_generation_challenges_anatomy",
+      "community": 19,
+      "norm_label": "\u89e3\u5256\u7ed3\u6784\u4fdd\u6301\u6311\u6218"
+    },
+    {
+      "label": "\u5c0f\u6570\u636e\u96c6\u6cdb\u5316\u6311\u6218",
+      "file_type": "concept",
+      "source_file": "medical-image-generation-challenges.md",
+      "source_location": null,
+      "id": "medical_image_generation_challenges_small_data",
+      "community": 10,
+      "norm_label": "\u5c0f\u6570\u636e\u96c6\u6cdb\u5316\u6311\u6218"
+    },
+    {
+      "label": "\u4e34\u5e8a\u53ef\u4fe1\u6027\u9a8c\u8bc1",
+      "file_type": "concept",
+      "source_file": "medical-image-generation-challenges.md",
+      "source_location": null,
+      "id": "medical_image_generation_challenges_clinical_validation",
+      "community": 73,
+      "norm_label": "\u4e34\u5e8a\u53ef\u4fe1\u6027\u9a8c\u8bc1"
+    },
+    {
+      "label": "\u53cd\u4e8b\u5b9e\u751f\u6210\u4e34\u5e8a\u8f6c\u5316\u74f6\u9888",
+      "file_type": "concept",
+      "source_file": "medical-image-generation-challenges.md",
+      "source_location": null,
+      "id": "medical_image_generation_challenges_hallucination",
+      "community": 20,
+      "norm_label": "\u53cd\u4e8b\u5b9e\u751f\u6210\u4e34\u5e8a\u8f6c\u5316\u74f6\u9888"
+    },
+    {
+      "label": "2024\u6269\u6563\u6a21\u578b\u5e94\u7528\u8d8b\u52bf",
+      "file_type": "concept",
+      "source_file": "medical-image-generation-challenges.md",
+      "source_location": null,
+      "id": "medical_image_generation_challenges_diffusion_2024",
+      "community": 74,
+      "norm_label": "2024\u6269\u6563\u6a21\u578b\u5e94\u7528\u8d8b\u52bf"
+    },
+    {
+      "label": "MICCAI\u6295\u7a3f\u4e0e\u6458\u8981\u5199\u4f5c",
+      "file_type": "document",
+      "source_file": "miccai-submission-and-abstract.md",
+      "source_location": null,
+      "id": "miccai_submission_and_abstract",
+      "community": 12,
+      "norm_label": "miccai\u6295\u7a3f\u4e0e\u6458\u8981\u5199\u4f5c"
+    },
+    {
+      "label": "MICCAI\u6295\u7a3f\u5168\u6d41\u7a0b\u4e0edesk reject\u89c4\u907f",
+      "file_type": "concept",
+      "source_file": "miccai-submission-and-abstract.md",
+      "source_location": null,
+      "id": "miccai_submission_and_abstract_summary",
+      "community": 12,
+      "norm_label": "miccai\u6295\u7a3f\u5168\u6d41\u7a0b\u4e0edesk reject\u89c4\u907f"
+    },
+    {
+      "label": "\u6458\u8981\u5199\u4f5coverclaim\u9884\u9632",
+      "file_type": "concept",
+      "source_file": "miccai-submission-and-abstract.md",
+      "source_location": null,
+      "id": "miccai_submission_and_abstract_overclaim",
+      "community": 78,
+      "norm_label": "\u6458\u8981\u5199\u4f5coverclaim\u9884\u9632"
+    },
+    {
+      "label": "CMT\u63d0\u4ea4\u8868\u5355\u5b57\u6bb5",
+      "file_type": "concept",
+      "source_file": "miccai-submission-and-abstract.md",
+      "source_location": null,
+      "id": "miccai_submission_and_abstract_cmt",
+      "community": 75,
+      "norm_label": "cmt\u63d0\u4ea4\u8868\u5355\u5b57\u6bb5"
+    },
+    {
+      "label": "Desk reject\u9884\u6f14\u4e0e\u4e94\u5927\u539f\u56e0",
+      "file_type": "concept",
+      "source_file": "miccai-submission-and-abstract.md",
+      "source_location": null,
+      "id": "miccai_submission_and_abstract_desk_reject",
+      "community": 76,
+      "norm_label": "desk reject\u9884\u6f14\u4e0e\u4e94\u5927\u539f\u56e0"
+    },
+    {
+      "label": "Forcing question\u6a21\u677f",
+      "file_type": "concept",
+      "source_file": "miccai-submission-and-abstract.md",
+      "source_location": null,
+      "id": "miccai_submission_and_abstract_forcing_question",
+      "community": 77,
+      "norm_label": "forcing question\u6a21\u677f"
+    },
+    {
+      "label": "MRI\u4eae\u5ea6\u4e00\u81f4\u6027\u5904\u7406",
+      "file_type": "document",
+      "source_file": "mri-brightness-consistency.md",
+      "source_location": null,
+      "id": "mri_brightness_consistency",
+      "community": 9,
+      "norm_label": "mri\u4eae\u5ea6\u4e00\u81f4\u6027\u5904\u7406"
+    },
+    {
+      "label": "\u751f\u6210MRI\u4eae\u5ea6\u5bf9\u9f50\u4e0e\u8bc4\u4f30",
+      "file_type": "concept",
+      "source_file": "mri-brightness-consistency.md",
+      "source_location": null,
+      "id": "mri_brightness_consistency_summary",
+      "community": 9,
+      "norm_label": "\u751f\u6210mri\u4eae\u5ea6\u5bf9\u9f50\u4e0e\u8bc4\u4f30"
+    },
+    {
+      "label": "\u540e\u5904\u7406\u4eae\u5ea6\u5bf9\u9f50\u65b9\u6cd5",
+      "file_type": "concept",
+      "source_file": "mri-brightness-consistency.md",
+      "source_location": null,
+      "id": "mri_brightness_consistency_postprocessing",
+      "community": 15,
+      "norm_label": "\u540e\u5904\u7406\u4eae\u5ea6\u5bf9\u9f50\u65b9\u6cd5"
+    },
+    {
+      "label": "\u8bad\u7ec3\u7aef\u4eae\u5ea6\u7ea6\u675f",
+      "file_type": "concept",
+      "source_file": "mri-brightness-consistency.md",
+      "source_location": null,
+      "id": "mri_brightness_consistency_training_constraint",
+      "community": 81,
+      "norm_label": "\u8bad\u7ec3\u7aef\u4eae\u5ea6\u7ea6\u675f"
+    },
+    {
+      "label": "NIfTI 3D\u53bb\u566a\u6d41\u6c34\u7ebf",
+      "file_type": "concept",
+      "source_file": "mri-brightness-consistency.md",
+      "source_location": null,
+      "id": "mri_brightness_consistency_denoising",
+      "community": 79,
+      "norm_label": "nifti 3d\u53bb\u566a\u6d41\u6c34\u7ebf"
+    },
+    {
+      "label": "NCC\u5f52\u4e00\u5316\u4e92\u76f8\u5173\u7ed3\u6784\u8bc4\u4f30",
+      "file_type": "concept",
+      "source_file": "mri-brightness-consistency.md",
+      "source_location": null,
+      "id": "mri_brightness_consistency_ncc",
+      "community": 80,
+      "norm_label": "ncc\u5f52\u4e00\u5316\u4e92\u76f8\u5173\u7ed3\u6784\u8bc4\u4f30"
+    },
+    {
+      "label": "\u591a\u5361\u8bad\u7ec3\u4e0e\u5206\u5e03\u5f0f\u6545\u969c\u6392\u67e5",
+      "file_type": "document",
+      "source_file": "multi-gpu-training-troubleshooting.md",
+      "source_location": null,
+      "id": "multi_gpu_training_troubleshooting",
+      "community": 7,
+      "norm_label": "\u591a\u5361\u8bad\u7ec3\u4e0e\u5206\u5e03\u5f0f\u6545\u969c\u6392\u67e5"
+    },
+    {
+      "label": "\u6a21\u578b\u5e76\u884cvs\u6570\u636e\u5e76\u884c\u4e0e\u5206\u5e03\u5f0f\u8c03\u8bd5",
+      "file_type": "concept",
+      "source_file": "multi-gpu-training-troubleshooting.md",
+      "source_location": null,
+      "id": "multi_gpu_training_troubleshooting_summary",
+      "community": 7,
+      "norm_label": "\u6a21\u578b\u5e76\u884cvs\u6570\u636e\u5e76\u884c\u4e0e\u5206\u5e03\u5f0f\u8c03\u8bd5"
+    },
+    {
+      "label": "\u6a21\u578b\u5e76\u884cvs\u6570\u636e\u5e76\u884c\u53d6\u820d",
+      "file_type": "concept",
+      "source_file": "multi-gpu-training-troubleshooting.md",
+      "source_location": null,
+      "id": "multi_gpu_training_troubleshooting_model_parallel",
+      "community": 7,
+      "norm_label": "\u6a21\u578b\u5e76\u884cvs\u6570\u636e\u5e76\u884c\u53d6\u820d"
+    },
+    {
+      "label": "DDP\u6570\u636e\u5e76\u884c\u9aa8\u67b6",
+      "file_type": "concept",
+      "source_file": "multi-gpu-training-troubleshooting.md",
+      "source_location": null,
+      "id": "multi_gpu_training_troubleshooting_ddp",
+      "community": 24,
+      "norm_label": "ddp\u6570\u636e\u5e76\u884c\u9aa8\u67b6"
+    },
+    {
+      "label": "\u6d41\u6c34\u7ebf\u5e76\u884c\u4e0e\u68af\u5ea6\u68c0\u67e5\u70b9",
+      "file_type": "concept",
+      "source_file": "multi-gpu-training-troubleshooting.md",
+      "source_location": null,
+      "id": "multi_gpu_training_troubleshooting_pipeline_parallel",
+      "community": 27,
+      "norm_label": "\u6d41\u6c34\u7ebf\u5e76\u884c\u4e0e\u68af\u5ea6\u68c0\u67e5\u70b9"
+    },
+    {
+      "label": "DCU/ROCm VMFault\u6392\u67e5",
+      "file_type": "concept",
+      "source_file": "multi-gpu-training-troubleshooting.md",
+      "source_location": null,
+      "id": "multi_gpu_training_troubleshooting_vmfault",
+      "community": 84,
+      "norm_label": "dcu/rocm vmfault\u6392\u67e5"
+    },
+    {
+      "label": "torchrun\u542f\u52a8\u4e0e\u65e5\u5fd7\u7ba1\u7406",
+      "file_type": "concept",
+      "source_file": "multi-gpu-training-troubleshooting.md",
+      "source_location": null,
+      "id": "multi_gpu_training_troubleshooting_torchrun",
+      "community": 83,
+      "norm_label": "torchrun\u542f\u52a8\u4e0e\u65e5\u5fd7\u7ba1\u7406"
+    },
+    {
+      "label": "DDP\u8c03\u8bd5\u65e5\u5fd7\u6b63\u5e38\u566a\u97f3vs\u771f\u9519\u8bef",
+      "file_type": "concept",
+      "source_file": "multi-gpu-training-troubleshooting.md",
+      "source_location": null,
+      "id": "multi_gpu_training_troubleshooting_ddp_debug",
+      "community": 82,
+      "norm_label": "ddp\u8c03\u8bd5\u65e5\u5fd7\u6b63\u5e38\u566a\u97f3vs\u771f\u9519\u8bef"
+    },
+    {
+      "label": "npm / Node.js \u4e0e\u524d\u7aef\u5de5\u5177\u94fe\u5b89\u88c5",
+      "file_type": "document",
+      "source_file": "npm-nodejs-toolchain.md",
+      "source_location": null,
+      "id": "npm_nodejs_toolchain",
+      "community": 3,
+      "norm_label": "npm / node.js \u4e0e\u524d\u7aef\u5de5\u5177\u94fe\u5b89\u88c5"
+    },
+    {
+      "label": "PPT \u5236\u4f5c\u4e0e\u8bba\u6587\u8bb2\u89e3",
+      "file_type": "document",
+      "source_file": "ppt-paper-presentation.md",
+      "source_location": null,
+      "id": "ppt_paper_presentation",
+      "community": 5,
+      "norm_label": "ppt \u5236\u4f5c\u4e0e\u8bba\u6587\u8bb2\u89e3"
+    },
+    {
+      "label": "3D MRI \u7684 PSNR \u4e0e SSIM \u8ba1\u7b97",
+      "file_type": "document",
+      "source_file": "psnr-ssim-3d-mri.md",
+      "source_location": null,
+      "id": "psnr_ssim_3d_mri",
+      "community": 4,
+      "norm_label": "3d mri \u7684 psnr \u4e0e ssim \u8ba1\u7b97"
+    },
+    {
+      "label": "Rectified Flow \u4e0e Flow Matching \u539f\u7406",
+      "file_type": "document",
+      "source_file": "rectified-flow-basics.md",
+      "source_location": null,
+      "id": "rectified_flow_basics",
+      "community": 8,
+      "norm_label": "rectified flow \u4e0e flow matching \u539f\u7406"
+    },
+    {
+      "label": "\u5206\u5272\u63a9\u7801\u6761\u4ef6\u4e0b\u7684\u6269\u6563\u751f\u6210",
+      "file_type": "document",
+      "source_file": "segmentation-mask-conditioned-diffusion.md",
+      "source_location": null,
+      "id": "segmentation_mask_conditioned_diffusion",
+      "community": 0,
+      "norm_label": "\u5206\u5272\u63a9\u7801\u6761\u4ef6\u4e0b\u7684\u6269\u6563\u751f\u6210"
+    },
+    {
+      "label": "SS-FSE \u539a\u5207\u4e0e\u5404\u5411\u540c\u6027\u626b\u63cf\u53ca\u539a\u5207\u6a21\u62df",
+      "file_type": "document",
+      "source_file": "ss-fse-isotropic-thick-slice.md",
+      "source_location": null,
+      "id": "ss_fse_isotropic_thick_slice",
+      "community": 0,
+      "norm_label": "ss-fse \u539a\u5207\u4e0e\u5404\u5411\u540c\u6027\u626b\u63cf\u53ca\u539a\u5207\u6a21\u62df"
+    },
+    {
+      "label": "\u8fdc\u7a0b\u5f00\u53d1\u4e0e\u670d\u52a1\u5668\u8fde\u63a5",
+      "file_type": "document",
+      "source_file": "ssh-remote-development.md",
+      "source_location": null,
+      "id": "ssh_remote_development",
+      "community": 3,
+      "norm_label": "\u8fdc\u7a0b\u5f00\u53d1\u4e0e\u670d\u52a1\u5668\u8fde\u63a5"
+    },
+    {
+      "label": "\u751f\u6210\u6a21\u578b\u7684\u8bad\u7ec3\u635f\u5931\u51fd\u6570",
+      "file_type": "document",
+      "source_file": "training-losses-generative-models.md",
+      "source_location": null,
+      "id": "training_losses_generative_models",
+      "community": 1,
+      "norm_label": "\u751f\u6210\u6a21\u578b\u7684\u8bad\u7ec3\u635f\u5931\u51fd\u6570"
+    },
+    {
+      "label": "3D \u533b\u5b66\u5f71\u50cf VAE \u67b6\u6784",
+      "file_type": "document",
+      "source_file": "vae-3d-medical-imaging.md",
+      "source_location": null,
+      "id": "vae_3d_medical_imaging",
+      "community": 1,
+      "norm_label": "3d \u533b\u5b66\u5f71\u50cf vae \u67b6\u6784"
+    },
+    {
+      "label": "WandB \u5b9e\u9a8c\u8ffd\u8e2a\u4e0e\u4ee3\u7801\u7ba1\u7406",
+      "file_type": "document",
+      "source_file": "wandb-experiment-tracking.md",
+      "source_location": null,
+      "id": "wandb_experiment_tracking",
+      "community": 1,
+      "norm_label": "wandb \u5b9e\u9a8c\u8ffd\u8e2a\u4e0e\u4ee3\u7801\u7ba1\u7406"
+    },
+    {
+      "label": "\u5c0f\u6ce2\u57df\u4e2d\u7684\u56fe\u50cf\u5f62\u53d8\u5206\u6790",
+      "file_type": "document",
+      "source_file": "wavelet-deformation-analysis.md",
+      "source_location": null,
+      "id": "wavelet_deformation_analysis",
+      "community": 4,
+      "norm_label": "\u5c0f\u6ce2\u57df\u4e2d\u7684\u56fe\u50cf\u5f62\u53d8\u5206\u6790"
+    },
+    {
+      "label": "\u5c0f\u6ce2\u53d8\u6362 + \u751f\u6210\u6a21\u578b\u7528\u4e8e\u7eb5\u5411 MRI \u751f\u6210",
+      "file_type": "document",
+      "source_file": "wavelet-flow-mri-generation.md",
+      "source_location": null,
+      "id": "wavelet_flow_mri_generation",
+      "community": 0,
+      "norm_label": "\u5c0f\u6ce2\u53d8\u6362 + \u751f\u6210\u6a21\u578b\u7528\u4e8e\u7eb5\u5411 mri \u751f\u6210"
+    },
+    {
+      "label": "\u8bba\u6587\u9605\u8bfb\u00b7\u5ba1\u9605\u00b7\u603b\u7ed3\u65b9\u6cd5",
+      "file_type": "document",
+      "source_file": "paper-review-summarization.md",
+      "source_location": null,
+      "id": "paper_review_summarization",
+      "community": 5,
+      "norm_label": "\u8bba\u6587\u9605\u8bfb\u00b7\u5ba1\u9605\u00b7\u603b\u7ed3\u65b9\u6cd5"
+    },
+    {
+      "label": "npm \u5305\u7ba1\u7406\u5668",
+      "file_type": "concept",
+      "source_file": "npm-nodejs-toolchain.md",
+      "source_location": null,
+      "id": "npm_nodejs_toolchain_npm",
+      "community": 3,
+      "norm_label": "npm \u5305\u7ba1\u7406\u5668"
+    },
+    {
+      "label": "nvm Node Version Manager",
+      "file_type": "concept",
+      "source_file": "npm-nodejs-toolchain.md",
+      "source_location": null,
+      "id": "npm_nodejs_toolchain_nvm",
+      "community": 3,
+      "norm_label": "nvm node version manager"
+    },
+    {
+      "label": "Node.js \u8fd0\u884c\u65f6",
+      "file_type": "concept",
+      "source_file": "npm-nodejs-toolchain.md",
+      "source_location": null,
+      "id": "npm_nodejs_toolchain_node_js",
+      "community": 3,
+      "norm_label": "node.js \u8fd0\u884c\u65f6"
+    },
+    {
+      "label": "Electron \u5b89\u88c5\u4e0e\u955c\u50cf",
+      "file_type": "concept",
+      "source_file": "npm-nodejs-toolchain.md",
+      "source_location": null,
+      "id": "npm_nodejs_toolchain_electron",
+      "community": 3,
+      "norm_label": "electron \u5b89\u88c5\u4e0e\u955c\u50cf"
+    },
+    {
+      "label": "Cursor \u7f16\u8f91\u5668\u63d2\u4ef6",
+      "file_type": "concept",
+      "source_file": "npm-nodejs-toolchain.md",
+      "source_location": null,
+      "id": "npm_nodejs_toolchain_cursor",
+      "community": 3,
+      "norm_label": "cursor \u7f16\u8f91\u5668\u63d2\u4ef6"
+    },
+    {
+      "label": "npm \u56fd\u5185\u955c\u50cf\u914d\u7f6e",
+      "file_type": "concept",
+      "source_file": "npm-nodejs-toolchain.md",
+      "source_location": null,
+      "id": "npm_nodejs_toolchain_domestic_mirror",
+      "community": 3,
+      "norm_label": "npm \u56fd\u5185\u955c\u50cf\u914d\u7f6e"
+    },
+    {
+      "label": "python-pptx \u7a0b\u5e8f\u5316\u751f\u6210",
+      "file_type": "concept",
+      "source_file": "ppt-paper-presentation.md",
+      "source_location": null,
+      "id": "ppt_paper_presentation_python_pptx",
+      "community": 5,
+      "norm_label": "python-pptx \u7a0b\u5e8f\u5316\u751f\u6210"
+    },
+    {
+      "label": "KaTeX \u516c\u5f0f\u6e32\u67d3",
+      "file_type": "concept",
+      "source_file": "ppt-paper-presentation.md",
+      "source_location": null,
+      "id": "ppt_paper_presentation_katex",
+      "community": 5,
+      "norm_label": "katex \u516c\u5f0f\u6e32\u67d3"
+    },
+    {
+      "label": "MathJax \u516c\u5f0f\u6e32\u67d3",
+      "file_type": "concept",
+      "source_file": "ppt-paper-presentation.md",
+      "source_location": null,
+      "id": "ppt_paper_presentation_mathjax",
+      "community": 5,
+      "norm_label": "mathjax \u516c\u5f0f\u6e32\u67d3"
+    },
+    {
+      "label": "\u516c\u5f0f\u663e\u793a\u6392\u5751 CDN \u6392\u67e5",
+      "file_type": "concept",
+      "source_file": "ppt-paper-presentation.md",
+      "source_location": null,
+      "id": "ppt_paper_presentation_formula_troubleshooting",
+      "community": 5,
+      "norm_label": "\u516c\u5f0f\u663e\u793a\u6392\u5751 cdn \u6392\u67e5"
+    },
+    {
+      "label": "\u8bb2\u89e3\u522b\u4eba\u8bba\u6587\u7684 PPT \u9aa8\u67b6",
+      "file_type": "concept",
+      "source_file": "ppt-paper-presentation.md",
+      "source_location": null,
+      "id": "ppt_paper_presentation_paper_presentation_structure",
+      "community": 5,
+      "norm_label": "\u8bb2\u89e3\u522b\u4eba\u8bba\u6587\u7684 ppt \u9aa8\u67b6"
+    },
+    {
+      "label": "\u7d27\u51d1\u884c\u8ddd CSS \u53d8\u91cf",
+      "file_type": "concept",
+      "source_file": "ppt-paper-presentation.md",
+      "source_location": null,
+      "id": "ppt_paper_presentation_compact_css",
+      "community": 5,
+      "norm_label": "\u7d27\u51d1\u884c\u8ddd css \u53d8\u91cf"
+    },
+    {
+      "label": "PSNR \u5cf0\u503c\u4fe1\u566a\u6bd4",
+      "file_type": "concept",
+      "source_file": "psnr-ssim-3d-mri.md",
+      "source_location": null,
+      "id": "psnr_ssim_3d_mri_psnr",
+      "community": 4,
+      "norm_label": "psnr \u5cf0\u503c\u4fe1\u566a\u6bd4"
+    },
+    {
+      "label": "SSIM \u7ed3\u6784\u76f8\u4f3c\u6027",
+      "file_type": "concept",
+      "source_file": "psnr-ssim-3d-mri.md",
+      "source_location": null,
+      "id": "psnr_ssim_3d_mri_ssim",
+      "community": 4,
+      "norm_label": "ssim \u7ed3\u6784\u76f8\u4f3c\u6027"
+    },
+    {
+      "label": "\u52a8\u6001\u8303\u56f4 data_range \u8bbe\u5b9a",
+      "file_type": "concept",
+      "source_file": "psnr-ssim-3d-mri.md",
+      "source_location": null,
+      "id": "psnr_ssim_3d_mri_data_range",
+      "community": 4,
+      "norm_label": "\u52a8\u6001\u8303\u56f4 data_range \u8bbe\u5b9a"
+    },
+    {
+      "label": "\u8111\u63a9\u819c\u5185\u7edf\u8ba1",
+      "file_type": "concept",
+      "source_file": "psnr-ssim-3d-mri.md",
+      "source_location": null,
+      "id": "psnr_ssim_3d_mri_brain_mask",
+      "community": 4,
+      "norm_label": "\u8111\u63a9\u819c\u5185\u7edf\u8ba1"
+    },
+    {
+      "label": "Volume-wise vs Slice-wise \u6307\u6807",
+      "file_type": "concept",
+      "source_file": "psnr-ssim-3d-mri.md",
+      "source_location": null,
+      "id": "psnr_ssim_3d_mri_volume_wise_vs_slice_wise",
+      "community": 4,
+      "norm_label": "volume-wise vs slice-wise \u6307\u6807"
+    },
+    {
+      "label": "\u767e\u5206\u4f4d\u5f52\u4e00\u5316 clip \u7b56\u7565",
+      "file_type": "concept",
+      "source_file": "psnr-ssim-3d-mri.md",
+      "source_location": null,
+      "id": "psnr_ssim_3d_mri_percentile_normalization",
+      "community": 4,
+      "norm_label": "\u767e\u5206\u4f4d\u5f52\u4e00\u5316 clip \u7b56\u7565"
+    },
+    {
+      "label": "Rectified Flow ODE \u76f4\u7ebf\u8def\u5f84",
+      "file_type": "concept",
+      "source_file": "rectified-flow-basics.md",
+      "source_location": null,
+      "id": "rectified_flow_basics_rectified_flow",
+      "community": 8,
+      "norm_label": "rectified flow ode \u76f4\u7ebf\u8def\u5f84"
+    },
+    {
+      "label": "Flow Matching \u901f\u5ea6\u573a\u56de\u5f52",
+      "file_type": "concept",
+      "source_file": "rectified-flow-basics.md",
+      "source_location": null,
+      "id": "rectified_flow_basics_flow_matching",
+      "community": 8,
+      "norm_label": "flow matching \u901f\u5ea6\u573a\u56de\u5f52"
+    },
+    {
+      "label": "Conditional Flow Matching",
+      "file_type": "concept",
+      "source_file": "rectified-flow-basics.md",
+      "source_location": null,
+      "id": "rectified_flow_basics_cfm",
+      "community": 8,
+      "norm_label": "conditional flow matching"
+    },
+    {
+      "label": "Continuous Normalizing Flow",
+      "file_type": "concept",
+      "source_file": "rectified-flow-basics.md",
+      "source_location": null,
+      "id": "rectified_flow_basics_cnf",
+      "community": 8,
+      "norm_label": "continuous normalizing flow"
+    },
+    {
+      "label": "ODE \u4e0e SDE \u8def\u5f84\u5bf9\u6bd4",
+      "file_type": "concept",
+      "source_file": "rectified-flow-basics.md",
+      "source_location": null,
+      "id": "rectified_flow_basics_ode_vs_sde",
+      "community": 8,
+      "norm_label": "ode \u4e0e sde \u8def\u5f84\u5bf9\u6bd4"
+    },
+    {
+      "label": "\u5c11\u6b65\u91c7\u6837\u9ad8\u6548\u751f\u6210",
+      "file_type": "concept",
+      "source_file": "rectified-flow-basics.md",
+      "source_location": null,
+      "id": "rectified_flow_basics_few_step_sampling",
+      "community": 8,
+      "norm_label": "\u5c11\u6b65\u91c7\u6837\u9ad8\u6548\u751f\u6210"
+    },
+    {
+      "label": "\u6761\u4ef6\u56fe\u50cf\u751f\u6210",
+      "file_type": "concept",
+      "source_file": "segmentation-mask-conditioned-diffusion.md",
+      "source_location": null,
+      "id": "segmentation_mask_conditioned_diffusion_conditional_generation",
+      "community": 0,
+      "norm_label": "\u6761\u4ef6\u56fe\u50cf\u751f\u6210"
+    },
+    {
+      "label": "One-hot \u63a9\u7801\u7f16\u7801",
+      "file_type": "concept",
+      "source_file": "segmentation-mask-conditioned-diffusion.md",
+      "source_location": null,
+      "id": "segmentation_mask_conditioned_diffusion_one_hot",
+      "community": 0,
+      "norm_label": "one-hot \u63a9\u7801\u7f16\u7801"
+    },
+    {
+      "label": "\u63a9\u7801\u62fc\u63a5\u6ce8\u5165 U-Net",
+      "file_type": "concept",
+      "source_file": "segmentation-mask-conditioned-diffusion.md",
+      "source_location": null,
+      "id": "segmentation_mask_conditioned_diffusion_mask_concatenation",
+      "community": 0,
+      "norm_label": "\u63a9\u7801\u62fc\u63a5\u6ce8\u5165 u-net"
+    },
+    {
+      "label": "Stable Diffusion \u6761\u4ef6\u751f\u6210\u4efb\u52a1",
+      "file_type": "concept",
+      "source_file": "segmentation-mask-conditioned-diffusion.md",
+      "source_location": null,
+      "id": "segmentation_mask_conditioned_diffusion_stable_diffusion_tasks",
+      "community": 0,
+      "norm_label": "stable diffusion \u6761\u4ef6\u751f\u6210\u4efb\u52a1"
+    },
+    {
+      "label": "SS-FSE \u539a\u5c42\u5feb\u901f\u626b\u63cf",
+      "file_type": "concept",
+      "source_file": "ss-fse-isotropic-thick-slice.md",
+      "source_location": null,
+      "id": "ss_fse_isotropic_thick_slice_ss_fse",
+      "community": 0,
+      "norm_label": "ss-fse \u539a\u5c42\u5feb\u901f\u626b\u63cf"
+    },
+    {
+      "label": "\u5404\u5411\u540c\u6027\u9ad8\u5206\u8fa8\u626b\u63cf",
+      "file_type": "concept",
+      "source_file": "ss-fse-isotropic-thick-slice.md",
+      "source_location": null,
+      "id": "ss_fse_isotropic_thick_slice_isotropic",
+      "community": 0,
+      "norm_label": "\u5404\u5411\u540c\u6027\u9ad8\u5206\u8fa8\u626b\u63cf"
+    },
+    {
+      "label": "\u539a\u5207\u6a21\u62df\u65b9\u6cd5",
+      "file_type": "concept",
+      "source_file": "ss-fse-isotropic-thick-slice.md",
+      "source_location": null,
+      "id": "ss_fse_isotropic_thick_slice_thick_slice_simulation",
+      "community": 0,
+      "norm_label": "\u539a\u5207\u6a21\u62df\u65b9\u6cd5"
+    },
+    {
+      "label": "IBIS \u5a74\u5e7c\u513f\u8111\u5f71\u50cf\u6570\u636e\u96c6",
+      "file_type": "concept",
+      "source_file": "ss-fse-isotropic-thick-slice.md",
+      "source_location": null,
+      "id": "ss_fse_isotropic_thick_slice_ibis",
+      "community": 0,
+      "norm_label": "ibis \u5a74\u5e7c\u513f\u8111\u5f71\u50cf\u6570\u636e\u96c6"
+    },
+    {
+      "label": "SSH \u8fdc\u7a0b\u8fde\u63a5",
+      "file_type": "concept",
+      "source_file": "ssh-remote-development.md",
+      "source_location": null,
+      "id": "ssh_remote_development_ssh",
+      "community": 3,
+      "norm_label": "ssh \u8fdc\u7a0b\u8fde\u63a5"
+    },
+    {
+      "label": "VS Code Server code-server",
+      "file_type": "concept",
+      "source_file": "ssh-remote-development.md",
+      "source_location": null,
+      "id": "ssh_remote_development_vs_code_server",
+      "community": 3,
+      "norm_label": "vs code server code-server"
+    },
+    {
+      "label": "\u6587\u4ef6\u4f20\u8f93 scp rsync",
+      "file_type": "concept",
+      "source_file": "ssh-remote-development.md",
+      "source_location": null,
+      "id": "ssh_remote_development_file_transfer",
+      "community": 3,
+      "norm_label": "\u6587\u4ef6\u4f20\u8f93 scp rsync"
+    },
+    {
+      "label": "tmpfs \u5185\u5b58\u4e34\u65f6\u5b58\u50a8",
+      "file_type": "concept",
+      "source_file": "ssh-remote-development.md",
+      "source_location": null,
+      "id": "ssh_remote_development_tmpfs",
+      "community": 3,
+      "norm_label": "tmpfs \u5185\u5b58\u4e34\u65f6\u5b58\u50a8"
+    },
+    {
+      "label": "SSH Connection Refused \u6392\u67e5",
+      "file_type": "concept",
+      "source_file": "ssh-remote-development.md",
+      "source_location": null,
+      "id": "ssh_remote_development_connection_refused",
+      "community": 3,
+      "norm_label": "ssh connection refused \u6392\u67e5"
+    },
+    {
+      "label": "minerU \u6587\u6863\u89e3\u6790\u5f15\u64ce",
+      "file_type": "concept",
+      "source_file": "ssh-remote-development.md",
+      "source_location": null,
+      "id": "ssh_remote_development_mineru",
+      "community": 3,
+      "norm_label": "mineru \u6587\u6863\u89e3\u6790\u5f15\u64ce"
+    },
+    {
+      "label": "Pseudo-Huber \u635f\u5931",
+      "file_type": "concept",
+      "source_file": "training-losses-generative-models.md",
+      "source_location": null,
+      "id": "training_losses_generative_models_pseudo_huber",
+      "community": 1,
+      "norm_label": "pseudo-huber \u635f\u5931"
+    },
+    {
+      "label": "LPIPS-Huber \u611f\u77e5\u635f\u5931",
+      "file_type": "concept",
+      "source_file": "training-losses-generative-models.md",
+      "source_location": null,
+      "id": "training_losses_generative_models_lpips_huber",
+      "community": 1,
+      "norm_label": "lpips-huber \u611f\u77e5\u635f\u5931"
+    },
+    {
+      "label": "3D \u611f\u77e5\u635f\u5931 VGG \u4e0e MedicalNet",
+      "file_type": "concept",
+      "source_file": "training-losses-generative-models.md",
+      "source_location": null,
+      "id": "training_losses_generative_models_perceptual_loss_3d",
+      "community": 1,
+      "norm_label": "3d \u611f\u77e5\u635f\u5931 vgg \u4e0e medicalnet"
+    },
+    {
+      "label": "Gram \u7eb9\u7406\u635f\u5931",
+      "file_type": "concept",
+      "source_file": "training-losses-generative-models.md",
+      "source_location": null,
+      "id": "training_losses_generative_models_gram_texture_loss",
+      "community": 1,
+      "norm_label": "gram \u7eb9\u7406\u635f\u5931"
+    },
+    {
+      "label": "\u7ec4\u5408\u635f\u5931\u7b56\u7565",
+      "file_type": "concept",
+      "source_file": "training-losses-generative-models.md",
+      "source_location": null,
+      "id": "training_losses_generative_models_combined_loss",
+      "community": 1,
+      "norm_label": "\u7ec4\u5408\u635f\u5931\u7b56\u7565"
+    },
+    {
+      "label": "SDXL-VAE \u67b6\u6784",
+      "file_type": "concept",
+      "source_file": "vae-3d-medical-imaging.md",
+      "source_location": null,
+      "id": "vae_3d_medical_imaging_sdxl_vae",
+      "community": 1,
+      "norm_label": "sdxl-vae \u67b6\u6784"
+    },
+    {
+      "label": "2D Conv \u2192 3D Conv \u6269\u5c55",
+      "file_type": "concept",
+      "source_file": "vae-3d-medical-imaging.md",
+      "source_location": null,
+      "id": "vae_3d_medical_imaging_2d_to_3d",
+      "community": 1,
+      "norm_label": "2d conv \u2192 3d conv \u6269\u5c55"
+    },
+    {
+      "label": "MONAI AutoencoderKL",
+      "file_type": "concept",
+      "source_file": "vae-3d-medical-imaging.md",
+      "source_location": null,
+      "id": "vae_3d_medical_imaging_monai_autoencoderkl",
+      "community": 1,
+      "norm_label": "monai autoencoderkl"
+    },
+    {
+      "label": "\u6f5c\u7a7a\u95f4\u7f16\u7801\u4e0e\u538b\u7f29",
+      "file_type": "concept",
+      "source_file": "vae-3d-medical-imaging.md",
+      "source_location": null,
+      "id": "vae_3d_medical_imaging_latent_space",
+      "community": 1,
+      "norm_label": "\u6f5c\u7a7a\u95f4\u7f16\u7801\u4e0e\u538b\u7f29"
+    },
+    {
+      "label": "MAISI \u6a21\u578b\u67b6\u6784",
+      "file_type": "concept",
+      "source_file": "vae-3d-medical-imaging.md",
+      "source_location": null,
+      "id": "vae_3d_medical_imaging_maisi",
+      "community": 1,
+      "norm_label": "maisi \u6a21\u578b\u67b6\u6784"
+    },
+    {
+      "label": "WandB \u521d\u59cb\u5316\u4e0e\u65e5\u5fd7",
+      "file_type": "concept",
+      "source_file": "wandb-experiment-tracking.md",
+      "source_location": null,
+      "id": "wandb_experiment_tracking_wandb_init",
+      "community": 1,
+      "norm_label": "wandb \u521d\u59cb\u5316\u4e0e\u65e5\u5fd7"
+    },
+    {
+      "label": "resume \u8ffd\u52a0\u5b9e\u9a8c",
+      "file_type": "concept",
+      "source_file": "wandb-experiment-tracking.md",
+      "source_location": null,
+      "id": "wandb_experiment_tracking_resume",
+      "community": 1,
+      "norm_label": "resume \u8ffd\u52a0\u5b9e\u9a8c"
+    },
+    {
+      "label": "wandb.Table \u7ed3\u6784\u5316\u8bb0\u5f55",
+      "file_type": "concept",
+      "source_file": "wandb-experiment-tracking.md",
+      "source_location": null,
+      "id": "wandb_experiment_tracking_table",
+      "community": 1,
+      "norm_label": "wandb.table \u7ed3\u6784\u5316\u8bb0\u5f55"
+    },
+    {
+      "label": "multiprocessing \u6570\u636e\u4e22\u5931\u9677\u9631",
+      "file_type": "concept",
+      "source_file": "wandb-experiment-tracking.md",
+      "source_location": null,
+      "id": "wandb_experiment_tracking_multiprocessing_trap",
+      "community": 1,
+      "norm_label": "multiprocessing \u6570\u636e\u4e22\u5931\u9677\u9631"
+    },
+    {
+      "label": "WandB API Key \u5b89\u5168",
+      "file_type": "concept",
+      "source_file": "wandb-experiment-tracking.md",
+      "source_location": null,
+      "id": "wandb_experiment_tracking_code_security",
+      "community": 1,
+      "norm_label": "wandb api key \u5b89\u5168"
+    },
+    {
+      "label": "DWT \u5c0f\u6ce2\u591a\u5c3a\u5ea6\u5206\u89e3",
+      "file_type": "concept",
+      "source_file": "wavelet-deformation-analysis.md",
+      "source_location": null,
+      "id": "wavelet_deformation_analysis_dwt",
+      "community": 4,
+      "norm_label": "dwt \u5c0f\u6ce2\u591a\u5c3a\u5ea6\u5206\u89e3"
+    },
+    {
+      "label": "DWT \u5e73\u79fb\u654f\u611f\u6027\u7f3a\u9677",
+      "file_type": "concept",
+      "source_file": "wavelet-deformation-analysis.md",
+      "source_location": null,
+      "id": "wavelet_deformation_analysis_shift_variance",
+      "community": 4,
+      "norm_label": "dwt \u5e73\u79fb\u654f\u611f\u6027\u7f3a\u9677"
+    },
+    {
+      "label": "SWT \u5e73\u7a33\u5c0f\u6ce2\u4f4d\u79fb\u4e0d\u53d8",
+      "file_type": "concept",
+      "source_file": "wavelet-deformation-analysis.md",
+      "source_location": null,
+      "id": "wavelet_deformation_analysis_swt",
+      "community": 4,
+      "norm_label": "swt \u5e73\u7a33\u5c0f\u6ce2\u4f4d\u79fb\u4e0d\u53d8"
+    },
+    {
+      "label": "DT-CWT \u53cc\u6811\u590d\u5c0f\u6ce2\u76f8\u4f4d\u4f30\u8ba1",
+      "file_type": "concept",
+      "source_file": "wavelet-deformation-analysis.md",
+      "source_location": null,
+      "id": "wavelet_deformation_analysis_dt_cwt",
+      "community": 4,
+      "norm_label": "dt-cwt \u53cc\u6811\u590d\u5c0f\u6ce2\u76f8\u4f4d\u4f30\u8ba1"
+    },
+    {
+      "label": "\u76f8\u4f4d\u5dee\u4e9a\u50cf\u7d20\u4f4d\u79fb\u4f30\u8ba1",
+      "file_type": "concept",
+      "source_file": "wavelet-deformation-analysis.md",
+      "source_location": null,
+      "id": "wavelet_deformation_analysis_phase_difference",
+      "community": 4,
+      "norm_label": "\u76f8\u4f4d\u5dee\u4e9a\u50cf\u7d20\u4f4d\u79fb\u4f30\u8ba1"
+    },
+    {
+      "label": "3D MRI \u5f62\u53d8\u5206\u6790\u5b9e\u6218\u6d41\u7a0b",
+      "file_type": "concept",
+      "source_file": "wavelet-deformation-analysis.md",
+      "source_location": null,
+      "id": "wavelet_deformation_analysis_3d_mri_pipeline",
+      "community": 4,
+      "norm_label": "3d mri \u5f62\u53d8\u5206\u6790\u5b9e\u6218\u6d41\u7a0b"
+    },
+    {
+      "label": "\u9891\u7387\u89e3\u8026\u6846\u67b6",
+      "file_type": "concept",
+      "source_file": "wavelet-flow-mri-generation.md",
+      "source_location": null,
+      "id": "wavelet_flow_mri_generation_frequency_decoupling",
+      "community": 0,
+      "norm_label": "\u9891\u7387\u89e3\u8026\u6846\u67b6"
+    },
+    {
+      "label": "WRF-DG \u5f62\u53d8\u573a\u5f15\u5bfc\u751f\u6210",
+      "file_type": "concept",
+      "source_file": "wavelet-flow-mri-generation.md",
+      "source_location": null,
+      "id": "wavelet_flow_mri_generation_wrf_dg",
+      "community": 0,
+      "norm_label": "wrf-dg \u5f62\u53d8\u573a\u5f15\u5bfc\u751f\u6210"
+    },
+    {
+      "label": "\u65e0\u914d\u51c6\u9690\u5f0f\u5bf9\u9f50\u65b9\u6848",
+      "file_type": "concept",
+      "source_file": "wavelet-flow-mri-generation.md",
+      "source_location": null,
+      "id": "wavelet_flow_mri_generation_implicit_alignment",
+      "community": 0,
+      "norm_label": "\u65e0\u914d\u51c6\u9690\u5f0f\u5bf9\u9f50\u65b9\u6848"
+    },
+    {
+      "label": "\u56fa\u5b9a\u6b63\u4ea4\u5c0f\u6ce2\u57fa\u9009\u62e9",
+      "file_type": "concept",
+      "source_file": "wavelet-flow-mri-generation.md",
+      "source_location": null,
+      "id": "wavelet_flow_mri_generation_fixed_wavelet",
+      "community": 0,
+      "norm_label": "\u56fa\u5b9a\u6b63\u4ea4\u5c0f\u6ce2\u57fa\u9009\u62e9"
+    },
+    {
+      "label": "Label \u4f5c\u7ed3\u6784 reward \u7ea6\u675f",
+      "file_type": "concept",
+      "source_file": "wavelet-flow-mri-generation.md",
+      "source_location": null,
+      "id": "wavelet_flow_mri_generation_label_as_reward",
+      "community": 0,
+      "norm_label": "label \u4f5c\u7ed3\u6784 reward \u7ea6\u675f"
+    },
+    {
+      "label": "\u7eb5\u5411\u53d1\u80b2\u7ea6\u675f\u7b56\u7565",
+      "file_type": "concept",
+      "source_file": "wavelet-flow-mri-generation.md",
+      "source_location": null,
+      "id": "wavelet_flow_mri_generation_longitudinal_constraint",
+      "community": 0,
+      "norm_label": "\u7eb5\u5411\u53d1\u80b2\u7ea6\u675f\u7b56\u7565"
+    },
+    {
+      "label": "WaveDiff \u5c0f\u6ce2\u6269\u6563\u6a21\u578b",
+      "file_type": "concept",
+      "source_file": "wavelet-flow-mri-generation.md",
+      "source_location": null,
+      "id": "wavelet_flow_mri_generation_wavediff",
+      "community": 0,
+      "norm_label": "wavediff \u5c0f\u6ce2\u6269\u6563\u6a21\u578b"
+    },
+    {
+      "label": "WDM 3D \u5c0f\u6ce2\u6269\u6563\u533b\u5b66\u56fe\u50cf",
+      "file_type": "concept",
+      "source_file": "wavelet-flow-mri-generation.md",
+      "source_location": null,
+      "id": "wavelet_flow_mri_generation_wdm",
+      "community": 0,
+      "norm_label": "wdm 3d \u5c0f\u6ce2\u6269\u6563\u533b\u5b66\u56fe\u50cf"
+    },
+    {
+      "label": "AI \u8bba\u6587\u8bc4\u5ba1\u5de5\u5177 Scite Elicit ChatPDF",
+      "file_type": "concept",
+      "source_file": "paper-review-summarization.md",
+      "source_location": null,
+      "id": "paper_review_summarization_ai_tools",
+      "community": 5,
+      "norm_label": "ai \u8bba\u6587\u8bc4\u5ba1\u5de5\u5177 scite elicit chatpdf"
+    },
+    {
+      "label": "\u56db\u6bb5\u5f0f\u5ba1\u9605 \u4e2d\u82f1\u53cc\u8bed",
+      "file_type": "concept",
+      "source_file": "paper-review-summarization.md",
+      "source_location": null,
+      "id": "paper_review_summarization_four_part_review",
+      "community": 5,
+      "norm_label": "\u56db\u6bb5\u5f0f\u5ba1\u9605 \u4e2d\u82f1\u53cc\u8bed"
+    },
+    {
+      "label": "\u4e09\u6bb5\u5f0f\u8bba\u6587\u603b\u7ed3\u9aa8\u67b6",
+      "file_type": "concept",
+      "source_file": "paper-review-summarization.md",
+      "source_location": null,
+      "id": "paper_review_summarization_three_part_summary",
+      "community": 5,
+      "norm_label": "\u4e09\u6bb5\u5f0f\u8bba\u6587\u603b\u7ed3\u9aa8\u67b6"
+    },
+    {
+      "label": "arXiv \u8bba\u6587\u63d0\u95ee\u6a21\u677f",
+      "file_type": "concept",
+      "source_file": "paper-review-summarization.md",
+      "source_location": null,
+      "id": "paper_review_summarization_arxiv_qa",
+      "community": 5,
+      "norm_label": "arxiv \u8bba\u6587\u63d0\u95ee\u6a21\u677f"
+    },
+    {
+      "label": "\u8ba9 AI \u603b\u7ed3\u66f4\u9760\u8c31\u7684\u6280\u5de7",
+      "file_type": "concept",
+      "source_file": "paper-review-summarization.md",
+      "source_location": null,
+      "id": "paper_review_summarization_reliable_ai_summary",
+      "community": 5,
+      "norm_label": "\u8ba9 ai \u603b\u7ed3\u66f4\u9760\u8c31\u7684\u6280\u5de7"
+    }
+  ],
+  "links": [
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "autism-mri-diagnosis.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "autism_mri_diagnosis",
+      "target": "brain_mri_counterfactual_generation"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "autism-mri-diagnosis.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "autism_mri_diagnosis",
+      "target": "infant_brain_mri_processing"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "autism-mri-diagnosis.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "autism_mri_diagnosis_summary",
+      "target": "autism_mri_diagnosis"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "infant-brain-mri-processing.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "infant_brain_mri_processing_ibeat",
+      "target": "autism_mri_diagnosis_abide_dataset"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "flow-medical-image-generation.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "flow_medical_image_generation_longitudinal",
+      "target": "autism_mri_diagnosis_early_diagnosis"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "autism-mri-diagnosis.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "autism_mri_diagnosis_smri_classification_pipeline",
+      "target": "cortical_thickness_area_volume_measurement_cortical_thickness"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "cortical-thickness-area-volume-measurement.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "cortical_thickness_area_volume_measurement_confound_correction",
+      "target": "autism_mri_diagnosis_smri_classification_pipeline"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "brain-atlas-parcellation-dkt-mcrib-aal.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "brain_atlas_parcellation_dkt_mcrib_aal",
+      "target": "brain_segmentation_deep_learning_models"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "brain-atlas-parcellation-dkt-mcrib-aal.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "brain_atlas_parcellation_dkt_mcrib_aal",
+      "target": "cortical_thickness_area_volume_measurement"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "brain-atlas-parcellation-dkt-mcrib-aal.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "brain_atlas_parcellation_dkt_mcrib_aal",
+      "target": "fastsurfer_freesurfer_cortical_pipeline"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "brain-atlas-parcellation-dkt-mcrib-aal.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "brain_atlas_parcellation_dkt_mcrib_aal_summary",
+      "target": "brain_atlas_parcellation_dkt_mcrib_aal"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "fastsurfer-freesurfer-cortical-pipeline.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "fastsurfer_freesurfer_cortical_pipeline_desikan",
+      "target": "brain_atlas_parcellation_dkt_mcrib_aal_dk_dkt"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "brain-atlas-parcellation-dkt-mcrib-aal.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "brain_atlas_parcellation_dkt_mcrib_aal_unc_4d",
+      "target": "infant_brain_mri_processing_summary"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "fastsurfer-freesurfer-cortical-pipeline.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "fastsurfer_freesurfer_cortical_pipeline_aseg_mgz",
+      "target": "brain_atlas_parcellation_dkt_mcrib_aal_aseg_labels"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "brain-mri-counterfactual-generation.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "brain_mri_counterfactual_generation_summary",
+      "target": "brain_mri_counterfactual_generation"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "flow-medical-image-generation.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "flow_medical_image_generation",
+      "target": "brain_mri_counterfactual_generation"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "infant-brain-mri-processing.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "infant_brain_mri_processing",
+      "target": "brain_mri_counterfactual_generation"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "medical-image-generation-challenges.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "medical_image_generation_challenges",
+      "target": "brain_mri_counterfactual_generation"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "brain-mri-counterfactual-generation.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "brain_mri_counterfactual_generation_summary",
+      "target": "flow_medical_image_generation_summary"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "flow-medical-image-generation.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "flow_medical_image_generation_counterfactual",
+      "target": "brain_mri_counterfactual_generation_summary"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "medical-image-generation-challenges.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "medical_image_generation_challenges_anatomy",
+      "target": "brain_mri_counterfactual_generation_edit_head"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "medical-image-generation-challenges.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "medical_image_generation_challenges_hallucination",
+      "target": "brain_mri_counterfactual_generation_training_losses"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "brain-segmentation-deep-learning-models.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "brain_segmentation_deep_learning_models",
+      "target": "cortical_thickness_area_volume_measurement"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "brain-segmentation-deep-learning-models.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "brain_segmentation_deep_learning_models",
+      "target": "fastsurfer_freesurfer_cortical_pipeline"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "brain-segmentation-deep-learning-models.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "brain_segmentation_deep_learning_models_summary",
+      "target": "brain_segmentation_deep_learning_models"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "dinov3-3d-mri-self-supervised.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "dinov3_3d_mri_self_supervised_slice_encoder",
+      "target": "brain_segmentation_deep_learning_models_summary"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "brain-segmentation-deep-learning-models.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "brain_segmentation_deep_learning_models_nn_unet",
+      "target": "loss_function_debugging_dice_metric"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "brain-segmentation-deep-learning-models.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "brain_segmentation_deep_learning_models_edge_aware_loss",
+      "target": "loss_function_debugging_edge_loss_3d"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "cortical-thickness-area-volume-measurement.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "cortical_thickness_area_volume_measurement",
+      "target": "fastsurfer_freesurfer_cortical_pipeline"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "cortical-thickness-area-volume-measurement.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "cortical_thickness_area_volume_measurement_summary",
+      "target": "cortical_thickness_area_volume_measurement"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "fastsurfer-freesurfer-cortical-pipeline.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "fastsurfer_freesurfer_cortical_pipeline_output_structure",
+      "target": "cortical_thickness_area_volume_measurement_cortical_thickness"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "infant-brain-mri-processing.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "infant_brain_mri_processing_quality_metrics",
+      "target": "cortical_thickness_area_volume_measurement_cortical_thickness"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "cross-modal-medical-image-translation.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "cross_modal_medical_image_translation",
+      "target": "flow_medical_image_generation"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "cross-modal-medical-image-translation.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "cross_modal_medical_image_translation",
+      "target": "medical_image_generation_challenges"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "cross-modal-medical-image-translation.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "cross_modal_medical_image_translation_summary",
+      "target": "cross_modal_medical_image_translation"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "cross-modal-medical-image-translation.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "cross_modal_medical_image_translation_summary",
+      "target": "medical_image_generation_challenges_summary"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "cross-modal-medical-image-translation.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "cross_modal_medical_image_translation_gan",
+      "target": "cross_modal_medical_image_translation_syndiff"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "cross-modal-medical-image-translation.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "cross_modal_medical_image_translation_direct",
+      "target": "flow_medical_image_generation_direct"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "dataloader-data-parallel.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "dataloader_data_parallel",
+      "target": "loss_function_debugging"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "dataloader-data-parallel.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "dataloader_data_parallel",
+      "target": "multi_gpu_training_troubleshooting"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "dataloader-data-parallel.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "dataloader_data_parallel_summary",
+      "target": "dataloader_data_parallel"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "multi-gpu-training-troubleshooting.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "multi_gpu_training_troubleshooting_model_parallel",
+      "target": "dataloader_data_parallel_summary"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "dataloader-data-parallel.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "dataloader_data_parallel_num_workers",
+      "target": "multi_gpu_training_troubleshooting_ddp"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "dinov3-3d-mri-self-supervised.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "dinov3_3d_mri_self_supervised_summary",
+      "target": "dinov3_3d_mri_self_supervised"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "dinov3-3d-mri-self-supervised.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "dinov3_3d_mri_self_supervised_summary",
+      "target": "flow_medical_image_generation_3d_improvements"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "dinov3-3d-mri-self-supervised.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "dinov3_3d_mri_self_supervised_perceptual_loss",
+      "target": "loss_function_debugging_edge_loss_3d"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "dinov3-3d-mri-self-supervised.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "dinov3_3d_mri_self_supervised_high_frequency",
+      "target": "image_frequency_analysis_high_low_separation"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "docker-install-and-management.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docker_install_and_management_summary",
+      "target": "docker_install_and_management"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "fastsurfer-freesurfer-cortical-pipeline.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "fastsurfer_freesurfer_cortical_pipeline_summary",
+      "target": "fastsurfer_freesurfer_cortical_pipeline"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "flow-medical-image-generation.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "flow_medical_image_generation_summary",
+      "target": "flow_medical_image_generation"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "medical-image-generation-challenges.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "medical_image_generation_challenges",
+      "target": "flow_medical_image_generation"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "flow-medical-image-generation.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "flow_medical_image_generation_longitudinal",
+      "target": "infant_brain_mri_processing_growth_model"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "loss-function-debugging.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "loss_function_debugging_voxelmorph",
+      "target": "flow_medical_image_generation_longitudinal"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "medical-image-generation-challenges.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "medical_image_generation_challenges_small_data",
+      "target": "flow_medical_image_generation_longitudinal"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "hardware-precision-reproducibility.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "hardware_precision_reproducibility",
+      "target": "loss_function_debugging"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "hardware-precision-reproducibility.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "hardware_precision_reproducibility",
+      "target": "multi_gpu_training_troubleshooting"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "hardware-precision-reproducibility.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "hardware_precision_reproducibility_summary",
+      "target": "hardware_precision_reproducibility"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "multi-gpu-training-troubleshooting.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "multi_gpu_training_troubleshooting_pipeline_parallel",
+      "target": "hardware_precision_reproducibility_amp_behavior"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "histogram-matching.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "histogram_matching",
+      "target": "mri_brightness_consistency"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "histogram-matching.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "histogram_matching_summary",
+      "target": "histogram_matching"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "mri-brightness-consistency.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "mri_brightness_consistency_postprocessing",
+      "target": "histogram_matching_cdf_lut"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "histogram-matching.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "histogram_matching_information_leakage",
+      "target": "mri_brightness_consistency_postprocessing"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "image-frequency-analysis.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "image_frequency_analysis",
+      "target": "mri_brightness_consistency"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "image-frequency-analysis.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "image_frequency_analysis_summary",
+      "target": "image_frequency_analysis"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "image-frequency-analysis.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "image_frequency_analysis_summary",
+      "target": "mri_brightness_consistency_summary"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "infant-brain-mri-processing.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "infant_brain_mri_processing_summary",
+      "target": "infant_brain_mri_processing"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "latex-bibtex-typesetting.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "latex_bibtex_typesetting",
+      "target": "miccai_submission_and_abstract"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "latex-bibtex-typesetting.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "latex_bibtex_typesetting_summary",
+      "target": "latex_bibtex_typesetting"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "linux-user-management.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "linux_user_management_summary",
+      "target": "linux_user_management"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "loss-function-debugging.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "loss_function_debugging_summary",
+      "target": "loss_function_debugging"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "medical-image-generation-challenges.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "medical_image_generation_challenges_summary",
+      "target": "medical_image_generation_challenges"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "miccai-submission-and-abstract.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "miccai_submission_and_abstract_summary",
+      "target": "miccai_submission_and_abstract"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "mri-brightness-consistency.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "mri_brightness_consistency_summary",
+      "target": "mri_brightness_consistency"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "multi-gpu-training-troubleshooting.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "multi_gpu_training_troubleshooting_summary",
+      "target": "multi_gpu_training_troubleshooting"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "npm-nodejs-toolchain.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "npm_nodejs_toolchain",
+      "target": "npm_nodejs_toolchain_cursor"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "npm-nodejs-toolchain.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "npm_nodejs_toolchain",
+      "target": "npm_nodejs_toolchain_domestic_mirror"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "npm-nodejs-toolchain.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "npm_nodejs_toolchain",
+      "target": "npm_nodejs_toolchain_electron"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "npm-nodejs-toolchain.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "npm_nodejs_toolchain",
+      "target": "npm_nodejs_toolchain_node_js"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "npm-nodejs-toolchain.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "npm_nodejs_toolchain",
+      "target": "npm_nodejs_toolchain_npm"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "npm-nodejs-toolchain.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "npm_nodejs_toolchain",
+      "target": "npm_nodejs_toolchain_nvm"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ssh-remote-development.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "ssh_remote_development",
+      "target": "npm_nodejs_toolchain"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ppt-paper-presentation.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "ppt_paper_presentation",
+      "target": "paper_review_summarization"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ppt-paper-presentation.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "ppt_paper_presentation",
+      "target": "ppt_paper_presentation_compact_css"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ppt-paper-presentation.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "ppt_paper_presentation",
+      "target": "ppt_paper_presentation_formula_troubleshooting"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ppt-paper-presentation.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "ppt_paper_presentation",
+      "target": "ppt_paper_presentation_katex"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ppt-paper-presentation.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "ppt_paper_presentation",
+      "target": "ppt_paper_presentation_mathjax"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ppt-paper-presentation.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "ppt_paper_presentation",
+      "target": "ppt_paper_presentation_paper_presentation_structure"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ppt-paper-presentation.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "ppt_paper_presentation",
+      "target": "ppt_paper_presentation_python_pptx"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "psnr-ssim-3d-mri.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "psnr_ssim_3d_mri",
+      "target": "psnr_ssim_3d_mri_brain_mask"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "psnr-ssim-3d-mri.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "psnr_ssim_3d_mri",
+      "target": "psnr_ssim_3d_mri_data_range"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "psnr-ssim-3d-mri.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "psnr_ssim_3d_mri",
+      "target": "psnr_ssim_3d_mri_percentile_normalization"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "psnr-ssim-3d-mri.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "psnr_ssim_3d_mri",
+      "target": "psnr_ssim_3d_mri_psnr"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "psnr-ssim-3d-mri.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "psnr_ssim_3d_mri",
+      "target": "psnr_ssim_3d_mri_ssim"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "psnr-ssim-3d-mri.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "psnr_ssim_3d_mri",
+      "target": "psnr_ssim_3d_mri_volume_wise_vs_slice_wise"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "psnr-ssim-3d-mri.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "psnr_ssim_3d_mri",
+      "target": "ss_fse_isotropic_thick_slice"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "training-losses-generative-models.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "training_losses_generative_models",
+      "target": "psnr_ssim_3d_mri"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wandb-experiment-tracking.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "wandb_experiment_tracking",
+      "target": "psnr_ssim_3d_mri"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wavelet-flow-mri-generation.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "wavelet_flow_mri_generation",
+      "target": "psnr_ssim_3d_mri"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "wavelet-deformation-analysis.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "wavelet_deformation_analysis",
+      "target": "psnr_ssim_3d_mri"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "rectified-flow-basics.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "rectified_flow_basics",
+      "target": "rectified_flow_basics_cfm"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "rectified-flow-basics.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "rectified_flow_basics",
+      "target": "rectified_flow_basics_cnf"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "rectified-flow-basics.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "rectified_flow_basics",
+      "target": "rectified_flow_basics_few_step_sampling"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "rectified-flow-basics.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "rectified_flow_basics",
+      "target": "rectified_flow_basics_flow_matching"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "rectified-flow-basics.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "rectified_flow_basics",
+      "target": "rectified_flow_basics_ode_vs_sde"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "rectified-flow-basics.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "rectified_flow_basics",
+      "target": "rectified_flow_basics_rectified_flow"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "segmentation-mask-conditioned-diffusion.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "segmentation_mask_conditioned_diffusion",
+      "target": "rectified_flow_basics"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "rectified-flow-basics.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "rectified_flow_basics",
+      "target": "training_losses_generative_models"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "rectified-flow-basics.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "rectified_flow_basics",
+      "target": "vae_3d_medical_imaging"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "rectified-flow-basics.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "rectified_flow_basics",
+      "target": "wavelet_flow_mri_generation"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wavelet-deformation-analysis.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "wavelet_deformation_analysis",
+      "target": "rectified_flow_basics"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "segmentation-mask-conditioned-diffusion.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "segmentation_mask_conditioned_diffusion",
+      "target": "segmentation_mask_conditioned_diffusion_conditional_generation"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "segmentation-mask-conditioned-diffusion.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "segmentation_mask_conditioned_diffusion",
+      "target": "segmentation_mask_conditioned_diffusion_mask_concatenation"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "segmentation-mask-conditioned-diffusion.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "segmentation_mask_conditioned_diffusion",
+      "target": "segmentation_mask_conditioned_diffusion_one_hot"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "segmentation-mask-conditioned-diffusion.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "segmentation_mask_conditioned_diffusion",
+      "target": "segmentation_mask_conditioned_diffusion_stable_diffusion_tasks"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ss-fse-isotropic-thick-slice.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "ss_fse_isotropic_thick_slice",
+      "target": "segmentation_mask_conditioned_diffusion"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "vae-3d-medical-imaging.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "vae_3d_medical_imaging",
+      "target": "segmentation_mask_conditioned_diffusion"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wavelet-flow-mri-generation.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "wavelet_flow_mri_generation",
+      "target": "segmentation_mask_conditioned_diffusion"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ss-fse-isotropic-thick-slice.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "ss_fse_isotropic_thick_slice",
+      "target": "ss_fse_isotropic_thick_slice_ibis"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ss-fse-isotropic-thick-slice.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "ss_fse_isotropic_thick_slice",
+      "target": "ss_fse_isotropic_thick_slice_isotropic"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ss-fse-isotropic-thick-slice.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "ss_fse_isotropic_thick_slice",
+      "target": "ss_fse_isotropic_thick_slice_ss_fse"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ss-fse-isotropic-thick-slice.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "ss_fse_isotropic_thick_slice",
+      "target": "ss_fse_isotropic_thick_slice_thick_slice_simulation"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "ss-fse-isotropic-thick-slice.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "ss_fse_isotropic_thick_slice",
+      "target": "training_losses_generative_models"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "ss-fse-isotropic-thick-slice.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "ss_fse_isotropic_thick_slice",
+      "target": "wavelet_flow_mri_generation"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ssh-remote-development.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "ssh_remote_development",
+      "target": "ssh_remote_development_connection_refused"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ssh-remote-development.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "ssh_remote_development",
+      "target": "ssh_remote_development_file_transfer"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ssh-remote-development.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "ssh_remote_development",
+      "target": "ssh_remote_development_mineru"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ssh-remote-development.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "ssh_remote_development",
+      "target": "ssh_remote_development_ssh"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ssh-remote-development.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "ssh_remote_development",
+      "target": "ssh_remote_development_tmpfs"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ssh-remote-development.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "ssh_remote_development",
+      "target": "ssh_remote_development_vs_code_server"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "training-losses-generative-models.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "training_losses_generative_models",
+      "target": "training_losses_generative_models_combined_loss"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "training-losses-generative-models.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "training_losses_generative_models",
+      "target": "training_losses_generative_models_gram_texture_loss"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "training-losses-generative-models.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "training_losses_generative_models",
+      "target": "training_losses_generative_models_lpips_huber"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "training-losses-generative-models.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "training_losses_generative_models",
+      "target": "training_losses_generative_models_perceptual_loss_3d"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "training-losses-generative-models.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "training_losses_generative_models",
+      "target": "training_losses_generative_models_pseudo_huber"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "vae-3d-medical-imaging.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "vae_3d_medical_imaging",
+      "target": "training_losses_generative_models"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "wandb-experiment-tracking.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "wandb_experiment_tracking",
+      "target": "training_losses_generative_models"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "wavelet-flow-mri-generation.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "wavelet_flow_mri_generation",
+      "target": "training_losses_generative_models"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "vae-3d-medical-imaging.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "vae_3d_medical_imaging",
+      "target": "vae_3d_medical_imaging_2d_to_3d"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "vae-3d-medical-imaging.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "vae_3d_medical_imaging",
+      "target": "vae_3d_medical_imaging_latent_space"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "vae-3d-medical-imaging.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "vae_3d_medical_imaging",
+      "target": "vae_3d_medical_imaging_maisi"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "vae-3d-medical-imaging.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "vae_3d_medical_imaging",
+      "target": "vae_3d_medical_imaging_monai_autoencoderkl"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "vae-3d-medical-imaging.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "vae_3d_medical_imaging",
+      "target": "vae_3d_medical_imaging_sdxl_vae"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "vae-3d-medical-imaging.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "vae_3d_medical_imaging",
+      "target": "wavelet_flow_mri_generation"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "wandb-experiment-tracking.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "wandb_experiment_tracking",
+      "target": "vae_3d_medical_imaging"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wandb-experiment-tracking.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "wandb_experiment_tracking",
+      "target": "wandb_experiment_tracking_code_security"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wandb-experiment-tracking.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "wandb_experiment_tracking",
+      "target": "wandb_experiment_tracking_multiprocessing_trap"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wandb-experiment-tracking.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "wandb_experiment_tracking",
+      "target": "wandb_experiment_tracking_resume"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wandb-experiment-tracking.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "wandb_experiment_tracking",
+      "target": "wandb_experiment_tracking_table"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wandb-experiment-tracking.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "wandb_experiment_tracking",
+      "target": "wandb_experiment_tracking_wandb_init"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "wandb-experiment-tracking.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "wandb_experiment_tracking",
+      "target": "wavelet_flow_mri_generation"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wavelet-deformation-analysis.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "wavelet_deformation_analysis",
+      "target": "wavelet_deformation_analysis_3d_mri_pipeline"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wavelet-deformation-analysis.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "wavelet_deformation_analysis",
+      "target": "wavelet_deformation_analysis_dt_cwt"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wavelet-deformation-analysis.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "wavelet_deformation_analysis",
+      "target": "wavelet_deformation_analysis_dwt"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wavelet-deformation-analysis.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "wavelet_deformation_analysis",
+      "target": "wavelet_deformation_analysis_phase_difference"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wavelet-deformation-analysis.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "wavelet_deformation_analysis",
+      "target": "wavelet_deformation_analysis_shift_variance"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wavelet-deformation-analysis.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "wavelet_deformation_analysis",
+      "target": "wavelet_deformation_analysis_swt"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wavelet-deformation-analysis.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "wavelet_deformation_analysis",
+      "target": "wavelet_flow_mri_generation"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wavelet-flow-mri-generation.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "wavelet_flow_mri_generation",
+      "target": "wavelet_flow_mri_generation_fixed_wavelet"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wavelet-flow-mri-generation.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "wavelet_flow_mri_generation",
+      "target": "wavelet_flow_mri_generation_frequency_decoupling"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wavelet-flow-mri-generation.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "wavelet_flow_mri_generation",
+      "target": "wavelet_flow_mri_generation_implicit_alignment"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wavelet-flow-mri-generation.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "wavelet_flow_mri_generation",
+      "target": "wavelet_flow_mri_generation_label_as_reward"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wavelet-flow-mri-generation.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "wavelet_flow_mri_generation",
+      "target": "wavelet_flow_mri_generation_longitudinal_constraint"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wavelet-flow-mri-generation.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "wavelet_flow_mri_generation",
+      "target": "wavelet_flow_mri_generation_wavediff"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wavelet-flow-mri-generation.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "wavelet_flow_mri_generation",
+      "target": "wavelet_flow_mri_generation_wdm"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wavelet-flow-mri-generation.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "wavelet_flow_mri_generation",
+      "target": "wavelet_flow_mri_generation_wrf_dg"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "paper-review-summarization.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "paper_review_summarization",
+      "target": "paper_review_summarization_ai_tools"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "paper-review-summarization.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "paper_review_summarization",
+      "target": "paper_review_summarization_arxiv_qa"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "paper-review-summarization.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "paper_review_summarization",
+      "target": "paper_review_summarization_four_part_review"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "paper-review-summarization.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "paper_review_summarization",
+      "target": "paper_review_summarization_reliable_ai_summary"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "paper-review-summarization.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "paper_review_summarization",
+      "target": "paper_review_summarization_three_part_summary"
+    }
+  ],
+  "hyperedges": []
+}

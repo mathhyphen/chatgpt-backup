@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Knowledge Graph</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:#0a0a0f;color:#c0b8d0;font-family:'Segoe UI',sans-serif;overflow:hidden;height:100vh}
+    #graph-container{width:100vw;height:100vh;position:fixed;top:0;left:0}
+    #info{position:fixed;top:20px;left:20px;z-index:10;pointer-events:none}
+    #info h1{font-size:18px;font-weight:600;color:#e0d8f0;text-shadow:0 0 20px rgba(100,80,200,.5)}
+    #info p{font-size:12px;color:#8880a0;margin-top:4px}
+    #tooltip{position:fixed;z-index:20;background:rgba(15,15,30,.92);border:1px solid rgba(120,100,220,.4);border-radius:8px;padding:10px 14px;font-size:13px;max-width:300px;pointer-events:none;opacity:0;transition:opacity .15s;backdrop-filter:blur(8px);box-shadow:0 4px 20px rgba(0,0,0,.6)}
+    #tooltip.visible{opacity:1}
+    #tooltip .tt-title{color:#e0d8f0;font-weight:600;margin-bottom:4px}
+    #tooltip .tt-type{display:inline-block;font-size:10px;padding:1px 6px;border-radius:4px;background:rgba(120,100,220,.2);color:#a090d0;margin-bottom:4px}
+    #tooltip .tt-community{font-size:11px;color:#8070a0}
+    #controls{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:10;display:flex;gap:8px;align-items:center}
+    #controls button,#controls a{background:rgba(30,25,50,.8);border:1px solid rgba(100,80,200,.3);color:#c0b8d0;padding:6px 14px;border-radius:6px;font-size:12px;cursor:pointer;backdrop-filter:blur(4px);transition:all .2s;text-decoration:none}
+    #controls button:hover,#controls a:hover{background:rgba(60,50,120,.6);border-color:rgba(140,120,240,.5)}
+    #search-box{background:rgba(15,15,30,.85);border:1px solid rgba(100,80,200,.3);color:#c0b8d0;padding:6px 12px;border-radius:6px;font-size:12px;width:200px;outline:none;backdrop-filter:blur(4px)}
+    #search-box:focus{border-color:rgba(140,120,240,.6)}
+    #search-box::placeholder{color:#605070}
+    #legend{position:fixed;right:16px;top:50%;transform:translateY(-50%);z-index:10;pointer-events:none;display:flex;flex-direction:column;gap:3px;background:rgba(10,10,20,.5);padding:8px;border-radius:6px;backdrop-filter:blur(4px)}
+    #legend .legend-item{display:flex;align-items:center;gap:5px;font-size:9px;color:#9080a8}
+    #legend .legend-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+    #loading{position:fixed;top:0;left:0;width:100vw;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:100;background:#0a0a0f;color:#c0b8d0;transition:opacity .5s}
+    #loading.hidden{opacity:0;pointer-events:none}
+    .loader{width:32px;height:32px;border:2px solid rgba(100,80,200,.2);border-top-color:#8870d0;border-radius:50%;animation:spin .8s linear infinite;margin-bottom:12px}
+    @keyframes spin{to{transform:rotate(360deg)}}
+  </style>
+</head>
+<body>
+  <div id="loading"><div class="loader"></div><div>Loading knowledge graph...</div></div>
+  <div id="info"><h1>&#x1f9e0; 3D Knowledge Graph</h1><p>35 units &middot; 228 concepts &middot; 170 relationships</p></div>
+  <div id="legend"></div>
+  <div id="tooltip"><div class="tt-title"></div><div><span class="tt-type"></span></div><div class="tt-community"></div></div>
+  <div id="controls">
+    <button id="btn-auto" onclick="window.GR=!window.GR;this.textContent=window.GR?'&#x27f3; Auto-rotate':'&#x23f8; Stop'">&#x27f3; Auto-rotate</button>
+    <a href="index.html">&#x2190; Back to main</a>
+    <input id="search-box" type="text" placeholder="Search nodes..." oninput="searchNodes(this.value)">
+  </div>
+  <div id="graph-container"></div>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170/examples/jsm/",
+      "3d-force-graph": "https://cdn.jsdelivr.net/npm/3d-force-graph@2.7/dist/3d-force-graph.mjs"
+    }
+  </script>
+  <script type="module">
+    import ForceGraph3D from "3d-force-graph";
+
+    const COM_LABELS = {
+      0:"Diffusion & Signal",1:"Gen Model Training",2:"Medical Image Gen",
+      3:"Dev Tools & SSH",4:"Wavelet & Quality",5:"Paper Workflow",
+      6:"Brain Parcellation",7:"Infrastructure",8:"Rectified Flow",
+      9:"Image Post-Proc",10:"Early Diagnosis",11:"Cortical Pipeline",
+      12:"LaTeX & Submission",13:"Deep Learning",14:"Self-Supervised 3D"
+    };
+    const COLORS = ["#f72585","#b5179e","#7209b7","#3a0ca3","#4361ee",
+      "#4cc9f0","#06d6a0","#fb5607","#ff006e","#8338ec",
+      "#3a86ff","#80ed99","#f77f00","#e36414","#9b5de5",
+      "#00bbf9","#00f5d4","#fee440","#d90368","#0ead69"];
+    const color = n => COLORS[n % COLORS.length];
+
+    const res = await fetch("graph.json");
+    const raw = await res.json();
+
+    const graphData = {
+      nodes: raw.nodes.map(n => ({
+        id: n.id, name: n.label || n.id.replace(/_/g," "),
+        group: n.community != null ? n.community : 0,
+        val: n.file_type === "document" ? 12 : (n.val || 3),
+        type: n.file_type || "concept"
+      })),
+      links: raw.links.map(l => ({
+        source: l.source, target: l.target, value: l.weight || 1
+      }))
+    };
+
+    // Legend
+    const shown = new Set();
+    const leg = document.getElementById("legend");
+    for (const n of graphData.nodes) {
+      if (n.type === "document" && !shown.has(n.group)) {
+        shown.add(n.group);
+        const d = document.createElement("div"); d.className="legend-item";
+        d.innerHTML = '<span class="legend-dot" style="background:'+color(n.group)+'"></span> '+(COM_LABELS[n.group]||"C"+n.group);
+        leg.appendChild(d);
+      }
+    }
+
+    window.GR = true;
+    const graph = ForceGraph3D({controlType:"orbit"})(document.getElementById("graph-container"))
+      .graphData(graphData).nodeId("id").nodeColor(n=>color(n.group)).nodeVal("val")
+      .nodeThreeObject(n => {
+        const isDoc = n.type === "document";
+        const sz = isDoc ? 8 : 3;
+        const sph = new THREE.Mesh(
+          new THREE.SphereGeometry(sz, isDoc?24:16),
+          new THREE.MeshStandardMaterial({
+            color: new THREE.Color(color(n.group)),
+            metalness: isDoc?.5:.2, roughness: isDoc?.3:.5,
+            emissive: new THREE.Color(color(n.group)),
+            emissiveIntensity: isDoc?.15:.05,
+            transparent: true, opacity: isDoc?1:.75
+          })
+        );
+        if (isDoc) {
+          const ring = new THREE.Mesh(
+            new THREE.RingGeometry(sz*1.6,sz*1.8,32),
+            new THREE.MeshBasicMaterial({color:new THREE.Color(color(n.group)),transparent:true,opacity:.2,side:THREE.DoubleSide})
+          );
+          ring.position.z=.1; sph.add(ring);
+        }
+        return sph;
+      })
+      .linkColor(l => {
+        const g = (l.source && l.source.group != null) ? l.source.group : 0;
+        const cl = new THREE.Color(color(g)); cl.multiplyScalar(.7);
+        return cl;
+      })
+      .linkOpacity(.2).linkWidth(l=>Math.min(l.value||1,2))
+      .backgroundColor("#0a0a0f").showNavInfo(false).enableNodeDrag(false)
+      .onNodeClick(n => { graph.centerAt(n.x,n.y,400); graph.zoom(3,400); })
+      .onNodeHover(n => {
+        const t = document.getElementById("tooltip");
+        if (n) {
+          t.querySelector(".tt-title").textContent = n.name;
+          t.querySelector(".tt-type").textContent = n.type==="document" ? "Knowledge Unit" : "Concept";
+          t.querySelector(".tt-community").textContent = COM_LABELS[n.group]||"Community "+n.group;
+          t.classList.add("visible");
+        } else t.classList.remove("visible");
+      })
+      .d3AlphaDecay(.02).d3VelocityDecay(.3);
+
+    // Auto-rotate
+    let ang = 0;
+    setInterval(() => {
+      if (window.GR) {
+        ang += .003;
+        const c = graph.cameraPosition();
+        const r = Math.sqrt(c.x*c.x + c.z*c.z);
+        graph.cameraPosition({x:r*Math.sin(ang),y:c.y,z:r*Math.cos(ang)},{x:0,y:0,z:0});
+      }
+    }, 20);
+
+    // Mouse interaction
+    let rt; const ce = document.getElementById("graph-container");
+    ce.addEventListener("mousedown",()=>{window.GR=false;document.getElementById("btn-auto").textContent="Stop";clearTimeout(rt)});
+    ce.addEventListener("mouseup",()=>{rt=setTimeout(()=>{window.GR=true;document.getElementById("btn-auto").textContent="Auto-rotate"},3000)});
+    ce.addEventListener("wheel",()=>{window.GR=false;document.getElementById("btn-auto").textContent="Stop";clearTimeout(rt);rt=setTimeout(()=>{window.GR=true;document.getElementById("btn-auto").textContent="Auto-rotate"},3000)});
+    ce.addEventListener("mousemove",e=>{const t=document.getElementById("tooltip");t.style.left=(e.clientX+16)+"px";t.style.top=(e.clientY+16)+"px"});
+
+    // Search
+    window.searchNodes = q => {
+      if (!q) { graph.nodeColor(n=>color(n.group)).nodeVal("val"); graph.zoomToFit(400); return; }
+      const ql = q.toLowerCase();
+      const match = new Set(graphData.nodes.filter(n=>n.name.toLowerCase().includes(ql)).map(n=>n.id));
+      graph.nodeColor(n=>match.has(n.id)?color(n.group):"rgba(60,50,80,.3)").nodeVal(n=>match.has(n.id)?(n.type==="document"?18:6):1);
+      const f = graphData.nodes.find(n=>match.has(n.id));
+      if (f) { graph.centerAt(f.x||0,f.y||0,600); graph.zoom(2.5,600); }
+    };
+
+    document.getElementById("loading").classList.add("hidden");
+    setTimeout(()=>graph.zoomToFit(600,50),100);
+    window.addEventListener("resize",()=>setTimeout(()=>graph.width(window.innerWidth).height(window.innerHeight),100));
+  </script>
+</body>
+</html>
