@@ -1,1 +1,1 @@
-window.CFG = { SALT_B64: "eHkSAA9u+7d3nPxdOdx9KQ==", ITERATIONS: 210000, ASSETS_RAW: "https://raw.githubusercontent.com/mathhyphen/chatgpt-backup-assets/main" };
+window.CFG = { SALT_B64: "lxG5aqJvpxqVVfEUI+fFBg==", ITERATIONS: 210000, ASSETS_RAW: "https://raw.githubusercontent.com/mathhyphen/chatgpt-backup-assets/main" };
