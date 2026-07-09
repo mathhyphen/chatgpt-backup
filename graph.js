@@ -2,6 +2,8 @@ var COM_LABELS={0:"Diffusion & Signal",1:"Gen Model Training",2:"Medical Image G
 var COLORS=["#f72585","#b5179e","#7209b7","#3a0ca3","#4361ee","#4cc9f0","#06d6a0","#fb5607","#ff006e","#8338ec","#3a86ff","#80ed99","#f77f00","#e36414","#9b5de5","#00bbf9","#00f5d4","#fee440","#d90368","#0ead69"];
 function c(n){return COLORS[n%COLORS.length];}
 
+// Timeout: 12s fallback for CDN issues
+setTimeout(function(){var d=document.getElementById("loading");if(d&&d.className.indexOf("hidden")<0){d.innerHTML="<div style=color:#f72585>Timeout - <a href=graph.html style=color:#4cc9f0>retry</a></div>"}},12000);
 fetch("graph.json").then(function(r){return r.json()}).then(function(raw){
   var gd={nodes:[],links:[]};
   raw.nodes.forEach(function(n){gd.nodes.push({id:n.id,name:n.label||n.id.replace(/_/g," "),group:n.community!=null?n.community:0,val:n.file_type==="document"?12:(n.val||3),type:n.file_type||"concept"})});
