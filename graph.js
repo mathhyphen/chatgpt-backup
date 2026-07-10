@@ -5,12 +5,14 @@ function c(n){var h=((Number(n)||0)*137.508)%360;return "hsl("+h.toFixed(1)+",82
 setTimeout(function(){var d=document.getElementById("loading");if(d&&d.className.indexOf("hidden")<0){d.innerHTML="<div style=color:#f72585>Timeout - <a href=graph.html style=color:#4cc9f0>retry</a></div>"}},12000);
 fetch("graph.json").then(function(r){return r.json()}).then(function(raw){
   var gd={nodes:[],links:[]};
-  raw.nodes.forEach(function(n){gd.nodes.push({id:n.id,name:n.label||n.id.replace(/_/g," "),group:n.community!=null?n.community:0,val:n.file_type==="document"?12:(n.val||3),type:n.file_type||"concept"})});
+  raw.nodes.forEach(function(n){var t=n.type||n.file_type||"concept";gd.nodes.push({id:n.id,name:n.label||n.name||n.id.replace(/_/g," "),group:n.community!=null?n.community:(n.group!=null?n.group:0),val:t==="document"?12:(n.val||3),type:t})});
   (raw.links||[]).forEach(function(l){gd.links.push({source:l.source,target:l.target,value:l.weight||1})});
 
   var leg=document.getElementById("legend");
   leg.innerHTML='<div class="legend-title">知识节点</div>';
-  gd.nodes.filter(function(n){return n.type==="document"}).sort(function(a,b){return a.name.localeCompare(b.name,"zh-Hans-CN")}).forEach(function(n){var d=document.createElement("div");d.className="legend-item";d.setAttribute("data-node",n.id);d.innerHTML='<span class="legend-dot" style="background:'+c(n.group)+'"></span><span>'+n.name+'</span>';leg.appendChild(d)});
+  var listNodes=gd.nodes.filter(function(n){return n.type==="document"});
+  if(!listNodes.length){listNodes=gd.nodes.slice().sort(function(a,b){return (b.val||0)-(a.val||0)}).slice(0,120)}
+  listNodes.sort(function(a,b){return a.name.localeCompare(b.name,"zh-Hans-CN")}).forEach(function(n){var d=document.createElement("div");d.className="legend-item";d.setAttribute("data-node",n.id);d.innerHTML='<span class="legend-dot" style="background:'+c(n.group)+'"></span><span>'+n.name+'</span>';leg.appendChild(d)});
 
   var focusedId=null, focusedGroup=null, nodeById={};
   gd.nodes.forEach(function(n){nodeById[n.id]=n});
