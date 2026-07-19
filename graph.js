@@ -186,6 +186,7 @@
       .width(window.innerWidth).height(window.innerHeight)
       .d3AlphaDecay(.02).d3VelocityDecay(.3)
       .warmupTicks(60)
+      .cooldownTicks(300)
       .linkOpacity(.42)
       .linkCurvature(function (l) { return l.type === 'related' ? .28 : .12; })
       .linkDirectionalParticleWidth(1.7)
@@ -293,6 +294,7 @@
     var idleTimer = null;
     controls.addEventListener('start', function () {
       controls.autoRotate = false; clearTimeout(idleTimer);
+      fitDone = true;  /* user took control: never auto-fit again */
     });
     controls.addEventListener('end', function () {
       clearTimeout(idleTimer);
@@ -544,6 +546,21 @@
       syncDock();
     };
     document.getElementById('btn-fit').onclick = function () { graph.zoomToFit(900, 70); };
+
+    /* zoom buttons: scale camera distance from the orbit target */
+    function zoomStep(f) {
+      var tg = graph.controls().target;
+      var cam = graph.cameraPosition();
+      var dx = cam.x - tg.x, dy = cam.y - tg.y, dz = cam.z - tg.z;
+      var d = Math.sqrt(dx * dx + dy * dy + dz * dz) || 1;
+      var nd = d * f;
+      if (nd < 22) f = 22 / d; else if (nd > 3200) f = 3200 / d;
+      graph.cameraPosition(
+        { x: tg.x + dx * f, y: tg.y + dy * f, z: tg.z + dz * f },
+        { x: tg.x, y: tg.y, z: tg.z }, 280);
+    }
+    document.getElementById('btn-zoom-in').onclick = function () { zoomStep(.72); };
+    document.getElementById('btn-zoom-out').onclick = function () { zoomStep(1.38); };
     document.getElementById('btn-reset').onclick = function () { resetFocus(); };
     document.getElementById('btn-groups').onclick = function () {
       document.getElementById('groups').classList.toggle('open');
@@ -566,6 +583,8 @@
       else if (k === 'l') btnLabels.onclick();
       else if (k === 'b' && btnBloom) btnBloom.onclick();
       else if (k === 'f') graph.zoomToFit(900, 70);
+      else if (k === '+' || k === '=') zoomStep(.72);
+      else if (k === '-' || k === '_') zoomStep(1.38);
     });
 
     /* ---------- stats count-up ---------- */
@@ -589,7 +608,13 @@
     graph.cameraPosition({ x: 0, y: 90, z: 1750 }, { x: 0, y: 0, z: 0 }, 0);
     loadEl.classList.add('hidden');
     setTimeout(function () { graph.zoomToFit(2300, 64); }, 350);
-    graph.onEngineStop(function () { graph.zoomToFit(900, 64); });
+    /* auto-fit exactly once (first engine stop); never override user zoom */
+    var fitDone = false;
+    graph.onEngineStop(function () {
+      if (fitDone) return;
+      fitDone = true;
+      graph.zoomToFit(900, 64);
+    });
 
     /* deep-link: graph.html?focus=<node-id> */
     try {
