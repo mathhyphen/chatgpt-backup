@@ -4,1952 +4,2869 @@
   "graph": {
     "name": "ChatGPT Backup Wiki Knowledge Graph",
     "source": "sanitized wiki units only",
-    "units": 19,
-    "communities": 7
-  },
-  "groups": {
-    "0": "医学影像 · 反事实生成",
-    "1": "生物电 · 形态发生",
-    "2": "牙科 · 纳米材料",
-    "3": "局域网 · 文件传输",
-    "4": "姿态估计 · MediaPipe",
-    "5": "论文答辩 · PPT",
-    "6": "历史 · 考古"
+    "units": 39,
+    "groupLabels": {
+      "1": "医学影像",
+      "2": "生成模型",
+      "3": "Agent 与 Wiki 工具链",
+      "4": "基础设施",
+      "5": "论文工作流",
+      "6": "脑区分割",
+      "7": "训练工程",
+      "23": "LaTeX / BibTeX 排版技",
+      "28": "图像频域分析与高低频分离",
+      "35": "硬件精度与训练可复现性",
+      "41": "npm / Node.js 与前端工",
+      "43": "皮层厚度、表面积、体积测量与共变网络",
+      "44": "损失函数调试与分割评估",
+      "51": "小波域中的图像形变分析",
+      "59": "大脑分割深度学习模型"
+    },
+    "stats": {
+      "documents": 39,
+      "concepts": 156,
+      "links": 320,
+      "groups": 15
+    }
   },
   "nodes": [
     {
-      "id": "medical-image-counterfactual-generation",
-      "name": "医学影像反事实生成方法全景",
-      "label": "医学影像反事实生成方法全景",
-      "type": "document",
-      "group": 0,
-      "community": 0,
-      "val": 6,
-      "degree": 10,
-      "tags": [
-        "#医学影像",
-        "#反事实生成",
-        "#扩散模型",
-        "#因果推断",
-        "#文献综述"
-      ],
-      "summary": "医学影像反事实生成（counterfactual generation）要回答的问题是:「同一个人，如果疾病状态不同，影像会长什么样」。它不是普通图像编辑——要求改动只落在疾病相关区域，其余解剖结构严格保持。本单元梳理三类反事实任务、五条质量判据、七类方法谱系、代表方法、2024–2026 趋势，以及一个可用于选题的四层统一框架。"
-    },
-    {
-      "id": "maisi-vae-counterfactual-roadmap",
-      "name": "无配对 3D MRI 反事实生成:MAISI-VAE 务实方法路线",
-      "label": "无配对 3D MRI 反事实生成:MAISI-VAE 务实方法路线",
-      "type": "document",
-      "group": 0,
-      "community": 0,
-      "val": 6,
-      "degree": 10,
-      "tags": [
-        "#医学影像",
-        "#反事实生成",
-        "#MAISI",
-        "#rectified-flow",
-        "#normative-model",
-        "#研究路线"
-      ],
-      "summary": "针对「无配对 3D 神经退行 MRI」场景的一套完整、可落地的反事实生成研究路线:冻结 MAISI VAE 潜空间,先做静态 latent 干预（SARLI/NORDS）拿到可发表的基线,再升级到条件 Rectified Flow + FlowEdit 采样,最终加 normative 异常图引导实现区域自适应编辑。包含三篇对标论文拆解、诚实的新颖性评估、normative abnormality profile 的统计细节、三阶段收敛"
-    },
-    {
-      "id": "flow-matching-editing-methods",
-      "name": "Flow Matching 图像编辑与 Inversion 方法全景(2025.7-2026.7)",
-      "label": "Flow Matching 图像编辑与 Inversion 方法全景(2025.7-2026.7)",
-      "type": "document",
-      "group": 0,
-      "community": 0,
-      "val": 6,
-      "degree": 5,
-      "tags": [
-        "#flow-matching",
-        "#图像编辑",
-        "#inversion",
-        "#文献综述"
-      ],
-      "summary": "2025 年中到 2026 年中一年间,flow matching / rectified flow 框架下的图像编辑与 inversion 方法爆发（约 35 篇核心 + 8 篇基线,整理截至 h-Flow 2026-07-12）。本单元按六条技术路线归类这些方法,解释「为什么不能只看重建 PSNR 选方法」,并给出对 3D MRI 反事实生成的选型启发。"
-    },
-    {
-      "id": "flowalign-anomaly-aware-counterfactual",
-      "name": "FlowAlign 论文解析与异常感知医学扩展",
-      "label": "FlowAlign 论文解析与异常感知医学扩展",
-      "type": "document",
-      "group": 0,
-      "community": 0,
-      "val": 6,
-      "degree": 9,
-      "tags": [
-        "#flow-matching",
-        "#FlowEdit",
-        "#FlowAlign",
-        "#反事实生成",
-        "#医学影像"
-      ],
-      "summary": "FlowAlign（arXiv 2505.23145）是 FlowEdit 的「轨迹受控进阶版」:在 inversion-free 的源→目标直接运输之上,加一个终点干净估计的源一致性正则,把编辑轨迹拉向既改得动又不丢源结构的方向。本单元给出 FlowEdit / FlowAlign 的公式拆解,并推演其在医学反事实中的关键改造——**异常感知（anomaly-aware）区域加权**,解决「全局源保持」与「病灶该改、正常组织该保」的矛"
-    },
-    {
-      "id": "rae-3dino-latent-dit-counterfactual",
-      "name": "RAE + 3DINO 潜空间 DiT 反事实生成项目设计",
-      "label": "RAE + 3DINO 潜空间 DiT 反事实生成项目设计",
-      "type": "document",
-      "group": 0,
-      "community": 0,
-      "val": 6,
-      "degree": 8,
-      "tags": [
-        "#医学影像",
-        "#3DINO",
-        "#RAE",
-        "#DiT",
-        "#反事实生成",
-        "#项目方案"
-      ],
-      "summary": "一个具体的 3D MRI 反事实生成项目方案:冻结 3DINO 自监督模型提取 patch token 特征作为语义潜空间（RAE 思路,Representation AutoEncoder），训练轻量 3D ViT decoder 完成重建获得 Gate 1,再在该潜空间上训练条件 flow-matching DiT 获得类条件生成（Gate 2）,最后用「部分加噪 + 目标类引导 + ROI 掩膜」做反事实采样。核心卖点:用自监督表"
-    },
-    {
-      "id": "3d-medical-dit-training",
-      "name": "3D 医学影像 DiT 训练要点与 VolDiT 分析",
-      "label": "3D 医学影像 DiT 训练要点与 VolDiT 分析",
-      "type": "document",
-      "group": 0,
-      "community": 0,
-      "val": 6,
-      "degree": 9,
-      "tags": [
-        "#医学影像",
-        "#DiT",
-        "#3D生成",
-        "#训练工程",
-        "#VolDiT"
-      ],
-      "summary": "把 DiT 从 2D 自然图像搬到 3D 医学体数据时,大部分 2D 经验不能直接抄。本单元整理一组具体的工程要点:latent 统计检查、token 爆炸、位置编码、adaLN-Zero、v-prediction、timestep 分桶日志、两阶段反事实设计、显存预算、DiT V1 配置,以及对 VolDiT（3D 医学视频/体数据 DiT）的拆解。结论:先用 MAISI VAE + 3D DiT 做主 baseline,3DINO-"
-    },
-    {
-      "id": "sota-image-editing-mechanisms",
-      "name": "顶尖图像编辑模型的局部编辑机制(对 3D MRI 的启发)",
-      "label": "顶尖图像编辑模型的局部编辑机制(对 3D MRI 的启发)",
-      "type": "document",
-      "group": 0,
-      "community": 0,
-      "val": 6,
-      "degree": 6,
-      "tags": [
-        "#图像编辑",
-        "#DiT",
-        "#GPT-Image",
-        "#Seedream",
-        "#机制分析"
-      ],
-      "summary": "拆解 GPT Image 2、SeedEdit 3.0、Seedream 4.0（并对 5.0 Pro 做合理推断）这类顶尖图像编辑模型「只改局部、其余不动」的实现机制。核心结论:它们做的不是像素级修改,而是**局部条件反事实重生成**;保持能力来自数据与训练设计,不是单一的 mask 技巧。本单元抽象出五模块框架,并给出对 3D MRI 反事实生成的具体启发。"
-    },
-    {
-      "id": "medical-statistics-roc-auc",
-      "name": "医学统计建模:回归、R2、ROC/AUC 与增量预测价值",
-      "label": "医学统计建模:回归、R2、ROC/AUC 与增量预测价值",
-      "type": "document",
-      "group": 0,
-      "community": 0,
-      "val": 6,
-      "degree": 2,
-      "tags": [
-        "#医学统计",
-        "#logistic回归",
-        "#ROC",
-        "#AUC",
-        "#R方",
-        "#增量价值"
-      ],
-      "summary": "医学统计分析「年龄、性别、某指标与疾病关系」的标准范式:多变量回归校正混杂 → 报告 OR/R² → ROC/AUC 评估诊断效能 → 新增指标时做增量价值分析。本单元还澄清一组高频误区:R² 不是诊断正确率、AUC=1 往往只是训练集表观性能、AUC 饱和（都=1）时要用 IDI/NRI/discrimination slope 等替代指标。"
-    },
-    {
-      "id": "mri-preprocessing-pipeline",
-      "name": "成人神经退行 T1 MRI 预处理流水线",
-      "label": "成人神经退行 T1 MRI 预处理流水线",
-      "type": "document",
-      "group": 0,
-      "community": 0,
-      "val": 6,
-      "degree": 7,
-      "tags": [
-        "#医学影像",
-        "#MRI预处理",
-        "#ANTs",
-        "#SynthStrip",
-        "#MAISI"
-      ],
-      "summary": "面向成人神经退行疾病 T1 MRI 生成/反事实研究的预处理链决策记录。核心结论:SynthStrip 剥颅 → masked N4 偏场校正 → rigid（6DOF）配准 → 共同 reference grid 固定 crop → fixed spacing → MAISI percentile 强度归一。排除 iBEAT（婴幼儿工具）、不跑完整 recon-all、第一版不做非线性配准——因为非线性会把要研究的疾病形变「吃掉」。"
-    },
-    {
-      "id": "supersynth-freesurfer",
-      "name": "SuperSynth:FreeSurfer 统一多任务分析模块",
-      "label": "SuperSynth:FreeSurfer 统一多任务分析模块",
-      "type": "document",
-      "group": 0,
-      "community": 0,
-      "val": 6,
-      "degree": 8,
-      "tags": [
-        "#医学影像",
-        "#FreeSurfer",
-        "#SuperSynth",
-        "#分割",
-        "#工具"
-      ],
-      "summary": "SuperSynth 是 FreeSurfer 团队的新一代统一分析模块（命令 `mri_super_synth`）:单个网络同时完成解剖分割、WMH 检测、MNI 配准、1mm 各向同性合成（T1/T2/FLAIR）与 Dice 质量控制,且对输入对比度、分辨率、低场强、离体扫描、单半球数据都鲁棒。在研究管线中的正确定位:**提供结构标签、疾病 ROI 先验与 QC,但不要让它的 MNI warp 进入生成模型输入**。"
-    },
-    {
-      "id": "monai-medical-image-metadata",
-      "name": "MONAI 读取医学影像 shape 与 spacing",
-      "label": "MONAI 读取医学影像 shape 与 spacing",
-      "type": "document",
-      "group": 0,
-      "community": 0,
-      "val": 6,
-      "degree": 7,
-      "tags": [
-        "#MONAI",
-        "#医学影像",
-        "#metadata",
-        "#Python"
-      ],
-      "summary": "用 MONAI 读取医学影像（NIfTI 等）后,体素间距（spacing）不在 tensor 里而在 metadata 字典中。本单元记录正确的取法和批量统计 shape/spacing 分布的代码模式——这是决定预处理 fixed spacing 的前置步骤。"
-    },
-    {
-      "id": "bioelectric-morphogenesis",
-      "name": "生物电形态发生理论",
-      "label": "生物电形态发生理论",
-      "type": "document",
-      "group": 1,
-      "community": 1,
-      "val": 6,
-      "degree": 0,
-      "tags": [
-        "#生物电",
-        "#形态发生",
-        "#发育生物学",
-        "#概念辨析"
-      ],
-      "summary": "「生物电场决定生物形态」这一说法的现代科学版本与历史/伪科学版本辨析。现代版本是 Levin 学派的发育生物电学:细胞膜电位（V_mem）的空间图样是形态发生的上游调控信号,有实验证据;历史版本如 Burr 的 L-field 属强主张、非主流;Sheldrake 的「形态共振」则不是科学理论。"
-    },
-    {
-      "id": "codex-chat-to-wiki-tooling",
-      "name": "Agent 聊天记录 → Wiki / 知识库工具链",
-      "label": "Agent 聊天记录 → Wiki / 知识库工具链",
-      "type": "document",
-      "group": 0,
-      "community": 0,
-      "val": 6,
-      "degree": 1,
-      "tags": [
-        "#知识管理",
-        "#Obsidian",
-        "#3D知识图谱",
-        "#GitHub-Pages",
-        "#Codex",
-        "#工具链"
-      ],
-      "summary": "把 AI 编程助手（Codex 类）的聊天记录沉淀为可发布的 Wiki/知识库的完整工具链调研。结论:没有官方一键插件,需自建「Markdown 源码层 + HTML Dashboard 展示层 + 图谱探索层」三层结构;最大工程陷阱是别让 agent 直接扫描会话 JSONL（token 自增循环）;3D 知识图谱可用 graph.json + react-force-graph-3d 起步,GitHub Pages 静态部署。"
-    },
-    {
-      "id": "ponytail-ai-coding-skill",
-      "name": "Ponytail:编程 Agent 的极简主义行为准则",
-      "label": "Ponytail:编程 Agent 的极简主义行为准则",
-      "type": "document",
-      "group": 0,
-      "community": 0,
-      "val": 6,
-      "degree": 2,
-      "tags": [
-        "#AI编程",
-        "#Codex",
-        "#agent技能",
-        "#极简主义",
-        "#工具"
-      ],
-      "summary": "Ponytail 是一个给编程 Agent（Codex 类）用的极简主义行为准则包:AGENTS.md 规则 + skills + hooks,核心人设是「最懒的资深程序员」——能不加代码就不加,能删就删。目标是用约束对抗 LLM 编程天然的书写膨胀倾向。"
-    },
-    {
-      "id": "shiji-terracotta-army-evidence",
-      "name": "兵马俑的文献与考古证据链:《史记》到底记没记?",
-      "label": "兵马俑的文献与考古证据链:《史记》到底记没记?",
-      "type": "document",
-      "group": 6,
-      "community": 6,
-      "val": 6,
-      "degree": 0,
-      "tags": [
-        "#历史",
-        "#考古",
-        "#史记",
-        "#秦始皇陵",
-        "#证据链"
-      ],
-      "summary": "「兵马俑是不是秦国人建的、史书有没有记载」这个问题要拆成两半:**传世文献**(史记/二十四史)记的是什么,**考古证据**证明的是什么。结论:《史记》明确记载秦始皇陵是七十余万人参与的超大型国家工程,但没有直接记载兵马俑坑;二十四史也无任何一部描述今天的一、二、三号坑。兵马俑的秦代归属靠的是位置、年代、兵器铭文、陶工名记、生产制度拼出的考古证据链——这是一个「考古证据远强于传世文献」的典型案例。"
-    },
-    {
-      "id": "posture-monitoring-agent",
-      "name": "坐姿监控 Agent 方案",
-      "label": "坐姿监控 Agent 方案",
-      "type": "document",
-      "group": 4,
-      "community": 4,
-      "val": 6,
-      "degree": 0,
-      "tags": [
-        "#姿态估计",
-        "#MediaPipe",
-        "#边缘设备",
-        "#agent",
-        "#健康监测"
-      ],
-      "summary": "做一个「坐姿/坐态视觉 Agent」的完整方案:摄像头持续观察 → 姿态估计模型提取人体关键点 → 规则或小分类器判断驼背/头前伸/歪坐/久坐 → Agent 决定提醒、记录与日报。核心原则:先跑通 MVP(USB 摄像头 + OpenCV + MediaPipe + 规则判断 + 飞书提醒),再逐步升级为关键点分类器、个性化阈值与边缘设备部署;隐私设计(本地推理、不存原始视频)从第一天就要做。"
-    },
-    {
-      "id": "lan-file-drag-drop-transfer",
-      "name": "局域网文件拖拽传输工具(LanDrop)设计",
-      "label": "局域网文件拖拽传输工具(LanDrop)设计",
+      "id": "agent-chat-wiki-tooling",
+      "name": "Agent 聊天记录 Wiki 工具链",
+      "label": "Agent 聊天记录 Wiki 工具链",
       "type": "document",
       "group": 3,
       "community": 3,
       "val": 6,
-      "degree": 0,
       "tags": [
-        "#局域网",
-        "#文件传输",
-        "#Windows",
-        "#WPF",
-        "#工具设计"
+        "#agent",
+        "#wiki",
+        "#codex",
+        "#obsidian",
+        "#knowledge-management"
       ],
-      "summary": "两台 Windows 电脑在同一局域网内「像拖拽一样传文件」的产品与技术方案。结论:第一版做「**悬浮窗 + 设备卡片拖拽 + 对方确认接收**」的 LocalSend 式工具,难度、稳定性、体验最平衡;「真正拖出屏幕进入另一台电脑」能做但属于跨屏鼠标控制 + 拖拽状态代理 + Shell 集成的复合系统,Shell 级原生拖拽(IDataObject/IDropTarget)兼容成本极高,应放最后。"
-    },
-    {
-      "id": "chn-nanocomposite-wsl-research",
-      "name": "CHN 纳米复合材料治疗正畸牙釉质白斑(WSL)研究",
-      "label": "CHN 纳米复合材料治疗正畸牙釉质白斑(WSL)研究",
-      "type": "document",
-      "group": 2,
-      "community": 2,
-      "val": 6,
-      "degree": 0,
-      "tags": [
-        "#牙科",
-        "#纳米材料",
-        "#再矿化",
-        "#正畸白斑",
-        "#论文写作"
-      ],
-      "summary": "一个牙科材料研究项目的核心信息与写作素材:构建新型 CHN 纳米复合材料/纳米涂层,同时实现脱矿牙釉质再矿化与抗生物膜(antibiofilm)双重功能,用于治疗正畸过程中高发的牙釉质白斑病变(White Spot Lesions, WSLs)。单元保留论文题目、研究目的英文表述、题目创新性的答辩话术,以及 WSL 现有治疗选项(树脂渗透)和投稿期刊常识(RSC 出版社关系)。"
-    },
-    {
-      "id": "reviewer-comments-ppt-layout",
-      "name": "审稿意见 PPT 排版方法",
-      "label": "审稿意见 PPT 排版方法",
-      "type": "document",
-      "group": 5,
-      "community": 5,
-      "val": 6,
-      "degree": 0,
-      "tags": [
-        "#论文答辩",
-        "#PPT",
-        "#学术写作",
-        "#排版"
-      ],
-      "summary": "把学位论文审稿人意见放进 PPT(答辩或汇报用)时的排版规范:按审稿人分片、意见与回应分层、控制单页信息量。目标是让观众快速抓住每条意见的重点,并清楚看到作者对意见的处理与反思。"
-    },
-    {
-      "id": "tag:医学影像",
-      "name": "#医学影像",
-      "label": "#医学影像",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 8
-    },
-    {
-      "id": "tag:反事实生成",
-      "name": "#反事实生成",
-      "label": "#反事实生成",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 4
-    },
-    {
-      "id": "tag:扩散模型",
-      "name": "#扩散模型",
-      "label": "#扩散模型",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:因果推断",
-      "name": "#因果推断",
-      "label": "#因果推断",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:文献综述",
-      "name": "#文献综述",
-      "label": "#文献综述",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 2
-    },
-    {
-      "id": "tag:MAISI",
-      "name": "#MAISI",
-      "label": "#MAISI",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 2
-    },
-    {
-      "id": "tag:rectified-flow",
-      "name": "#rectified-flow",
-      "label": "#rectified-flow",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:normative-model",
-      "name": "#normative-model",
-      "label": "#normative-model",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:研究路线",
-      "name": "#研究路线",
-      "label": "#研究路线",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:flow-matching",
-      "name": "#flow-matching",
-      "label": "#flow-matching",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 2
-    },
-    {
-      "id": "tag:图像编辑",
-      "name": "#图像编辑",
-      "label": "#图像编辑",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 2
-    },
-    {
-      "id": "tag:inversion",
-      "name": "#inversion",
-      "label": "#inversion",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:FlowEdit",
-      "name": "#FlowEdit",
-      "label": "#FlowEdit",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:FlowAlign",
-      "name": "#FlowAlign",
-      "label": "#FlowAlign",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:3DINO",
-      "name": "#3DINO",
-      "label": "#3DINO",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:RAE",
-      "name": "#RAE",
-      "label": "#RAE",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:DiT",
-      "name": "#DiT",
-      "label": "#DiT",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 3
-    },
-    {
-      "id": "tag:项目方案",
-      "name": "#项目方案",
-      "label": "#项目方案",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:3D生成",
-      "name": "#3D生成",
-      "label": "#3D生成",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:训练工程",
-      "name": "#训练工程",
-      "label": "#训练工程",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:VolDiT",
-      "name": "#VolDiT",
-      "label": "#VolDiT",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:GPT-Image",
-      "name": "#GPT-Image",
-      "label": "#GPT-Image",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:Seedream",
-      "name": "#Seedream",
-      "label": "#Seedream",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:机制分析",
-      "name": "#机制分析",
-      "label": "#机制分析",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:医学统计",
-      "name": "#医学统计",
-      "label": "#医学统计",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:logistic回归",
-      "name": "#logistic回归",
-      "label": "#logistic回归",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:ROC",
-      "name": "#ROC",
-      "label": "#ROC",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:AUC",
-      "name": "#AUC",
-      "label": "#AUC",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:R方",
-      "name": "#R方",
-      "label": "#R方",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:增量价值",
-      "name": "#增量价值",
-      "label": "#增量价值",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:MRI预处理",
-      "name": "#MRI预处理",
-      "label": "#MRI预处理",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:ANTs",
-      "name": "#ANTs",
-      "label": "#ANTs",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:SynthStrip",
-      "name": "#SynthStrip",
-      "label": "#SynthStrip",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:FreeSurfer",
-      "name": "#FreeSurfer",
-      "label": "#FreeSurfer",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:SuperSynth",
-      "name": "#SuperSynth",
-      "label": "#SuperSynth",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:分割",
-      "name": "#分割",
-      "label": "#分割",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:工具",
-      "name": "#工具",
-      "label": "#工具",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 2
-    },
-    {
-      "id": "tag:MONAI",
-      "name": "#MONAI",
-      "label": "#MONAI",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:metadata",
-      "name": "#metadata",
-      "label": "#metadata",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:Python",
-      "name": "#Python",
-      "label": "#Python",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:生物电",
-      "name": "#生物电",
-      "label": "#生物电",
-      "type": "concept",
-      "group": 1,
-      "community": 1,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:形态发生",
-      "name": "#形态发生",
-      "label": "#形态发生",
-      "type": "concept",
-      "group": 1,
-      "community": 1,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:发育生物学",
-      "name": "#发育生物学",
-      "label": "#发育生物学",
-      "type": "concept",
-      "group": 1,
-      "community": 1,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:概念辨析",
-      "name": "#概念辨析",
-      "label": "#概念辨析",
-      "type": "concept",
-      "group": 1,
-      "community": 1,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:知识管理",
-      "name": "#知识管理",
-      "label": "#知识管理",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:Obsidian",
-      "name": "#Obsidian",
-      "label": "#Obsidian",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:3D知识图谱",
-      "name": "#3D知识图谱",
-      "label": "#3D知识图谱",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:GitHub-Pages",
-      "name": "#GitHub-Pages",
-      "label": "#GitHub-Pages",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:Codex",
-      "name": "#Codex",
-      "label": "#Codex",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 2
-    },
-    {
-      "id": "tag:工具链",
-      "name": "#工具链",
-      "label": "#工具链",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:AI编程",
-      "name": "#AI编程",
-      "label": "#AI编程",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:agent技能",
-      "name": "#agent技能",
-      "label": "#agent技能",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:极简主义",
-      "name": "#极简主义",
-      "label": "#极简主义",
-      "type": "concept",
-      "group": 0,
-      "community": 0,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:历史",
-      "name": "#历史",
-      "label": "#历史",
-      "type": "concept",
-      "group": 6,
-      "community": 6,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:考古",
-      "name": "#考古",
-      "label": "#考古",
-      "type": "concept",
-      "group": 6,
-      "community": 6,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:史记",
-      "name": "#史记",
-      "label": "#史记",
-      "type": "concept",
-      "group": 6,
-      "community": 6,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:秦始皇陵",
-      "name": "#秦始皇陵",
-      "label": "#秦始皇陵",
-      "type": "concept",
-      "group": 6,
-      "community": 6,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:证据链",
-      "name": "#证据链",
-      "label": "#证据链",
-      "type": "concept",
-      "group": 6,
-      "community": 6,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:姿态估计",
-      "name": "#姿态估计",
-      "label": "#姿态估计",
-      "type": "concept",
-      "group": 4,
-      "community": 4,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:MediaPipe",
-      "name": "#MediaPipe",
-      "label": "#MediaPipe",
-      "type": "concept",
-      "group": 4,
-      "community": 4,
-      "val": 2,
-      "degree": 1
-    },
-    {
-      "id": "tag:边缘设备",
-      "name": "#边缘设备",
-      "label": "#边缘设备",
-      "type": "concept",
-      "group": 4,
-      "community": 4,
-      "val": 2,
-      "degree": 1
+      "summary": "把 Codex / Claude Code 等 agent 会话整理成可维护 Wiki，核心不是原样归档聊天记录，而是“受限抽取 → 脱敏 → 结构化知识单元 → lint/索引/互链”。适合的工具链可拆成三层：历史会话抽取器、Obsidian/Wiki 维护框架、底层 agent skills。要避免让 agent 直接大范围读取 session JSONL，防止上下文膨胀、敏感信息泄露和 token 自增循环。"
     },
     {
       "id": "tag:agent",
       "name": "#agent",
       "label": "#agent",
       "type": "concept",
+      "group": 3,
+      "community": 3,
+      "val": 2
+    },
+    {
+      "id": "tag:wiki",
+      "name": "#wiki",
+      "label": "#wiki",
+      "type": "concept",
+      "group": 3,
+      "community": 3,
+      "val": 2
+    },
+    {
+      "id": "tag:codex",
+      "name": "#codex",
+      "label": "#codex",
+      "type": "concept",
+      "group": 3,
+      "community": 3,
+      "val": 2
+    },
+    {
+      "id": "tag:obsidian",
+      "name": "#obsidian",
+      "label": "#obsidian",
+      "type": "concept",
+      "group": 3,
+      "community": 3,
+      "val": 2
+    },
+    {
+      "id": "tag:knowledge-management",
+      "name": "#knowledge-management",
+      "label": "#knowledge-management",
+      "type": "concept",
+      "group": 3,
+      "community": 3,
+      "val": 2
+    },
+    {
+      "id": "autism-mri-diagnosis",
+      "name": "自闭症 MRI 诊断",
+      "label": "自闭症 MRI 诊断",
+      "type": "document",
+      "group": 1,
+      "community": 1,
+      "val": 6,
+      "tags": [
+        "#医学影像",
+        "#自闭症",
+        "#分类",
+        "#早期诊断",
+        "#生成模型"
+      ],
+      "summary": "基于 MRI 的自闭症谱系障碍（ASD）分类与早期诊断主要沿两条路线展开：（1）用结构 MRI（sMRI）的皮层厚度/表面积/体积特征 + 传统机器学习或 CNN 做分类；（2）用生成模型（Rectified Flow）从 6 月 MRI 外推 12/24 月图像，融合真实与合成图像实现 6 月龄早期诊断。早期诊断的核心挑战在于 ASD 通常要到 24 月后才被识别，而 6 月龄可用的形态学信号微弱，需借助纵向外推与分割监督来增强判别力"
+    },
+    {
+      "id": "tag:医学影像",
+      "name": "#医学影像",
+      "label": "#医学影像",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:自闭症",
+      "name": "#自闭症",
+      "label": "#自闭症",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:分类",
+      "name": "#分类",
+      "label": "#分类",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:早期诊断",
+      "name": "#早期诊断",
+      "label": "#早期诊断",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:生成模型",
+      "name": "#生成模型",
+      "label": "#生成模型",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "brain-atlas-parcellation-dkt-mcrib-aal",
+      "name": "脑区分割图谱：DKT / M-CRIB / AAL",
+      "label": "脑区分割图谱：DKT / M-CRIB / AAL",
+      "type": "document",
+      "group": 6,
+      "community": 6,
+      "val": 6,
+      "tags": [
+        "#脑区分割",
+        "#atlas",
+        "#DKT",
+        "#M-CRIB",
+        "#AAL",
+        "#Desikan-Killiany"
+      ],
+      "summary": "脑区分割依赖解剖图谱（atlas）定义区域边界。常用图谱包括 Desikan-Killiany（DK，每半球 34 区，FastSurfer 默认）、Desikan-Killiany-Tourville（DKT，DK 的细化版）、AAL（自动解剖标签）和 M-CRIB 2.0（新生儿专用）。选择图谱决定了后续 ROI 统计的粒度；婴幼儿/特殊人群需用专门图谱（UNC 4D、M-CRIB）而非成人模板。深度学习可直接学习 atlas 分割"
+    },
+    {
+      "id": "tag:脑区分割",
+      "name": "#脑区分割",
+      "label": "#脑区分割",
+      "type": "concept",
+      "group": 6,
+      "community": 6,
+      "val": 2
+    },
+    {
+      "id": "tag:atlas",
+      "name": "#atlas",
+      "label": "#atlas",
+      "type": "concept",
+      "group": 6,
+      "community": 6,
+      "val": 2
+    },
+    {
+      "id": "tag:DKT",
+      "name": "#DKT",
+      "label": "#DKT",
+      "type": "concept",
+      "group": 6,
+      "community": 6,
+      "val": 2
+    },
+    {
+      "id": "tag:M-CRIB",
+      "name": "#M-CRIB",
+      "label": "#M-CRIB",
+      "type": "concept",
+      "group": 6,
+      "community": 6,
+      "val": 2
+    },
+    {
+      "id": "tag:AAL",
+      "name": "#AAL",
+      "label": "#AAL",
+      "type": "concept",
+      "group": 6,
+      "community": 6,
+      "val": 2
+    },
+    {
+      "id": "tag:Desikan-Killiany",
+      "name": "#Desikan-Killiany",
+      "label": "#Desikan-Killiany",
+      "type": "concept",
+      "group": 6,
+      "community": 6,
+      "val": 2
+    },
+    {
+      "id": "brain-mri-counterfactual-generation",
+      "name": "Brain MRI 反事实生成",
+      "label": "Brain MRI 反事实生成",
+      "type": "document",
+      "group": 1,
+      "community": 1,
+      "val": 6,
+      "tags": [
+        "#医学影像",
+        "#生成模型",
+        "#反事实"
+      ],
+      "summary": "用 subject-preserving latent rectified flow 在 brain MRI 上生成反事实样本(同一受试者,只改变疾病状态),用于因果推断和病程模拟。"
+    },
+    {
+      "id": "tag:反事实",
+      "name": "#反事实",
+      "label": "#反事实",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "brain-segmentation-deep-learning-models",
+      "name": "大脑分割深度学习模型",
+      "label": "大脑分割深度学习模型",
+      "type": "document",
+      "group": 59,
+      "community": 59,
+      "val": 6,
+      "tags": [
+        "#深度学习",
+        "#医学分割",
+        "#nnU-Net",
+        "#SAM",
+        "#扩散模型",
+        "#一致性模型",
+        "#边缘损失"
+      ],
+      "summary": "大脑组织/脑区分割的深度学习方案分两类：一是判别式分割网络（nnU-Net、3D U-Net、TransUNet、DeepLabv3+、Swin Transformer、Medical-SAM2），二是生成式/一致性模型用于分割监督与图像生成。生成路线关注采样效率（NFE）与边界质量，常用 Sobel 边缘感知损失约束分割/生成边缘。选型取决于输入维度、数据规模与是否需要快速采样。"
+    },
+    {
+      "id": "tag:深度学习",
+      "name": "#深度学习",
+      "label": "#深度学习",
+      "type": "concept",
+      "group": 59,
+      "community": 59,
+      "val": 2
+    },
+    {
+      "id": "tag:医学分割",
+      "name": "#医学分割",
+      "label": "#医学分割",
+      "type": "concept",
+      "group": 59,
+      "community": 59,
+      "val": 2
+    },
+    {
+      "id": "tag:nnU-Net",
+      "name": "#nnU-Net",
+      "label": "#nnU-Net",
+      "type": "concept",
+      "group": 59,
+      "community": 59,
+      "val": 2
+    },
+    {
+      "id": "tag:SAM",
+      "name": "#SAM",
+      "label": "#SAM",
+      "type": "concept",
+      "group": 59,
+      "community": 59,
+      "val": 2
+    },
+    {
+      "id": "tag:扩散模型",
+      "name": "#扩散模型",
+      "label": "#扩散模型",
+      "type": "concept",
+      "group": 59,
+      "community": 59,
+      "val": 2
+    },
+    {
+      "id": "tag:一致性模型",
+      "name": "#一致性模型",
+      "label": "#一致性模型",
+      "type": "concept",
+      "group": 59,
+      "community": 59,
+      "val": 2
+    },
+    {
+      "id": "tag:边缘损失",
+      "name": "#边缘损失",
+      "label": "#边缘损失",
+      "type": "concept",
+      "group": 59,
+      "community": 59,
+      "val": 2
+    },
+    {
+      "id": "chatgpt-backup-wiki-publishing-pipeline",
+      "name": "ChatGPT 备份 Wiki 发布管线",
+      "label": "ChatGPT 备份 Wiki 发布管线",
+      "type": "document",
+      "group": 3,
+      "community": 3,
+      "val": 6,
+      "tags": [
+        "#chatgpt-backup",
+        "#wiki",
+        "#github-pages",
+        "#encryption",
+        "#publishing"
+      ],
+      "summary": "ChatGPT 备份 Wiki 的目标是把本地完整对话转化为可发布的加密知识单元：本地保留原始 conversation，公开页面只发布脱敏后的 `wiki/units/*.md` 提炼内容。发布管线由索引、知识单元、处理状态、Markdown 渲染、文本加密、图片外置加密和 GitHub Pages 推送组成。关键是把“备份恢复”和“知识发布”分离：前者保真，后者只输出可复用知识。"
+    },
+    {
+      "id": "tag:chatgpt-backup",
+      "name": "#chatgpt-backup",
+      "label": "#chatgpt-backup",
+      "type": "concept",
+      "group": 3,
+      "community": 3,
+      "val": 2
+    },
+    {
+      "id": "tag:github-pages",
+      "name": "#github-pages",
+      "label": "#github-pages",
+      "type": "concept",
+      "group": 3,
+      "community": 3,
+      "val": 2
+    },
+    {
+      "id": "tag:encryption",
+      "name": "#encryption",
+      "label": "#encryption",
+      "type": "concept",
+      "group": 3,
+      "community": 3,
+      "val": 2
+    },
+    {
+      "id": "tag:publishing",
+      "name": "#publishing",
+      "label": "#publishing",
+      "type": "concept",
+      "group": 3,
+      "community": 3,
+      "val": 2
+    },
+    {
+      "id": "cortical-thickness-area-volume-measurement",
+      "name": "皮层厚度、表面积、体积测量与共变网络",
+      "label": "皮层厚度、表面积、体积测量与共变网络",
+      "type": "document",
+      "group": 43,
+      "community": 43,
+      "val": 6,
+      "tags": [
+        "#皮层厚度",
+        "#表面积",
+        "#脑体积",
+        "#混杂变量校正",
+        "#结构共变网络",
+        "#图论"
+      ],
+      "summary": "皮层形态学测量的核心三量：厚度、表面积、体积。厚度=每个顶点内外皮层表面最短距离的 ROI 平均；表面积=ROI 内顶点面积总和；体积来自 aseg.stats 的 Measure 行。跨被试比较前必须用线性回归去除年龄、性别、全脑均值等混杂变量，取残差。基于 ROI 测量可构建结构共变网络（SCN），用图论指标（路径长度、全局效率、小世界性）做组间对比。"
+    },
+    {
+      "id": "tag:皮层厚度",
+      "name": "#皮层厚度",
+      "label": "#皮层厚度",
+      "type": "concept",
+      "group": 43,
+      "community": 43,
+      "val": 2
+    },
+    {
+      "id": "tag:表面积",
+      "name": "#表面积",
+      "label": "#表面积",
+      "type": "concept",
+      "group": 43,
+      "community": 43,
+      "val": 2
+    },
+    {
+      "id": "tag:脑体积",
+      "name": "#脑体积",
+      "label": "#脑体积",
+      "type": "concept",
+      "group": 43,
+      "community": 43,
+      "val": 2
+    },
+    {
+      "id": "tag:混杂变量校正",
+      "name": "#混杂变量校正",
+      "label": "#混杂变量校正",
+      "type": "concept",
+      "group": 43,
+      "community": 43,
+      "val": 2
+    },
+    {
+      "id": "tag:结构共变网络",
+      "name": "#结构共变网络",
+      "label": "#结构共变网络",
+      "type": "concept",
+      "group": 43,
+      "community": 43,
+      "val": 2
+    },
+    {
+      "id": "tag:图论",
+      "name": "#图论",
+      "label": "#图论",
+      "type": "concept",
+      "group": 43,
+      "community": 43,
+      "val": 2
+    },
+    {
+      "id": "cross-modal-medical-image-translation",
+      "name": "跨模态医学影像翻译",
+      "label": "跨模态医学影像翻译",
+      "type": "document",
+      "group": 1,
+      "community": 1,
+      "val": 6,
+      "tags": [
+        "#医学影像",
+        "#跨模态",
+        "#图像翻译",
+        "#MRI",
+        "#PET",
+        "#SynDiff"
+      ],
+      "summary": "跨模态医学影像翻译将源模态图像(如 MRI)转换为目标模态(如 PET/CT),解决多模态成像成本高、难普及的问题。核心方法从 GAN 发展到扩散模型和 flow matching,在保持解剖结构一致性的同时生成临床可用的合成图像。"
+    },
+    {
+      "id": "tag:跨模态",
+      "name": "#跨模态",
+      "label": "#跨模态",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:图像翻译",
+      "name": "#图像翻译",
+      "label": "#图像翻译",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:MRI",
+      "name": "#MRI",
+      "label": "#MRI",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:PET",
+      "name": "#PET",
+      "label": "#PET",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:SynDiff",
+      "name": "#SynDiff",
+      "label": "#SynDiff",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "dataloader-data-parallel",
+      "name": "DataLoader 与数据并行配置",
+      "label": "DataLoader 与数据并行配置",
+      "type": "document",
+      "group": 7,
+      "community": 7,
+      "val": 6,
+      "tags": [
+        "#DataLoader",
+        "#MONAI",
+        "#num_workers",
+        "#pin_memory",
+        "#数据并行"
+      ],
+      "summary": "PyTorch / MONAI 的 DataLoader 调参核心是 `num_workers`、`pin_memory`、`persistent_workers`、`prefetch_factor` 四件套，目标是让 GPU 不等数据。3D 医学图像场景下数据体量大，`pin_memory=True + num_workers>0` 这条路径容易触发 `received 0 items of ancdata` / `Pin memor"
+    },
+    {
+      "id": "tag:DataLoader",
+      "name": "#DataLoader",
+      "label": "#DataLoader",
+      "type": "concept",
+      "group": 7,
+      "community": 7,
+      "val": 2
+    },
+    {
+      "id": "tag:MONAI",
+      "name": "#MONAI",
+      "label": "#MONAI",
+      "type": "concept",
+      "group": 7,
+      "community": 7,
+      "val": 2
+    },
+    {
+      "id": "tag:num_workers",
+      "name": "#num_workers",
+      "label": "#num_workers",
+      "type": "concept",
+      "group": 7,
+      "community": 7,
+      "val": 2
+    },
+    {
+      "id": "tag:pin_memory",
+      "name": "#pin_memory",
+      "label": "#pin_memory",
+      "type": "concept",
+      "group": 7,
+      "community": 7,
+      "val": 2
+    },
+    {
+      "id": "tag:数据并行",
+      "name": "#数据并行",
+      "label": "#数据并行",
+      "type": "concept",
+      "group": 7,
+      "community": 7,
+      "val": 2
+    },
+    {
+      "id": "dinov3-3d-mri-self-supervised",
+      "name": "DINOv3 / 3DINO 应用于 3D 医学 MRI 自监督学习",
+      "label": "DINOv3 / 3DINO 应用于 3D 医学 MRI 自监督学习",
+      "type": "document",
+      "group": 1,
+      "community": 1,
+      "val": 6,
+      "tags": [
+        "#自监督学习",
+        "#DINOv3",
+        "#3DINO",
+        "#医学影像",
+        "#MRI生成",
+        "#3D视觉",
+        "#特征迁移"
+      ],
+      "summary": "DINOv3 是 Meta FAIR 的 2D 自监督 ViT 骨干（学生-教师对比一致性蒸馏，输出 embedding 而非分类标签），在自然图像上学到强语义/稠密 patch 表征；3DINO 则是专为 3D 医学影像设计的自监督框架（约 10 万例 3D 扫描、10+ 器官、多模态、全无标注预训练）。把这类 2D 自监督模型迁移到 3D MRI（分割/分类/生成）的核心难点是 2D-3D 维度差异与自然图像→医学影像的域差距。主流"
+    },
+    {
+      "id": "tag:自监督学习",
+      "name": "#自监督学习",
+      "label": "#自监督学习",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:DINOv3",
+      "name": "#DINOv3",
+      "label": "#DINOv3",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:3DINO",
+      "name": "#3DINO",
+      "label": "#3DINO",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:MRI生成",
+      "name": "#MRI生成",
+      "label": "#MRI生成",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:3D视觉",
+      "name": "#3D视觉",
+      "label": "#3D视觉",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:特征迁移",
+      "name": "#特征迁移",
+      "label": "#特征迁移",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "docker-install-and-management",
+      "name": "Docker 安装与管理",
+      "label": "Docker 安装与管理",
+      "type": "document",
       "group": 4,
       "community": 4,
-      "val": 2,
-      "degree": 1
+      "val": 6,
+      "tags": [
+        "#Docker",
+        "#Linux",
+        "#容器",
+        "#APT源"
+      ],
+      "summary": "在 Ubuntu 上安装 Docker 涉及添加 APT 源（含 GPG 密钥签名验证）后通过 `apt install docker-ce` 安装，但中国服务器常因网络问题（IPv6 阻塞、连接超时）无法直连 Docker 官方源。解决方法包括强制 IPv4、更换阿里云镜像源、或手动下载 `.deb` 包离线安装。镜像/容器管理使用 `docker images`、`docker rmi`、`docker ps -a` 等命令。"
     },
     {
-      "id": "tag:健康监测",
-      "name": "#健康监测",
-      "label": "#健康监测",
+      "id": "tag:Docker",
+      "name": "#Docker",
+      "label": "#Docker",
       "type": "concept",
       "group": 4,
       "community": 4,
-      "val": 2,
-      "degree": 1
+      "val": 2
     },
     {
-      "id": "tag:局域网",
-      "name": "#局域网",
-      "label": "#局域网",
+      "id": "tag:Linux",
+      "name": "#Linux",
+      "label": "#Linux",
       "type": "concept",
-      "group": 3,
-      "community": 3,
-      "val": 2,
-      "degree": 1
+      "group": 4,
+      "community": 4,
+      "val": 2
     },
     {
-      "id": "tag:文件传输",
-      "name": "#文件传输",
-      "label": "#文件传输",
+      "id": "tag:容器",
+      "name": "#容器",
+      "label": "#容器",
       "type": "concept",
-      "group": 3,
-      "community": 3,
-      "val": 2,
-      "degree": 1
+      "group": 4,
+      "community": 4,
+      "val": 2
     },
     {
-      "id": "tag:Windows",
-      "name": "#Windows",
-      "label": "#Windows",
+      "id": "tag:APT源",
+      "name": "#APT源",
+      "label": "#APT源",
       "type": "concept",
-      "group": 3,
-      "community": 3,
-      "val": 2,
-      "degree": 1
+      "group": 4,
+      "community": 4,
+      "val": 2
     },
     {
-      "id": "tag:WPF",
-      "name": "#WPF",
-      "label": "#WPF",
+      "id": "fastsurfer-freesurfer-cortical-pipeline",
+      "name": "FastSurfer / FreeSurfer 皮层分析工具链",
+      "label": "FastSurfer / FreeSurfer 皮层分析工具链",
+      "type": "document",
+      "group": 6,
+      "community": 6,
+      "val": 6,
+      "tags": [
+        "#FastSurfer",
+        "#FreeSurfer",
+        "#皮层重建",
+        "#脑区分割",
+        "#aseg",
+        "#aparc-stats"
+      ],
+      "summary": "FastSurfer 是 FreeSurfer 的高速深度学习替代，自动完成皮层表面重建与 Desikan-Killiany 脑区分割，输出与 FreeSurfer 兼容的目录结构。皮层厚度/表面积的顶点级数据存在 `surf/`，ROI 级统计在 `stats/`，全脑解剖分割标签在 `aseg.mgz`。理解这套输出布局和 `.stats` 文件格式，是后续做组间对比、共变网络分析的前提。"
+    },
+    {
+      "id": "tag:FastSurfer",
+      "name": "#FastSurfer",
+      "label": "#FastSurfer",
       "type": "concept",
-      "group": 3,
-      "community": 3,
-      "val": 2,
-      "degree": 1
+      "group": 6,
+      "community": 6,
+      "val": 2
     },
     {
-      "id": "tag:工具设计",
-      "name": "#工具设计",
-      "label": "#工具设计",
+      "id": "tag:FreeSurfer",
+      "name": "#FreeSurfer",
+      "label": "#FreeSurfer",
       "type": "concept",
-      "group": 3,
-      "community": 3,
-      "val": 2,
-      "degree": 1
+      "group": 6,
+      "community": 6,
+      "val": 2
     },
     {
-      "id": "tag:牙科",
-      "name": "#牙科",
-      "label": "#牙科",
+      "id": "tag:皮层重建",
+      "name": "#皮层重建",
+      "label": "#皮层重建",
       "type": "concept",
-      "group": 2,
-      "community": 2,
-      "val": 2,
-      "degree": 1
+      "group": 6,
+      "community": 6,
+      "val": 2
     },
     {
-      "id": "tag:纳米材料",
-      "name": "#纳米材料",
-      "label": "#纳米材料",
+      "id": "tag:aseg",
+      "name": "#aseg",
+      "label": "#aseg",
       "type": "concept",
-      "group": 2,
-      "community": 2,
-      "val": 2,
-      "degree": 1
+      "group": 6,
+      "community": 6,
+      "val": 2
     },
     {
-      "id": "tag:再矿化",
-      "name": "#再矿化",
-      "label": "#再矿化",
+      "id": "tag:aparc-stats",
+      "name": "#aparc-stats",
+      "label": "#aparc-stats",
       "type": "concept",
-      "group": 2,
-      "community": 2,
-      "val": 2,
-      "degree": 1
+      "group": 6,
+      "community": 6,
+      "val": 2
     },
     {
-      "id": "tag:正畸白斑",
-      "name": "#正畸白斑",
-      "label": "#正畸白斑",
+      "id": "flow-medical-image-generation",
+      "name": "Flow-Based 医学影像生成与反事实",
+      "label": "Flow-Based 医学影像生成与反事实",
+      "type": "document",
+      "group": 1,
+      "community": 1,
+      "val": 6,
+      "tags": [
+        "#医学影像",
+        "#生成模型",
+        "#FlowMatching",
+        "#反事实生成",
+        "#3DMRI"
+      ],
+      "summary": "Flow matching / rectified flow 在医学影像生成中用于跨模态翻译(MRI↔PET)、纵向预测(6月→12月脑MRI)和反事实生成(同一受试者只改变疾病状态)。核心挑战是保持主体一致性、解剖结构完整性和临床可信性。"
+    },
+    {
+      "id": "tag:FlowMatching",
+      "name": "#FlowMatching",
+      "label": "#FlowMatching",
       "type": "concept",
-      "group": 2,
-      "community": 2,
-      "val": 2,
-      "degree": 1
+      "group": 1,
+      "community": 1,
+      "val": 2
     },
     {
-      "id": "tag:论文写作",
-      "name": "#论文写作",
-      "label": "#论文写作",
+      "id": "tag:反事实生成",
+      "name": "#反事实生成",
+      "label": "#反事实生成",
       "type": "concept",
-      "group": 2,
-      "community": 2,
-      "val": 2,
-      "degree": 1
+      "group": 1,
+      "community": 1,
+      "val": 2
     },
     {
-      "id": "tag:论文答辩",
-      "name": "#论文答辩",
-      "label": "#论文答辩",
+      "id": "tag:3DMRI",
+      "name": "#3DMRI",
+      "label": "#3DMRI",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "hardware-precision-reproducibility",
+      "name": "硬件精度与训练可复现性",
+      "label": "硬件精度与训练可复现性",
+      "type": "document",
+      "group": 35,
+      "community": 35,
+      "val": 6,
+      "tags": [
+        "#GPU",
+        "#浮点精度",
+        "#可复现性",
+        "#AMP",
+        "#3090",
+        "#A6000"
+      ],
+      "summary": "同一份代码在 RTX 3090 上损失下降、在 A6000 上不下降，通常不是\"浮点精度\"本身的问题，而是 CUDA/cuDNN 版本、AMP 混合精度的 GradScaler 行为、cuDNN 非确定性算法、驱动版本等差异叠加导致。3090 与 A6000 同属 Ampere 架构但显存（24G vs 48G）和双精度（FP64 0.55 vs 1.3 TFLOPS）差异明显；做跨卡可复现实验需统一 CUDA/cuDNN 版本、固定随"
+    },
+    {
+      "id": "tag:GPU",
+      "name": "#GPU",
+      "label": "#GPU",
+      "type": "concept",
+      "group": 35,
+      "community": 35,
+      "val": 2
+    },
+    {
+      "id": "tag:浮点精度",
+      "name": "#浮点精度",
+      "label": "#浮点精度",
+      "type": "concept",
+      "group": 35,
+      "community": 35,
+      "val": 2
+    },
+    {
+      "id": "tag:可复现性",
+      "name": "#可复现性",
+      "label": "#可复现性",
+      "type": "concept",
+      "group": 35,
+      "community": 35,
+      "val": 2
+    },
+    {
+      "id": "tag:AMP",
+      "name": "#AMP",
+      "label": "#AMP",
+      "type": "concept",
+      "group": 35,
+      "community": 35,
+      "val": 2
+    },
+    {
+      "id": "tag:3090",
+      "name": "#3090",
+      "label": "#3090",
+      "type": "concept",
+      "group": 35,
+      "community": 35,
+      "val": 2
+    },
+    {
+      "id": "tag:A6000",
+      "name": "#A6000",
+      "label": "#A6000",
+      "type": "concept",
+      "group": 35,
+      "community": 35,
+      "val": 2
+    },
+    {
+      "id": "histogram-matching",
+      "name": "直方图匹配",
+      "label": "直方图匹配",
+      "type": "document",
+      "group": 1,
+      "community": 1,
+      "val": 6,
+      "tags": [
+        "#医学影像",
+        "#图像后处理",
+        "#强度对齐"
+      ],
+      "summary": "直方图匹配（规定化）把一幅图像的灰度分布映射到参考图，使两者亮度对比度一致。在 MRI 生成评估里它常被用来消除预测与真实的亮度偏差，但会引入参考图的统计信息、存在\"信息泄露/后处理作弊\"的争议——能否用于算指标前取决于实验目的。"
+    },
+    {
+      "id": "tag:图像后处理",
+      "name": "#图像后处理",
+      "label": "#图像后处理",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:强度对齐",
+      "name": "#强度对齐",
+      "label": "#强度对齐",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "image-frequency-analysis",
+      "name": "图像频域分析与高低频分离",
+      "label": "图像频域分析与高低频分离",
+      "type": "document",
+      "group": 28,
+      "community": 28,
+      "val": 6,
+      "tags": [
+        "#图像处理",
+        "#傅里叶变换",
+        "#频域分析"
+      ],
+      "summary": "用傅里叶变换把图像转到频域可分析其频率结构：低频（频谱中心）对应大尺度结构/整体光照，高频（边缘）对应细节/边缘/纹理/噪声。通过频谱可视化、频带能量、高低频掩码分离，可对比自然图与 MRI 的频谱差异，或诊断生成图的高频细节缺失。"
+    },
+    {
+      "id": "tag:图像处理",
+      "name": "#图像处理",
+      "label": "#图像处理",
+      "type": "concept",
+      "group": 28,
+      "community": 28,
+      "val": 2
+    },
+    {
+      "id": "tag:傅里叶变换",
+      "name": "#傅里叶变换",
+      "label": "#傅里叶变换",
+      "type": "concept",
+      "group": 28,
+      "community": 28,
+      "val": 2
+    },
+    {
+      "id": "tag:频域分析",
+      "name": "#频域分析",
+      "label": "#频域分析",
+      "type": "concept",
+      "group": 28,
+      "community": 28,
+      "val": 2
+    },
+    {
+      "id": "infant-brain-mri-processing",
+      "name": "婴幼儿大脑 MRI 处理",
+      "label": "婴幼儿大脑 MRI 处理",
+      "type": "document",
+      "group": 1,
+      "community": 1,
+      "val": 6,
+      "tags": [
+        "#医学影像",
+        "#婴幼儿大脑",
+        "#MRI处理",
+        "#纵向建模"
+      ],
+      "summary": "婴幼儿大脑 MRI 处理涵盖从原始扫描到结构量化的完整链路：用 FreeSurfer `infant_recon_all` / iBEAT V2.0 做去颅骨与组织分割、用皮层重建评估预测质量、用分段线性混合模型刻画 6→24 月的生长轨迹。婴幼儿大脑因髓鞘化未完成、组织对比度与成人差异大，必须使用专用工具与年龄分段模型，而非直接套用成人流程。"
+    },
+    {
+      "id": "tag:婴幼儿大脑",
+      "name": "#婴幼儿大脑",
+      "label": "#婴幼儿大脑",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:MRI处理",
+      "name": "#MRI处理",
+      "label": "#MRI处理",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:纵向建模",
+      "name": "#纵向建模",
+      "label": "#纵向建模",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "latex-bibtex-typesetting",
+      "name": "LaTeX / BibTeX 排版技巧",
+      "label": "LaTeX / BibTeX 排版技巧",
+      "type": "document",
+      "group": 23,
+      "community": 23,
+      "val": 6,
+      "tags": [
+        "#latex",
+        "#bibtex",
+        "#论文排版",
+        "#表格",
+        "#公式"
+      ],
+      "summary": "收录 LaTeX 论文排版中高频遇到的具体问题与解法：表格/图序号格式自定义、`subfigure` 环境弃用与 `subcaption` 冲突、`MathPhySci` 文献样式的编译流程、以及 figure/table 与正文间距的长度参数调节。核心思路是用 `\\renewcommand`/`\\fnum@table` 控制编号格式，并理解 `caption` 宏包会覆盖自定义序号、需在加载后重新定义。"
+    },
+    {
+      "id": "tag:latex",
+      "name": "#latex",
+      "label": "#latex",
+      "type": "concept",
+      "group": 23,
+      "community": 23,
+      "val": 2
+    },
+    {
+      "id": "tag:bibtex",
+      "name": "#bibtex",
+      "label": "#bibtex",
+      "type": "concept",
+      "group": 23,
+      "community": 23,
+      "val": 2
+    },
+    {
+      "id": "tag:论文排版",
+      "name": "#论文排版",
+      "label": "#论文排版",
+      "type": "concept",
+      "group": 23,
+      "community": 23,
+      "val": 2
+    },
+    {
+      "id": "tag:表格",
+      "name": "#表格",
+      "label": "#表格",
+      "type": "concept",
+      "group": 23,
+      "community": 23,
+      "val": 2
+    },
+    {
+      "id": "tag:公式",
+      "name": "#公式",
+      "label": "#公式",
+      "type": "concept",
+      "group": 23,
+      "community": 23,
+      "val": 2
+    },
+    {
+      "id": "linux-user-management",
+      "name": "Linux 用户管理",
+      "label": "Linux 用户管理",
+      "type": "document",
+      "group": 4,
+      "community": 4,
+      "val": 6,
+      "tags": [
+        "#Linux",
+        "#用户管理",
+        "#权限",
+        "#SSH"
+      ],
+      "summary": "Linux 用户管理核心操作包括创建用户（`useradd`/`adduser`）、设置密码、指定主目录、配置 SSH 权限，以及处理目录权限与 `.Xauthority` 等常见问题。关键要点是 `useradd -m -d /path` 创建用户时同时指定并创建主目录，之后用 `chown` 设置所有权。SSH 公钥认证需配置 `~/.ssh/authorized_keys` 并设置 600/700 权限。"
+    },
+    {
+      "id": "tag:用户管理",
+      "name": "#用户管理",
+      "label": "#用户管理",
+      "type": "concept",
+      "group": 4,
+      "community": 4,
+      "val": 2
+    },
+    {
+      "id": "tag:权限",
+      "name": "#权限",
+      "label": "#权限",
+      "type": "concept",
+      "group": 4,
+      "community": 4,
+      "val": 2
+    },
+    {
+      "id": "tag:SSH",
+      "name": "#SSH",
+      "label": "#SSH",
+      "type": "concept",
+      "group": 4,
+      "community": 4,
+      "val": 2
+    },
+    {
+      "id": "loss-function-debugging",
+      "name": "损失函数调试与分割评估",
+      "label": "损失函数调试与分割评估",
+      "type": "document",
+      "group": 44,
+      "community": 44,
+      "val": 6,
+      "tags": [
+        "#损失函数",
+        "#Dice",
+        "#VoxelMorph",
+        "#边缘损失",
+        "#FlowMatching",
+        "#分割评估"
+      ],
+      "summary": "损失不下降时按\"网络复杂度→输入数据→学习率→损失设计→初始化\"五步排查；Flow Matching 场景要特别警惕输入图像零值过多导致的退化。分割评估核心是 MONAI 的 `DiceMetric` 配合 `AsDiscrete` 后处理，关键陷阱是 `include_background` 与 `to_onehot` 的类别数必须匹配、单前景类务必排除背景。VoxelMorph 是\"3D UNet 预测位移场 + STN warp "
+    },
+    {
+      "id": "tag:损失函数",
+      "name": "#损失函数",
+      "label": "#损失函数",
+      "type": "concept",
+      "group": 44,
+      "community": 44,
+      "val": 2
+    },
+    {
+      "id": "tag:Dice",
+      "name": "#Dice",
+      "label": "#Dice",
+      "type": "concept",
+      "group": 44,
+      "community": 44,
+      "val": 2
+    },
+    {
+      "id": "tag:VoxelMorph",
+      "name": "#VoxelMorph",
+      "label": "#VoxelMorph",
+      "type": "concept",
+      "group": 44,
+      "community": 44,
+      "val": 2
+    },
+    {
+      "id": "tag:分割评估",
+      "name": "#分割评估",
+      "label": "#分割评估",
+      "type": "concept",
+      "group": 44,
+      "community": 44,
+      "val": 2
+    },
+    {
+      "id": "medical-image-generation-challenges",
+      "name": "医学影像生成挑战与综述",
+      "label": "医学影像生成挑战与综述",
+      "type": "document",
+      "group": 1,
+      "community": 1,
+      "val": 6,
+      "tags": [
+        "#医学影像",
+        "#生成模型",
+        "#综述",
+        "#挑战"
+      ],
+      "summary": "医学影像生成面临独特挑战:解剖结构保持、小数据泛化、临床可信验证。2024 年扩散模型在医学影像生成中占据主导地位,但仍需解决幻觉、偏差泄露、因果一致性等临床转化问题。"
+    },
+    {
+      "id": "tag:综述",
+      "name": "#综述",
+      "label": "#综述",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:挑战",
+      "name": "#挑战",
+      "label": "#挑战",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "miccai-submission-and-abstract",
+      "name": "MICCAI 投稿与摘要写作",
+      "label": "MICCAI 投稿与摘要写作",
+      "type": "document",
+      "group": 5,
+      "community": 5,
+      "val": 6,
+      "tags": [
+        "#miccai",
+        "#论文投稿",
+        "#摘要写作",
+        "#desk-reject",
+        "#cmt"
+      ],
+      "summary": "覆盖 MICCAI 投稿全流程的两类知识：一是摘要与 CMT 提交表单的字段填写规范（Statement of Contribution、Domain Conflicts、审稿人报名、提交清单等），二是 idea 阶段 desk reject 的预演与规避方法。核心教训：摘要切勿过度宣称（overclaim），贡献须诚实可证；idea 阶段若问题未被表述成可检验的研究问题，desk reject 概率 >70%。"
+    },
+    {
+      "id": "tag:miccai",
+      "name": "#miccai",
+      "label": "#miccai",
       "type": "concept",
       "group": 5,
       "community": 5,
-      "val": 2,
-      "degree": 1
+      "val": 2
     },
     {
-      "id": "tag:PPT",
-      "name": "#PPT",
-      "label": "#PPT",
+      "id": "tag:论文投稿",
+      "name": "#论文投稿",
+      "label": "#论文投稿",
       "type": "concept",
       "group": 5,
       "community": 5,
-      "val": 2,
-      "degree": 1
+      "val": 2
     },
     {
-      "id": "tag:学术写作",
-      "name": "#学术写作",
-      "label": "#学术写作",
+      "id": "tag:摘要写作",
+      "name": "#摘要写作",
+      "label": "#摘要写作",
       "type": "concept",
       "group": 5,
       "community": 5,
-      "val": 2,
-      "degree": 1
+      "val": 2
     },
     {
-      "id": "tag:排版",
-      "name": "#排版",
-      "label": "#排版",
+      "id": "tag:desk-reject",
+      "name": "#desk-reject",
+      "label": "#desk-reject",
       "type": "concept",
       "group": 5,
       "community": 5,
-      "val": 2,
-      "degree": 1
+      "val": 2
+    },
+    {
+      "id": "tag:cmt",
+      "name": "#cmt",
+      "label": "#cmt",
+      "type": "concept",
+      "group": 5,
+      "community": 5,
+      "val": 2
+    },
+    {
+      "id": "mri-brightness-consistency",
+      "name": "MRI 图像亮度一致性处理",
+      "label": "MRI 图像亮度一致性处理",
+      "type": "document",
+      "group": 1,
+      "community": 1,
+      "val": 6,
+      "tags": [
+        "#医学影像",
+        "#图像后处理",
+        "#亮度一致性"
+      ],
+      "summary": "生成 MRI 与真实 MRI 常出现\"结构相似、亮度分布不一致\"，直接拖低 PSNR/SSIM。解决思路分三层：后处理对齐亮度（直方图匹配/伽马/CLAHE/标准化）、训练端约束（SSIM 损失/亮度一致性损失/感知损失/数据增强）、以及用对亮度不敏感的指标（NCC/边缘相似度）评估。还可叠加去噪（Gaussian/小波/NLM）进一步压低像素误差。"
+    },
+    {
+      "id": "tag:亮度一致性",
+      "name": "#亮度一致性",
+      "label": "#亮度一致性",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "multi-gpu-training-troubleshooting",
+      "name": "多卡训练与分布式故障排查",
+      "label": "多卡训练与分布式故障排查",
+      "type": "document",
+      "group": 7,
+      "community": 7,
+      "val": 6,
+      "tags": [
+        "#DDP",
+        "#多卡",
+        "#模型并行",
+        "#数据并行",
+        "#NCCL",
+        "#ROCm",
+        "#分布式训练"
+      ],
+      "summary": "单卡显存不够时，把 encoder/decoder 拆到两张卡（模型并行）会因跨卡特征图传输变慢；更推荐数据并行（DDP/accelerate），把每卡 batch 拼成 global batch、梯度平均。关键认知是\"global batch 相同时，4卡×bs4 ≈ 单卡×bs16 ≈ 单卡×bs4 + grad_accum4\"。多卡出问题时要分清三类：DDP 集体通信日志（正常噪音）、NCCL 通信错误（backend/超时）、G"
+    },
+    {
+      "id": "tag:DDP",
+      "name": "#DDP",
+      "label": "#DDP",
+      "type": "concept",
+      "group": 7,
+      "community": 7,
+      "val": 2
+    },
+    {
+      "id": "tag:多卡",
+      "name": "#多卡",
+      "label": "#多卡",
+      "type": "concept",
+      "group": 7,
+      "community": 7,
+      "val": 2
+    },
+    {
+      "id": "tag:模型并行",
+      "name": "#模型并行",
+      "label": "#模型并行",
+      "type": "concept",
+      "group": 7,
+      "community": 7,
+      "val": 2
+    },
+    {
+      "id": "tag:NCCL",
+      "name": "#NCCL",
+      "label": "#NCCL",
+      "type": "concept",
+      "group": 7,
+      "community": 7,
+      "val": 2
+    },
+    {
+      "id": "tag:ROCm",
+      "name": "#ROCm",
+      "label": "#ROCm",
+      "type": "concept",
+      "group": 7,
+      "community": 7,
+      "val": 2
+    },
+    {
+      "id": "tag:分布式训练",
+      "name": "#分布式训练",
+      "label": "#分布式训练",
+      "type": "concept",
+      "group": 7,
+      "community": 7,
+      "val": 2
+    },
+    {
+      "id": "npm-nodejs-toolchain",
+      "name": "npm / Node.js 与前端工具链安装",
+      "label": "npm / Node.js 与前端工具链安装",
+      "type": "document",
+      "group": 41,
+      "community": 41,
+      "val": 6,
+      "tags": [
+        "#npm",
+        "#Node.js",
+        "#前端",
+        "#Electron",
+        "#Cursor"
+      ],
+      "summary": "npm/Node.js 环境搭建涉及版本选择、安装方式（nvm vs 系统包管理器）、国内镜像配置以及 Electron/Cursor 等前端工具的安装调试。npm 全局安装 Electron 时常见权限/网络问题，可通过 nvm 多版本管理、`--registry` 镜像加速解决。Cursor 插件安装有时被防火墙拦截导致失败。"
+    },
+    {
+      "id": "tag:npm",
+      "name": "#npm",
+      "label": "#npm",
+      "type": "concept",
+      "group": 41,
+      "community": 41,
+      "val": 2
+    },
+    {
+      "id": "tag:Node.js",
+      "name": "#Node.js",
+      "label": "#Node.js",
+      "type": "concept",
+      "group": 41,
+      "community": 41,
+      "val": 2
+    },
+    {
+      "id": "tag:前端",
+      "name": "#前端",
+      "label": "#前端",
+      "type": "concept",
+      "group": 41,
+      "community": 41,
+      "val": 2
+    },
+    {
+      "id": "tag:Electron",
+      "name": "#Electron",
+      "label": "#Electron",
+      "type": "concept",
+      "group": 41,
+      "community": 41,
+      "val": 2
+    },
+    {
+      "id": "tag:Cursor",
+      "name": "#Cursor",
+      "label": "#Cursor",
+      "type": "concept",
+      "group": 41,
+      "community": 41,
+      "val": 2
+    },
+    {
+      "id": "paper-review-summarization",
+      "name": "论文阅读·审阅·总结方法",
+      "label": "论文阅读·审阅·总结方法",
+      "type": "document",
+      "group": 5,
+      "community": 5,
+      "val": 6,
+      "tags": [
+        "#论文阅读",
+        "#论文审阅",
+        "#ai工具",
+        "#文献总结"
+      ],
+      "summary": "用 AI 辅助论文阅读、审阅与总结的方法论与工具集。审阅采用“优点/缺点/总结意见/审稿建议”四段式（中英双语）；总结采用“核心内容 + 方法思路 + 最终结论”或“背景动机 / 方法架构 / 实验设计”三段式结构。工具层覆盖 Scite、Elicit、ChatPDF 等。核心经验：让 AI 评审前先给足上下文（PDF/摘要/目标会场），并要求其引用论文具体行号作为依据，避免套模板式空评。"
+    },
+    {
+      "id": "tag:论文阅读",
+      "name": "#论文阅读",
+      "label": "#论文阅读",
+      "type": "concept",
+      "group": 5,
+      "community": 5,
+      "val": 2
+    },
+    {
+      "id": "tag:论文审阅",
+      "name": "#论文审阅",
+      "label": "#论文审阅",
+      "type": "concept",
+      "group": 5,
+      "community": 5,
+      "val": 2
+    },
+    {
+      "id": "tag:ai工具",
+      "name": "#ai工具",
+      "label": "#ai工具",
+      "type": "concept",
+      "group": 5,
+      "community": 5,
+      "val": 2
+    },
+    {
+      "id": "tag:文献总结",
+      "name": "#文献总结",
+      "label": "#文献总结",
+      "type": "concept",
+      "group": 5,
+      "community": 5,
+      "val": 2
+    },
+    {
+      "id": "posture-monitoring-agent",
+      "name": "坐姿监控视觉 Agent",
+      "label": "坐姿监控视觉 Agent",
+      "type": "document",
+      "group": 3,
+      "community": 3,
+      "val": 6,
+      "tags": [
+        "#agent",
+        "#computer-vision",
+        "#posture",
+        "#mediapipe",
+        "#yolo",
+        "#edge-ai"
+      ],
+      "summary": "坐姿监控 Agent 可以先做成“摄像头 + 姿态估计 + 状态机提醒”的本地视觉系统，而不是一开始就做复杂 autonomous agent。第一版用 USB 摄像头、OpenCV、MediaPipe Pose 或 YOLO Pose 提取人体关键点，再用规则判断驼背、歪头、前倾、久坐等状态。LLM 更适合做日报总结、个性化建议和阈值解释，不适合逐帧决策。"
+    },
+    {
+      "id": "tag:computer-vision",
+      "name": "#computer-vision",
+      "label": "#computer-vision",
+      "type": "concept",
+      "group": 3,
+      "community": 3,
+      "val": 2
+    },
+    {
+      "id": "tag:posture",
+      "name": "#posture",
+      "label": "#posture",
+      "type": "concept",
+      "group": 3,
+      "community": 3,
+      "val": 2
+    },
+    {
+      "id": "tag:mediapipe",
+      "name": "#mediapipe",
+      "label": "#mediapipe",
+      "type": "concept",
+      "group": 3,
+      "community": 3,
+      "val": 2
+    },
+    {
+      "id": "tag:yolo",
+      "name": "#yolo",
+      "label": "#yolo",
+      "type": "concept",
+      "group": 3,
+      "community": 3,
+      "val": 2
+    },
+    {
+      "id": "tag:edge-ai",
+      "name": "#edge-ai",
+      "label": "#edge-ai",
+      "type": "concept",
+      "group": 3,
+      "community": 3,
+      "val": 2
+    },
+    {
+      "id": "ppt-paper-presentation",
+      "name": "PPT 制作与论文讲解",
+      "label": "PPT 制作与论文讲解",
+      "type": "document",
+      "group": 5,
+      "community": 5,
+      "val": 6,
+      "tags": [
+        "#ppt",
+        "#论文讲解",
+        "#katex",
+        "#python-pptx",
+        "#公式渲染"
+      ],
+      "summary": "组会/答辩讲解论文时的 PPT 制作技术栈：用 python-pptx 程序化生成幻灯片，或用 HTML+KaTeX/MathJax 渲染含公式的学术幻灯片。重点收录公式显示排坑（散落 `$$`、CDN 被墙排查、紧凑行距 CSS 变量）以及“讲解别人论文”的 PPT 内容结构。核心经验：公式渲染问题先排查 CDN 可达性与 `typeof katex`，再用 CSS 变量统一压缩行距防溢出。"
+    },
+    {
+      "id": "tag:ppt",
+      "name": "#ppt",
+      "label": "#ppt",
+      "type": "concept",
+      "group": 5,
+      "community": 5,
+      "val": 2
+    },
+    {
+      "id": "tag:论文讲解",
+      "name": "#论文讲解",
+      "label": "#论文讲解",
+      "type": "concept",
+      "group": 5,
+      "community": 5,
+      "val": 2
+    },
+    {
+      "id": "tag:katex",
+      "name": "#katex",
+      "label": "#katex",
+      "type": "concept",
+      "group": 5,
+      "community": 5,
+      "val": 2
+    },
+    {
+      "id": "tag:python-pptx",
+      "name": "#python-pptx",
+      "label": "#python-pptx",
+      "type": "concept",
+      "group": 5,
+      "community": 5,
+      "val": 2
+    },
+    {
+      "id": "tag:公式渲染",
+      "name": "#公式渲染",
+      "label": "#公式渲染",
+      "type": "concept",
+      "group": 5,
+      "community": 5,
+      "val": 2
+    },
+    {
+      "id": "psnr-ssim-3d-mri",
+      "name": "3D MRI 的 PSNR 与 SSIM 计算",
+      "label": "3D MRI 的 PSNR 与 SSIM 计算",
+      "type": "document",
+      "group": 1,
+      "community": 1,
+      "val": 6,
+      "tags": [
+        "#医学影像",
+        "#图像质量评估",
+        "#PSNR",
+        "#SSIM"
+      ],
+      "summary": "PSNR/SSIM 在 3D MRI 上的计算本质与 2D 相同，只是把像素换成 voxel。核心分歧在于\"逐切片 2D 再平均\"还是\"真·3D 体素级\"，以及动态范围 data_range、脑掩膜、强度归一化如何设定——这些设定直接决定数值是否可比。医学影像中应优先用体素级 3D 指标、在脑掩膜内统计、用固定的全局动态范围。"
+    },
+    {
+      "id": "tag:图像质量评估",
+      "name": "#图像质量评估",
+      "label": "#图像质量评估",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:PSNR",
+      "name": "#PSNR",
+      "label": "#PSNR",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:SSIM",
+      "name": "#SSIM",
+      "label": "#SSIM",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "rectified-flow-basics",
+      "name": "Rectified Flow 与 Flow Matching 原理",
+      "label": "Rectified Flow 与 Flow Matching 原理",
+      "type": "document",
+      "group": 2,
+      "community": 2,
+      "val": 6,
+      "tags": [
+        "#生成模型",
+        "#数学基础",
+        "#FlowMatching",
+        "#RectifiedFlow"
+      ],
+      "summary": "Rectified flow 和 flow matching 是基于常微分方程(ODE)的生成模型,通过学习从噪声到数据的向量场,实现比传统扩散模型更高效的采样。Conditional Flow Matching (CFM) 通过回归条件概率路径的向量场,绕开了 normalizing flow 中昂贵的 log-det Jacobian 计算。"
+    },
+    {
+      "id": "tag:数学基础",
+      "name": "#数学基础",
+      "label": "#数学基础",
+      "type": "concept",
+      "group": 2,
+      "community": 2,
+      "val": 2
+    },
+    {
+      "id": "tag:RectifiedFlow",
+      "name": "#RectifiedFlow",
+      "label": "#RectifiedFlow",
+      "type": "concept",
+      "group": 2,
+      "community": 2,
+      "val": 2
+    },
+    {
+      "id": "research-experiment-agent-workbench",
+      "name": "科研实验 Agent 工作台",
+      "label": "科研实验 Agent 工作台",
+      "type": "document",
+      "group": 3,
+      "community": 3,
+      "val": 6,
+      "tags": [
+        "#agent",
+        "#科研实验",
+        "#监控",
+        "#wandb",
+        "#notion",
+        "#automation"
+      ],
+      "summary": "科研实验工作台不应从“自主 agent 到处看服务器”开始，而应先构建稳定的实验事件总线和 LLM 总结器。核心输入包括 agent 会话、git 变化、训练日志、checkpoint、WandB/TensorBoard、SLURM/job 状态等。每台服务器独立采集并上报到统一数据库或 Wiki，LLM 只负责压缩和解释，不代替事实采集。"
+    },
+    {
+      "id": "tag:科研实验",
+      "name": "#科研实验",
+      "label": "#科研实验",
+      "type": "concept",
+      "group": 3,
+      "community": 3,
+      "val": 2
+    },
+    {
+      "id": "tag:监控",
+      "name": "#监控",
+      "label": "#监控",
+      "type": "concept",
+      "group": 3,
+      "community": 3,
+      "val": 2
+    },
+    {
+      "id": "tag:wandb",
+      "name": "#wandb",
+      "label": "#wandb",
+      "type": "concept",
+      "group": 3,
+      "community": 3,
+      "val": 2
+    },
+    {
+      "id": "tag:notion",
+      "name": "#notion",
+      "label": "#notion",
+      "type": "concept",
+      "group": 3,
+      "community": 3,
+      "val": 2
+    },
+    {
+      "id": "tag:automation",
+      "name": "#automation",
+      "label": "#automation",
+      "type": "concept",
+      "group": 3,
+      "community": 3,
+      "val": 2
+    },
+    {
+      "id": "segmentation-mask-conditioned-diffusion",
+      "name": "分割掩码条件下的扩散生成",
+      "label": "分割掩码条件下的扩散生成",
+      "type": "document",
+      "group": 2,
+      "community": 2,
+      "val": 6,
+      "tags": [
+        "#生成模型",
+        "#扩散模型",
+        "#条件生成"
+      ],
+      "summary": "用取值 {0,1,2,3} 的分割掩码驱动扩散模型生成图像，属于\"条件图像生成/语义分割图像合成\"。核心预处理是把离散类别掩码转为模型可用的连续条件：one-hot 编码成多通道、归一化，并作为额外通道在每个去噪步与噪声图拼接注入网络。"
+    },
+    {
+      "id": "tag:条件生成",
+      "name": "#条件生成",
+      "label": "#条件生成",
+      "type": "concept",
+      "group": 2,
+      "community": 2,
+      "val": 2
+    },
+    {
+      "id": "ss-fse-isotropic-thick-slice",
+      "name": "SS-FSE 厚切与各向同性扫描及厚切模拟",
+      "label": "SS-FSE 厚切与各向同性扫描及厚切模拟",
+      "type": "document",
+      "group": 1,
+      "community": 1,
+      "val": 6,
+      "tags": [
+        "#医学影像",
+        "#MRI采集",
+        "#厚切模拟"
+      ],
+      "summary": "临床 SS-FSE（single-shot fast spin echo）扫描快、层厚大（5–6mm）、各向异性、软组织对比度高，适合快速排查；研究用各向同性扫描层薄（1–2mm）、三向等分辨率、扫描时间长，适合精细结构分析与 3D 重建。从高质量各向同性扫描模拟厚切图像有多种方法，用于训练数据构造或评估对照。"
+    },
+    {
+      "id": "tag:MRI采集",
+      "name": "#MRI采集",
+      "label": "#MRI采集",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:厚切模拟",
+      "name": "#厚切模拟",
+      "label": "#厚切模拟",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "ssh-remote-development",
+      "name": "远程开发与服务器连接",
+      "label": "远程开发与服务器连接",
+      "type": "document",
+      "group": 4,
+      "community": 4,
+      "val": 6,
+      "tags": [
+        "#远程开发",
+        "#VS",
+        "Code",
+        "#SSH",
+        "#服务器",
+        "#数据传输"
+      ],
+      "summary": "远程开发环境搭建涵盖 VS Code Server 安装（code-server 或 tunnel）、SSH 连接故障排查（Connection refused）、本地-服务器数据传输（scp/rsync/最低卡顿方案）、以及临时存储（tmpfs）和 minerU 文档解析引擎的调试。核心问题通常是端口不可达（防火墙/服务未启动/绑定地址错误）和传输效率优化。"
+    },
+    {
+      "id": "tag:远程开发",
+      "name": "#远程开发",
+      "label": "#远程开发",
+      "type": "concept",
+      "group": 4,
+      "community": 4,
+      "val": 2
+    },
+    {
+      "id": "tag:VS",
+      "name": "#VS",
+      "label": "#VS",
+      "type": "concept",
+      "group": 4,
+      "community": 4,
+      "val": 2
+    },
+    {
+      "id": "tag:Code",
+      "name": "Code",
+      "label": "Code",
+      "type": "concept",
+      "group": 4,
+      "community": 4,
+      "val": 2
+    },
+    {
+      "id": "tag:服务器",
+      "name": "#服务器",
+      "label": "#服务器",
+      "type": "concept",
+      "group": 4,
+      "community": 4,
+      "val": 2
+    },
+    {
+      "id": "tag:数据传输",
+      "name": "#数据传输",
+      "label": "#数据传输",
+      "type": "concept",
+      "group": 4,
+      "community": 4,
+      "val": 2
+    },
+    {
+      "id": "training-losses-generative-models",
+      "name": "生成模型的训练损失函数",
+      "label": "生成模型的训练损失函数",
+      "type": "document",
+      "group": 2,
+      "community": 2,
+      "val": 6,
+      "tags": [
+        "#生成模型",
+        "#损失函数",
+        "#训练技巧",
+        "#PseudoHuber"
+      ],
+      "summary": "生成模型的训练损失直接影响图像质量。在医学影像生成中,除标准 flow matching/diffusion 损失外,Pseudo-Huber、LPIPS-Huber、感知损失、SSIM 损失和对抗损失的组合使用可以有效提升细节和结构保真度。"
+    },
+    {
+      "id": "tag:训练技巧",
+      "name": "#训练技巧",
+      "label": "#训练技巧",
+      "type": "concept",
+      "group": 2,
+      "community": 2,
+      "val": 2
+    },
+    {
+      "id": "tag:PseudoHuber",
+      "name": "#PseudoHuber",
+      "label": "#PseudoHuber",
+      "type": "concept",
+      "group": 2,
+      "community": 2,
+      "val": 2
+    },
+    {
+      "id": "vae-3d-medical-imaging",
+      "name": "3D 医学影像 VAE 架构",
+      "label": "3D 医学影像 VAE 架构",
+      "type": "document",
+      "group": 1,
+      "community": 1,
+      "val": 6,
+      "tags": [
+        "#VAE",
+        "#Autoencoder",
+        "#3DMRI",
+        "#医学影像",
+        "#MAISI"
+      ],
+      "summary": "变分自编码器(VAE)在 3D 医学影像中作为潜空间编码器广泛应用,用于将体素级数据压缩到低维潜空间后再由生成模型(扩散/flow)建模。核心挑战包括 2D→3D 扩展、潜空间维度选择和预训练权重复用。"
+    },
+    {
+      "id": "tag:VAE",
+      "name": "#VAE",
+      "label": "#VAE",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:Autoencoder",
+      "name": "#Autoencoder",
+      "label": "#Autoencoder",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:MAISI",
+      "name": "#MAISI",
+      "label": "#MAISI",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "wandb-experiment-tracking",
+      "name": "WandB 实验追踪与代码管理",
+      "label": "WandB 实验追踪与代码管理",
+      "type": "document",
+      "group": 7,
+      "community": 7,
+      "val": 6,
+      "tags": [
+        "#WandB",
+        "#实验追踪",
+        "#可视化",
+        "#PSNR",
+        "#SSIM",
+        "#代码安全"
+      ],
+      "summary": "WandB 用于记录训练/测试的指标（PSNR/SSIM/loss）、保存源码、管理多实验。核心 API 是 `wandb.init` / `wandb.log` / `wandb.save` / `wandb.Table` / `wandb.Image` / `wandb.finish`。关键场景：测试集逐样本记录指标并画图、用 `resume=True` 往已有实验追加测试结果、多实验分别保存对应代码、用 Table 结构化记录但需"
+    },
+    {
+      "id": "tag:WandB",
+      "name": "#WandB",
+      "label": "#WandB",
+      "type": "concept",
+      "group": 7,
+      "community": 7,
+      "val": 2
+    },
+    {
+      "id": "tag:实验追踪",
+      "name": "#实验追踪",
+      "label": "#实验追踪",
+      "type": "concept",
+      "group": 7,
+      "community": 7,
+      "val": 2
+    },
+    {
+      "id": "tag:可视化",
+      "name": "#可视化",
+      "label": "#可视化",
+      "type": "concept",
+      "group": 7,
+      "community": 7,
+      "val": 2
+    },
+    {
+      "id": "tag:代码安全",
+      "name": "#代码安全",
+      "label": "#代码安全",
+      "type": "concept",
+      "group": 7,
+      "community": 7,
+      "val": 2
+    },
+    {
+      "id": "wavelet-deformation-analysis",
+      "name": "小波域中的图像形变分析",
+      "label": "小波域中的图像形变分析",
+      "type": "document",
+      "group": 51,
+      "community": 51,
+      "val": 6,
+      "tags": [
+        "#小波变换",
+        "#形变分析",
+        "#位移估计",
+        "#光流",
+        "#配准"
+      ],
+      "summary": "小波把图像分成不同尺度与方向的分量：低频近似（LL）捕捉大尺度结构/整体形状变化，高频细节子带（LH/HL/HH）捕捉边缘/纹理/局部边界移动。因此大尺度形变主要反映在低频系数变化，局部/边界位移则在高频定向系数上产生强响应。但标准 decimated DWT 不是移位不变的（平移敏感性），微小位移会使系数跳变/混叠，需用平稳小波（SWT）或双树复小波（DT-CWT）配合相位法做亚体素位移估计。"
+    },
+    {
+      "id": "tag:小波变换",
+      "name": "#小波变换",
+      "label": "#小波变换",
+      "type": "concept",
+      "group": 51,
+      "community": 51,
+      "val": 2
+    },
+    {
+      "id": "tag:形变分析",
+      "name": "#形变分析",
+      "label": "#形变分析",
+      "type": "concept",
+      "group": 51,
+      "community": 51,
+      "val": 2
+    },
+    {
+      "id": "tag:位移估计",
+      "name": "#位移估计",
+      "label": "#位移估计",
+      "type": "concept",
+      "group": 51,
+      "community": 51,
+      "val": 2
+    },
+    {
+      "id": "tag:光流",
+      "name": "#光流",
+      "label": "#光流",
+      "type": "concept",
+      "group": 51,
+      "community": 51,
+      "val": 2
+    },
+    {
+      "id": "tag:配准",
+      "name": "#配准",
+      "label": "#配准",
+      "type": "concept",
+      "group": 51,
+      "community": 51,
+      "val": 2
+    },
+    {
+      "id": "wavelet-flow-mri-generation",
+      "name": "小波变换 + 生成模型用于纵向 MRI 生成",
+      "label": "小波变换 + 生成模型用于纵向 MRI 生成",
+      "type": "document",
+      "group": 2,
+      "community": 2,
+      "val": 6,
+      "tags": [
+        "#小波变换",
+        "#生成模型",
+        "#rectified-flow",
+        "#扩散模型",
+        "#纵向MRI",
+        "#婴幼儿脑发育"
+      ],
+      "summary": "将 3D 小波变换与扩散模型/Rectified Flow 结合，用于婴幼儿大脑 MRI 的纵向生成（如 6 月龄→12 月龄）。核心思想是**频率解耦**：低频子带建模宏观解剖形态（脑体积、皮层厚度）的缓慢演化，高频子带建模纹理/髓鞘化等细节变化。通过对不同频带设计差异化流场、引入形变场引导或无配准的隐式对齐、利用分割 label 作为结构 reward，可在保持纵向解剖一致性与生物合理性的同时恢复高频细节。固定小波基（3D Haar"
+    },
+    {
+      "id": "tag:rectified-flow",
+      "name": "#rectified-flow",
+      "label": "#rectified-flow",
+      "type": "concept",
+      "group": 2,
+      "community": 2,
+      "val": 2
+    },
+    {
+      "id": "tag:纵向MRI",
+      "name": "#纵向MRI",
+      "label": "#纵向MRI",
+      "type": "concept",
+      "group": 2,
+      "community": 2,
+      "val": 2
+    },
+    {
+      "id": "tag:婴幼儿脑发育",
+      "name": "#婴幼儿脑发育",
+      "label": "#婴幼儿脑发育",
+      "type": "concept",
+      "group": 2,
+      "community": 2,
+      "val": 2
     }
   ],
   "links": [
     {
-      "source": "3d-medical-dit-training",
-      "target": "rae-3dino-latent-dit-counterfactual",
-      "type": "related",
-      "value": 2
+      "source": "agent-chat-wiki-tooling",
+      "target": "tag:agent",
+      "type": "tag",
+      "value": 0.6
     },
     {
-      "source": "3d-medical-dit-training",
-      "target": "maisi-vae-counterfactual-roadmap",
-      "type": "related",
-      "value": 2
+      "source": "agent-chat-wiki-tooling",
+      "target": "tag:wiki",
+      "type": "tag",
+      "value": 0.6
     },
     {
-      "source": "3d-medical-dit-training",
-      "target": "medical-image-counterfactual-generation",
-      "type": "related",
-      "value": 2
+      "source": "agent-chat-wiki-tooling",
+      "target": "tag:codex",
+      "type": "tag",
+      "value": 0.6
     },
     {
-      "source": "3d-medical-dit-training",
-      "target": "mri-preprocessing-pipeline",
-      "type": "related",
-      "value": 2
+      "source": "agent-chat-wiki-tooling",
+      "target": "tag:obsidian",
+      "type": "tag",
+      "value": 0.6
     },
     {
-      "source": "flow-matching-editing-methods",
-      "target": "flowalign-anomaly-aware-counterfactual",
-      "type": "related",
-      "value": 2
+      "source": "agent-chat-wiki-tooling",
+      "target": "tag:knowledge-management",
+      "type": "tag",
+      "value": 0.6
     },
     {
-      "source": "flow-matching-editing-methods",
-      "target": "maisi-vae-counterfactual-roadmap",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "flow-matching-editing-methods",
-      "target": "medical-image-counterfactual-generation",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "flow-matching-editing-methods",
-      "target": "3d-medical-dit-training",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "flowalign-anomaly-aware-counterfactual",
-      "target": "flow-matching-editing-methods",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "flowalign-anomaly-aware-counterfactual",
-      "target": "maisi-vae-counterfactual-roadmap",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "flowalign-anomaly-aware-counterfactual",
-      "target": "medical-image-counterfactual-generation",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "flowalign-anomaly-aware-counterfactual",
-      "target": "3d-medical-dit-training",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "maisi-vae-counterfactual-roadmap",
-      "target": "medical-statistics-roc-auc",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "maisi-vae-counterfactual-roadmap",
-      "target": "medical-image-counterfactual-generation",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "maisi-vae-counterfactual-roadmap",
-      "target": "flowalign-anomaly-aware-counterfactual",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "maisi-vae-counterfactual-roadmap",
-      "target": "flow-matching-editing-methods",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "maisi-vae-counterfactual-roadmap",
-      "target": "3d-medical-dit-training",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "maisi-vae-counterfactual-roadmap",
-      "target": "mri-preprocessing-pipeline",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "maisi-vae-counterfactual-roadmap",
-      "target": "supersynth-freesurfer",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "maisi-vae-counterfactual-roadmap",
-      "target": "sota-image-editing-mechanisms",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "maisi-vae-counterfactual-roadmap",
-      "target": "rae-3dino-latent-dit-counterfactual",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "medical-image-counterfactual-generation",
-      "target": "maisi-vae-counterfactual-roadmap",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "medical-image-counterfactual-generation",
-      "target": "flowalign-anomaly-aware-counterfactual",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "medical-image-counterfactual-generation",
-      "target": "rae-3dino-latent-dit-counterfactual",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "medical-image-counterfactual-generation",
-      "target": "flow-matching-editing-methods",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "medical-image-counterfactual-generation",
-      "target": "3d-medical-dit-training",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "medical-statistics-roc-auc",
-      "target": "maisi-vae-counterfactual-roadmap",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "medical-statistics-roc-auc",
-      "target": "medical-image-counterfactual-generation",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "monai-medical-image-metadata",
-      "target": "mri-preprocessing-pipeline",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "mri-preprocessing-pipeline",
-      "target": "maisi-vae-counterfactual-roadmap",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "mri-preprocessing-pipeline",
-      "target": "supersynth-freesurfer",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "mri-preprocessing-pipeline",
-      "target": "3d-medical-dit-training",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "mri-preprocessing-pipeline",
-      "target": "medical-image-counterfactual-generation",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "rae-3dino-latent-dit-counterfactual",
-      "target": "medical-image-counterfactual-generation",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "rae-3dino-latent-dit-counterfactual",
-      "target": "3d-medical-dit-training",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "rae-3dino-latent-dit-counterfactual",
-      "target": "maisi-vae-counterfactual-roadmap",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "rae-3dino-latent-dit-counterfactual",
-      "target": "mri-preprocessing-pipeline",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "sota-image-editing-mechanisms",
-      "target": "maisi-vae-counterfactual-roadmap",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "sota-image-editing-mechanisms",
-      "target": "medical-image-counterfactual-generation",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "sota-image-editing-mechanisms",
-      "target": "3d-medical-dit-training",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "sota-image-editing-mechanisms",
-      "target": "flowalign-anomaly-aware-counterfactual",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "supersynth-freesurfer",
-      "target": "maisi-vae-counterfactual-roadmap",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "supersynth-freesurfer",
-      "target": "mri-preprocessing-pipeline",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "supersynth-freesurfer",
-      "target": "medical-image-counterfactual-generation",
-      "type": "related",
-      "value": 2
-    },
-    {
-      "source": "medical-image-counterfactual-generation",
-      "target": "maisi-vae-counterfactual-roadmap",
-      "type": "shared-tag",
-      "value": 0.8
-    },
-    {
-      "source": "maisi-vae-counterfactual-roadmap",
-      "target": "flowalign-anomaly-aware-counterfactual",
-      "type": "shared-tag",
-      "value": 0.8
-    },
-    {
-      "source": "flowalign-anomaly-aware-counterfactual",
-      "target": "rae-3dino-latent-dit-counterfactual",
-      "type": "shared-tag",
-      "value": 0.8
-    },
-    {
-      "source": "rae-3dino-latent-dit-counterfactual",
-      "target": "3d-medical-dit-training",
-      "type": "shared-tag",
-      "value": 0.8
-    },
-    {
-      "source": "3d-medical-dit-training",
-      "target": "mri-preprocessing-pipeline",
-      "type": "shared-tag",
-      "value": 0.8
-    },
-    {
-      "source": "mri-preprocessing-pipeline",
-      "target": "supersynth-freesurfer",
-      "type": "shared-tag",
-      "value": 0.8
-    },
-    {
-      "source": "supersynth-freesurfer",
-      "target": "monai-medical-image-metadata",
-      "type": "shared-tag",
-      "value": 0.8
-    },
-    {
-      "source": "medical-image-counterfactual-generation",
-      "target": "flow-matching-editing-methods",
-      "type": "shared-tag",
-      "value": 0.8
-    },
-    {
-      "source": "maisi-vae-counterfactual-roadmap",
-      "target": "mri-preprocessing-pipeline",
-      "type": "shared-tag",
-      "value": 0.8
-    },
-    {
-      "source": "flow-matching-editing-methods",
-      "target": "flowalign-anomaly-aware-counterfactual",
-      "type": "shared-tag",
-      "value": 0.8
-    },
-    {
-      "source": "flow-matching-editing-methods",
-      "target": "sota-image-editing-mechanisms",
-      "type": "shared-tag",
-      "value": 0.8
-    },
-    {
-      "source": "3d-medical-dit-training",
-      "target": "sota-image-editing-mechanisms",
-      "type": "shared-tag",
-      "value": 0.8
-    },
-    {
-      "source": "supersynth-freesurfer",
-      "target": "ponytail-ai-coding-skill",
-      "type": "shared-tag",
-      "value": 0.8
-    },
-    {
-      "source": "codex-chat-to-wiki-tooling",
-      "target": "ponytail-ai-coding-skill",
-      "type": "shared-tag",
-      "value": 0.8
-    },
-    {
-      "source": "medical-image-counterfactual-generation",
+      "source": "autism-mri-diagnosis",
       "target": "tag:医学影像",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "medical-image-counterfactual-generation",
-      "target": "tag:反事实生成",
+      "source": "autism-mri-diagnosis",
+      "target": "tag:自闭症",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "medical-image-counterfactual-generation",
+      "source": "autism-mri-diagnosis",
+      "target": "tag:分类",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "autism-mri-diagnosis",
+      "target": "tag:早期诊断",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "autism-mri-diagnosis",
+      "target": "tag:生成模型",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "brain-atlas-parcellation-dkt-mcrib-aal",
+      "target": "tag:脑区分割",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "brain-atlas-parcellation-dkt-mcrib-aal",
+      "target": "tag:atlas",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "brain-atlas-parcellation-dkt-mcrib-aal",
+      "target": "tag:DKT",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "brain-atlas-parcellation-dkt-mcrib-aal",
+      "target": "tag:M-CRIB",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "brain-atlas-parcellation-dkt-mcrib-aal",
+      "target": "tag:AAL",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "brain-atlas-parcellation-dkt-mcrib-aal",
+      "target": "tag:Desikan-Killiany",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "brain-mri-counterfactual-generation",
+      "target": "tag:医学影像",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "brain-mri-counterfactual-generation",
+      "target": "tag:生成模型",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "brain-mri-counterfactual-generation",
+      "target": "tag:反事实",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "brain-segmentation-deep-learning-models",
+      "target": "tag:深度学习",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "brain-segmentation-deep-learning-models",
+      "target": "tag:医学分割",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "brain-segmentation-deep-learning-models",
+      "target": "tag:nnU-Net",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "brain-segmentation-deep-learning-models",
+      "target": "tag:SAM",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "brain-segmentation-deep-learning-models",
       "target": "tag:扩散模型",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "medical-image-counterfactual-generation",
-      "target": "tag:因果推断",
+      "source": "brain-segmentation-deep-learning-models",
+      "target": "tag:一致性模型",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "medical-image-counterfactual-generation",
-      "target": "tag:文献综述",
+      "source": "brain-segmentation-deep-learning-models",
+      "target": "tag:边缘损失",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "maisi-vae-counterfactual-roadmap",
+      "source": "chatgpt-backup-wiki-publishing-pipeline",
+      "target": "tag:chatgpt-backup",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "chatgpt-backup-wiki-publishing-pipeline",
+      "target": "tag:wiki",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "chatgpt-backup-wiki-publishing-pipeline",
+      "target": "tag:github-pages",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "chatgpt-backup-wiki-publishing-pipeline",
+      "target": "tag:encryption",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "chatgpt-backup-wiki-publishing-pipeline",
+      "target": "tag:publishing",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "cortical-thickness-area-volume-measurement",
+      "target": "tag:皮层厚度",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "cortical-thickness-area-volume-measurement",
+      "target": "tag:表面积",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "cortical-thickness-area-volume-measurement",
+      "target": "tag:脑体积",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "cortical-thickness-area-volume-measurement",
+      "target": "tag:混杂变量校正",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "cortical-thickness-area-volume-measurement",
+      "target": "tag:结构共变网络",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "cortical-thickness-area-volume-measurement",
+      "target": "tag:图论",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "cross-modal-medical-image-translation",
       "target": "tag:医学影像",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "maisi-vae-counterfactual-roadmap",
-      "target": "tag:反事实生成",
+      "source": "cross-modal-medical-image-translation",
+      "target": "tag:跨模态",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "maisi-vae-counterfactual-roadmap",
-      "target": "tag:MAISI",
+      "source": "cross-modal-medical-image-translation",
+      "target": "tag:图像翻译",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "maisi-vae-counterfactual-roadmap",
-      "target": "tag:rectified-flow",
+      "source": "cross-modal-medical-image-translation",
+      "target": "tag:MRI",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "maisi-vae-counterfactual-roadmap",
-      "target": "tag:normative-model",
+      "source": "cross-modal-medical-image-translation",
+      "target": "tag:PET",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "maisi-vae-counterfactual-roadmap",
-      "target": "tag:研究路线",
+      "source": "cross-modal-medical-image-translation",
+      "target": "tag:SynDiff",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "flow-matching-editing-methods",
-      "target": "tag:flow-matching",
+      "source": "dataloader-data-parallel",
+      "target": "tag:DataLoader",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "flow-matching-editing-methods",
-      "target": "tag:图像编辑",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "flow-matching-editing-methods",
-      "target": "tag:inversion",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "flow-matching-editing-methods",
-      "target": "tag:文献综述",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "flowalign-anomaly-aware-counterfactual",
-      "target": "tag:flow-matching",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "flowalign-anomaly-aware-counterfactual",
-      "target": "tag:FlowEdit",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "flowalign-anomaly-aware-counterfactual",
-      "target": "tag:FlowAlign",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "flowalign-anomaly-aware-counterfactual",
-      "target": "tag:反事实生成",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "flowalign-anomaly-aware-counterfactual",
-      "target": "tag:医学影像",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "rae-3dino-latent-dit-counterfactual",
-      "target": "tag:医学影像",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "rae-3dino-latent-dit-counterfactual",
-      "target": "tag:3DINO",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "rae-3dino-latent-dit-counterfactual",
-      "target": "tag:RAE",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "rae-3dino-latent-dit-counterfactual",
-      "target": "tag:DiT",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "rae-3dino-latent-dit-counterfactual",
-      "target": "tag:反事实生成",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "rae-3dino-latent-dit-counterfactual",
-      "target": "tag:项目方案",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "3d-medical-dit-training",
-      "target": "tag:医学影像",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "3d-medical-dit-training",
-      "target": "tag:DiT",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "3d-medical-dit-training",
-      "target": "tag:3D生成",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "3d-medical-dit-training",
-      "target": "tag:训练工程",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "3d-medical-dit-training",
-      "target": "tag:VolDiT",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "sota-image-editing-mechanisms",
-      "target": "tag:图像编辑",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "sota-image-editing-mechanisms",
-      "target": "tag:DiT",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "sota-image-editing-mechanisms",
-      "target": "tag:GPT-Image",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "sota-image-editing-mechanisms",
-      "target": "tag:Seedream",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "sota-image-editing-mechanisms",
-      "target": "tag:机制分析",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "medical-statistics-roc-auc",
-      "target": "tag:医学统计",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "medical-statistics-roc-auc",
-      "target": "tag:logistic回归",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "medical-statistics-roc-auc",
-      "target": "tag:ROC",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "medical-statistics-roc-auc",
-      "target": "tag:AUC",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "medical-statistics-roc-auc",
-      "target": "tag:R方",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "medical-statistics-roc-auc",
-      "target": "tag:增量价值",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "mri-preprocessing-pipeline",
-      "target": "tag:医学影像",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "mri-preprocessing-pipeline",
-      "target": "tag:MRI预处理",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "mri-preprocessing-pipeline",
-      "target": "tag:ANTs",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "mri-preprocessing-pipeline",
-      "target": "tag:SynthStrip",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "mri-preprocessing-pipeline",
-      "target": "tag:MAISI",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "supersynth-freesurfer",
-      "target": "tag:医学影像",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "supersynth-freesurfer",
-      "target": "tag:FreeSurfer",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "supersynth-freesurfer",
-      "target": "tag:SuperSynth",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "supersynth-freesurfer",
-      "target": "tag:分割",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "supersynth-freesurfer",
-      "target": "tag:工具",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "monai-medical-image-metadata",
+      "source": "dataloader-data-parallel",
       "target": "tag:MONAI",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "monai-medical-image-metadata",
+      "source": "dataloader-data-parallel",
+      "target": "tag:num_workers",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "dataloader-data-parallel",
+      "target": "tag:pin_memory",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "dataloader-data-parallel",
+      "target": "tag:数据并行",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "dinov3-3d-mri-self-supervised",
+      "target": "tag:自监督学习",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "dinov3-3d-mri-self-supervised",
+      "target": "tag:DINOv3",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "dinov3-3d-mri-self-supervised",
+      "target": "tag:3DINO",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "dinov3-3d-mri-self-supervised",
       "target": "tag:医学影像",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "monai-medical-image-metadata",
-      "target": "tag:metadata",
+      "source": "dinov3-3d-mri-self-supervised",
+      "target": "tag:MRI生成",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "monai-medical-image-metadata",
-      "target": "tag:Python",
+      "source": "dinov3-3d-mri-self-supervised",
+      "target": "tag:3D视觉",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "bioelectric-morphogenesis",
-      "target": "tag:生物电",
+      "source": "dinov3-3d-mri-self-supervised",
+      "target": "tag:特征迁移",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "bioelectric-morphogenesis",
-      "target": "tag:形态发生",
+      "source": "docker-install-and-management",
+      "target": "tag:Docker",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "bioelectric-morphogenesis",
-      "target": "tag:发育生物学",
+      "source": "docker-install-and-management",
+      "target": "tag:Linux",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "bioelectric-morphogenesis",
-      "target": "tag:概念辨析",
+      "source": "docker-install-and-management",
+      "target": "tag:容器",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "codex-chat-to-wiki-tooling",
-      "target": "tag:知识管理",
+      "source": "docker-install-and-management",
+      "target": "tag:APT源",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "codex-chat-to-wiki-tooling",
-      "target": "tag:Obsidian",
+      "source": "fastsurfer-freesurfer-cortical-pipeline",
+      "target": "tag:FastSurfer",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "codex-chat-to-wiki-tooling",
-      "target": "tag:3D知识图谱",
+      "source": "fastsurfer-freesurfer-cortical-pipeline",
+      "target": "tag:FreeSurfer",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "codex-chat-to-wiki-tooling",
-      "target": "tag:GitHub-Pages",
+      "source": "fastsurfer-freesurfer-cortical-pipeline",
+      "target": "tag:皮层重建",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "codex-chat-to-wiki-tooling",
-      "target": "tag:Codex",
+      "source": "fastsurfer-freesurfer-cortical-pipeline",
+      "target": "tag:脑区分割",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "codex-chat-to-wiki-tooling",
-      "target": "tag:工具链",
+      "source": "fastsurfer-freesurfer-cortical-pipeline",
+      "target": "tag:aseg",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "ponytail-ai-coding-skill",
-      "target": "tag:AI编程",
+      "source": "fastsurfer-freesurfer-cortical-pipeline",
+      "target": "tag:aparc-stats",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "ponytail-ai-coding-skill",
-      "target": "tag:Codex",
+      "source": "flow-medical-image-generation",
+      "target": "tag:医学影像",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "ponytail-ai-coding-skill",
-      "target": "tag:agent技能",
+      "source": "flow-medical-image-generation",
+      "target": "tag:生成模型",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "ponytail-ai-coding-skill",
-      "target": "tag:极简主义",
+      "source": "flow-medical-image-generation",
+      "target": "tag:FlowMatching",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "ponytail-ai-coding-skill",
-      "target": "tag:工具",
+      "source": "flow-medical-image-generation",
+      "target": "tag:反事实生成",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "shiji-terracotta-army-evidence",
-      "target": "tag:历史",
+      "source": "flow-medical-image-generation",
+      "target": "tag:3DMRI",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "shiji-terracotta-army-evidence",
-      "target": "tag:考古",
+      "source": "hardware-precision-reproducibility",
+      "target": "tag:GPU",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "shiji-terracotta-army-evidence",
-      "target": "tag:史记",
+      "source": "hardware-precision-reproducibility",
+      "target": "tag:浮点精度",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "shiji-terracotta-army-evidence",
-      "target": "tag:秦始皇陵",
+      "source": "hardware-precision-reproducibility",
+      "target": "tag:可复现性",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "shiji-terracotta-army-evidence",
-      "target": "tag:证据链",
+      "source": "hardware-precision-reproducibility",
+      "target": "tag:AMP",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "posture-monitoring-agent",
-      "target": "tag:姿态估计",
+      "source": "hardware-precision-reproducibility",
+      "target": "tag:3090",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "posture-monitoring-agent",
-      "target": "tag:MediaPipe",
+      "source": "hardware-precision-reproducibility",
+      "target": "tag:A6000",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "posture-monitoring-agent",
-      "target": "tag:边缘设备",
+      "source": "histogram-matching",
+      "target": "tag:医学影像",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "histogram-matching",
+      "target": "tag:图像后处理",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "histogram-matching",
+      "target": "tag:强度对齐",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "image-frequency-analysis",
+      "target": "tag:图像处理",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "image-frequency-analysis",
+      "target": "tag:傅里叶变换",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "image-frequency-analysis",
+      "target": "tag:频域分析",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "infant-brain-mri-processing",
+      "target": "tag:医学影像",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "infant-brain-mri-processing",
+      "target": "tag:婴幼儿大脑",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "infant-brain-mri-processing",
+      "target": "tag:MRI处理",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "infant-brain-mri-processing",
+      "target": "tag:纵向建模",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "latex-bibtex-typesetting",
+      "target": "tag:latex",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "latex-bibtex-typesetting",
+      "target": "tag:bibtex",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "latex-bibtex-typesetting",
+      "target": "tag:论文排版",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "latex-bibtex-typesetting",
+      "target": "tag:表格",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "latex-bibtex-typesetting",
+      "target": "tag:公式",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "linux-user-management",
+      "target": "tag:Linux",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "linux-user-management",
+      "target": "tag:用户管理",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "linux-user-management",
+      "target": "tag:权限",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "linux-user-management",
+      "target": "tag:SSH",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "loss-function-debugging",
+      "target": "tag:损失函数",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "loss-function-debugging",
+      "target": "tag:Dice",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "loss-function-debugging",
+      "target": "tag:VoxelMorph",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "loss-function-debugging",
+      "target": "tag:边缘损失",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "loss-function-debugging",
+      "target": "tag:FlowMatching",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "loss-function-debugging",
+      "target": "tag:分割评估",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "medical-image-generation-challenges",
+      "target": "tag:医学影像",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "medical-image-generation-challenges",
+      "target": "tag:生成模型",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "medical-image-generation-challenges",
+      "target": "tag:综述",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "medical-image-generation-challenges",
+      "target": "tag:挑战",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "miccai-submission-and-abstract",
+      "target": "tag:miccai",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "miccai-submission-and-abstract",
+      "target": "tag:论文投稿",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "miccai-submission-and-abstract",
+      "target": "tag:摘要写作",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "miccai-submission-and-abstract",
+      "target": "tag:desk-reject",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "miccai-submission-and-abstract",
+      "target": "tag:cmt",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "mri-brightness-consistency",
+      "target": "tag:医学影像",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "mri-brightness-consistency",
+      "target": "tag:图像后处理",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "mri-brightness-consistency",
+      "target": "tag:亮度一致性",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "multi-gpu-training-troubleshooting",
+      "target": "tag:DDP",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "multi-gpu-training-troubleshooting",
+      "target": "tag:多卡",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "multi-gpu-training-troubleshooting",
+      "target": "tag:模型并行",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "multi-gpu-training-troubleshooting",
+      "target": "tag:数据并行",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "multi-gpu-training-troubleshooting",
+      "target": "tag:NCCL",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "multi-gpu-training-troubleshooting",
+      "target": "tag:ROCm",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "multi-gpu-training-troubleshooting",
+      "target": "tag:分布式训练",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "npm-nodejs-toolchain",
+      "target": "tag:npm",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "npm-nodejs-toolchain",
+      "target": "tag:Node.js",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "npm-nodejs-toolchain",
+      "target": "tag:前端",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "npm-nodejs-toolchain",
+      "target": "tag:Electron",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "npm-nodejs-toolchain",
+      "target": "tag:Cursor",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "paper-review-summarization",
+      "target": "tag:论文阅读",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "paper-review-summarization",
+      "target": "tag:论文审阅",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "paper-review-summarization",
+      "target": "tag:ai工具",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "paper-review-summarization",
+      "target": "tag:文献总结",
       "type": "tag",
       "value": 0.6
     },
@@ -1961,93 +2878,1143 @@
     },
     {
       "source": "posture-monitoring-agent",
-      "target": "tag:健康监测",
+      "target": "tag:computer-vision",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "lan-file-drag-drop-transfer",
-      "target": "tag:局域网",
+      "source": "posture-monitoring-agent",
+      "target": "tag:posture",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "lan-file-drag-drop-transfer",
-      "target": "tag:文件传输",
+      "source": "posture-monitoring-agent",
+      "target": "tag:mediapipe",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "lan-file-drag-drop-transfer",
-      "target": "tag:Windows",
+      "source": "posture-monitoring-agent",
+      "target": "tag:yolo",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "lan-file-drag-drop-transfer",
-      "target": "tag:WPF",
+      "source": "posture-monitoring-agent",
+      "target": "tag:edge-ai",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "lan-file-drag-drop-transfer",
-      "target": "tag:工具设计",
+      "source": "ppt-paper-presentation",
+      "target": "tag:ppt",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "chn-nanocomposite-wsl-research",
-      "target": "tag:牙科",
+      "source": "ppt-paper-presentation",
+      "target": "tag:论文讲解",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "chn-nanocomposite-wsl-research",
-      "target": "tag:纳米材料",
+      "source": "ppt-paper-presentation",
+      "target": "tag:katex",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "chn-nanocomposite-wsl-research",
-      "target": "tag:再矿化",
+      "source": "ppt-paper-presentation",
+      "target": "tag:python-pptx",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "chn-nanocomposite-wsl-research",
-      "target": "tag:正畸白斑",
+      "source": "ppt-paper-presentation",
+      "target": "tag:公式渲染",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "chn-nanocomposite-wsl-research",
-      "target": "tag:论文写作",
+      "source": "psnr-ssim-3d-mri",
+      "target": "tag:医学影像",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "reviewer-comments-ppt-layout",
-      "target": "tag:论文答辩",
+      "source": "psnr-ssim-3d-mri",
+      "target": "tag:图像质量评估",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "reviewer-comments-ppt-layout",
-      "target": "tag:PPT",
+      "source": "psnr-ssim-3d-mri",
+      "target": "tag:PSNR",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "reviewer-comments-ppt-layout",
-      "target": "tag:学术写作",
+      "source": "psnr-ssim-3d-mri",
+      "target": "tag:SSIM",
       "type": "tag",
       "value": 0.6
     },
     {
-      "source": "reviewer-comments-ppt-layout",
-      "target": "tag:排版",
+      "source": "rectified-flow-basics",
+      "target": "tag:生成模型",
       "type": "tag",
       "value": 0.6
+    },
+    {
+      "source": "rectified-flow-basics",
+      "target": "tag:数学基础",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "rectified-flow-basics",
+      "target": "tag:FlowMatching",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "rectified-flow-basics",
+      "target": "tag:RectifiedFlow",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "research-experiment-agent-workbench",
+      "target": "tag:agent",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "research-experiment-agent-workbench",
+      "target": "tag:科研实验",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "research-experiment-agent-workbench",
+      "target": "tag:监控",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "research-experiment-agent-workbench",
+      "target": "tag:wandb",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "research-experiment-agent-workbench",
+      "target": "tag:notion",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "research-experiment-agent-workbench",
+      "target": "tag:automation",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "segmentation-mask-conditioned-diffusion",
+      "target": "tag:生成模型",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "segmentation-mask-conditioned-diffusion",
+      "target": "tag:扩散模型",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "segmentation-mask-conditioned-diffusion",
+      "target": "tag:条件生成",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "ss-fse-isotropic-thick-slice",
+      "target": "tag:医学影像",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "ss-fse-isotropic-thick-slice",
+      "target": "tag:MRI采集",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "ss-fse-isotropic-thick-slice",
+      "target": "tag:厚切模拟",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "ssh-remote-development",
+      "target": "tag:远程开发",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "ssh-remote-development",
+      "target": "tag:VS",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "ssh-remote-development",
+      "target": "tag:Code",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "ssh-remote-development",
+      "target": "tag:SSH",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "ssh-remote-development",
+      "target": "tag:服务器",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "ssh-remote-development",
+      "target": "tag:数据传输",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "training-losses-generative-models",
+      "target": "tag:生成模型",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "training-losses-generative-models",
+      "target": "tag:损失函数",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "training-losses-generative-models",
+      "target": "tag:训练技巧",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "training-losses-generative-models",
+      "target": "tag:PseudoHuber",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "vae-3d-medical-imaging",
+      "target": "tag:VAE",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "vae-3d-medical-imaging",
+      "target": "tag:Autoencoder",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "vae-3d-medical-imaging",
+      "target": "tag:3DMRI",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "vae-3d-medical-imaging",
+      "target": "tag:医学影像",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "vae-3d-medical-imaging",
+      "target": "tag:MAISI",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "wandb-experiment-tracking",
+      "target": "tag:WandB",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "wandb-experiment-tracking",
+      "target": "tag:实验追踪",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "wandb-experiment-tracking",
+      "target": "tag:可视化",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "wandb-experiment-tracking",
+      "target": "tag:PSNR",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "wandb-experiment-tracking",
+      "target": "tag:SSIM",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "wandb-experiment-tracking",
+      "target": "tag:代码安全",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "wavelet-deformation-analysis",
+      "target": "tag:小波变换",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "wavelet-deformation-analysis",
+      "target": "tag:形变分析",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "wavelet-deformation-analysis",
+      "target": "tag:位移估计",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "wavelet-deformation-analysis",
+      "target": "tag:光流",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "wavelet-deformation-analysis",
+      "target": "tag:配准",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "wavelet-flow-mri-generation",
+      "target": "tag:小波变换",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "wavelet-flow-mri-generation",
+      "target": "tag:生成模型",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "wavelet-flow-mri-generation",
+      "target": "tag:rectified-flow",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "wavelet-flow-mri-generation",
+      "target": "tag:扩散模型",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "wavelet-flow-mri-generation",
+      "target": "tag:纵向MRI",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "wavelet-flow-mri-generation",
+      "target": "tag:婴幼儿脑发育",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "agent-chat-wiki-tooling",
+      "target": "chatgpt-backup-wiki-publishing-pipeline",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "agent-chat-wiki-tooling",
+      "target": "research-experiment-agent-workbench",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "autism-mri-diagnosis",
+      "target": "infant-brain-mri-processing",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "autism-mri-diagnosis",
+      "target": "brain-mri-counterfactual-generation",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "autism-mri-diagnosis",
+      "target": "rectified-flow-basics",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "brain-atlas-parcellation-dkt-mcrib-aal",
+      "target": "fastsurfer-freesurfer-cortical-pipeline",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "brain-atlas-parcellation-dkt-mcrib-aal",
+      "target": "cortical-thickness-area-volume-measurement",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "brain-atlas-parcellation-dkt-mcrib-aal",
+      "target": "brain-segmentation-deep-learning-models",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "brain-mri-counterfactual-generation",
+      "target": "rectified-flow-basics",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "brain-segmentation-deep-learning-models",
+      "target": "fastsurfer-freesurfer-cortical-pipeline",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "brain-segmentation-deep-learning-models",
+      "target": "brain-atlas-parcellation-dkt-mcrib-aal",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "brain-segmentation-deep-learning-models",
+      "target": "cortical-thickness-area-volume-measurement",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "chatgpt-backup-wiki-publishing-pipeline",
+      "target": "agent-chat-wiki-tooling",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "chatgpt-backup-wiki-publishing-pipeline",
+      "target": "ssh-remote-development",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "chatgpt-backup-wiki-publishing-pipeline",
+      "target": "npm-nodejs-toolchain",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "cortical-thickness-area-volume-measurement",
+      "target": "fastsurfer-freesurfer-cortical-pipeline",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "cortical-thickness-area-volume-measurement",
+      "target": "brain-atlas-parcellation-dkt-mcrib-aal",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "cortical-thickness-area-volume-measurement",
+      "target": "brain-segmentation-deep-learning-models",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "cross-modal-medical-image-translation",
+      "target": "flow-medical-image-generation",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "cross-modal-medical-image-translation",
+      "target": "rectified-flow-basics",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "cross-modal-medical-image-translation",
+      "target": "medical-image-generation-challenges",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "dataloader-data-parallel",
+      "target": "multi-gpu-training-troubleshooting",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "dataloader-data-parallel",
+      "target": "loss-function-debugging",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "docker-install-and-management",
+      "target": "ssh-remote-development",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "fastsurfer-freesurfer-cortical-pipeline",
+      "target": "brain-atlas-parcellation-dkt-mcrib-aal",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "fastsurfer-freesurfer-cortical-pipeline",
+      "target": "cortical-thickness-area-volume-measurement",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "fastsurfer-freesurfer-cortical-pipeline",
+      "target": "brain-segmentation-deep-learning-models",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "flow-medical-image-generation",
+      "target": "brain-mri-counterfactual-generation",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "flow-medical-image-generation",
+      "target": "rectified-flow-basics",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "flow-medical-image-generation",
+      "target": "wavelet-flow-mri-generation",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "hardware-precision-reproducibility",
+      "target": "multi-gpu-training-troubleshooting",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "hardware-precision-reproducibility",
+      "target": "loss-function-debugging",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "histogram-matching",
+      "target": "psnr-ssim-3d-mri",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "histogram-matching",
+      "target": "mri-brightness-consistency",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "image-frequency-analysis",
+      "target": "mri-brightness-consistency",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "image-frequency-analysis",
+      "target": "psnr-ssim-3d-mri",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "infant-brain-mri-processing",
+      "target": "autism-mri-diagnosis",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "infant-brain-mri-processing",
+      "target": "brain-mri-counterfactual-generation",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "infant-brain-mri-processing",
+      "target": "rectified-flow-basics",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "latex-bibtex-typesetting",
+      "target": "miccai-submission-and-abstract",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "latex-bibtex-typesetting",
+      "target": "ppt-paper-presentation",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "linux-user-management",
+      "target": "ssh-remote-development",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "loss-function-debugging",
+      "target": "dataloader-data-parallel",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "loss-function-debugging",
+      "target": "psnr-ssim-3d-mri",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "loss-function-debugging",
+      "target": "rectified-flow-basics",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "medical-image-generation-challenges",
+      "target": "cross-modal-medical-image-translation",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "medical-image-generation-challenges",
+      "target": "flow-medical-image-generation",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "medical-image-generation-challenges",
+      "target": "brain-mri-counterfactual-generation",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "medical-image-generation-challenges",
+      "target": "segmentation-mask-conditioned-diffusion",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "miccai-submission-and-abstract",
+      "target": "latex-bibtex-typesetting",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "miccai-submission-and-abstract",
+      "target": "paper-review-summarization",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "mri-brightness-consistency",
+      "target": "psnr-ssim-3d-mri",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "mri-brightness-consistency",
+      "target": "histogram-matching",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "mri-brightness-consistency",
+      "target": "image-frequency-analysis",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "multi-gpu-training-troubleshooting",
+      "target": "dataloader-data-parallel",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "multi-gpu-training-troubleshooting",
+      "target": "hardware-precision-reproducibility",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "npm-nodejs-toolchain",
+      "target": "ssh-remote-development",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "paper-review-summarization",
+      "target": "miccai-submission-and-abstract",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "paper-review-summarization",
+      "target": "ppt-paper-presentation",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "paper-review-summarization",
+      "target": "infant-brain-mri-processing",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "posture-monitoring-agent",
+      "target": "research-experiment-agent-workbench",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "posture-monitoring-agent",
+      "target": "agent-chat-wiki-tooling",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "ppt-paper-presentation",
+      "target": "latex-bibtex-typesetting",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "ppt-paper-presentation",
+      "target": "paper-review-summarization",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "psnr-ssim-3d-mri",
+      "target": "mri-brightness-consistency",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "psnr-ssim-3d-mri",
+      "target": "histogram-matching",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "psnr-ssim-3d-mri",
+      "target": "ss-fse-isotropic-thick-slice",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "rectified-flow-basics",
+      "target": "brain-mri-counterfactual-generation",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "rectified-flow-basics",
+      "target": "wavelet-flow-mri-generation",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "rectified-flow-basics",
+      "target": "flow-medical-image-generation",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "research-experiment-agent-workbench",
+      "target": "wandb-experiment-tracking",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "research-experiment-agent-workbench",
+      "target": "agent-chat-wiki-tooling",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "research-experiment-agent-workbench",
+      "target": "multi-gpu-training-troubleshooting",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "segmentation-mask-conditioned-diffusion",
+      "target": "brain-mri-counterfactual-generation",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "segmentation-mask-conditioned-diffusion",
+      "target": "rectified-flow-basics",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "ss-fse-isotropic-thick-slice",
+      "target": "psnr-ssim-3d-mri",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "ss-fse-isotropic-thick-slice",
+      "target": "segmentation-mask-conditioned-diffusion",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "ssh-remote-development",
+      "target": "docker-install-and-management",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "ssh-remote-development",
+      "target": "npm-nodejs-toolchain",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "training-losses-generative-models",
+      "target": "psnr-ssim-3d-mri",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "training-losses-generative-models",
+      "target": "flow-medical-image-generation",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "training-losses-generative-models",
+      "target": "loss-function-debugging",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "vae-3d-medical-imaging",
+      "target": "flow-medical-image-generation",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "vae-3d-medical-imaging",
+      "target": "segmentation-mask-conditioned-diffusion",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "wandb-experiment-tracking",
+      "target": "psnr-ssim-3d-mri",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "wandb-experiment-tracking",
+      "target": "loss-function-debugging",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "wavelet-deformation-analysis",
+      "target": "wavelet-flow-mri-generation",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "wavelet-deformation-analysis",
+      "target": "image-frequency-analysis",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "wavelet-deformation-analysis",
+      "target": "rectified-flow-basics",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "wavelet-flow-mri-generation",
+      "target": "wavelet-deformation-analysis",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "wavelet-flow-mri-generation",
+      "target": "rectified-flow-basics",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "wavelet-flow-mri-generation",
+      "target": "image-frequency-analysis",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "wavelet-flow-mri-generation",
+      "target": "segmentation-mask-conditioned-diffusion",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "wavelet-flow-mri-generation",
+      "target": "infant-brain-mri-processing",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "wavelet-flow-mri-generation",
+      "target": "psnr-ssim-3d-mri",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "agent-chat-wiki-tooling",
+      "target": "posture-monitoring-agent",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "posture-monitoring-agent",
+      "target": "research-experiment-agent-workbench",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "agent-chat-wiki-tooling",
+      "target": "chatgpt-backup-wiki-publishing-pipeline",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "autism-mri-diagnosis",
+      "target": "brain-mri-counterfactual-generation",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "brain-mri-counterfactual-generation",
+      "target": "cross-modal-medical-image-translation",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "cross-modal-medical-image-translation",
+      "target": "dinov3-3d-mri-self-supervised",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "dinov3-3d-mri-self-supervised",
+      "target": "flow-medical-image-generation",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "flow-medical-image-generation",
+      "target": "histogram-matching",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "histogram-matching",
+      "target": "infant-brain-mri-processing",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "infant-brain-mri-processing",
+      "target": "medical-image-generation-challenges",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "medical-image-generation-challenges",
+      "target": "mri-brightness-consistency",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "mri-brightness-consistency",
+      "target": "psnr-ssim-3d-mri",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "psnr-ssim-3d-mri",
+      "target": "ss-fse-isotropic-thick-slice",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "ss-fse-isotropic-thick-slice",
+      "target": "vae-3d-medical-imaging",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "brain-mri-counterfactual-generation",
+      "target": "flow-medical-image-generation",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "flow-medical-image-generation",
+      "target": "medical-image-generation-challenges",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "medical-image-generation-challenges",
+      "target": "rectified-flow-basics",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "rectified-flow-basics",
+      "target": "segmentation-mask-conditioned-diffusion",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "segmentation-mask-conditioned-diffusion",
+      "target": "training-losses-generative-models",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "training-losses-generative-models",
+      "target": "wavelet-flow-mri-generation",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "brain-atlas-parcellation-dkt-mcrib-aal",
+      "target": "fastsurfer-freesurfer-cortical-pipeline",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "brain-segmentation-deep-learning-models",
+      "target": "segmentation-mask-conditioned-diffusion",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "segmentation-mask-conditioned-diffusion",
+      "target": "wavelet-flow-mri-generation",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "dataloader-data-parallel",
+      "target": "multi-gpu-training-troubleshooting",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "docker-install-and-management",
+      "target": "linux-user-management",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "flow-medical-image-generation",
+      "target": "loss-function-debugging",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "loss-function-debugging",
+      "target": "rectified-flow-basics",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "flow-medical-image-generation",
+      "target": "vae-3d-medical-imaging",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "histogram-matching",
+      "target": "mri-brightness-consistency",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "linux-user-management",
+      "target": "ssh-remote-development",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "loss-function-debugging",
+      "target": "training-losses-generative-models",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "psnr-ssim-3d-mri",
+      "target": "wandb-experiment-tracking",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "wavelet-deformation-analysis",
+      "target": "wavelet-flow-mri-generation",
+      "type": "shared-tag",
+      "value": 0.8
     }
   ]
 }

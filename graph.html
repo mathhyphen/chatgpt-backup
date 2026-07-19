@@ -3,60 +3,284 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3D 知识图谱 · ChatGPT Wiki</title>
+  <title>知识星图 · 3D Knowledge Cosmos</title>
   <style>
+    /* ============ 2026 design tokens ============ */
+    @property --gb-angle { syntax:'<angle>'; inherits:false; initial-value:0deg }
+    @property --hue-drift { syntax:'<number>'; inherits:true; initial-value:0 }
+    :root{
+      --bg-deep: oklch(0.08 0.03 285);
+      --ink: oklch(0.93 0.02 300);
+      --ink-dim: oklch(0.72 0.04 295);
+      --ink-faint: oklch(0.55 0.05 295);
+      --accent-a: oklch(0.72 0.19 295);   /* violet */
+      --accent-b: oklch(0.80 0.15 210);   /* cyan   */
+      --accent-c: oklch(0.75 0.17 350);   /* magenta*/
+      --glass-bg: color-mix(in oklch, oklch(0.14 0.04 290) 62%, transparent);
+      --glass-brd: color-mix(in oklch, var(--accent-a) 26%, transparent);
+      --font: "PingFang SC","Microsoft YaHei","Noto Sans SC",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      --mono: "SF Mono","Cascadia Code",Consolas,monospace;
+    }
     *{margin:0;padding:0;box-sizing:border-box}
-    body{background:#0a0a0f;color:#d8d0ea;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow:hidden;height:100vh}
+    html,body{height:100%}
+    body{
+      background:#04050d;color:var(--ink);font-family:var(--font);
+      overflow:hidden;height:100vh;overscroll-behavior:none;
+      -webkit-font-smoothing:antialiased;
+    }
     #graph-container{position:fixed;inset:0;width:100vw;height:100vh}
-    #info{position:fixed;top:20px;left:20px;z-index:10;pointer-events:none}
-    #info h1{font-size:20px;font-weight:700;color:#f1ecff;text-shadow:0 0 20px rgba(100,80,200,.55)}
-    #info p{font-size:13px;color:#a99cc8;margin-top:5px}
-    #tooltip{position:fixed;z-index:30;background:rgba(15,15,30,.94);border:1px solid rgba(120,100,220,.45);border-radius:8px;padding:10px 14px;font-size:13px;max-width:340px;pointer-events:none;opacity:0;transition:opacity .15s;box-shadow:0 4px 20px rgba(0,0,0,.6)}
-    #tooltip.visible{opacity:1}
-    #tooltip .tt-title{color:#f1ecff;font-weight:650;margin-bottom:4px}
-    #tooltip .tt-type{display:inline-block;font-size:11px;padding:2px 7px;border-radius:4px;background:rgba(120,100,220,.22);color:#c6b8f0;margin-bottom:5px}
-    #tooltip .tt-community{font-size:12px;color:#a496c2}
-    #tooltip .tt-tags{margin-top:5px}
-    #tooltip .tt-tag{display:inline-block;font-size:11px;padding:1px 6px;border-radius:4px;background:rgba(120,100,220,.16);color:#bfaeee;margin:1px 2px 1px 0}
-    #tooltip .tt-summary{margin-top:6px;font-size:12px;color:#9d92ba;line-height:1.5}
-    #controls{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:20;display:flex;gap:10px;align-items:center}
-    #controls button,#controls a{background:#161225;border:1px solid rgba(150,130,255,.45);color:#eee9ff;padding:9px 16px;border-radius:8px;font-size:14px;line-height:1;cursor:pointer;transition:all .2s;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.38)}
-    #controls button:hover,#controls a:hover{background:#241b3e;border-color:rgba(190,170,255,.7)}
-    #search-box{background:#100d1b;border:1px solid rgba(150,130,255,.45);color:#eee9ff;padding:9px 13px;border-radius:8px;font-size:14px;width:240px;outline:none;box-shadow:0 8px 24px rgba(0,0,0,.38)}
-    #search-box:focus{border-color:rgba(205,188,255,.75)}
-    #search-box::placeholder{color:#7f739d}
-    #legend{position:fixed;right:16px;top:20px;bottom:20px;width:330px;z-index:15;display:flex;flex-direction:column;gap:5px;background:rgba(10,10,18,.88);border:1px solid rgba(120,100,220,.3);border-radius:12px;padding:12px;overflow:auto;box-shadow:0 16px 42px rgba(0,0,0,.46)}
-    .legend-title{color:#f1ecff;font-size:15px;font-weight:700;padding:2px 0 6px}
-    #stats{font-size:12px;color:#a99cc8;padding:0 0 8px;margin-bottom:4px;border-bottom:1px solid rgba(120,100,220,.22)}
-    .legend-section{color:#8f82b0;font-size:12px;font-weight:650;letter-spacing:.06em;padding:10px 2px 3px;border-top:1px solid rgba(120,100,220,.16)}
-    .legend-item{display:flex;align-items:center;gap:8px;padding:7px 8px;border-radius:8px;cursor:pointer;font-size:14px;color:#ded7f0;background:rgba(255,255,255,.025);border:1px solid transparent;min-height:34px}
-    .legend-item:hover{background:rgba(100,80,200,.18);border-color:rgba(140,120,240,.25)}
-    .legend-item.active{background:rgba(100,80,200,.28);border-color:rgba(165,145,255,.52);color:#fff}
-    .legend-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;box-shadow:0 0 10px currentColor}
-    .legend-item span:last-child{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-    .legend-item .cnt{margin-left:auto;font-size:11px;color:#9d92ba;flex-shrink:0}
-    #loading{position:fixed;inset:0;width:100vw;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:100;background:#0a0a0f;color:#c0b8d0;transition:opacity .5s}
+    #graph-container canvas{display:block}
+    .scene-nav-info{display:none !important}
+
+    /* ============ glass panels with rotating conic border ============ */
+    .glass{
+      position:relative;
+      background:var(--glass-bg);
+      -webkit-backdrop-filter:blur(18px) saturate(1.4);
+      backdrop-filter:blur(18px) saturate(1.4);
+      border-radius:16px;
+      box-shadow:0 18px 50px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.06);
+    }
+    @supports (background: conic-gradient(from var(--gb-angle), red, blue)) {
+      .glass::before{
+        content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;
+        background:conic-gradient(from var(--gb-angle),
+          transparent 0%, color-mix(in oklch,var(--accent-a) 65%,transparent) 12%,
+          transparent 26%, transparent 55%,
+          color-mix(in oklch,var(--accent-b) 55%,transparent) 70%, transparent 85%);
+        -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+        -webkit-mask-composite:xor;mask-composite:exclude;
+        animation:gb-spin 7s linear infinite;pointer-events:none;
+      }
+      @keyframes gb-spin{to{--gb-angle:360deg}}
+    }
+
+    /* ============ brand / HUD ============ */
+    #brand{position:fixed;top:22px;left:24px;z-index:12;pointer-events:none;max-width:min(460px,60vw)}
+    #brand .overline{
+      font-family:var(--mono);font-size:10px;letter-spacing:.32em;text-transform:uppercase;
+      color:var(--ink-faint);margin-bottom:6px;
+    }
+    #brand h1{
+      font-size:clamp(22px,3.2vw,34px);font-weight:800;letter-spacing:.04em;line-height:1.15;
+      background:linear-gradient(100deg,#f5f2ff 10%,var(--accent-a) 45%,var(--accent-b) 75%,#f5f2ff 110%);
+      background-size:220% 100%;
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+      animation:title-sheen 9s ease-in-out infinite;
+      filter:drop-shadow(0 0 22px color-mix(in oklch,var(--accent-a) 40%,transparent));
+    }
+    @keyframes title-sheen{0%,100%{background-position:0% 0}50%{background-position:100% 0}}
+    #brand .sub{font-size:12.5px;color:var(--ink-dim);margin-top:6px;letter-spacing:.06em}
+
+    #stats{display:flex;gap:18px;margin-top:14px;flex-wrap:wrap}
+    .stat{min-width:64px}
+    .stat b{
+      display:block;font-size:22px;font-weight:750;font-variant-numeric:tabular-nums;
+      background:linear-gradient(180deg,#fff,var(--accent-b));
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+    .stat i{font-style:normal;font-size:10.5px;color:var(--ink-faint);letter-spacing:.12em}
+
+    /* ============ search ============ */
+    #search-wrap{position:fixed;top:22px;left:50%;transform:translateX(-50%);z-index:14;width:min(380px,44vw)}
+    #search-box{
+      width:100%;padding:11px 16px 11px 40px;border-radius:14px;border:1px solid var(--glass-brd);
+      background:var(--glass-bg);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);
+      color:var(--ink);font-size:13.5px;font-family:var(--font);outline:none;
+      transition:border-color .25s, box-shadow .25s;
+      box-shadow:0 10px 30px rgba(0,0,0,.4);
+    }
+    #search-box:focus{border-color:color-mix(in oklch,var(--accent-b) 60%,transparent);
+      box-shadow:0 0 0 3px color-mix(in oklch,var(--accent-b) 18%,transparent),0 10px 30px rgba(0,0,0,.4)}
+    #search-box::placeholder{color:var(--ink-faint)}
+    #search-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--ink-faint);font-size:14px;pointer-events:none}
+    #search-kbd{position:absolute;right:12px;top:50%;transform:translateY(-50%);
+      font-family:var(--mono);font-size:10px;color:var(--ink-faint);
+      border:1px solid var(--glass-brd);border-radius:5px;padding:2px 6px;pointer-events:none}
+    #search-count{position:absolute;right:12px;top:calc(100% + 6px);font-size:11px;color:var(--ink-dim);opacity:0;transition:opacity .2s}
+    #search-count.on{opacity:1}
+
+    /* ============ groups panel ============ */
+    #groups{
+      position:fixed;right:18px;top:18px;bottom:86px;width:288px;z-index:13;
+      display:flex;flex-direction:column;padding:14px 12px;overflow:hidden;
+    }
+    #groups h2{font-size:12px;font-weight:700;letter-spacing:.22em;color:var(--ink-dim);padding:2px 8px 10px;text-transform:uppercase}
+    #groups .scroll{overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--glass-brd) transparent;padding-right:2px}
+    #groups .scroll::-webkit-scrollbar{width:4px}
+    #groups .scroll::-webkit-scrollbar-thumb{background:var(--glass-brd);border-radius:4px}
+    .g-item{
+      display:flex;align-items:center;gap:9px;padding:7px 9px;border-radius:10px;cursor:pointer;
+      border:1px solid transparent;transition:background .18s,border-color .18s,transform .18s;
+      animation:g-in .5s cubic-bezier(.2,.9,.25,1) both;
+    }
+    @keyframes g-in{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
+    .g-item:hover{background:color-mix(in oklch,var(--accent-a) 14%,transparent);border-color:color-mix(in oklch,var(--accent-a) 25%,transparent)}
+    .g-item.active{background:color-mix(in oklch,var(--accent-a) 22%,transparent);border-color:color-mix(in oklch,var(--accent-a) 50%,transparent)}
+    .g-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;box-shadow:0 0 10px currentColor,0 0 3px currentColor}
+    .g-name{flex:1;min-width:0;font-size:12.5px;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .g-num{font-family:var(--mono);font-size:10px;color:var(--ink-faint);flex-shrink:0}
+
+    /* ============ detail panel ============ */
+    #detail{
+      position:fixed;left:24px;bottom:96px;width:min(360px,86vw);z-index:14;
+      padding:18px 18px 14px;transform:translateY(24px);opacity:0;pointer-events:none;
+      transition:transform .38s cubic-bezier(.2,.9,.25,1),opacity .3s;
+      max-height:52vh;display:flex;flex-direction:column;
+    }
+    #detail.on{transform:none;opacity:1;pointer-events:auto}
+    #detail .d-close{position:absolute;top:10px;right:12px;background:none;border:none;color:var(--ink-faint);font-size:16px;cursor:pointer;padding:4px}
+    #detail .d-close:hover{color:var(--ink)}
+    #detail .chips{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap}
+    .chip{font-size:10.5px;padding:3px 9px;border-radius:999px;letter-spacing:.05em;
+      border:1px solid var(--glass-brd);color:var(--ink-dim);background:rgba(255,255,255,.03)}
+    .chip.hot{color:#0b0a12;font-weight:700;border:none}
+    #detail h3{font-size:16.5px;font-weight:750;line-height:1.35;margin-bottom:8px;padding-right:18px}
+    #detail .d-sum{font-size:12.5px;line-height:1.75;color:var(--ink-dim);overflow-y:auto;scrollbar-width:thin;margin-bottom:10px}
+    #detail .d-tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:10px}
+    #detail .d-tags span{font-family:var(--mono);font-size:10px;color:var(--accent-b);opacity:.85}
+    #detail h4{font-size:10.5px;letter-spacing:.2em;color:var(--ink-faint);margin-bottom:6px;text-transform:uppercase}
+    #detail .d-links{overflow-y:auto;scrollbar-width:thin;display:flex;flex-direction:column;gap:2px}
+    .d-link{display:flex;align-items:center;gap:7px;padding:5px 7px;border-radius:8px;cursor:pointer;font-size:12px;color:var(--ink)}
+    .d-link:hover{background:color-mix(in oklch,var(--accent-b) 12%,transparent)}
+    .d-link .rel{font-size:9.5px;color:var(--ink-faint);border:1px solid var(--glass-brd);border-radius:4px;padding:1px 5px;flex-shrink:0}
+    .d-link .nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+    /* ============ control dock ============ */
+    #dock{
+      position:fixed;bottom:22px;left:50%;transform:translateX(-50%);z-index:15;
+      display:flex;gap:6px;align-items:center;padding:8px 10px;
+    }
+    #dock button,#dock a{
+      display:flex;align-items:center;gap:6px;background:transparent;border:1px solid transparent;
+      color:var(--ink-dim);padding:8px 12px;border-radius:10px;font-size:12.5px;font-family:var(--font);
+      cursor:pointer;transition:all .2s;text-decoration:none;white-space:nowrap;
+    }
+    #dock button:hover,#dock a:hover{color:var(--ink);background:rgba(255,255,255,.05)}
+    #dock button.on{color:var(--accent-b);background:color-mix(in oklch,var(--accent-b) 12%,transparent);
+      border-color:color-mix(in oklch,var(--accent-b) 30%,transparent)}
+    #dock .sep{width:1px;height:18px;background:var(--glass-brd)}
+    #dock .ico{font-size:13px}
+
+    /* ============ tooltip ============ */
+    #tooltip{
+      position:fixed;z-index:30;pointer-events:none;opacity:0;transform:translateY(4px);
+      transition:opacity .16s,transform .16s;max-width:300px;padding:10px 13px;border-radius:12px;
+      background:color-mix(in oklch, oklch(0.12 0.04 290) 82%, transparent);
+      -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+      border:1px solid var(--glass-brd);box-shadow:0 10px 34px rgba(0,0,0,.55);
+    }
+    #tooltip.on{opacity:1;transform:none}
+    #tooltip .tt-title{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:5px;line-height:1.4}
+    #tooltip .tt-meta{display:flex;gap:6px;align-items:center;font-size:10.5px;color:var(--ink-faint)}
+    #tooltip .tt-dot{width:7px;height:7px;border-radius:50%;box-shadow:0 0 8px currentColor}
+
+    /* ============ loading ============ */
+    #loading{
+      position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;
+      background:radial-gradient(1200px 700px at 50% 60%, oklch(0.14 0.06 290), #04050d 70%);
+      transition:opacity .8s ease;
+    }
     #loading.hidden{opacity:0;pointer-events:none}
-    .loader{width:32px;height:32px;border:2px solid rgba(100,80,200,.2);border-top-color:#8870d0;border-radius:50%;animation:spin .8s linear infinite;margin-bottom:12px}
-    @keyframes spin{to{transform:rotate(360deg)}}
-    @media (max-width:900px){#legend{width:270px;right:10px}.legend-item{font-size:12px}#controls{left:12px;right:292px;transform:none;justify-content:flex-start;flex-wrap:wrap}#search-box{width:180px}}
+    .orb{width:88px;height:88px;position:relative}
+    .orb::before,.orb::after{content:"";position:absolute;inset:0;border-radius:50%}
+    .orb::before{
+      background:conic-gradient(from 0deg,transparent 8%,var(--accent-a),var(--accent-b),transparent 92%);
+      animation:orb-spin 1.6s linear infinite;
+      -webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 2px));
+      mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 2px));
+    }
+    .orb::after{inset:26px;background:radial-gradient(circle at 35% 35%,var(--accent-b),var(--accent-a) 70%);
+      filter:blur(6px);opacity:.8;animation:orb-pulse 2.2s ease-in-out infinite}
+    @keyframes orb-spin{to{transform:rotate(360deg)}}
+    @keyframes orb-pulse{0%,100%{transform:scale(.85);opacity:.55}50%{transform:scale(1.05);opacity:.95}}
+    #load-text{font-size:12.5px;letter-spacing:.28em;color:var(--ink-dim);text-transform:uppercase;font-family:var(--mono)}
+    #load-tip{font-size:11px;color:var(--ink-faint);max-width:300px;text-align:center;line-height:1.7}
+
+    /* ============ responsive ============ */
+    #dock #btn-groups{display:none}
+    @media (max-width:960px){
+      #brand{max-width:56vw}
+      #stats{gap:12px}.stat b{font-size:17px}
+      #search-wrap{top:auto;bottom:78px;width:min(420px,86vw)}
+      #search-kbd{display:none}
+      #groups{transform:translateX(110%);transition:transform .35s cubic-bezier(.2,.9,.25,1);bottom:130px;width:min(300px,84vw)}
+      #groups.open{transform:none}
+      #dock #btn-groups{display:flex}
+      #detail{left:12px;right:12px;width:auto;bottom:128px;max-height:44vh}
+      #dock{bottom:14px;max-width:96vw;overflow-x:auto}
+    }
+    @media (prefers-reduced-motion:reduce){
+      *,*::before,*::after{animation-duration:.01s !important;animation-iteration-count:1 !important;transition-duration:.01s !important}
+    }
   </style>
 </head>
 <body>
-  <div id="loading"><div class="loader"></div><div>正在加载知识图谱...</div></div>
-  <div id="info"><h1>🧠 3D 知识图谱</h1><p>知识单元 · 标签概念 · 关系网络 · 社区聚类</p></div>
-  <div id="legend"></div>
-  <div id="tooltip"><div class="tt-title"></div><div><span class="tt-type"></span></div><div class="tt-community"></div><div class="tt-tags"></div><div class="tt-summary"></div></div>
-  <div id="controls">
-    <button id="btn-auto">自动旋转</button>
-    <a href="index.html">← 返回首页</a>
-    <input id="search-box" type="text" placeholder="搜索节点,回车定位...">
+  <div id="loading">
+    <div class="orb"></div>
+    <div id="load-text">INITIALIZING</div>
+    <div id="load-tip">正在点亮知识宇宙 · Lighting up the knowledge cosmos…</div>
   </div>
+
+  <header id="brand">
+    <div class="overline">ChatGPT Backup · Knowledge Universe</div>
+    <h1>知识星图</h1>
+    <p class="sub">39 个知识单元 · 195 个节点 · 320 条关系 — 三维交互式知识宇宙</p>
+    <div id="stats">
+      <div class="stat"><b id="st-doc">0</b><i>知识单元</i></div>
+      <div class="stat"><b id="st-node">0</b><i>节点</i></div>
+      <div class="stat"><b id="st-link">0</b><i>连接</i></div>
+      <div class="stat"><b id="st-grp">0</b><i>社区</i></div>
+    </div>
+  </header>
+
+  <div id="search-wrap">
+    <span id="search-icon">⌕</span>
+    <input id="search-box" type="text" placeholder="搜索知识单元或概念…" autocomplete="off">
+    <span id="search-kbd">/</span>
+    <span id="search-count"></span>
+  </div>
+
+  <aside id="groups" class="glass">
+    <h2>主题社区 · Communities</h2>
+    <div class="scroll" id="groups-scroll"></div>
+  </aside>
+
+  <section id="detail" class="glass">
+    <button class="d-close" title="关闭 (Esc)">✕</button>
+    <div class="chips" id="d-chips"></div>
+    <h3 id="d-title"></h3>
+    <div class="d-sum" id="d-sum"></div>
+    <div class="d-tags" id="d-tags"></div>
+    <h4>连接 · Connections</h4>
+    <div class="d-links" id="d-links"></div>
+  </section>
+
+  <nav id="dock" class="glass">
+    <button id="btn-rotate" class="on" title="自动旋转 (R)"><span class="ico">⟳</span>旋转</button>
+    <button id="btn-labels" class="on" title="节点标签 (L)"><span class="ico">✦</span>标签</button>
+    <button id="btn-bloom" class="on" title="辉光后期 (B)"><span class="ico">◐</span>辉光</button>
+    <button id="btn-groups" title="主题社区面板"><span class="ico">▦</span>社区</button>
+    <span class="sep"></span>
+    <button id="btn-fit" title="适配视图 (F)"><span class="ico">⤢</span>适配</button>
+    <button id="btn-reset" title="重置焦点 (Esc)"><span class="ico">◎</span>重置</button>
+    <span class="sep"></span>
+    <a href="index.html" title="返回首页"><span class="ico">⌂</span>首页</a>
+  </nav>
+
+  <div id="tooltip"><div class="tt-title"></div><div class="tt-meta"><span class="tt-dot"></span><span class="tt-type"></span><span>·</span><span class="tt-group"></span></div></div>
   <div id="graph-container"></div>
 
-    <script src="vendor/three.min.js"></script>
-  <script src="vendor/3d-force-graph.min.js"></script>
-  <script src="vendor/three-spritetext.min.js"></script>
+  <!-- pinned UMD stack (stable; no ESM/importmap) -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/CopyShader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/LuminosityHighPassShader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/MaskPass.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/3d-force-graph@1.70.0/dist/3d-force-graph.min.js"></script>
   <script src="graph.js"></script>
 </body>
 </html>
