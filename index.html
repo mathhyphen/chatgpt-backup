@@ -233,7 +233,7 @@ body{font-family:var(--serif);background:var(--paper);color:var(--ink);height:10
       <div class="tabs">
         <div class="tab active" data-tab="wiki">知识图录<span class="tab-count" id="cntWiki"></span></div>
         <div class="tab" data-tab="conv">对话原档<span class="tab-count" id="cntConv"></span></div>
-        <a class="tab" href="graph.html">3D知识图谱<span class="tab-count" id="cntGraph">节点195</span></a>
+        <a class="tab" href="graph.html">3D知识图谱<span class="tab-count" id="cntGraph">节点…</span></a>
       </div>
       <div class="side-tools">
         <div class="search-wrap"><input type="text" class="search" id="search" placeholder="检索篇目…"></div>
@@ -419,6 +419,12 @@ $('pw').addEventListener('keydown',e=>{if(e.key==='Enter')unlock()});
 $('search').addEventListener('input',e=>renderList(e.target.value));
 document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>switchTab(t.dataset.tab));
 $('lockBtn').onclick=()=>location.reload();
+
+// 3D图谱节点数(公开 graph.json,无需解锁即可加载)
+fetch('graph.json').then(r=>r.json()).then(g=>{
+  const n=(g&&g.nodes&&g.nodes.length)||0;
+  const el=$('cntGraph');if(el&&n)el.textContent='节点'+n;
+}).catch(()=>{});
 </script>
 </body>
 </html>
