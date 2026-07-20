@@ -4,7 +4,7 @@
   "graph": {
     "name": "ChatGPT Backup Wiki Knowledge Graph",
     "source": "sanitized wiki units only",
-    "units": 64,
+    "units": 71,
     "groupLabels": {
       "1": "医学影像",
       "2": "生成模型",
@@ -21,8 +21,10 @@
       "35": "硬件精度与训练可复现性",
       "36": "Cursor / Cline / M",
       "37": "求职写作与技术杂项问答",
+      "38": "arxiv 论文讲解 / HTML ",
       "39": "Linux / Windows / ",
       "41": "npm / Node.js 与前端工",
+      "42": "AI 工具 / CLI / 微信机器",
       "43": "皮层厚度、表面积、体积测量与共变网络",
       "44": "损失函数调试与分割评估",
       "48": "深度学习训练 / 模型 / PyTo",
@@ -33,10 +35,10 @@
       "59": "大脑分割深度学习模型"
     },
     "stats": {
-      "documents": 64,
-      "concepts": 244,
-      "links": 570,
-      "groups": 25
+      "documents": 71,
+      "concepts": 269,
+      "links": 647,
+      "groups": 27
     }
   },
   "nodes": [
@@ -3344,6 +3346,356 @@
       "group": 59,
       "community": 59,
       "val": 2
+    },
+    {
+      "id": "minimax-ai-tools-dev",
+      "name": "AI 工具 / CLI / 微信机器人 / 投资工具",
+      "label": "AI 工具 / CLI / 微信机器人 / 投资工具",
+      "type": "document",
+      "group": 42,
+      "community": 42,
+      "val": 6,
+      "tags": [
+        "#minimax",
+        "#ai-cli",
+        "#claude-code",
+        "#reasonix",
+        "#量化投研",
+        "#微信机器人"
+      ],
+      "summary": "四条对话围绕\"AI 应用层工具的选型与使用\"展开：从 AI CLI 编程助手（Claude Code / Codex CLI / Reasonix）的实现语言与架构取舍，到 Claude Code `/goal` 自主循环命令的用法，再到 AI 量化投研开源工具栈和微信机器人接入路径。核心是\"按场景选型 + 工程权衡\"——CLI 在 TS/Ink（快迭代）与 Rust（零依赖分发）间两极分化，投资工具按\"数据/回测/AI 分析\"分层组合"
+    },
+    {
+      "id": "tag:minimax",
+      "name": "#minimax",
+      "label": "#minimax",
+      "type": "concept",
+      "group": 42,
+      "community": 42,
+      "val": 2
+    },
+    {
+      "id": "tag:reasonix",
+      "name": "#reasonix",
+      "label": "#reasonix",
+      "type": "concept",
+      "group": 42,
+      "community": 42,
+      "val": 2
+    },
+    {
+      "id": "tag:量化投研",
+      "name": "#量化投研",
+      "label": "#量化投研",
+      "type": "concept",
+      "group": 42,
+      "community": 42,
+      "val": 2
+    },
+    {
+      "id": "tag:微信机器人",
+      "name": "#微信机器人",
+      "label": "#微信机器人",
+      "type": "concept",
+      "group": 42,
+      "community": 42,
+      "val": 2
+    },
+    {
+      "id": "minimax-arxiv-paper-explanation",
+      "name": "arxiv 论文讲解 / HTML 整理 / 论文综述",
+      "label": "arxiv 论文讲解 / HTML 整理 / 论文综述",
+      "type": "document",
+      "group": 38,
+      "community": 38,
+      "val": 6,
+      "tags": [
+        "#minimax",
+        "#arxiv",
+        "#论文讲解",
+        "#html生成",
+        "#pdf抓取",
+        "#工具链"
+      ],
+      "summary": "11 条对话高度同质：用户给一个 arxiv 链接（或上传 PDF），要求\"深入讲解 + 整理成 HTML\"。核心可复用知识不是某篇论文的内容，而是 MiniMax 环境下\"arxiv 论文抓取 → 正文提取 → 结构化讲解 → HTML 产物\"的稳定工作流。最大坑点是 web_fetch 对 arxiv.org 几乎全军覆没（status_code 1400010321），必须用 bash + curl + UA 伪装抓 abs 页 "
+    },
+    {
+      "id": "tag:arxiv",
+      "name": "#arxiv",
+      "label": "#arxiv",
+      "type": "concept",
+      "group": 38,
+      "community": 38,
+      "val": 2
+    },
+    {
+      "id": "tag:html生成",
+      "name": "#html生成",
+      "label": "#html生成",
+      "type": "concept",
+      "group": 38,
+      "community": 38,
+      "val": 2
+    },
+    {
+      "id": "tag:pdf抓取",
+      "name": "#pdf抓取",
+      "label": "#pdf抓取",
+      "type": "concept",
+      "group": 38,
+      "community": 38,
+      "val": 2
+    },
+    {
+      "id": "tag:工具链",
+      "name": "#工具链",
+      "label": "#工具链",
+      "type": "concept",
+      "group": 38,
+      "community": 38,
+      "val": 2
+    },
+    {
+      "id": "minimax-diffusion-generative",
+      "name": "扩散模型 / DiT / 生成模型 / Drifting",
+      "label": "扩散模型 / DiT / 生成模型 / Drifting",
+      "type": "document",
+      "group": 2,
+      "community": 2,
+      "val": 6,
+      "tags": [
+        "#minimax",
+        "#扩散模型",
+        "#DiT",
+        "#生成模型",
+        "#Drifting",
+        "#论文讲解"
+      ],
+      "summary": "这组对话围绕扩散模型与 Diffusion Transformer (DiT) 的前沿变体展开，核心可复用知识有三条主线：(1) 何恺明团队的 Drifting Models 把迭代从推理期搬到训练期，靠 mean-shift drifting field 实现单步(1-NFE)生成；(2) 谢赛宁/LeCun 团队的 RAE 用预训练表征编码器替代 VAE 构造高维语义潜空间，让 DiT 收敛更快且天然抗过拟合；(3) 字节 Seed"
+    },
+    {
+      "id": "tag:DiT",
+      "name": "#DiT",
+      "label": "#DiT",
+      "type": "concept",
+      "group": 2,
+      "community": 2,
+      "val": 2
+    },
+    {
+      "id": "tag:Drifting",
+      "name": "#Drifting",
+      "label": "#Drifting",
+      "type": "concept",
+      "group": 2,
+      "community": 2,
+      "val": 2
+    },
+    {
+      "id": "minimax-jepa-world-model",
+      "name": "JEPA / V-JEPA / 世界模型 / 图像生成",
+      "label": "JEPA / V-JEPA / 世界模型 / 图像生成",
+      "type": "document",
+      "group": 42,
+      "community": 42,
+      "val": 6,
+      "tags": [
+        "#minimax",
+        "#JEPA",
+        "#世界模型",
+        "#自监督学习",
+        "#图像生成",
+        "#视频理解"
+      ],
+      "summary": "JEPA（Joint Embedding Predictive Architecture）是 LeCun 2022 年提出的自监督元架构，核心是在抽象表征空间预测被遮蔽部分，而非像素/Token 重建，以此规避生成式模型在不可预测细节上的算力浪费。系列从 I-JEPA（图像）→ V-JEPA（视频）→ V-JEPA 2（世界模型+机器人零样本控制）一路演进，2026 年进入工程化拐点（Rectified LpJEPA 稀疏表示、GRAS"
+    },
+    {
+      "id": "tag:JEPA",
+      "name": "#JEPA",
+      "label": "#JEPA",
+      "type": "concept",
+      "group": 42,
+      "community": 42,
+      "val": 2
+    },
+    {
+      "id": "tag:图像生成",
+      "name": "#图像生成",
+      "label": "#图像生成",
+      "type": "concept",
+      "group": 42,
+      "community": 42,
+      "val": 2
+    },
+    {
+      "id": "tag:视频理解",
+      "name": "#视频理解",
+      "label": "#视频理解",
+      "type": "concept",
+      "group": 42,
+      "community": 42,
+      "val": 2
+    },
+    {
+      "id": "minimax-medical-imaging-ai",
+      "name": "医学影像 AI / MRI / MICCAI / EDA / 重建",
+      "label": "医学影像 AI / MRI / MICCAI / EDA / 重建",
+      "type": "document",
+      "group": 1,
+      "community": 1,
+      "val": 6,
+      "tags": [
+        "#minimax",
+        "#医学影像",
+        "#MRI重建",
+        "#MICCAI",
+        "#SSIM-PSNR",
+        "#EDA"
+      ],
+      "summary": "医学影像 AI 的现实路径是\"微调现有生成基座\"而非从零训练，受限于医学数据的物理上限与合规成本。重建质量用 SSIM/PSNR 分疾病组评价时，组间差异多源于 site/scanner 与亮度组成而非疾病本身。MICCAI 2024 最佳论文 RoCoSDF 把多视图超声重建拉到 3D 形状层级。整套实验闭环需要 MONAI/TorchIO/nnU-Net fingerprint + 自动 EDA + QC 可视化 + 实验追踪的 s"
+    },
+    {
+      "id": "tag:MRI重建",
+      "name": "#MRI重建",
+      "label": "#MRI重建",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:SSIM-PSNR",
+      "name": "#SSIM-PSNR",
+      "label": "#SSIM-PSNR",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:EDA",
+      "name": "#EDA",
+      "label": "#EDA",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "minimax-misc",
+      "name": "其他杂项问答",
+      "label": "其他杂项问答",
+      "type": "document",
+      "group": 3,
+      "community": 3,
+      "val": 6,
+      "tags": [
+        "#minimax",
+        "#知识图谱",
+        "#agent记忆",
+        "#rule-engine",
+        "#prompt-engineering"
+      ],
+      "summary": "4 条 MiniMax 杂项对话沉淀的可复用知识：TeamAgent 式\"自进化规则引擎\"用 PreToolUse hook 在工具调用前拦截重复错误，把人纠正 agent 的信号闭环成规则库；LLM Wiki 与 Gbrain 代表知识图谱两条路线——前端多信号关联度分析器（四信号加权 + Louvain）vs typed-edge 驱动的持续运行记忆系统（混合检索 + dream cycle）；Mavis 问候折射出\"标题即问候、单"
+    },
+    {
+      "id": "tag:知识图谱",
+      "name": "#知识图谱",
+      "label": "#知识图谱",
+      "type": "concept",
+      "group": 3,
+      "community": 3,
+      "val": 2
+    },
+    {
+      "id": "tag:agent记忆",
+      "name": "#agent记忆",
+      "label": "#agent记忆",
+      "type": "concept",
+      "group": 3,
+      "community": 3,
+      "val": 2
+    },
+    {
+      "id": "tag:rule-engine",
+      "name": "#rule-engine",
+      "label": "#rule-engine",
+      "type": "concept",
+      "group": 3,
+      "community": 3,
+      "val": 2
+    },
+    {
+      "id": "tag:prompt-engineering",
+      "name": "#prompt-engineering",
+      "label": "#prompt-engineering",
+      "type": "concept",
+      "group": 3,
+      "community": 3,
+      "val": 2
+    },
+    {
+      "id": "minimax-ppt-slide-generation",
+      "name": "PPT / Slide / HTML 页面生成与布局",
+      "label": "PPT / Slide / HTML 页面生成与布局",
+      "type": "document",
+      "group": 5,
+      "community": 5,
+      "val": 6,
+      "tags": [
+        "#minimax",
+        "#ppt-slide",
+        "#html-layout",
+        "#数据可视化",
+        "#设计迭代",
+        "#信息密度"
+      ],
+      "summary": "把一张 1600×900 (16:9) 的 HTML slide 从「文档感」迭代到「keynote 感」，核心是控制信息密度的两极：v1 文字过密（每卡 6 块文字、字号低到 8.8px），v2 又砍太空（每卡只剩一个大图标），v3 才收敛到「卡片=信息单元」——标题+副标题+hero 数字+周边小信息，图标缩成视觉锚点而非主视觉。可复用的不是某段 CSS，而是密度调节的判据、字号层级底线、grid 行高预算法和「渲染成 PNG 自检"
+    },
+    {
+      "id": "tag:ppt-slide",
+      "name": "#ppt-slide",
+      "label": "#ppt-slide",
+      "type": "concept",
+      "group": 5,
+      "community": 5,
+      "val": 2
+    },
+    {
+      "id": "tag:html-layout",
+      "name": "#html-layout",
+      "label": "#html-layout",
+      "type": "concept",
+      "group": 5,
+      "community": 5,
+      "val": 2
+    },
+    {
+      "id": "tag:数据可视化",
+      "name": "#数据可视化",
+      "label": "#数据可视化",
+      "type": "concept",
+      "group": 5,
+      "community": 5,
+      "val": 2
+    },
+    {
+      "id": "tag:设计迭代",
+      "name": "#设计迭代",
+      "label": "#设计迭代",
+      "type": "concept",
+      "group": 5,
+      "community": 5,
+      "val": 2
+    },
+    {
+      "id": "tag:信息密度",
+      "name": "#信息密度",
+      "label": "#信息密度",
+      "type": "concept",
+      "group": 5,
+      "community": 5,
+      "val": 2
     }
   ],
   "links": [
@@ -5394,6 +5746,252 @@
       "value": 0.6
     },
     {
+      "source": "minimax-ai-tools-dev",
+      "target": "tag:minimax",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-ai-tools-dev",
+      "target": "tag:ai-cli",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-ai-tools-dev",
+      "target": "tag:claude-code",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-ai-tools-dev",
+      "target": "tag:reasonix",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-ai-tools-dev",
+      "target": "tag:量化投研",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-ai-tools-dev",
+      "target": "tag:微信机器人",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-arxiv-paper-explanation",
+      "target": "tag:minimax",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-arxiv-paper-explanation",
+      "target": "tag:arxiv",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-arxiv-paper-explanation",
+      "target": "tag:论文讲解",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-arxiv-paper-explanation",
+      "target": "tag:html生成",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-arxiv-paper-explanation",
+      "target": "tag:pdf抓取",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-arxiv-paper-explanation",
+      "target": "tag:工具链",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-diffusion-generative",
+      "target": "tag:minimax",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-diffusion-generative",
+      "target": "tag:扩散模型",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-diffusion-generative",
+      "target": "tag:DiT",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-diffusion-generative",
+      "target": "tag:生成模型",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-diffusion-generative",
+      "target": "tag:Drifting",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-diffusion-generative",
+      "target": "tag:论文讲解",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-jepa-world-model",
+      "target": "tag:minimax",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-jepa-world-model",
+      "target": "tag:JEPA",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-jepa-world-model",
+      "target": "tag:世界模型",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-jepa-world-model",
+      "target": "tag:自监督学习",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-jepa-world-model",
+      "target": "tag:图像生成",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-jepa-world-model",
+      "target": "tag:视频理解",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-medical-imaging-ai",
+      "target": "tag:minimax",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-medical-imaging-ai",
+      "target": "tag:医学影像",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-medical-imaging-ai",
+      "target": "tag:MRI重建",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-medical-imaging-ai",
+      "target": "tag:MICCAI",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-medical-imaging-ai",
+      "target": "tag:SSIM-PSNR",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-medical-imaging-ai",
+      "target": "tag:EDA",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-misc",
+      "target": "tag:minimax",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-misc",
+      "target": "tag:知识图谱",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-misc",
+      "target": "tag:agent记忆",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-misc",
+      "target": "tag:rule-engine",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-misc",
+      "target": "tag:prompt-engineering",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-ppt-slide-generation",
+      "target": "tag:minimax",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-ppt-slide-generation",
+      "target": "tag:ppt-slide",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-ppt-slide-generation",
+      "target": "tag:html-layout",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-ppt-slide-generation",
+      "target": "tag:数据可视化",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-ppt-slide-generation",
+      "target": "tag:设计迭代",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "minimax-ppt-slide-generation",
+      "target": "tag:信息密度",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
       "source": "agent-chat-wiki-tooling",
       "target": "chatgpt-backup-wiki-publishing-pipeline",
       "type": "related",
@@ -6150,6 +6748,150 @@
       "value": 2
     },
     {
+      "source": "minimax-ai-tools-dev",
+      "target": "deepseek-codex-pi-ai-tools",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "minimax-ai-tools-dev",
+      "target": "agent-chat-wiki-tooling",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "minimax-ai-tools-dev",
+      "target": "npm-nodejs-toolchain",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "minimax-ai-tools-dev",
+      "target": "kimi-dev-tools-mcp",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "minimax-arxiv-paper-explanation",
+      "target": "paper-review-summarization",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "minimax-arxiv-paper-explanation",
+      "target": "ppt-paper-presentation",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "minimax-arxiv-paper-explanation",
+      "target": "agent-chat-wiki-tooling",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "minimax-diffusion-generative",
+      "target": "kimi-diffusion-rectified-flow",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "minimax-diffusion-generative",
+      "target": "training-losses-generative-models",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "minimax-diffusion-generative",
+      "target": "deepseek-world-model-jepa",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "minimax-diffusion-generative",
+      "target": "ppt-paper-presentation",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "minimax-diffusion-generative",
+      "target": "paper-review-summarization",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "minimax-jepa-world-model",
+      "target": "deepseek-world-model-jepa",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "minimax-jepa-world-model",
+      "target": "kimi-diffusion-rectified-flow",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "minimax-jepa-world-model",
+      "target": "training-losses-generative-models",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "minimax-medical-imaging-ai",
+      "target": "kimi-paper-miccai-review",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "minimax-medical-imaging-ai",
+      "target": "deepseek-medical-image-synthesis",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "minimax-medical-imaging-ai",
+      "target": "brain-segmentation-deep-learning-models",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "minimax-medical-imaging-ai",
+      "target": "autism-mri-diagnosis",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "minimax-medical-imaging-ai",
+      "target": "vae-3d-medical-imaging",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "minimax-misc",
+      "target": "agent-chat-wiki-tooling",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "minimax-misc",
+      "target": "deepseek-codex-pi-ai-tools",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "minimax-ppt-slide-generation",
+      "target": "ppt-paper-presentation",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "minimax-ppt-slide-generation",
+      "target": "agent-chat-wiki-tooling",
+      "type": "related",
+      "value": 2
+    },
+    {
       "source": "mri-brightness-consistency",
       "target": "psnr-ssim-3d-mri",
       "type": "related",
@@ -6480,6 +7222,12 @@
       "value": 0.8
     },
     {
+      "source": "wavelet-flow-mri-generation",
+      "target": "minimax-diffusion-generative",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
       "source": "brain-atlas-parcellation-dkt-mcrib-aal",
       "target": "fastsurfer-freesurfer-cortical-pipeline",
       "type": "shared-tag",
@@ -6510,6 +7258,12 @@
       "value": 0.8
     },
     {
+      "source": "kimi-medical-image-synthesis",
+      "target": "minimax-diffusion-generative",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
       "source": "cortical-thickness-area-volume-measurement",
       "target": "deepseek-cortical-freesurfer",
       "type": "shared-tag",
@@ -6524,6 +7278,12 @@
     {
       "source": "dinov3-3d-mri-self-supervised",
       "target": "deepseek-world-model-jepa",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "deepseek-world-model-jepa",
+      "target": "minimax-jepa-world-model",
       "type": "shared-tag",
       "value": 0.8
     },
@@ -6588,6 +7348,18 @@
       "value": 0.8
     },
     {
+      "source": "ppt-paper-presentation",
+      "target": "minimax-arxiv-paper-explanation",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "minimax-arxiv-paper-explanation",
+      "target": "minimax-diffusion-generative",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
       "source": "psnr-ssim-3d-mri",
       "target": "wandb-experiment-tracking",
       "type": "shared-tag",
@@ -6626,6 +7398,12 @@
     {
       "source": "kimi-diffusion-rectified-flow",
       "target": "kimi-ibeat-infant-mri",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "deepseek-codex-pi-ai-tools",
+      "target": "minimax-ai-tools-dev",
       "type": "shared-tag",
       "value": 0.8
     },
@@ -6674,6 +7452,12 @@
     {
       "source": "deepseek-medical-image-synthesis",
       "target": "deepseek-diffusion-rectified-flow",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "deepseek-paper-miccai-review",
+      "target": "minimax-medical-imaging-ai",
       "type": "shared-tag",
       "value": 0.8
     },
@@ -6764,6 +7548,36 @@
     {
       "source": "kimi-network-remote",
       "target": "kimi-paper-miccai-review",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "minimax-ai-tools-dev",
+      "target": "minimax-arxiv-paper-explanation",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "minimax-diffusion-generative",
+      "target": "minimax-jepa-world-model",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "minimax-jepa-world-model",
+      "target": "minimax-medical-imaging-ai",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "minimax-medical-imaging-ai",
+      "target": "minimax-misc",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "minimax-misc",
+      "target": "minimax-ppt-slide-generation",
       "type": "shared-tag",
       "value": 0.8
     }
