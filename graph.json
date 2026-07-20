@@ -4,7 +4,7 @@
   "graph": {
     "name": "ChatGPT Backup Wiki Knowledge Graph",
     "source": "sanitized wiki units only",
-    "units": 39,
+    "units": 64,
     "groupLabels": {
       "1": "医学影像",
       "2": "生成模型",
@@ -14,19 +14,29 @@
       "6": "脑区分割",
       "7": "训练工程",
       "23": "LaTeX / BibTeX 排版技",
+      "24": "Tailscale 与远程连接网络",
+      "25": "硬件外设与软件推荐",
       "28": "图像频域分析与高低频分离",
+      "33": "Linux / Docker / C",
       "35": "硬件精度与训练可复现性",
+      "36": "Cursor / Cline / M",
+      "37": "求职写作与技术杂项问答",
+      "39": "Linux / Windows / ",
       "41": "npm / Node.js 与前端工",
       "43": "皮层厚度、表面积、体积测量与共变网络",
       "44": "损失函数调试与分割评估",
+      "48": "深度学习训练 / 模型 / PyTo",
       "51": "小波域中的图像形变分析",
+      "52": "生活娱乐与社会杂谈",
+      "53": "世界模型 / JEPA / V-JE",
+      "54": "Linux / Docker / C",
       "59": "大脑分割深度学习模型"
     },
     "stats": {
-      "documents": 39,
-      "concepts": 156,
-      "links": 320,
-      "groups": 15
+      "documents": 64,
+      "concepts": 244,
+      "links": 570,
+      "groups": 25
     }
   },
   "nodes": [
@@ -1803,7 +1813,6 @@
       "tags": [
         "#远程开发",
         "#VS",
-        "Code",
         "#SSH",
         "#服务器",
         "#数据传输"
@@ -1823,15 +1832,6 @@
       "id": "tag:VS",
       "name": "#VS",
       "label": "#VS",
-      "type": "concept",
-      "group": 4,
-      "community": 4,
-      "val": 2
-    },
-    {
-      "id": "tag:Code",
-      "name": "Code",
-      "label": "Code",
       "type": "concept",
       "group": 4,
       "community": 4,
@@ -2092,6 +2092,1257 @@
       "type": "concept",
       "group": 2,
       "community": 2,
+      "val": 2
+    },
+    {
+      "id": "deepseek-codex-pi-ai-tools",
+      "name": "Codex / Pi / AI CLI 工具链",
+      "label": "Codex / Pi / AI CLI 工具链",
+      "type": "document",
+      "group": 3,
+      "community": 3,
+      "val": 6,
+      "tags": [
+        "#deepseek",
+        "#ai-cli",
+        "#codex",
+        "#pi-agent",
+        "#claude-code",
+        "#工具选型"
+      ],
+      "summary": "围绕 AI 编程 CLI 工具链的安装、登录、扩展生态、多 Agent 编排、代码分析与文档 Wiki 化五大主题。Codex CLI 采用\"主包+平台二进制包\"结构，安装卸载有三条路径，平台依赖缺失与设备码登录是高频坑点；Pi Agent 走\"极简内核+按需扩展\"路线，扩展覆盖多智能体、记忆、安全、UI 全栈；DeepSeek TUI 与 Claude Code 代表开源性价比与商业全功能两条路线，Windows 上可用 wmux/C"
+    },
+    {
+      "id": "tag:deepseek",
+      "name": "#deepseek",
+      "label": "#deepseek",
+      "type": "concept",
+      "group": 3,
+      "community": 3,
+      "val": 2
+    },
+    {
+      "id": "tag:ai-cli",
+      "name": "#ai-cli",
+      "label": "#ai-cli",
+      "type": "concept",
+      "group": 3,
+      "community": 3,
+      "val": 2
+    },
+    {
+      "id": "tag:pi-agent",
+      "name": "#pi-agent",
+      "label": "#pi-agent",
+      "type": "concept",
+      "group": 3,
+      "community": 3,
+      "val": 2
+    },
+    {
+      "id": "tag:claude-code",
+      "name": "#claude-code",
+      "label": "#claude-code",
+      "type": "concept",
+      "group": 3,
+      "community": 3,
+      "val": 2
+    },
+    {
+      "id": "tag:工具选型",
+      "name": "#工具选型",
+      "label": "#工具选型",
+      "type": "concept",
+      "group": 3,
+      "community": 3,
+      "val": 2
+    },
+    {
+      "id": "deepseek-cortical-freesurfer",
+      "name": "皮层厚度与 FreeSurfer 统计",
+      "label": "皮层厚度与 FreeSurfer 统计",
+      "type": "document",
+      "group": 1,
+      "community": 1,
+      "val": 6,
+      "tags": [
+        "#deepseek",
+        "#医学影像",
+        "#freesurfer",
+        "#皮层厚度",
+        "#神经影像",
+        "#aparc-stats"
+      ],
+      "summary": "FreeSurfer 的 `aparc.stats` 文件记录了 Desikan-Killiany 皮层分区逐区统计量，计算全脑平均皮层厚度的合理方法是以表面积为权重的加权平均，而不能用总灰质体积除以总表面积。皮层厚度是神经发育、老化与多种神经/精神疾病的重要影像生物标志物，FreeSurfer 默认采用 Laplace 方程法在灰白质与软膜表面间度量。分析时需控制年龄、性别、ICV 等协变量并做多重比较校正。"
+    },
+    {
+      "id": "tag:freesurfer",
+      "name": "#freesurfer",
+      "label": "#freesurfer",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:神经影像",
+      "name": "#神经影像",
+      "label": "#神经影像",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "deepseek-cursor-cline-mcp",
+      "name": "Cursor / Cline / MCP 开发工具",
+      "label": "Cursor / Cline / MCP 开发工具",
+      "type": "document",
+      "group": 51,
+      "community": 51,
+      "val": 6,
+      "tags": [
+        "#deepseek",
+        "#cursor",
+        "#cline",
+        "#mcp",
+        "#vscode",
+        "#开发工具"
+      ],
+      "summary": "围绕 Cursor / Cline / VSCode 中 MCP（Model Context Protocol）的配置与使用，以及 Cursor 试用限制的应对。MCP 是 Anthropic 推出的开放协议，通过客户端-服务器架构标准化 AI 助手与外部数据源/工具的连接。Cline 与 Cursor 均支持本地配置 MCP，但在 SSH 远程模式下需重新配置；Cursor 的试用限制通过多个机器码字段识别设备，单字段修改常被自动覆盖"
+    },
+    {
+      "id": "tag:cursor",
+      "name": "#cursor",
+      "label": "#cursor",
+      "type": "concept",
+      "group": 51,
+      "community": 51,
+      "val": 2
+    },
+    {
+      "id": "tag:cline",
+      "name": "#cline",
+      "label": "#cline",
+      "type": "concept",
+      "group": 51,
+      "community": 51,
+      "val": 2
+    },
+    {
+      "id": "tag:mcp",
+      "name": "#mcp",
+      "label": "#mcp",
+      "type": "concept",
+      "group": 51,
+      "community": 51,
+      "val": 2
+    },
+    {
+      "id": "tag:vscode",
+      "name": "#vscode",
+      "label": "#vscode",
+      "type": "concept",
+      "group": 51,
+      "community": 51,
+      "val": 2
+    },
+    {
+      "id": "tag:开发工具",
+      "name": "#开发工具",
+      "label": "#开发工具",
+      "type": "concept",
+      "group": 51,
+      "community": 51,
+      "val": 2
+    },
+    {
+      "id": "deepseek-life-entertainment",
+      "name": "生活娱乐与社会杂谈",
+      "label": "生活娱乐与社会杂谈",
+      "type": "document",
+      "group": 52,
+      "community": 52,
+      "val": 6,
+      "tags": [
+        "#deepseek",
+        "#影视文娱",
+        "#天文地理",
+        "#光流估计",
+        "#地缘经济",
+        "#生活技巧"
+      ],
+      "summary": "本单元跨 default / alt 两个账号汇集 16 条 DeepSeek 生活娱乐与社会杂谈对话，提炼出五类可复用知识：影视文娱收益估算方法论（票房分账规则与导演/制作人收入构成）、游戏版本与体育技法分析范式（DOTA2 7.38 版本解读 + 台球贴库发力）、天文地理与数理约束思想（星座起源、哈雷彗星周期、地图投影与测地线、光流约束方程）、文化批评与地缘经济（日本动漫二元对立思维、中国对荷/巴/日的精准反制）、数字生活实用技巧（"
+    },
+    {
+      "id": "tag:影视文娱",
+      "name": "#影视文娱",
+      "label": "#影视文娱",
+      "type": "concept",
+      "group": 52,
+      "community": 52,
+      "val": 2
+    },
+    {
+      "id": "tag:天文地理",
+      "name": "#天文地理",
+      "label": "#天文地理",
+      "type": "concept",
+      "group": 52,
+      "community": 52,
+      "val": 2
+    },
+    {
+      "id": "tag:光流估计",
+      "name": "#光流估计",
+      "label": "#光流估计",
+      "type": "concept",
+      "group": 52,
+      "community": 52,
+      "val": 2
+    },
+    {
+      "id": "tag:地缘经济",
+      "name": "#地缘经济",
+      "label": "#地缘经济",
+      "type": "concept",
+      "group": 52,
+      "community": 52,
+      "val": 2
+    },
+    {
+      "id": "tag:生活技巧",
+      "name": "#生活技巧",
+      "label": "#生活技巧",
+      "type": "concept",
+      "group": 52,
+      "community": 52,
+      "val": 2
+    },
+    {
+      "id": "deepseek-linux-windows-commands",
+      "name": "Linux / Windows / WSL 命令技巧",
+      "label": "Linux / Windows / WSL 命令技巧",
+      "type": "document",
+      "group": 39,
+      "community": 39,
+      "val": 6,
+      "tags": [
+        "#deepseek",
+        "#linux",
+        "#windows",
+        "#wsl",
+        "#shell",
+        "#命令行"
+      ],
+      "summary": "汇集 Linux 与 Windows/WSL 日常命令技巧：用 `du`/`ncdu` 查看文件夹大小、`rm -rf` 递归删除、`HTTP_PROXY` 环境变量配代理、`scp`/`rsync`/`sz` 跨机传文件、`Ctrl+Z` 配 `fg`/`bg` 管理作业、`chsh` 切换 zsh/bash；Windows 侧覆盖 WSL 一键安装、账户切换与彻底更换、PowerShell 执行策略与 SSH 排障、tmux 替代工"
+    },
+    {
+      "id": "tag:linux",
+      "name": "#linux",
+      "label": "#linux",
+      "type": "concept",
+      "group": 39,
+      "community": 39,
+      "val": 2
+    },
+    {
+      "id": "tag:windows",
+      "name": "#windows",
+      "label": "#windows",
+      "type": "concept",
+      "group": 39,
+      "community": 39,
+      "val": 2
+    },
+    {
+      "id": "tag:wsl",
+      "name": "#wsl",
+      "label": "#wsl",
+      "type": "concept",
+      "group": 39,
+      "community": 39,
+      "val": 2
+    },
+    {
+      "id": "tag:shell",
+      "name": "#shell",
+      "label": "#shell",
+      "type": "concept",
+      "group": 39,
+      "community": 39,
+      "val": 2
+    },
+    {
+      "id": "tag:命令行",
+      "name": "#命令行",
+      "label": "#命令行",
+      "type": "concept",
+      "group": 39,
+      "community": 39,
+      "val": 2
+    },
+    {
+      "id": "deepseek-medical-image-synthesis",
+      "name": "医学影像生成与跨场强合成",
+      "label": "医学影像生成与跨场强合成",
+      "type": "document",
+      "group": 1,
+      "community": 1,
+      "val": 6,
+      "tags": [
+        "#deepseek",
+        "#医学影像",
+        "#rectified-flow",
+        "#跨场强MRI",
+        "#diffusion",
+        "#物理先验"
+      ],
+      "summary": "围绕 3D 医学影像（婴幼儿脑 MRI 纵向生成、跨场强 MRI 互译、无造影剂 T1ce 生成、PET 衰减校正）的生成方法学，核心结论是：医学影像生成不能当成普通风格迁移，必须把 MRI 物理成像原理（场强对 SNR/弛豫/对比度/伪影的影响、Bloch 信号方程、k-space 与空间形变的对应关系）嵌入到 diffusion / rectified-flow / flow matching 中，用定量参数图或物理一致性损失约束生"
+    },
+    {
+      "id": "tag:跨场强MRI",
+      "name": "#跨场强MRI",
+      "label": "#跨场强MRI",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:diffusion",
+      "name": "#diffusion",
+      "label": "#diffusion",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:物理先验",
+      "name": "#物理先验",
+      "label": "#物理先验",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "deepseek-paper-miccai-review",
+      "name": "论文写作 / MICCAI / 审稿",
+      "label": "论文写作 / MICCAI / 审稿",
+      "type": "document",
+      "group": 1,
+      "community": 1,
+      "val": 6,
+      "tags": [
+        "#deepseek",
+        "#医学影像",
+        "#MICCAI",
+        "#论文写作",
+        "#审稿",
+        "#rectified-flow"
+      ],
+      "summary": "围绕 MICCAI 医学影像论文（婴儿脑 MRI 纵向合成的 rectified flow 工作）的全流程写作知识：摘要迭代精炼、量化指标表格组织、模型框架图精准生成、README 结构化、审稿意见撰写、Rebuttal 分数门槛判断、OASIS 数据集申请。核心方法论是\"摘要按背景-方法-结果-价值四段式迭代、审稿按优点-问题-建议结构化、模型图用确定性工具解析而非让 AI 凭空画、数据集申请按六段式承诺合规\"。"
+    },
+    {
+      "id": "tag:MICCAI",
+      "name": "#MICCAI",
+      "label": "#MICCAI",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:论文写作",
+      "name": "#论文写作",
+      "label": "#论文写作",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:审稿",
+      "name": "#审稿",
+      "label": "#审稿",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "deepseek-tailscale-remote-network",
+      "name": "Tailscale 与远程连接网络",
+      "label": "Tailscale 与远程连接网络",
+      "type": "document",
+      "group": 24,
+      "community": 24,
+      "val": 6,
+      "tags": [
+        "#deepseek",
+        "#tailscale",
+        "#远程桌面",
+        "#内网穿透",
+        "#网络排查",
+        "#ssh"
+      ],
+      "summary": "Tailscale 组网、远程桌面与 SSH 传输稳定性的实战排查合集。涵盖设备分享授权与 Tailnet Lock、校外降延迟方案选型（零信任 VPN / FRP / 云中转）、远程桌面工具组合（RustDesk / RDP / NoMachine + Tailscale）、Tailscale 网络故障排查（CGNAT 冲突 / UDP 打洞 / DERP 中继）以及 SSH 保活与传输中断处理。核心方法论：先用 `tailscale"
+    },
+    {
+      "id": "tag:tailscale",
+      "name": "#tailscale",
+      "label": "#tailscale",
+      "type": "concept",
+      "group": 24,
+      "community": 24,
+      "val": 2
+    },
+    {
+      "id": "tag:远程桌面",
+      "name": "#远程桌面",
+      "label": "#远程桌面",
+      "type": "concept",
+      "group": 24,
+      "community": 24,
+      "val": 2
+    },
+    {
+      "id": "tag:内网穿透",
+      "name": "#内网穿透",
+      "label": "#内网穿透",
+      "type": "concept",
+      "group": 24,
+      "community": 24,
+      "val": 2
+    },
+    {
+      "id": "tag:网络排查",
+      "name": "#网络排查",
+      "label": "#网络排查",
+      "type": "concept",
+      "group": 24,
+      "community": 24,
+      "val": 2
+    },
+    {
+      "id": "tag:ssh",
+      "name": "#ssh",
+      "label": "#ssh",
+      "type": "concept",
+      "group": 24,
+      "community": 24,
+      "val": 2
+    },
+    {
+      "id": "deepseek-diffusion-rectified-flow",
+      "name": "扩散模型 / Rectified Flow / Flow Matching",
+      "label": "扩散模型 / Rectified Flow / Flow Matching",
+      "type": "document",
+      "group": 1,
+      "community": 1,
+      "val": 6,
+      "tags": [
+        "#deepseek",
+        "#rectified-flow",
+        "#flow-matching",
+        "#diffusion",
+        "#蒸馏",
+        "#医学影像生成"
+      ],
+      "summary": "Rectified Flow 用线性插值 ODE（z_t = z_0 + t(z_1−z_0)）把噪声分布与数据分布以\"直线\"连接，训练速度场 v_θ 最小化 ‖(z_1−z_0) − v_θ(z_t,t)‖²，本质是分布到分布的变换而非图像到图像的映射。相比 Flow Matching+OT 显式求解 Wasserstein 传输，Rectified Flow 用数据驱动的\"拉直\"迭代隐式逼近测地线，路径曲率低、可用一阶 Euler "
+    },
+    {
+      "id": "tag:flow-matching",
+      "name": "#flow-matching",
+      "label": "#flow-matching",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:蒸馏",
+      "name": "#蒸馏",
+      "label": "#蒸馏",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:医学影像生成",
+      "name": "#医学影像生成",
+      "label": "#医学影像生成",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "deepseek-hardware-peripherals",
+      "name": "硬件外设与软件推荐",
+      "label": "硬件外设与软件推荐",
+      "type": "document",
+      "group": 25,
+      "community": 25,
+      "val": 6,
+      "tags": [
+        "#deepseek",
+        "#硬件外设",
+        "#故障排查",
+        "#软件选型",
+        "#网络诊断",
+        "#音频设备"
+      ],
+      "summary": "围绕台式机音频、有线耳机、轻量 Office、网速测试四类硬件外设与软件选型问题，沉淀可复用的选型决策矩阵与故障排查方法论。核心思路是分层排查：物理连接 → 系统设置 → 驱动/固件 → 硬件本身，适用于耳机无反应、Wi-Fi 慢速、随身 WiFi 降速等多种场景。软件选型则按场景（极致轻量 / 全能 / 跨平台 / 开源 / 协作）给出对比矩阵，避免凭印象选择。"
+    },
+    {
+      "id": "tag:硬件外设",
+      "name": "#硬件外设",
+      "label": "#硬件外设",
+      "type": "concept",
+      "group": 25,
+      "community": 25,
+      "val": 2
+    },
+    {
+      "id": "tag:故障排查",
+      "name": "#故障排查",
+      "label": "#故障排查",
+      "type": "concept",
+      "group": 25,
+      "community": 25,
+      "val": 2
+    },
+    {
+      "id": "tag:软件选型",
+      "name": "#软件选型",
+      "label": "#软件选型",
+      "type": "concept",
+      "group": 25,
+      "community": 25,
+      "val": 2
+    },
+    {
+      "id": "tag:网络诊断",
+      "name": "#网络诊断",
+      "label": "#网络诊断",
+      "type": "concept",
+      "group": 25,
+      "community": 25,
+      "val": 2
+    },
+    {
+      "id": "tag:音频设备",
+      "name": "#音频设备",
+      "label": "#音频设备",
+      "type": "concept",
+      "group": 25,
+      "community": 25,
+      "val": 2
+    },
+    {
+      "id": "deepseek-ibeat-infant-mri",
+      "name": "iBEAT 婴儿大脑 MRI 重建与分割",
+      "label": "iBEAT 婴儿大脑 MRI 重建与分割",
+      "type": "document",
+      "group": 35,
+      "community": 35,
+      "val": 6,
+      "tags": [
+        "#deepseek",
+        "#ibeat",
+        "#infant-mri",
+        "#brain-segmentation",
+        "#cortical-reconstruction",
+        "#synthseg"
+      ],
+      "summary": "iBEAT 是面向婴儿大脑 T1 MRI 的组织分割 + 皮层重建工具链，Docker 版（如 `ibeatgroup/ibeat_v2:release208`）需 license 文件并区分 GPU（分割）与 CPU（重建）阶段。组织分割结果遵循 SynthSeg/FreeSurfer 标签体系，可按解剖结构归并为灰质/白质/脑脊液三分类。皮层重建走 FastSurfer `recon-surf` 流水线（含 Talairach 配准"
+    },
+    {
+      "id": "tag:ibeat",
+      "name": "#ibeat",
+      "label": "#ibeat",
+      "type": "concept",
+      "group": 35,
+      "community": 35,
+      "val": 2
+    },
+    {
+      "id": "tag:infant-mri",
+      "name": "#infant-mri",
+      "label": "#infant-mri",
+      "type": "concept",
+      "group": 35,
+      "community": 35,
+      "val": 2
+    },
+    {
+      "id": "tag:brain-segmentation",
+      "name": "#brain-segmentation",
+      "label": "#brain-segmentation",
+      "type": "concept",
+      "group": 35,
+      "community": 35,
+      "val": 2
+    },
+    {
+      "id": "tag:cortical-reconstruction",
+      "name": "#cortical-reconstruction",
+      "label": "#cortical-reconstruction",
+      "type": "concept",
+      "group": 35,
+      "community": 35,
+      "val": 2
+    },
+    {
+      "id": "tag:synthseg",
+      "name": "#synthseg",
+      "label": "#synthseg",
+      "type": "concept",
+      "group": 35,
+      "community": 35,
+      "val": 2
+    },
+    {
+      "id": "deepseek-linux-docker-cuda-infra",
+      "name": "Linux / Docker / CUDA 服务器基础设施",
+      "label": "Linux / Docker / CUDA 服务器基础设施",
+      "type": "document",
+      "group": 33,
+      "community": 33,
+      "val": 6,
+      "tags": [
+        "#deepseek",
+        "#linux",
+        "#docker",
+        "#cuda",
+        "#服务器运维",
+        "#bash"
+      ],
+      "summary": "围绕 Linux GPU 服务器从零搭建到稳定运行所需的基础设施知识：Docker 与 NVIDIA Docker（nvidia-container-toolkit）安装及 GPU 运行时配置、CUDA/驱动版本兼容与 NVML 不匹配修复、conda 环境权限与缓存清理、GLIBC 过低导致 VS Code Remote-SSH 失败、npm 代理与 allow-scripts 安全策略、网络连通性排查、磁盘空间治理，以及 Bash "
+    },
+    {
+      "id": "tag:docker",
+      "name": "#docker",
+      "label": "#docker",
+      "type": "concept",
+      "group": 33,
+      "community": 33,
+      "val": 2
+    },
+    {
+      "id": "tag:cuda",
+      "name": "#cuda",
+      "label": "#cuda",
+      "type": "concept",
+      "group": 33,
+      "community": 33,
+      "val": 2
+    },
+    {
+      "id": "tag:服务器运维",
+      "name": "#服务器运维",
+      "label": "#服务器运维",
+      "type": "concept",
+      "group": 33,
+      "community": 33,
+      "val": 2
+    },
+    {
+      "id": "tag:bash",
+      "name": "#bash",
+      "label": "#bash",
+      "type": "concept",
+      "group": 33,
+      "community": 33,
+      "val": 2
+    },
+    {
+      "id": "deepseek-work-writing-misc",
+      "name": "求职写作与技术杂项问答",
+      "label": "求职写作与技术杂项问答",
+      "type": "document",
+      "group": 37,
+      "community": 37,
+      "val": 6,
+      "tags": [
+        "#deepseek",
+        "#数据清洗",
+        "#求职写作",
+        "#ssh配置",
+        "#密码管理",
+        "#数学解题"
+      ],
+      "summary": "汇集 DeepSeek 对话中非研究主线的杂项问答，提炼为可复用方法与选型结论：纵向研究数据的 pandas 清洗流程、矩阵微积分与数学解题/教学、SSH 颜色配置的隐藏副作用、开源密码管理选型、求职简历撰写（以冷盘厨师为例）与岗位认知、DeepSeek 自身版本演进与 iOS 专家模式、模型蒸馏争议与量化/评测平台。核心是把零散问答沉淀为方法、清单与避坑要点，而非单次对话摘要。"
+    },
+    {
+      "id": "tag:数据清洗",
+      "name": "#数据清洗",
+      "label": "#数据清洗",
+      "type": "concept",
+      "group": 37,
+      "community": 37,
+      "val": 2
+    },
+    {
+      "id": "tag:求职写作",
+      "name": "#求职写作",
+      "label": "#求职写作",
+      "type": "concept",
+      "group": 37,
+      "community": 37,
+      "val": 2
+    },
+    {
+      "id": "tag:ssh配置",
+      "name": "#ssh配置",
+      "label": "#ssh配置",
+      "type": "concept",
+      "group": 37,
+      "community": 37,
+      "val": 2
+    },
+    {
+      "id": "tag:密码管理",
+      "name": "#密码管理",
+      "label": "#密码管理",
+      "type": "concept",
+      "group": 37,
+      "community": 37,
+      "val": 2
+    },
+    {
+      "id": "tag:数学解题",
+      "name": "#数学解题",
+      "label": "#数学解题",
+      "type": "concept",
+      "group": 37,
+      "community": 37,
+      "val": 2
+    },
+    {
+      "id": "deepseek-world-model-jepa",
+      "name": "世界模型 / JEPA / V-JEPA",
+      "label": "世界模型 / JEPA / V-JEPA",
+      "type": "document",
+      "group": 53,
+      "community": 53,
+      "val": 6,
+      "tags": [
+        "#deepseek",
+        "#世界模型",
+        "#jepa",
+        "#视频生成",
+        "#自监督学习",
+        "#表示学习"
+      ],
+      "summary": "世界模型学习分决策规划（World Models / Dreamer 系列）与生成模拟（Sora / Genie / NOVA）两条主线。JEPA 在连续潜空间做预测，主动丢弃不可预测的细节，因此潜变量是不可逆压缩，需条件扩散解码器\"幻想\"被丢弃的细节才能可视化——这揭示了\"重建怕信息少、预测怕信息杂\"的根本权衡。LLM 的 next-token 自监督学的是\"人怎么说\"，JEPA 的潜空间预测则倒逼模型隐式习得物理约束；二者差异不在自"
+    },
+    {
+      "id": "tag:世界模型",
+      "name": "#世界模型",
+      "label": "#世界模型",
+      "type": "concept",
+      "group": 53,
+      "community": 53,
+      "val": 2
+    },
+    {
+      "id": "tag:jepa",
+      "name": "#jepa",
+      "label": "#jepa",
+      "type": "concept",
+      "group": 53,
+      "community": 53,
+      "val": 2
+    },
+    {
+      "id": "tag:视频生成",
+      "name": "#视频生成",
+      "label": "#视频生成",
+      "type": "concept",
+      "group": 53,
+      "community": 53,
+      "val": 2
+    },
+    {
+      "id": "tag:表示学习",
+      "name": "#表示学习",
+      "label": "#表示学习",
+      "type": "concept",
+      "group": 53,
+      "community": 53,
+      "val": 2
+    },
+    {
+      "id": "kimi-brain-segmentation-freesurfer",
+      "name": "脑区分割 / FreeSurfer / 皮层统计",
+      "label": "脑区分割 / FreeSurfer / 皮层统计",
+      "type": "document",
+      "group": 6,
+      "community": 6,
+      "val": 6,
+      "tags": [
+        "#kimi",
+        "#脑区分割",
+        "#FreeSurfer",
+        "#FastSurfer",
+        "#皮层统计",
+        "#神经影像"
+      ],
+      "summary": "围绕婴幼儿/成人脑 MRI 的结构分割与皮层形态学统计，核心工具链是 FreeSurfer（含 infant 分支）与 FastSurfer（深度学习加速版）。关键知识包括：recon-all 流程产出的 `aseg.mgz`/`aparc+aseg.mgz`/`aparc.DKTatlas.mapped.stats` 等文件的层级关系与图谱差异（DKT/Destrieux/AAL）；皮层厚度、表面积、灰质体积、全脑体积(TBV/ICV"
+    },
+    {
+      "id": "tag:kimi",
+      "name": "#kimi",
+      "label": "#kimi",
+      "type": "concept",
+      "group": 6,
+      "community": 6,
+      "val": 2
+    },
+    {
+      "id": "tag:皮层统计",
+      "name": "#皮层统计",
+      "label": "#皮层统计",
+      "type": "concept",
+      "group": 6,
+      "community": 6,
+      "val": 2
+    },
+    {
+      "id": "kimi-deep-learning-training",
+      "name": "深度学习训练 / 模型 / PyTorch / GPU",
+      "label": "深度学习训练 / 模型 / PyTorch / GPU",
+      "type": "document",
+      "group": 48,
+      "community": 48,
+      "val": 6,
+      "tags": [
+        "#kimi",
+        "#pytorch",
+        "#深度学习训练",
+        "#conda",
+        "#gpu",
+        "#进程管理"
+      ],
+      "summary": "围绕深度学习训练的工程实践，覆盖 PyTorch 生态版本兼容、Conda 环境与权限、训练算法与损失函数设计、训练脚本工程、GPU 资源与显存管理、Linux 进程/线程排查六个方向。核心教训是：torch 系列包（torch/torchvision/torchaudio/torchtext/xformers）必须按官方兼容矩阵严格匹配，混用 pip/conda 或误用 sudo 装包是绝大多数环境问题根源；GPU 显存不释放多因父进"
+    },
+    {
+      "id": "tag:pytorch",
+      "name": "#pytorch",
+      "label": "#pytorch",
+      "type": "concept",
+      "group": 48,
+      "community": 48,
+      "val": 2
+    },
+    {
+      "id": "tag:深度学习训练",
+      "name": "#深度学习训练",
+      "label": "#深度学习训练",
+      "type": "concept",
+      "group": 48,
+      "community": 48,
+      "val": 2
+    },
+    {
+      "id": "tag:conda",
+      "name": "#conda",
+      "label": "#conda",
+      "type": "concept",
+      "group": 48,
+      "community": 48,
+      "val": 2
+    },
+    {
+      "id": "tag:gpu",
+      "name": "#gpu",
+      "label": "#gpu",
+      "type": "concept",
+      "group": 48,
+      "community": 48,
+      "val": 2
+    },
+    {
+      "id": "tag:进程管理",
+      "name": "#进程管理",
+      "label": "#进程管理",
+      "type": "concept",
+      "group": 48,
+      "community": 48,
+      "val": 2
+    },
+    {
+      "id": "kimi-dev-tools-mcp",
+      "name": "Cursor / Cline / MCP / IDE / Git 开发工具",
+      "label": "Cursor / Cline / MCP / IDE / Git 开发工具",
+      "type": "document",
+      "group": 36,
+      "community": 36,
+      "val": 6,
+      "tags": [
+        "#kimi",
+        "#vscode",
+        "#roo-code",
+        "#cli-vs-ide",
+        "#git",
+        "#netlify"
+      ],
+      "summary": "蒸馏 AI 编程工具三层生态（IDE / CLI / VSCode 插件）的选型与用法：Cursor/Trae、Claude Code/Gemini CLI/iFlow CLI、Roo Code/Cline 各自定位；重点沉淀 Roo Code 的模式与内置工具、VS Code LM API 白嫖 Copilot、VSCode 目录树插件与多光标快捷键、Git 选择性提交、Netlify 404 排障、SSH 代理转发共享本地代理，以及"
+    },
+    {
+      "id": "tag:roo-code",
+      "name": "#roo-code",
+      "label": "#roo-code",
+      "type": "concept",
+      "group": 36,
+      "community": 36,
+      "val": 2
+    },
+    {
+      "id": "tag:cli-vs-ide",
+      "name": "#cli-vs-ide",
+      "label": "#cli-vs-ide",
+      "type": "concept",
+      "group": 36,
+      "community": 36,
+      "val": 2
+    },
+    {
+      "id": "tag:git",
+      "name": "#git",
+      "label": "#git",
+      "type": "concept",
+      "group": 36,
+      "community": 36,
+      "val": 2
+    },
+    {
+      "id": "tag:netlify",
+      "name": "#netlify",
+      "label": "#netlify",
+      "type": "concept",
+      "group": 36,
+      "community": 36,
+      "val": 2
+    },
+    {
+      "id": "kimi-diffusion-rectified-flow",
+      "name": "扩散模型 / Rectified Flow / Flow Matching / 最优传输",
+      "label": "扩散模型 / Rectified Flow / Flow Matching / 最优传输",
+      "type": "document",
+      "group": 1,
+      "community": 1,
+      "val": 6,
+      "tags": [
+        "#kimi",
+        "#rectified-flow",
+        "#flow-matching",
+        "#diffusion-model",
+        "#最优传输",
+        "#医学影像配准"
+      ],
+      "summary": "Rectified Flow 用直线插值 ODE（$dX_t=v\\,dt$，$X_t=X_0+t(X_1-X_0)$）学习两分布间的速度场，训练损失为 $\\mathbb{E}\\|(x_1-x_0)-v_\\theta(x_t,t)\\|^2$；经 reflow 反复拉直路径后可蒸馏为一步采样。相比 DDPM 的多步去噪，Flow Matching 步数少（20-50 vs 50-1000）、损失简单，已扩展到点云生成与医学影像配准。医学应用"
+    },
+    {
+      "id": "tag:diffusion-model",
+      "name": "#diffusion-model",
+      "label": "#diffusion-model",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:最优传输",
+      "name": "#最优传输",
+      "label": "#最优传输",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:医学影像配准",
+      "name": "#医学影像配准",
+      "label": "#医学影像配准",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "kimi-ibeat-infant-mri",
+      "name": "iBEAT 婴儿大脑 MRI 重建与分割",
+      "label": "iBEAT 婴儿大脑 MRI 重建与分割",
+      "type": "document",
+      "group": 52,
+      "community": 52,
+      "val": 6,
+      "tags": [
+        "#kimi",
+        "#infant-brain-mri",
+        "#ibeat",
+        "#freesurfer",
+        "#rectified-flow",
+        "#brain-segmentation"
+      ],
+      "summary": "围绕 0-2 岁婴幼儿大脑 MRI 的处理与跨年龄生成：工具链以 iBEAT V2.0（Cloud + Docker）和 Infant FreeSurfer（infant_recon_all）为核心，完成颅骨剥离、WM/GM/CSF 组织分割、皮层表面重建；研究方法上提出 FDRF（Flexible Distilled Rectified Flow），从 6 月龄 MRI 联合生成 12/24 月 MRI 与分割标签，以 age-str"
+    },
+    {
+      "id": "tag:infant-brain-mri",
+      "name": "#infant-brain-mri",
+      "label": "#infant-brain-mri",
+      "type": "concept",
+      "group": 52,
+      "community": 52,
+      "val": 2
+    },
+    {
+      "id": "kimi-life-entertainment",
+      "name": "生活娱乐 / 社会杂谈 / 杂务",
+      "label": "生活娱乐 / 社会杂谈 / 杂务",
+      "type": "document",
+      "group": 28,
+      "community": 28,
+      "val": 6,
+      "tags": [
+        "#kimi",
+        "#生活技巧",
+        "#数码兼容",
+        "#订阅管理",
+        "#国补签证",
+        "#求职招聘"
+      ],
+      "summary": "12 条 Kimi 对话围绕生活娱乐与社会杂谈中的实用杂务展开，沉淀出五类可复用知识：数码设备充电协议与跨设备兼容判断、Google/Gemini 订阅与支付方式移除规则、Cursor 机器码重置与图像生成一致性方法、京东国补地区差异与签证中心发票开具、模拟学生档案生成与口腔医学博士报考/招聘方法论。核心共识是：协议与政策规则决定可用性，AI 给出的招聘/政策信息存在时效性，需以官方渠道复核。"
+    },
+    {
+      "id": "tag:数码兼容",
+      "name": "#数码兼容",
+      "label": "#数码兼容",
+      "type": "concept",
+      "group": 28,
+      "community": 28,
+      "val": 2
+    },
+    {
+      "id": "tag:订阅管理",
+      "name": "#订阅管理",
+      "label": "#订阅管理",
+      "type": "concept",
+      "group": 28,
+      "community": 28,
+      "val": 2
+    },
+    {
+      "id": "tag:国补签证",
+      "name": "#国补签证",
+      "label": "#国补签证",
+      "type": "concept",
+      "group": 28,
+      "community": 28,
+      "val": 2
+    },
+    {
+      "id": "tag:求职招聘",
+      "name": "#求职招聘",
+      "label": "#求职招聘",
+      "type": "concept",
+      "group": 28,
+      "community": 28,
+      "val": 2
+    },
+    {
+      "id": "kimi-linux-docker-cuda-infra",
+      "name": "Linux / Docker / CUDA / 服务器基础设施",
+      "label": "Linux / Docker / CUDA / 服务器基础设施",
+      "type": "document",
+      "group": 54,
+      "community": 54,
+      "val": 6,
+      "tags": [
+        "#kimi",
+        "#linux",
+        "#docker",
+        "#cuda",
+        "#服务器运维",
+        "#容器化"
+      ],
+      "summary": "覆盖 GPU 服务器从“装机到跑训练”的整条基础设施链路：Linux 网络与系统监控、Docker + NVIDIA Container Toolkit 容器化、CUDA 驱动与运行时版本兼容、远程开发（SSH/VS Code Remote-SSH）与系统库（GLIBC）升级陷阱、裸金属服务器选型与国内镜像源加速。核心方法论是“分层排查 + 版本对齐 + 镜像加速”：先确认网络/DNS/防火墙，再确认驱动与 CUDA runtime 匹"
+    },
+    {
+      "id": "tag:容器化",
+      "name": "#容器化",
+      "label": "#容器化",
+      "type": "concept",
+      "group": 54,
+      "community": 54,
+      "val": 2
+    },
+    {
+      "id": "kimi-medical-image-synthesis",
+      "name": "医学影像生成 / 跨场强 / 评价指标",
+      "label": "医学影像生成 / 跨场强 / 评价指标",
+      "type": "document",
+      "group": 1,
+      "community": 1,
+      "val": 6,
+      "tags": [
+        "#kimi",
+        "#医学影像生成",
+        "#扩散模型",
+        "#跨模态转换",
+        "#评价指标",
+        "#直方图匹配"
+      ],
+      "summary": "围绕医学影像（尤其脑部 MRI/PET）的生成、跨场强/跨模态转换与质量评价展开。生成侧覆盖扩散模型（DDPM/DDIM/Flow Matching）、Rectified Flow、VQ-VAE/VQ-GAN 与 U-Net 速度场网络；转换侧涵盖 MRI→PET、缺失模态补全与直方图匹配/强度归一化；评价侧梳理 PSNR/SSIM/MSE/Dice 的适用范围与陷阱（直方图匹配会人为抬高 PSNR、VAE 微调后 PSNR 反降）。核"
+    },
+    {
+      "id": "tag:跨模态转换",
+      "name": "#跨模态转换",
+      "label": "#跨模态转换",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:评价指标",
+      "name": "#评价指标",
+      "label": "#评价指标",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "tag:直方图匹配",
+      "name": "#直方图匹配",
+      "label": "#直方图匹配",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "kimi-misc",
+      "name": "其他杂项问答",
+      "label": "其他杂项问答",
+      "type": "document",
+      "group": 1,
+      "community": 1,
+      "val": 6,
+      "tags": [
+        "#kimi",
+        "#论文写作",
+        "#latex",
+        "#医学影像",
+        "#申根签证",
+        "#生活技巧"
+      ],
+      "summary": "该单元沉淀了 12 条 Kimi 对话中的零散问答知识，覆盖四大主题：论文写作与 LaTeX 排版技巧、医学影像概念与方法（MRI/分割/可视化）、希腊申根签证申请流程、日常生活技巧（相亲沟通、终端字体配置）。核心价值在于把跨领域的一次性 Q&A 提炼为可复用的操作要点和坑点提示，如 LaTeX 表格/向量符号写法、nibabel 保存图像的 cutoff 差异、便携式超低场 MRI 的深度学习 EMI 消除、申根签证表 21-27 项"
+    },
+    {
+      "id": "tag:申根签证",
+      "name": "#申根签证",
+      "label": "#申根签证",
+      "type": "concept",
+      "group": 1,
+      "community": 1,
+      "val": 2
+    },
+    {
+      "id": "kimi-network-remote",
+      "name": "SSH / 远程连接 / 代理 / 网络",
+      "label": "SSH / 远程连接 / 代理 / 网络",
+      "type": "document",
+      "group": 52,
+      "community": 52,
+      "val": 6,
+      "tags": [
+        "#kimi",
+        "#ssh",
+        "#远程连接",
+        "#密钥配置",
+        "#架构图工具",
+        "#网络诊断"
+      ],
+      "summary": "SSH 密钥生成与 GitHub/远程仓库认证配置，以及 API 工具连接失败的通用排查思路。核心知识点：`Permission denied (publickey)` 多由未生成密钥或公钥未上传导致，标准流程为 `ssh-keygen` 生成 ed25519 密钥 → 加入 ssh-agent → 公钥贴到服务端 → `ssh -T` 验证；遇到 `known_hosts` 首次确认属正常；权限报错用 `--user` 或 `cond"
+    },
+    {
+      "id": "tag:远程连接",
+      "name": "#远程连接",
+      "label": "#远程连接",
+      "type": "concept",
+      "group": 52,
+      "community": 52,
+      "val": 2
+    },
+    {
+      "id": "tag:密钥配置",
+      "name": "#密钥配置",
+      "label": "#密钥配置",
+      "type": "concept",
+      "group": 52,
+      "community": 52,
+      "val": 2
+    },
+    {
+      "id": "tag:架构图工具",
+      "name": "#架构图工具",
+      "label": "#架构图工具",
+      "type": "concept",
+      "group": 52,
+      "community": 52,
+      "val": 2
+    },
+    {
+      "id": "kimi-paper-miccai-review",
+      "name": "MICCAI 论文写作 / 投稿 / 审稿 / 模板",
+      "label": "MICCAI 论文写作 / 投稿 / 审稿 / 模板",
+      "type": "document",
+      "group": 59,
+      "community": 59,
+      "val": 6,
+      "tags": [
+        "#kimi",
+        "#miccai",
+        "#论文写作",
+        "#同行审稿",
+        "#学术模板",
+        "#ipmi"
+      ],
+      "summary": "围绕 MICCAI/IPMI 等医学影像顶会论文的完整生命周期：投稿领域选择与摘要可改性、意向投稿与全文投稿两阶段流程、各章节（实验细节、相关工作、引言、结果、结论）的 LaTeX 撰写与精简规范、7 分制审稿结果解读与 independent rebuttal 策略、IPMI 海报 teaser 与口头展示要求，以及柳叶刀/Nature 等期刊 Word 模板获取途径与会议注册费报销邮件模板。核心可复用知识是顶会投稿的关键流程节点、写"
+    },
+    {
+      "id": "tag:同行审稿",
+      "name": "#同行审稿",
+      "label": "#同行审稿",
+      "type": "concept",
+      "group": 59,
+      "community": 59,
+      "val": 2
+    },
+    {
+      "id": "tag:学术模板",
+      "name": "#学术模板",
+      "label": "#学术模板",
+      "type": "concept",
+      "group": 59,
+      "community": 59,
+      "val": 2
+    },
+    {
+      "id": "tag:ipmi",
+      "name": "#ipmi",
+      "label": "#ipmi",
+      "type": "concept",
+      "group": 59,
+      "community": 59,
       "val": 2
     }
   ],
@@ -3070,12 +4321,6 @@
     },
     {
       "source": "ssh-remote-development",
-      "target": "tag:Code",
-      "type": "tag",
-      "value": 0.6
-    },
-    {
-      "source": "ssh-remote-development",
       "target": "tag:SSH",
       "type": "tag",
       "value": 0.6
@@ -3249,6 +4494,906 @@
       "value": 0.6
     },
     {
+      "source": "deepseek-codex-pi-ai-tools",
+      "target": "tag:deepseek",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-codex-pi-ai-tools",
+      "target": "tag:ai-cli",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-codex-pi-ai-tools",
+      "target": "tag:codex",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-codex-pi-ai-tools",
+      "target": "tag:pi-agent",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-codex-pi-ai-tools",
+      "target": "tag:claude-code",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-codex-pi-ai-tools",
+      "target": "tag:工具选型",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-cortical-freesurfer",
+      "target": "tag:deepseek",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-cortical-freesurfer",
+      "target": "tag:医学影像",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-cortical-freesurfer",
+      "target": "tag:freesurfer",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-cortical-freesurfer",
+      "target": "tag:皮层厚度",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-cortical-freesurfer",
+      "target": "tag:神经影像",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-cortical-freesurfer",
+      "target": "tag:aparc-stats",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-cursor-cline-mcp",
+      "target": "tag:deepseek",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-cursor-cline-mcp",
+      "target": "tag:cursor",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-cursor-cline-mcp",
+      "target": "tag:cline",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-cursor-cline-mcp",
+      "target": "tag:mcp",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-cursor-cline-mcp",
+      "target": "tag:vscode",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-cursor-cline-mcp",
+      "target": "tag:开发工具",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-life-entertainment",
+      "target": "tag:deepseek",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-life-entertainment",
+      "target": "tag:影视文娱",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-life-entertainment",
+      "target": "tag:天文地理",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-life-entertainment",
+      "target": "tag:光流估计",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-life-entertainment",
+      "target": "tag:地缘经济",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-life-entertainment",
+      "target": "tag:生活技巧",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-linux-windows-commands",
+      "target": "tag:deepseek",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-linux-windows-commands",
+      "target": "tag:linux",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-linux-windows-commands",
+      "target": "tag:windows",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-linux-windows-commands",
+      "target": "tag:wsl",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-linux-windows-commands",
+      "target": "tag:shell",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-linux-windows-commands",
+      "target": "tag:命令行",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-medical-image-synthesis",
+      "target": "tag:deepseek",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-medical-image-synthesis",
+      "target": "tag:医学影像",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-medical-image-synthesis",
+      "target": "tag:rectified-flow",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-medical-image-synthesis",
+      "target": "tag:跨场强MRI",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-medical-image-synthesis",
+      "target": "tag:diffusion",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-medical-image-synthesis",
+      "target": "tag:物理先验",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-paper-miccai-review",
+      "target": "tag:deepseek",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-paper-miccai-review",
+      "target": "tag:医学影像",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-paper-miccai-review",
+      "target": "tag:MICCAI",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-paper-miccai-review",
+      "target": "tag:论文写作",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-paper-miccai-review",
+      "target": "tag:审稿",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-paper-miccai-review",
+      "target": "tag:rectified-flow",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-tailscale-remote-network",
+      "target": "tag:deepseek",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-tailscale-remote-network",
+      "target": "tag:tailscale",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-tailscale-remote-network",
+      "target": "tag:远程桌面",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-tailscale-remote-network",
+      "target": "tag:内网穿透",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-tailscale-remote-network",
+      "target": "tag:网络排查",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-tailscale-remote-network",
+      "target": "tag:ssh",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-diffusion-rectified-flow",
+      "target": "tag:deepseek",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-diffusion-rectified-flow",
+      "target": "tag:rectified-flow",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-diffusion-rectified-flow",
+      "target": "tag:flow-matching",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-diffusion-rectified-flow",
+      "target": "tag:diffusion",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-diffusion-rectified-flow",
+      "target": "tag:蒸馏",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-diffusion-rectified-flow",
+      "target": "tag:医学影像生成",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-hardware-peripherals",
+      "target": "tag:deepseek",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-hardware-peripherals",
+      "target": "tag:硬件外设",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-hardware-peripherals",
+      "target": "tag:故障排查",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-hardware-peripherals",
+      "target": "tag:软件选型",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-hardware-peripherals",
+      "target": "tag:网络诊断",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-hardware-peripherals",
+      "target": "tag:音频设备",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-ibeat-infant-mri",
+      "target": "tag:deepseek",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-ibeat-infant-mri",
+      "target": "tag:ibeat",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-ibeat-infant-mri",
+      "target": "tag:infant-mri",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-ibeat-infant-mri",
+      "target": "tag:brain-segmentation",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-ibeat-infant-mri",
+      "target": "tag:cortical-reconstruction",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-ibeat-infant-mri",
+      "target": "tag:synthseg",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-linux-docker-cuda-infra",
+      "target": "tag:deepseek",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-linux-docker-cuda-infra",
+      "target": "tag:linux",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-linux-docker-cuda-infra",
+      "target": "tag:docker",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-linux-docker-cuda-infra",
+      "target": "tag:cuda",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-linux-docker-cuda-infra",
+      "target": "tag:服务器运维",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-linux-docker-cuda-infra",
+      "target": "tag:bash",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-work-writing-misc",
+      "target": "tag:deepseek",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-work-writing-misc",
+      "target": "tag:数据清洗",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-work-writing-misc",
+      "target": "tag:求职写作",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-work-writing-misc",
+      "target": "tag:ssh配置",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-work-writing-misc",
+      "target": "tag:密码管理",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-work-writing-misc",
+      "target": "tag:数学解题",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-world-model-jepa",
+      "target": "tag:deepseek",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-world-model-jepa",
+      "target": "tag:世界模型",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-world-model-jepa",
+      "target": "tag:jepa",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-world-model-jepa",
+      "target": "tag:视频生成",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-world-model-jepa",
+      "target": "tag:自监督学习",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "deepseek-world-model-jepa",
+      "target": "tag:表示学习",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-brain-segmentation-freesurfer",
+      "target": "tag:kimi",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-brain-segmentation-freesurfer",
+      "target": "tag:脑区分割",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-brain-segmentation-freesurfer",
+      "target": "tag:FreeSurfer",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-brain-segmentation-freesurfer",
+      "target": "tag:FastSurfer",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-brain-segmentation-freesurfer",
+      "target": "tag:皮层统计",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-brain-segmentation-freesurfer",
+      "target": "tag:神经影像",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-deep-learning-training",
+      "target": "tag:kimi",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-deep-learning-training",
+      "target": "tag:pytorch",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-deep-learning-training",
+      "target": "tag:深度学习训练",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-deep-learning-training",
+      "target": "tag:conda",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-deep-learning-training",
+      "target": "tag:gpu",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-deep-learning-training",
+      "target": "tag:进程管理",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-dev-tools-mcp",
+      "target": "tag:kimi",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-dev-tools-mcp",
+      "target": "tag:vscode",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-dev-tools-mcp",
+      "target": "tag:roo-code",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-dev-tools-mcp",
+      "target": "tag:cli-vs-ide",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-dev-tools-mcp",
+      "target": "tag:git",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-dev-tools-mcp",
+      "target": "tag:netlify",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-diffusion-rectified-flow",
+      "target": "tag:kimi",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-diffusion-rectified-flow",
+      "target": "tag:rectified-flow",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-diffusion-rectified-flow",
+      "target": "tag:flow-matching",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-diffusion-rectified-flow",
+      "target": "tag:diffusion-model",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-diffusion-rectified-flow",
+      "target": "tag:最优传输",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-diffusion-rectified-flow",
+      "target": "tag:医学影像配准",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-ibeat-infant-mri",
+      "target": "tag:kimi",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-ibeat-infant-mri",
+      "target": "tag:infant-brain-mri",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-ibeat-infant-mri",
+      "target": "tag:ibeat",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-ibeat-infant-mri",
+      "target": "tag:freesurfer",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-ibeat-infant-mri",
+      "target": "tag:rectified-flow",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-ibeat-infant-mri",
+      "target": "tag:brain-segmentation",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-life-entertainment",
+      "target": "tag:kimi",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-life-entertainment",
+      "target": "tag:生活技巧",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-life-entertainment",
+      "target": "tag:数码兼容",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-life-entertainment",
+      "target": "tag:订阅管理",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-life-entertainment",
+      "target": "tag:国补签证",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-life-entertainment",
+      "target": "tag:求职招聘",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-linux-docker-cuda-infra",
+      "target": "tag:kimi",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-linux-docker-cuda-infra",
+      "target": "tag:linux",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-linux-docker-cuda-infra",
+      "target": "tag:docker",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-linux-docker-cuda-infra",
+      "target": "tag:cuda",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-linux-docker-cuda-infra",
+      "target": "tag:服务器运维",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-linux-docker-cuda-infra",
+      "target": "tag:容器化",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-medical-image-synthesis",
+      "target": "tag:kimi",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-medical-image-synthesis",
+      "target": "tag:医学影像生成",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-medical-image-synthesis",
+      "target": "tag:扩散模型",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-medical-image-synthesis",
+      "target": "tag:跨模态转换",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-medical-image-synthesis",
+      "target": "tag:评价指标",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-medical-image-synthesis",
+      "target": "tag:直方图匹配",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-misc",
+      "target": "tag:kimi",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-misc",
+      "target": "tag:论文写作",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-misc",
+      "target": "tag:latex",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-misc",
+      "target": "tag:医学影像",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-misc",
+      "target": "tag:申根签证",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-misc",
+      "target": "tag:生活技巧",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-network-remote",
+      "target": "tag:kimi",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-network-remote",
+      "target": "tag:ssh",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-network-remote",
+      "target": "tag:远程连接",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-network-remote",
+      "target": "tag:密钥配置",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-network-remote",
+      "target": "tag:架构图工具",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-network-remote",
+      "target": "tag:网络诊断",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-paper-miccai-review",
+      "target": "tag:kimi",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-paper-miccai-review",
+      "target": "tag:miccai",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-paper-miccai-review",
+      "target": "tag:论文写作",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-paper-miccai-review",
+      "target": "tag:同行审稿",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-paper-miccai-review",
+      "target": "tag:学术模板",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
+      "source": "kimi-paper-miccai-review",
+      "target": "tag:ipmi",
+      "type": "tag",
+      "value": 0.6
+    },
+    {
       "source": "agent-chat-wiki-tooling",
       "target": "chatgpt-backup-wiki-publishing-pipeline",
       "type": "related",
@@ -3387,6 +5532,180 @@
       "value": 2
     },
     {
+      "source": "deepseek-codex-pi-ai-tools",
+      "target": "agent-chat-wiki-tooling",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "deepseek-cortical-freesurfer",
+      "target": "cortical-thickness-area-volume-measurement",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "deepseek-cortical-freesurfer",
+      "target": "fastsurfer-freesurfer-cortical-pipeline",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "deepseek-cortical-freesurfer",
+      "target": "brain-atlas-parcellation-dkt-mcrib-aal",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "deepseek-cursor-cline-mcp",
+      "target": "agent-chat-wiki-tooling",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "deepseek-cursor-cline-mcp",
+      "target": "chatgpt-backup-wiki-publishing-pipeline",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "deepseek-diffusion-rectified-flow",
+      "target": "deepseek-medical-image-synthesis",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "deepseek-diffusion-rectified-flow",
+      "target": "brain-segmentation-deep-learning-models",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "deepseek-diffusion-rectified-flow",
+      "target": "autism-mri-diagnosis",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "deepseek-diffusion-rectified-flow",
+      "target": "cross-modal-medical-image-translation",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "deepseek-ibeat-infant-mri",
+      "target": "deepseek-cortical-freesurfer",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "deepseek-ibeat-infant-mri",
+      "target": "deepseek-medical-image-synthesis",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "deepseek-ibeat-infant-mri",
+      "target": "brain-segmentation-deep-learning-models",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "deepseek-ibeat-infant-mri",
+      "target": "autism-mri-diagnosis",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "deepseek-life-entertainment",
+      "target": "agent-chat-wiki-tooling",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "deepseek-linux-docker-cuda-infra",
+      "target": "brain-segmentation-deep-learning-models",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "deepseek-linux-docker-cuda-infra",
+      "target": "deepseek-medical-image-synthesis",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "deepseek-linux-docker-cuda-infra",
+      "target": "autism-mri-diagnosis",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "deepseek-linux-windows-commands",
+      "target": "agent-chat-wiki-tooling",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "deepseek-linux-windows-commands",
+      "target": "chatgpt-backup-wiki-publishing-pipeline",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "deepseek-medical-image-synthesis",
+      "target": "agent-chat-wiki-tooling",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "deepseek-medical-image-synthesis",
+      "target": "chatgpt-backup-wiki-publishing-pipeline",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "deepseek-paper-miccai-review",
+      "target": "agent-chat-wiki-tooling",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "deepseek-tailscale-remote-network",
+      "target": "agent-chat-wiki-tooling",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "deepseek-work-writing-misc",
+      "target": "deepseek-life-entertainment",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "deepseek-work-writing-misc",
+      "target": "deepseek-codex-pi-ai-tools",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "deepseek-work-writing-misc",
+      "target": "deepseek-linux-docker-cuda-infra",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "deepseek-world-model-jepa",
+      "target": "deepseek-medical-image-synthesis",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "deepseek-world-model-jepa",
+      "target": "agent-chat-wiki-tooling",
+      "type": "related",
+      "value": 2
+    },
+    {
       "source": "docker-install-and-management",
       "target": "ssh-remote-development",
       "type": "related",
@@ -3479,6 +5798,282 @@
     {
       "source": "infant-brain-mri-processing",
       "target": "rectified-flow-basics",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-brain-segmentation-freesurfer",
+      "target": "autism-mri-diagnosis",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-brain-segmentation-freesurfer",
+      "target": "brain-segmentation-deep-learning-models",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-brain-segmentation-freesurfer",
+      "target": "cross-modal-medical-image-translation",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-deep-learning-training",
+      "target": "kimi-diffusion-rectified-flow",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-deep-learning-training",
+      "target": "kimi-medical-image-synthesis",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-deep-learning-training",
+      "target": "kimi-ibeat-infant-mri",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-deep-learning-training",
+      "target": "kimi-linux-docker-cuda-infra",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-deep-learning-training",
+      "target": "dataloader-data-parallel",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-dev-tools-mcp",
+      "target": "agent-chat-wiki-tooling",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-dev-tools-mcp",
+      "target": "autism-mri-diagnosis",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-dev-tools-mcp",
+      "target": "deepseek-medical-image-synthesis",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-diffusion-rectified-flow",
+      "target": "autism-mri-diagnosis",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-diffusion-rectified-flow",
+      "target": "brain-segmentation-deep-learning-models",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-diffusion-rectified-flow",
+      "target": "cross-modal-medical-image-translation",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-diffusion-rectified-flow",
+      "target": "deepseek-medical-image-synthesis",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-ibeat-infant-mri",
+      "target": "deepseek-ibeat-infant-mri",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-ibeat-infant-mri",
+      "target": "kimi-diffusion-rectified-flow",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-ibeat-infant-mri",
+      "target": "kimi-brain-segmentation-freesurfer",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-ibeat-infant-mri",
+      "target": "kimi-medical-image-synthesis",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-ibeat-infant-mri",
+      "target": "autism-mri-diagnosis",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-ibeat-infant-mri",
+      "target": "brain-segmentation-deep-learning-models",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-life-entertainment",
+      "target": "agent-chat-wiki-tooling",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-life-entertainment",
+      "target": "deepseek-medical-image-synthesis",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-linux-docker-cuda-infra",
+      "target": "brain-segmentation-deep-learning-models",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-linux-docker-cuda-infra",
+      "target": "agent-chat-wiki-tooling",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-medical-image-synthesis",
+      "target": "cross-modal-medical-image-translation",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-medical-image-synthesis",
+      "target": "deepseek-medical-image-synthesis",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-medical-image-synthesis",
+      "target": "brain-segmentation-deep-learning-models",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-medical-image-synthesis",
+      "target": "autism-mri-diagnosis",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-misc",
+      "target": "autism-mri-diagnosis",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-misc",
+      "target": "brain-segmentation-deep-learning-models",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-misc",
+      "target": "deepseek-medical-image-synthesis",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-network-remote",
+      "target": "brain-segmentation-deep-learning-models",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-network-remote",
+      "target": "kimi-diffusion-rectified-flow",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-network-remote",
+      "target": "segmentation-mask-conditioned-diffusion",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-network-remote",
+      "target": "kimi-life-entertainment",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-network-remote",
+      "target": "ssh-remote-development",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-network-remote",
+      "target": "deepseek-tailscale-remote-network",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-network-remote",
+      "target": "kimi-linux-docker-cuda-infra",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-network-remote",
+      "target": "kimi-dev-tools-mcp",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-paper-miccai-review",
+      "target": "deepseek-paper-miccai-review",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-paper-miccai-review",
+      "target": "deepseek-medical-image-synthesis",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-paper-miccai-review",
+      "target": "kimi-medical-image-synthesis",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-paper-miccai-review",
+      "target": "kimi-ibeat-infant-mri",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-paper-miccai-review",
+      "target": "kimi-diffusion-rectified-flow",
+      "type": "related",
+      "value": 2
+    },
+    {
+      "source": "kimi-paper-miccai-review",
+      "target": "agent-chat-wiki-tooling",
       "type": "related",
       "value": 2
     },
@@ -3837,68 +6432,14 @@
       "value": 0.8
     },
     {
+      "source": "agent-chat-wiki-tooling",
+      "target": "deepseek-codex-pi-ai-tools",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
       "source": "autism-mri-diagnosis",
       "target": "brain-mri-counterfactual-generation",
-      "type": "shared-tag",
-      "value": 0.8
-    },
-    {
-      "source": "brain-mri-counterfactual-generation",
-      "target": "cross-modal-medical-image-translation",
-      "type": "shared-tag",
-      "value": 0.8
-    },
-    {
-      "source": "cross-modal-medical-image-translation",
-      "target": "dinov3-3d-mri-self-supervised",
-      "type": "shared-tag",
-      "value": 0.8
-    },
-    {
-      "source": "dinov3-3d-mri-self-supervised",
-      "target": "flow-medical-image-generation",
-      "type": "shared-tag",
-      "value": 0.8
-    },
-    {
-      "source": "flow-medical-image-generation",
-      "target": "histogram-matching",
-      "type": "shared-tag",
-      "value": 0.8
-    },
-    {
-      "source": "histogram-matching",
-      "target": "infant-brain-mri-processing",
-      "type": "shared-tag",
-      "value": 0.8
-    },
-    {
-      "source": "infant-brain-mri-processing",
-      "target": "medical-image-generation-challenges",
-      "type": "shared-tag",
-      "value": 0.8
-    },
-    {
-      "source": "medical-image-generation-challenges",
-      "target": "mri-brightness-consistency",
-      "type": "shared-tag",
-      "value": 0.8
-    },
-    {
-      "source": "mri-brightness-consistency",
-      "target": "psnr-ssim-3d-mri",
-      "type": "shared-tag",
-      "value": 0.8
-    },
-    {
-      "source": "psnr-ssim-3d-mri",
-      "target": "ss-fse-isotropic-thick-slice",
-      "type": "shared-tag",
-      "value": 0.8
-    },
-    {
-      "source": "ss-fse-isotropic-thick-slice",
-      "target": "vae-3d-medical-imaging",
       "type": "shared-tag",
       "value": 0.8
     },
@@ -3945,6 +6486,12 @@
       "value": 0.8
     },
     {
+      "source": "fastsurfer-freesurfer-cortical-pipeline",
+      "target": "kimi-brain-segmentation-freesurfer",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
       "source": "brain-segmentation-deep-learning-models",
       "target": "segmentation-mask-conditioned-diffusion",
       "type": "shared-tag",
@@ -3957,14 +6504,38 @@
       "value": 0.8
     },
     {
+      "source": "wavelet-flow-mri-generation",
+      "target": "kimi-medical-image-synthesis",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "cortical-thickness-area-volume-measurement",
+      "target": "deepseek-cortical-freesurfer",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
       "source": "dataloader-data-parallel",
       "target": "multi-gpu-training-troubleshooting",
       "type": "shared-tag",
       "value": 0.8
     },
     {
+      "source": "dinov3-3d-mri-self-supervised",
+      "target": "deepseek-world-model-jepa",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
       "source": "docker-install-and-management",
       "target": "linux-user-management",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "fastsurfer-freesurfer-cortical-pipeline",
+      "target": "deepseek-cortical-freesurfer",
       "type": "shared-tag",
       "value": 0.8
     },
@@ -3993,6 +6564,12 @@
       "value": 0.8
     },
     {
+      "source": "latex-bibtex-typesetting",
+      "target": "kimi-misc",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
       "source": "linux-user-management",
       "target": "ssh-remote-development",
       "type": "shared-tag",
@@ -4005,6 +6582,12 @@
       "value": 0.8
     },
     {
+      "source": "miccai-submission-and-abstract",
+      "target": "kimi-paper-miccai-review",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
       "source": "psnr-ssim-3d-mri",
       "target": "wandb-experiment-tracking",
       "type": "shared-tag",
@@ -4013,6 +6596,174 @@
     {
       "source": "wavelet-deformation-analysis",
       "target": "wavelet-flow-mri-generation",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "wavelet-flow-mri-generation",
+      "target": "deepseek-medical-image-synthesis",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "deepseek-medical-image-synthesis",
+      "target": "deepseek-paper-miccai-review",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "deepseek-paper-miccai-review",
+      "target": "deepseek-diffusion-rectified-flow",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "deepseek-diffusion-rectified-flow",
+      "target": "kimi-diffusion-rectified-flow",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "kimi-diffusion-rectified-flow",
+      "target": "kimi-ibeat-infant-mri",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "deepseek-cortical-freesurfer",
+      "target": "kimi-ibeat-infant-mri",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "deepseek-cortical-freesurfer",
+      "target": "kimi-brain-segmentation-freesurfer",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "deepseek-cursor-cline-mcp",
+      "target": "kimi-dev-tools-mcp",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "deepseek-life-entertainment",
+      "target": "kimi-life-entertainment",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "kimi-life-entertainment",
+      "target": "kimi-misc",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "deepseek-linux-windows-commands",
+      "target": "deepseek-linux-docker-cuda-infra",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "deepseek-linux-docker-cuda-infra",
+      "target": "kimi-linux-docker-cuda-infra",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "deepseek-medical-image-synthesis",
+      "target": "deepseek-diffusion-rectified-flow",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "deepseek-paper-miccai-review",
+      "target": "kimi-misc",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "kimi-misc",
+      "target": "kimi-paper-miccai-review",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "deepseek-tailscale-remote-network",
+      "target": "kimi-network-remote",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "deepseek-diffusion-rectified-flow",
+      "target": "kimi-medical-image-synthesis",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "deepseek-hardware-peripherals",
+      "target": "kimi-network-remote",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "deepseek-ibeat-infant-mri",
+      "target": "kimi-ibeat-infant-mri",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "kimi-brain-segmentation-freesurfer",
+      "target": "kimi-deep-learning-training",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "kimi-deep-learning-training",
+      "target": "kimi-dev-tools-mcp",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "kimi-dev-tools-mcp",
+      "target": "kimi-diffusion-rectified-flow",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "kimi-ibeat-infant-mri",
+      "target": "kimi-life-entertainment",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "kimi-life-entertainment",
+      "target": "kimi-linux-docker-cuda-infra",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "kimi-linux-docker-cuda-infra",
+      "target": "kimi-medical-image-synthesis",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "kimi-medical-image-synthesis",
+      "target": "kimi-misc",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "kimi-misc",
+      "target": "kimi-network-remote",
+      "type": "shared-tag",
+      "value": 0.8
+    },
+    {
+      "source": "kimi-network-remote",
+      "target": "kimi-paper-miccai-review",
       "type": "shared-tag",
       "value": 0.8
     }
